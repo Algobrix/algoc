@@ -1,0 +1,33 @@
+{
+    "packages":[
+        {
+            "name":"AlgoC",
+            "maintainer":"AlgoBrix",
+            "websiteURL":"",
+            "email":"",
+			"help" : { "online" : "https://github.com/semir-t/algoc" },
+            "platforms":[
+				{
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.1.0",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/semir-t/algoC/main/AlgoC_0.1.3.zip",
+                    "archiveFileName":"AlgoC_0.1.0.zip",
+                    "checksum": "SHA-256:d3c8c2938e949b253dd52766094594b5f0845d67c9af2c2a2bfb85ea4fecaa70",
+                    "size":"11157654",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+            ],
+            "tools":[
+            ]
+        }
+    ]
+}
