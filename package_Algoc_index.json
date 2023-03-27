@@ -5,14 +5,14 @@
             "maintainer":"AlgoBrix",
             "websiteURL":"",
             "email":"",
-			"help" : { "online" : "https://github.com/Algobrix/AlgoC" },
+			"help" : { "online" : "https://github.com/Algobrix/algoc" },
             "platforms":[
 				{
                     "name":"AlgoC",
                     "architecture":"avr",
                     "version":"0.1.0",
                     "category":"Contributed",
-                    "url":"https://raw.githubusercontent.com/Algobrix/AlgoC/main/package_Algoc_index.json",
+                    "url":"https://raw.githubusercontent.com/Algobrix/algoc/main/package_Algoc_index.json",
                     "archiveFileName":"AlgoC_0.1.0.zip",
                     "checksum": "SHA-256:f28b94ef3253b20ddf2d67a54546b43416b8ddeaf4bd2fdc7ebcddd521167a96",
                     "size":"11157654",
