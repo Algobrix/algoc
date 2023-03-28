@@ -14,8 +14,8 @@
                     "category":"Contributed",
                     "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.1.0.zip",
                     "archiveFileName":"AlgoC_0.1.0.zip",
-                    "checksum": "SHA-256:f28b94ef3253b20ddf2d67a54546b43416b8ddeaf4bd2fdc7ebcddd521167a96",
-                    "size":"11157654",
+                    "checksum": "SHA-256:5e2c29a4b78e1d6f0fcd6edb9b3a9abee26be15e356767b774e632152dfabacb",
+                    "size":"11157662",
                     "boards":[
                         {
                             "name":"AlgoC_328PB"
