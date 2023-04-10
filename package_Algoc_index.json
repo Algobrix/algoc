@@ -7,6 +7,24 @@
             "email":"",
 			"help" : { "online" : "https://github.com/Algobrix/algoc" },
             "platforms":[
+            	{
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.1.5",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.1.5.zip",
+                    "archiveFileName":"AlgoC_0.1.5.zip",
+                    "checksum": "SHA-256:7a2a0a96cc2464d9c0339ef6180b41acd49a96f4f0b49f9c1019fd6a05a5a337",
+                    "size":"11157772",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
 				{
                     "name":"AlgoC",
                     "architecture":"avr",
