@@ -10,6 +10,24 @@
                 {
                     "name":"AlgoC",
                     "architecture":"avr",
+                    "version":"0.3.8",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.3.8.zip",
+                    "archiveFileName":"AlgoC_0.3.8.zip",
+                    "checksum": "SHA-256:4ba12ba35a47ad9a9a4e3f09d57195658d5701090a7d953d7f491dc5e3165f11",
+                    "size":"11185535",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                }, 
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
                     "version":"0.3.7",
                     "category":"Contributed",
                     "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.3.7.zip",
