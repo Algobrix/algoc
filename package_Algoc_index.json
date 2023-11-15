@@ -7,501 +7,33 @@
             "email":"",
 			"help" : { "online" : "https://github.com/Algobrix/algoc" },
             "platforms":[
+               	{
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.1.0",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.1.0.zip",
+                    "archiveFileName":"AlgoC_0.1.0.zip",
+                    "checksum": "SHA-256:5e2c29a4b78e1d6f0fcd6edb9b3a9abee26be15e356767b774e632152dfabacb",
+                    "size":"11157662",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
                 {
                     "name":"AlgoC",
                     "architecture":"avr",
-                    "version":"0.3.10",
+                    "version":"0.1.1",
                     "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.3.10.zip",
-                    "archiveFileName":"AlgoC_0.3.10.zip",
-                    "checksum": "SHA-256:cd445cf0af8cdf1547c5418fc051eace0f76e970550724cd7c6b3325b929d169",
-                    "size":"11206079",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                }, 
-                {
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.3.9",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.3.9.zip",
-                    "archiveFileName":"AlgoC_0.3.9.zip",
-                    "checksum": "SHA-256:38debf94e3f60c65397939fbd306f18ec629f66d2e740c0db132616945ad0f52",
-                    "size":"11189679",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                }, 
-                {
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.3.8",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.3.8.zip",
-                    "archiveFileName":"AlgoC_0.3.8.zip",
-                    "checksum": "SHA-256:4ba12ba35a47ad9a9a4e3f09d57195658d5701090a7d953d7f491dc5e3165f11",
-                    "size":"11185535",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                }, 
-                {
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.3.7",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.3.7.zip",
-                    "archiveFileName":"AlgoC_0.3.7.zip",
-                    "checksum": "SHA-256:3f011fc9341bc7c90c451755902bd2b1da0c8a912bc7974d4ad0f4cac654c97a",
-                    "size":"11185495",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                }, 
-                {
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.3.6",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.3.6.zip",
-                    "archiveFileName":"AlgoC_0.3.6.zip",
-                    "checksum": "SHA-256:82a96903a303ee427b0b7bbedc4f8b30356133a97e79f88f10bd41a7dab0af60",
-                    "size":"11184401",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },    
-                {
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.3.5",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.3.5.zip",
-                    "archiveFileName":"AlgoC_0.3.5.zip",
-                    "checksum": "SHA-256:107278dd3aba7d7b1c1c3dc856c1d76b8c3951ae38af16ee948ac572a470415d",
-                    "size":"11183782",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },    
-                {
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.3.4",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.3.4.zip",
-                    "archiveFileName":"AlgoC_0.3.4.zip",
-                    "checksum": "SHA-256:f67e04763e4d431581866a500697783c8e72ebdea424aca87b412ba36bfd892f",
-                    "size":"11187373",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                }, 				
-                {
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.3.3",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.3.3.zip",
-                    "archiveFileName":"AlgoC_0.3.3.zip",
-                    "checksum": "SHA-256:8ac6d74aef15ff1e7d295c3a14753547a15ad29a14f8c2b00754b4ee75cfc432",
-                    "size":"11187387",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                }, 
-            	{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.3.2",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.3.2.zip",
-                    "archiveFileName":"AlgoC_0.3.2.zip",
-                    "checksum": "SHA-256:2794c1d25e374094e9b56ac956cc1afd4cd76d3b3d073de1b8b6ba5aef387dc3",
-                    "size":"11186846",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                }, 
-            	{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.3.1",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.3.1.zip",
-                    "archiveFileName":"AlgoC_0.3.1.zip",
-                    "checksum": "SHA-256:ad90f5a41609591d633265dae14359a0fd5092e2273489f7685073cea6de617f",
-                    "size":"11182721",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                }, 
-				{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.3.0",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.3.0.zip",
-                    "archiveFileName":"AlgoC_0.3.0.zip",
-                    "checksum": "SHA-256:de5f3e1addf2f767e6a096cdd7cc403e3be43fe14b7ef1f1c3ee47059bd98f5f",
-                    "size":"11182631",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },            
-				{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.2.9",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.2.9.zip",
-                    "archiveFileName":"AlgoC_0.2.9.zip",
-                    "checksum": "SHA-256:e207b6cb27870272c18585b2afa08770dee595c230dc9fb0497a2724d10fa511",
-                    "size":"11186453",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },
-				{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.2.8",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.2.8.zip",
-                    "archiveFileName":"AlgoC_0.2.8.zip",
-                    "checksum": "SHA-256:9ca94b543e7594160fdf4bdf1fcebb7c1a3340e7a6199740e30e87b1c7ce6fa3",
-                    "size":"11186641",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },
-				{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.2.7",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.2.7.zip",
-                    "archiveFileName":"AlgoC_0.2.7.zip",
-                    "checksum": "SHA-256:54d2537c4e7d621f91035723635c01a54c63e2db643d79c001a8095eee2d426b",
-                    "size":"11186404",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },
-				{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.2.6",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.2.6.zip",
-                    "archiveFileName":"AlgoC_0.2.6.zip",
-                    "checksum": "SHA-256:d67de59326e75b657c76025d8a7c176b60d88b5b0f5c59057beb9a6edd0edd78",
-                    "size":"11185655 ",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },
-				{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.2.5",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.2.5.zip",
-                    "archiveFileName":"AlgoC_0.2.5.zip",
-                    "checksum": "SHA-256:82b2052e9090229d1aa8ed5b61ee19aa68992758401b9b6e48cc9e7038de7062",
-                    "size":"11184992",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },
-				{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.2.4",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.2.4.zip",
-                    "archiveFileName":"AlgoC_0.2.4.zip",
-                    "checksum": "SHA-256:fbed3e60ced9804596132c77a83c1623d107472729b19c8a08f1b21c3d6633cc",
-                    "size":"11180694",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },
-				{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.2.3",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.2.3.zip",
-                    "archiveFileName":"AlgoC_0.2.3.zip",
-                    "checksum": "SHA-256:d68a1bfa93bffbce5414f62f76187aa9a67daf93063da84901248cc713bed84a",
-                    "size":"11174926",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },
-				{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.2.2",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.2.2.zip",
-                    "archiveFileName":"AlgoC_0.2.2.zip",
-                    "checksum": "SHA-256:1b27114b1901ca872924931bff73125c4b3be3e583085c83977da20e572202b2",
-                    "size":"11174757",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },
-				{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.2.1",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.2.1.zip",
-                    "archiveFileName":"AlgoC_0.2.1.zip",
-                    "checksum": "SHA-256:58bc657a960bde360686f38b6195120c5b8ca515f7f0b9c922ba2d2e948365f0",
-                    "size":"11174623",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },
-				{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.2.0",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.2.0.zip",
-                    "archiveFileName":"AlgoC_0.2.0.zip",
-                    "checksum": "SHA-256:6433cacfc9a719cfb3fb78b1bfd242ecd5b9e7a169561bfea37e49ab6a482271",
-                    "size":"11179462",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },
-				{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.1.9",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.1.9.zip",
-                    "archiveFileName":"AlgoC_0.1.9.zip",
-                    "checksum": "SHA-256:840066662968a88060aeac1e78616b8dee8e13ef67059073ec96c1196a87f254",
-                    "size":"11164237",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },
-				{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.1.8",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.1.8.zip",
-                    "archiveFileName":"AlgoC_0.1.8.zip",
-                    "checksum": "SHA-256:da183216fef9a5689d9961e20655a71bd878c9a6ee00d76e577567e196d34b76",
-                    "size":"11164156",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },
-            	{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.1.7",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.1.7.zip",
-                    "archiveFileName":"AlgoC_0.1.7.zip",
-                    "checksum": "SHA-256:8c10c2b2862de0950399e989f650996c119d4cc3c55040ae72bd372a51818372",
-                    "size":"11158660",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },
-				{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.1.6",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.1.6.zip",
-                    "archiveFileName":"AlgoC_0.1.6.zip",
-                    "checksum": "SHA-256:f042b23c4bfc7cdfc3eb1d6c0735ca8058e267404edc6581d4dfcf62f5ab7976",
-                    "size":"11162485",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },
-            	{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.1.5",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.1.5.zip",
-                    "archiveFileName":"AlgoC_0.1.5.zip",
-                    "checksum": "SHA-256:7a2a0a96cc2464d9c0339ef6180b41acd49a96f4f0b49f9c1019fd6a05a5a337",
-                    "size":"11157772",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },
-				{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.1.4",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.1.4.zip",
-                    "archiveFileName":"AlgoC_0.1.4.zip",
-                    "checksum": "SHA-256:c3452b615ef76d8e57f2f6c09264db00ee041bb7ca9d30136cd84230727472c8",
-                    "size":"11157700",
-                    "boards":[
-                        {
-                            "name":"AlgoC_328PB"
-                        }
-                    ],
-                    "toolsDependencies":[
-
-                    ]
-                },
-				{
-                    "name":"AlgoC",
-                    "architecture":"avr",
-                    "version":"0.1.3",
-                    "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.1.3.zip",
-                    "archiveFileName":"AlgoC_0.1.3.zip",
-                    "checksum": "SHA-256:20ba85e4a7118e65a1027f137d529aa53dbb76a6e5caf5fe71c03a76b89e826e",
-                    "size":"11157702",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.1.1.zip",
+                    "archiveFileName":"AlgoC_0.1.1.zip",
+                    "checksum": "SHA-256:a62f475faf727f34ffb1fda72dbd964bc440e630b57c9cf0d71934cebd5f84f3",
+                    "size":"11157660",
                     "boards":[
                         {
                             "name":"AlgoC_328PB"
@@ -516,7 +48,7 @@
                     "architecture":"avr",
                     "version":"0.1.2",
                     "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.1.2.zip",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.1.2.zip",
                     "archiveFileName":"AlgoC_0.1.2.zip",
                     "checksum": "SHA-256:b176f6a238a2b1f65619d6905739c60d6bec0c3269a87eb9dac42dafcc649c37",
                     "size":"11157674",
@@ -532,12 +64,192 @@
                 {
                     "name":"AlgoC",
                     "architecture":"avr",
-                    "version":"0.1.1",
+                    "version":"0.1.3",
                     "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.1.1.zip",
-                    "archiveFileName":"AlgoC_0.1.1.zip",
-                    "checksum": "SHA-256:a62f475faf727f34ffb1fda72dbd964bc440e630b57c9cf0d71934cebd5f84f3",
-                    "size":"11157660",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.1.3.zip",
+                    "archiveFileName":"AlgoC_0.1.3.zip",
+                    "checksum": "SHA-256:20ba85e4a7118e65a1027f137d529aa53dbb76a6e5caf5fe71c03a76b89e826e",
+                    "size":"11157702",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+                				{
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.1.4",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.1.4.zip",
+                    "archiveFileName":"AlgoC_0.1.4.zip",
+                    "checksum": "SHA-256:c3452b615ef76d8e57f2f6c09264db00ee041bb7ca9d30136cd84230727472c8",
+                    "size":"11157700",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.1.5",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.1.5.zip",
+                    "archiveFileName":"AlgoC_0.1.5.zip",
+                    "checksum": "SHA-256:7a2a0a96cc2464d9c0339ef6180b41acd49a96f4f0b49f9c1019fd6a05a5a337",
+                    "size":"11157772",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.1.6",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.1.6.zip",
+                    "archiveFileName":"AlgoC_0.1.6.zip",
+                    "checksum": "SHA-256:f042b23c4bfc7cdfc3eb1d6c0735ca8058e267404edc6581d4dfcf62f5ab7976",
+                    "size":"11162485",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.1.7",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.1.7.zip",
+                    "archiveFileName":"AlgoC_0.1.7.zip",
+                    "checksum": "SHA-256:8c10c2b2862de0950399e989f650996c119d4cc3c55040ae72bd372a51818372",
+                    "size":"11158660",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.1.8",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.1.8.zip",
+                    "archiveFileName":"AlgoC_0.1.8.zip",
+                    "checksum": "SHA-256:da183216fef9a5689d9961e20655a71bd878c9a6ee00d76e577567e196d34b76",
+                    "size":"11164156",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.1.9",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.1.9.zip",
+                    "archiveFileName":"AlgoC_0.1.9.zip",
+                    "checksum": "SHA-256:840066662968a88060aeac1e78616b8dee8e13ef67059073ec96c1196a87f254",
+                    "size":"11164237",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.2.0",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.2.0.zip",
+                    "archiveFileName":"AlgoC_0.2.0.zip",
+                    "checksum": "SHA-256:6433cacfc9a719cfb3fb78b1bfd242ecd5b9e7a169561bfea37e49ab6a482271",
+                    "size":"11179462",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },    
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.2.1",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.2.1.zip",
+                    "archiveFileName":"AlgoC_0.2.1.zip",
+                    "checksum": "SHA-256:58bc657a960bde360686f38b6195120c5b8ca515f7f0b9c922ba2d2e948365f0",
+                    "size":"11174623",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },    
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.2.2",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.2.2.zip",
+                    "archiveFileName":"AlgoC_0.2.2.zip",
+                    "checksum": "SHA-256:1b27114b1901ca872924931bff73125c4b3be3e583085c83977da20e572202b2",
+                    "size":"11174757",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                }, 				
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.2.3",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.2.3.zip",
+                    "archiveFileName":"AlgoC_0.2.3.zip",
+                    "checksum": "SHA-256:d68a1bfa93bffbce5414f62f76187aa9a67daf93063da84901248cc713bed84a",
+                    "size":"11174926",
                     "boards":[
                         {
                             "name":"AlgoC_328PB"
@@ -550,12 +262,300 @@
 				{
                     "name":"AlgoC",
                     "architecture":"avr",
-                    "version":"0.1.0",
+                    "version":"0.2.4",
                     "category":"Contributed",
-                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/main/AlgoC_0.1.0.zip",
-                    "archiveFileName":"AlgoC_0.1.0.zip",
-                    "checksum": "SHA-256:5e2c29a4b78e1d6f0fcd6edb9b3a9abee26be15e356767b774e632152dfabacb",
-                    "size":"11157662",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.2.4.zip",
+                    "archiveFileName":"AlgoC_0.2.4.zip",
+                    "checksum": "SHA-256:fbed3e60ced9804596132c77a83c1623d107472729b19c8a08f1b21c3d6633cc",
+                    "size":"11180694",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+				{
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.2.5",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.2.5.zip",
+                    "archiveFileName":"AlgoC_0.2.5.zip",
+                    "checksum": "SHA-256:82b2052e9090229d1aa8ed5b61ee19aa68992758401b9b6e48cc9e7038de7062",
+                    "size":"11184992",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+				{
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.2.6",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.2.6.zip",
+                    "archiveFileName":"AlgoC_0.2.6.zip",
+                    "checksum": "SHA-256:d67de59326e75b657c76025d8a7c176b60d88b5b0f5c59057beb9a6edd0edd78",
+                    "size":"11185655 ",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+				{
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.2.7",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.2.7.zip",
+                    "archiveFileName":"AlgoC_0.2.7.zip",
+                    "checksum": "SHA-256:54d2537c4e7d621f91035723635c01a54c63e2db643d79c001a8095eee2d426b",
+                    "size":"11186404",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+				{
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.2.8",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.2.8.zip",
+                    "archiveFileName":"AlgoC_0.2.8.zip",
+                    "checksum": "SHA-256:9ca94b543e7594160fdf4bdf1fcebb7c1a3340e7a6199740e30e87b1c7ce6fa3",
+                    "size":"11186641",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+				{
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.2.9",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.2.9.zip",
+                    "archiveFileName":"AlgoC_0.2.9.zip",
+                    "checksum": "SHA-256:e207b6cb27870272c18585b2afa08770dee595c230dc9fb0497a2724d10fa511",
+                    "size":"11186453",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+            	{
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.3.0",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.3.0.zip",
+                    "archiveFileName":"AlgoC_0.3.0.zip",
+                    "checksum": "SHA-256:de5f3e1addf2f767e6a096cdd7cc403e3be43fe14b7ef1f1c3ee47059bd98f5f",
+                    "size":"11182631",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+				{
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.3.1",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.3.1.zip",
+                    "archiveFileName":"AlgoC_0.3.1.zip",
+                    "checksum": "SHA-256:ad90f5a41609591d633265dae14359a0fd5092e2273489f7685073cea6de617f",
+                    "size":"11182721",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                }, 
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.3.2",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.3.2.zip",
+                    "archiveFileName":"AlgoC_0.3.2.zip",
+                    "checksum": "SHA-256:2794c1d25e374094e9b56ac956cc1afd4cd76d3b3d073de1b8b6ba5aef387dc3",
+                    "size":"11186846",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                }, 
+				{
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.3.3",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.3.3.zip",
+                    "archiveFileName":"AlgoC_0.3.3.zip",
+                    "checksum": "SHA-256:8ac6d74aef15ff1e7d295c3a14753547a15ad29a14f8c2b00754b4ee75cfc432",
+                    "size":"11187387",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                }, 
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.3.4",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.3.4.zip",
+                    "archiveFileName":"AlgoC_0.3.4.zip",
+                    "checksum": "SHA-256:f67e04763e4d431581866a500697783c8e72ebdea424aca87b412ba36bfd892f",
+                    "size":"11187373",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.3.5",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.3.5.zip",
+                    "archiveFileName":"AlgoC_0.3.5.zip",
+                    "checksum": "SHA-256:107278dd3aba7d7b1c1c3dc856c1d76b8c3951ae38af16ee948ac572a470415d",
+                    "size":"11183782",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.3.6",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.3.6.zip",
+                    "archiveFileName":"AlgoC_0.3.6.zip",
+                    "checksum": "SHA-256:82a96903a303ee427b0b7bbedc4f8b30356133a97e79f88f10bd41a7dab0af60",
+                    "size":"11184401",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+				{
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.3.7",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.3.7.zip",
+                    "archiveFileName":"AlgoC_0.3.7.zip",
+                    "checksum": "SHA-256:3f011fc9341bc7c90c451755902bd2b1da0c8a912bc7974d4ad0f4cac654c97a",
+                    "size":"11185495",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                }, 
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.3.8",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.3.8.zip",
+                    "archiveFileName":"AlgoC_0.3.8.zip",
+                    "checksum": "SHA-256:4ba12ba35a47ad9a9a4e3f09d57195658d5701090a7d953d7f491dc5e3165f11",
+                    "size":"11185535",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                }, 
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.3.9",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.3.9.zip",
+                    "archiveFileName":"AlgoC_0.3.9.zip",
+                    "checksum": "SHA-256:38debf94e3f60c65397939fbd306f18ec629f66d2e740c0db132616945ad0f52",
+                    "size":"11189679",
+                    "boards":[
+                        {
+                            "name":"AlgoC_328PB"
+                        }
+                    ],
+                    "toolsDependencies":[
+
+                    ]
+                },
+                {
+                    "name":"AlgoC",
+                    "architecture":"avr",
+                    "version":"0.3.10",
+                    "category":"Contributed",
+                    "url":"http://raw.githubusercontent.com/Algobrix/algoc/releases/algoc_0.3.10.zip",
+                    "archiveFileName":"AlgoC_0.3.10.zip",
+                    "checksum": "SHA-256:cd445cf0af8cdf1547c5418fc051eace0f76e970550724cd7c6b3325b929d169",
+                    "size":"11206079",
                     "boards":[
                         {
                             "name":"AlgoC_328PB"
