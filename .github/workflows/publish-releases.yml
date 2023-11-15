@@ -55,12 +55,16 @@ jobs:
         # Put the archive file *outside* the checkout, otherwise
         # switching to another branch with the checkout action
         # overwrites it
-        ARCHIVE_FILE="../$REPO-$TAG.zip"
+        # ARCHIVE_FILE="../$REPO-$TAG.zip"
+        wget -O "$REPO-$TAG.zip" "$URL"
+
+        ARCHIVE_FILE="$REPO-$TAG.zip"
+
 
         # This uses git archive to create the same tarball that github
         # will create on downloads. Note that this works on the git
         # commit, not the checkout.
-        git archive --prefix "$REPO-$TAG/" "$TAG" -o "$ARCHIVE_FILE"
+        # git archive --prefix "$REPO-$TAG/" "$TAG" -o "$ARCHIVE_FILE"
 
         echo "URL=$URL" >> $GITHUB_ENV
         echo "ARCHIVE_FILE=$ARCHIVE_FILE" >> $GITHUB_ENV
