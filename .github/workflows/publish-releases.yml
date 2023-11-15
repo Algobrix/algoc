@@ -83,6 +83,7 @@ jobs:
 
         # GITHUB_REF is refs/tags/tagname, so remove the prefix
         TAG="${GITHUB_REF#refs/tags/}"
+        REPO="${GITHUB_REPOSITORY#*/}"
 
         wget -O "$REPO-$TAG.zip" "$URL"
 
