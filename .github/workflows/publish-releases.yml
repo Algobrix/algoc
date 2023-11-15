@@ -56,7 +56,6 @@ jobs:
         # switching to another branch with the checkout action
         # overwrites it
         # ARCHIVE_FILE="../$REPO-$TAG.zip"
-        wget -O "$REPO-$TAG.zip" "$URL"
 
         ARCHIVE_FILE="$REPO-$TAG.zip"
 
@@ -84,6 +83,8 @@ jobs:
 
         # GITHUB_REF is refs/tags/tagname, so remove the prefix
         TAG="${GITHUB_REF#refs/tags/}"
+
+        wget -O "$REPO-$TAG.zip" "$URL"
 
         echo "::group::Getting file checksum and size"
           SHA256=$(sha256sum "$ARCHIVE_FILE" | cut -d ' ' -f 1)
