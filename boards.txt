@@ -1,0 +1,97 @@
+# Menu options
+#menu.clock=Clock
+#menu.BOD=BOD
+#menu.eeprom=EEPROM
+#menu.LTO=Compiler LTO
+#menu.variant=Variant
+#menu.bootloader=Bootloader
+#menu.BOD=BOD 2.7V
+
+#menu.clock=External 16 MHz
+#menu.variant=328PB
+#menu.LTO=LTO disabled
+#menu.bootloader=Yes (UART0)
+
+
+AlgoC.upload.tool=avrdude
+AlgoC.upload.protocol=arduino
+AlgoC.upload.maximum_size=32256
+AlgoC.upload.maximum_data_size=2048
+AlgoC.upload.speed=115200
+
+# General
+AlgoC.name=AlgoC
+AlgoC.upload.tool=avrdude
+AlgoC.upload.maximum_data_size=2048
+AlgoC.bootloader.tool=avrdude
+AlgoC.bootloader.unlock_bits=0x3f
+AlgoC.bootloader.lock_bits=0x0f
+AlgoC.build.core=AlgoC
+#AlgoC.build.board=AVR_ATmega328
+AlgoC.build.board=AVR_ALGO_BOT
+AlgoC.build.bootloader_led=B5
+AlgoC.build.extra_flags={build.clkpr}
+
+AlgoC.vid.0 = 0x1A86
+AlgoC.pid.0 = 0x7523
+
+# Upload port select
+#AlgoC.menu.bootloader.uart0=Yes (UART0)
+AlgoC.bootloader.uart0.upload.maximum_size=32256
+AlgoC.bootloader.uart0.upload.protocol=arduino
+AlgoC.bootloader.uart0.upload.port=UART0
+AlgoC.bootloader.uart0.build.export_merged_output=true
+AlgoC.bootloader.uart0.bootloader.high_fuses=0b1101{bootloader.eesave_bit}110
+AlgoC.bootloader.uart0.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.clock_speed}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.clock_speed}_{build.bootloader_led}.hex
+
+# EEPROM
+AlgoC.eeprom.keep=EEPROM retained
+AlgoC.eeprom.keep.bootloader.eesave_bit=0
+
+# Variants
+#AlgoC.menu.variant.modelPB=328PB
+AlgoC.bootloader.cksel_bits=1111
+AlgoC.bootloader.cfd_bit=0
+AlgoC.build.variant=pb-variant
+AlgoC.build.mcu=atmega328pb
+
+# Brown out detection
+#AlgoC.BOD.2v7=BOD 2.7V
+AlgoC.bootloader.extended_fuses=0b1111{bootloader.cfd_bit}101
+#AlgoC.menu.BOD.4v3=BOD 4.3V
+#AlgoC.menu.BOD.4v3.bootloader.extended_fuses=0b1111{bootloader.cfd_bit}100
+#AlgoC.menu.BOD.1v8=BOD 1.8V
+#AlgoC.menu.BOD.1v8.bootloader.extended_fuses=0b1111{bootloader.cfd_bit}110
+#AlgoC.menu.BOD.disabled=BOD  disabled
+#AlgoC.menu.BOD.disabled.bootloader.extended_fuses=0b1111{bootloader.cfd_bit}111
+
+# Compiler link time optimization
+#AlgoC.menu.LTO.Os=LTO disabled
+AlgoC.compiler.c.extra_flags=
+AlgoC.compiler.c.elf.extra_flags=
+AlgoC.compiler.cpp.extra_flags=
+AlgoC.ltoarcmd=avr-ar
+
+
+#AlgoC.menu.LTO.Os=LTO disabled
+#AlgoC.menu.LTO.Os.compiler.c.extra_flags=
+#AlgoC.menu.LTO.Os.compiler.c.elf.extra_flags=
+#AlgoC.menu.LTO.Os.compiler.cpp.extra_flags=
+#AlgoC.menu.LTO.Os.ltoarcmd=avr-ar
+
+#AlgoC.menu.LTO.Os_flto=LTO enabled
+#AlgoC.menu.LTO.Os_flto.compiler.c.extra_flags=-Wextra -flto -g
+#AlgoC.menu.LTO.Os_flto.compiler.c.elf.extra_flags=-w -flto -g
+#AlgoC.menu.LTO.Os_flto.compiler.cpp.extra_flags=-Wextra -flto -g
+#AlgoC.menu.LTO.Os_flto.ltoarcmd=avr-gcc-ar
+
+# Clock frequencies
+#AlgoC.menu.clock.16MHz_external=External 16 MHz
+AlgoC.upload.speed=115200
+AlgoC.bootloader.low_fuses=0b1111{bootloader.cksel_bits}
+AlgoC.build.clkpr=
+AlgoC.build.clock_speed={build.f_cpu}
+AlgoC.build.f_cpu=16000000L
+
+AlgoC.bootloader.tool=avrdude
+

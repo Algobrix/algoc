@@ -1,0 +1,1695 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/semir/SSD/Dropbox/MicroBitDesign/MCU/projects/young-engineers/arduino-versions/arduino-algoc/portable/packages/AlgoC/hardware/avr/0.1.0/cores/AlgoC/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+ACMFunctionalDescriptor	USBCore.h	/^} ACMFunctionalDescriptor;$/;"	t	typeref:struct:__anonb5ac37ee0908
+ALGOBOT_INFO	Arduino.h	/^class ALGOBOT_INFO $/;"	c
+ALGOBOT_STATE	Arduino.h	/^enum ALGOBOT_STATE$/;"	g
+ALGOBOT_STATE_HALT	Arduino.h	/^    ALGOBOT_STATE_HALT$/;"	e	enum:ALGOBOT_STATE
+ALGOBOT_STATE_IDLE	Arduino.h	/^    ALGOBOT_STATE_IDLE = 0x00,$/;"	e	enum:ALGOBOT_STATE
+ALGOBOT_STATE_RUN	Arduino.h	/^    ALGOBOT_STATE_RUN,$/;"	e	enum:ALGOBOT_STATE
+ALGOBOT_STATE_WAIT4STOP	Arduino.h	/^    ALGOBOT_STATE_WAIT4STOP,$/;"	e	enum:ALGOBOT_STATE
+ARDUINO_MAIN	wiring_digital.c	/^#define ARDUINO_MAIN$/;"	d	file:
+AVAILABLE_TONE_PINS	Tone.cpp	/^  #define AVAILABLE_TONE_PINS /;"	d	file:
+Adding further clock frequencies	README.md	/^### Adding further clock frequencies$/;"	S	section:Arduino core files for MCUdude's cores""Supported clock frequencies
+Arduino core files for MCUdude's cores	README.md	/^# Arduino core files for MCUdude's cores$/;"	c
+Arduino_h	Arduino.h	/^#define Arduino_h$/;"	d
+B0	binary.h	/^#define B0 /;"	d
+B00	binary.h	/^#define B00 /;"	d
+B000	binary.h	/^#define B000 /;"	d
+B0000	binary.h	/^#define B0000 /;"	d
+B00000	binary.h	/^#define B00000 /;"	d
+B000000	binary.h	/^#define B000000 /;"	d
+B0000000	binary.h	/^#define B0000000 /;"	d
+B00000000	binary.h	/^#define B00000000 /;"	d
+B00000001	binary.h	/^#define B00000001 /;"	d
+B0000001	binary.h	/^#define B0000001 /;"	d
+B00000010	binary.h	/^#define B00000010 /;"	d
+B00000011	binary.h	/^#define B00000011 /;"	d
+B000001	binary.h	/^#define B000001 /;"	d
+B0000010	binary.h	/^#define B0000010 /;"	d
+B00000100	binary.h	/^#define B00000100 /;"	d
+B00000101	binary.h	/^#define B00000101 /;"	d
+B0000011	binary.h	/^#define B0000011 /;"	d
+B00000110	binary.h	/^#define B00000110 /;"	d
+B00000111	binary.h	/^#define B00000111 /;"	d
+B00001	binary.h	/^#define B00001 /;"	d
+B000010	binary.h	/^#define B000010 /;"	d
+B0000100	binary.h	/^#define B0000100 /;"	d
+B00001000	binary.h	/^#define B00001000 /;"	d
+B00001001	binary.h	/^#define B00001001 /;"	d
+B0000101	binary.h	/^#define B0000101 /;"	d
+B00001010	binary.h	/^#define B00001010 /;"	d
+B00001011	binary.h	/^#define B00001011 /;"	d
+B000011	binary.h	/^#define B000011 /;"	d
+B0000110	binary.h	/^#define B0000110 /;"	d
+B00001100	binary.h	/^#define B00001100 /;"	d
+B00001101	binary.h	/^#define B00001101 /;"	d
+B0000111	binary.h	/^#define B0000111 /;"	d
+B00001110	binary.h	/^#define B00001110 /;"	d
+B00001111	binary.h	/^#define B00001111 /;"	d
+B0001	binary.h	/^#define B0001 /;"	d
+B00010	binary.h	/^#define B00010 /;"	d
+B000100	binary.h	/^#define B000100 /;"	d
+B0001000	binary.h	/^#define B0001000 /;"	d
+B00010000	binary.h	/^#define B00010000 /;"	d
+B00010001	binary.h	/^#define B00010001 /;"	d
+B0001001	binary.h	/^#define B0001001 /;"	d
+B00010010	binary.h	/^#define B00010010 /;"	d
+B00010011	binary.h	/^#define B00010011 /;"	d
+B000101	binary.h	/^#define B000101 /;"	d
+B0001010	binary.h	/^#define B0001010 /;"	d
+B00010100	binary.h	/^#define B00010100 /;"	d
+B00010101	binary.h	/^#define B00010101 /;"	d
+B0001011	binary.h	/^#define B0001011 /;"	d
+B00010110	binary.h	/^#define B00010110 /;"	d
+B00010111	binary.h	/^#define B00010111 /;"	d
+B00011	binary.h	/^#define B00011 /;"	d
+B000110	binary.h	/^#define B000110 /;"	d
+B0001100	binary.h	/^#define B0001100 /;"	d
+B00011000	binary.h	/^#define B00011000 /;"	d
+B00011001	binary.h	/^#define B00011001 /;"	d
+B0001101	binary.h	/^#define B0001101 /;"	d
+B00011010	binary.h	/^#define B00011010 /;"	d
+B00011011	binary.h	/^#define B00011011 /;"	d
+B000111	binary.h	/^#define B000111 /;"	d
+B0001110	binary.h	/^#define B0001110 /;"	d
+B00011100	binary.h	/^#define B00011100 /;"	d
+B00011101	binary.h	/^#define B00011101 /;"	d
+B0001111	binary.h	/^#define B0001111 /;"	d
+B00011110	binary.h	/^#define B00011110 /;"	d
+B00011111	binary.h	/^#define B00011111 /;"	d
+B001	binary.h	/^#define B001 /;"	d
+B0010	binary.h	/^#define B0010 /;"	d
+B00100	binary.h	/^#define B00100 /;"	d
+B001000	binary.h	/^#define B001000 /;"	d
+B0010000	binary.h	/^#define B0010000 /;"	d
+B00100000	binary.h	/^#define B00100000 /;"	d
+B00100001	binary.h	/^#define B00100001 /;"	d
+B0010001	binary.h	/^#define B0010001 /;"	d
+B00100010	binary.h	/^#define B00100010 /;"	d
+B00100011	binary.h	/^#define B00100011 /;"	d
+B001001	binary.h	/^#define B001001 /;"	d
+B0010010	binary.h	/^#define B0010010 /;"	d
+B00100100	binary.h	/^#define B00100100 /;"	d
+B00100101	binary.h	/^#define B00100101 /;"	d
+B0010011	binary.h	/^#define B0010011 /;"	d
+B00100110	binary.h	/^#define B00100110 /;"	d
+B00100111	binary.h	/^#define B00100111 /;"	d
+B00101	binary.h	/^#define B00101 /;"	d
+B001010	binary.h	/^#define B001010 /;"	d
+B0010100	binary.h	/^#define B0010100 /;"	d
+B00101000	binary.h	/^#define B00101000 /;"	d
+B00101001	binary.h	/^#define B00101001 /;"	d
+B0010101	binary.h	/^#define B0010101 /;"	d
+B00101010	binary.h	/^#define B00101010 /;"	d
+B00101011	binary.h	/^#define B00101011 /;"	d
+B001011	binary.h	/^#define B001011 /;"	d
+B0010110	binary.h	/^#define B0010110 /;"	d
+B00101100	binary.h	/^#define B00101100 /;"	d
+B00101101	binary.h	/^#define B00101101 /;"	d
+B0010111	binary.h	/^#define B0010111 /;"	d
+B00101110	binary.h	/^#define B00101110 /;"	d
+B00101111	binary.h	/^#define B00101111 /;"	d
+B0011	binary.h	/^#define B0011 /;"	d
+B00110	binary.h	/^#define B00110 /;"	d
+B001100	binary.h	/^#define B001100 /;"	d
+B0011000	binary.h	/^#define B0011000 /;"	d
+B00110000	binary.h	/^#define B00110000 /;"	d
+B00110001	binary.h	/^#define B00110001 /;"	d
+B0011001	binary.h	/^#define B0011001 /;"	d
+B00110010	binary.h	/^#define B00110010 /;"	d
+B00110011	binary.h	/^#define B00110011 /;"	d
+B001101	binary.h	/^#define B001101 /;"	d
+B0011010	binary.h	/^#define B0011010 /;"	d
+B00110100	binary.h	/^#define B00110100 /;"	d
+B00110101	binary.h	/^#define B00110101 /;"	d
+B0011011	binary.h	/^#define B0011011 /;"	d
+B00110110	binary.h	/^#define B00110110 /;"	d
+B00110111	binary.h	/^#define B00110111 /;"	d
+B00111	binary.h	/^#define B00111 /;"	d
+B001110	binary.h	/^#define B001110 /;"	d
+B0011100	binary.h	/^#define B0011100 /;"	d
+B00111000	binary.h	/^#define B00111000 /;"	d
+B00111001	binary.h	/^#define B00111001 /;"	d
+B0011101	binary.h	/^#define B0011101 /;"	d
+B00111010	binary.h	/^#define B00111010 /;"	d
+B00111011	binary.h	/^#define B00111011 /;"	d
+B001111	binary.h	/^#define B001111 /;"	d
+B0011110	binary.h	/^#define B0011110 /;"	d
+B00111100	binary.h	/^#define B00111100 /;"	d
+B00111101	binary.h	/^#define B00111101 /;"	d
+B0011111	binary.h	/^#define B0011111 /;"	d
+B00111110	binary.h	/^#define B00111110 /;"	d
+B00111111	binary.h	/^#define B00111111 /;"	d
+B01	binary.h	/^#define B01 /;"	d
+B010	binary.h	/^#define B010 /;"	d
+B0100	binary.h	/^#define B0100 /;"	d
+B01000	binary.h	/^#define B01000 /;"	d
+B010000	binary.h	/^#define B010000 /;"	d
+B0100000	binary.h	/^#define B0100000 /;"	d
+B01000000	binary.h	/^#define B01000000 /;"	d
+B01000001	binary.h	/^#define B01000001 /;"	d
+B0100001	binary.h	/^#define B0100001 /;"	d
+B01000010	binary.h	/^#define B01000010 /;"	d
+B01000011	binary.h	/^#define B01000011 /;"	d
+B010001	binary.h	/^#define B010001 /;"	d
+B0100010	binary.h	/^#define B0100010 /;"	d
+B01000100	binary.h	/^#define B01000100 /;"	d
+B01000101	binary.h	/^#define B01000101 /;"	d
+B0100011	binary.h	/^#define B0100011 /;"	d
+B01000110	binary.h	/^#define B01000110 /;"	d
+B01000111	binary.h	/^#define B01000111 /;"	d
+B01001	binary.h	/^#define B01001 /;"	d
+B010010	binary.h	/^#define B010010 /;"	d
+B0100100	binary.h	/^#define B0100100 /;"	d
+B01001000	binary.h	/^#define B01001000 /;"	d
+B01001001	binary.h	/^#define B01001001 /;"	d
+B0100101	binary.h	/^#define B0100101 /;"	d
+B01001010	binary.h	/^#define B01001010 /;"	d
+B01001011	binary.h	/^#define B01001011 /;"	d
+B010011	binary.h	/^#define B010011 /;"	d
+B0100110	binary.h	/^#define B0100110 /;"	d
+B01001100	binary.h	/^#define B01001100 /;"	d
+B01001101	binary.h	/^#define B01001101 /;"	d
+B0100111	binary.h	/^#define B0100111 /;"	d
+B01001110	binary.h	/^#define B01001110 /;"	d
+B01001111	binary.h	/^#define B01001111 /;"	d
+B0101	binary.h	/^#define B0101 /;"	d
+B01010	binary.h	/^#define B01010 /;"	d
+B010100	binary.h	/^#define B010100 /;"	d
+B0101000	binary.h	/^#define B0101000 /;"	d
+B01010000	binary.h	/^#define B01010000 /;"	d
+B01010001	binary.h	/^#define B01010001 /;"	d
+B0101001	binary.h	/^#define B0101001 /;"	d
+B01010010	binary.h	/^#define B01010010 /;"	d
+B01010011	binary.h	/^#define B01010011 /;"	d
+B010101	binary.h	/^#define B010101 /;"	d
+B0101010	binary.h	/^#define B0101010 /;"	d
+B01010100	binary.h	/^#define B01010100 /;"	d
+B01010101	binary.h	/^#define B01010101 /;"	d
+B0101011	binary.h	/^#define B0101011 /;"	d
+B01010110	binary.h	/^#define B01010110 /;"	d
+B01010111	binary.h	/^#define B01010111 /;"	d
+B01011	binary.h	/^#define B01011 /;"	d
+B010110	binary.h	/^#define B010110 /;"	d
+B0101100	binary.h	/^#define B0101100 /;"	d
+B01011000	binary.h	/^#define B01011000 /;"	d
+B01011001	binary.h	/^#define B01011001 /;"	d
+B0101101	binary.h	/^#define B0101101 /;"	d
+B01011010	binary.h	/^#define B01011010 /;"	d
+B01011011	binary.h	/^#define B01011011 /;"	d
+B010111	binary.h	/^#define B010111 /;"	d
+B0101110	binary.h	/^#define B0101110 /;"	d
+B01011100	binary.h	/^#define B01011100 /;"	d
+B01011101	binary.h	/^#define B01011101 /;"	d
+B0101111	binary.h	/^#define B0101111 /;"	d
+B01011110	binary.h	/^#define B01011110 /;"	d
+B01011111	binary.h	/^#define B01011111 /;"	d
+B011	binary.h	/^#define B011 /;"	d
+B0110	binary.h	/^#define B0110 /;"	d
+B01100	binary.h	/^#define B01100 /;"	d
+B011000	binary.h	/^#define B011000 /;"	d
+B0110000	binary.h	/^#define B0110000 /;"	d
+B01100000	binary.h	/^#define B01100000 /;"	d
+B01100001	binary.h	/^#define B01100001 /;"	d
+B0110001	binary.h	/^#define B0110001 /;"	d
+B01100010	binary.h	/^#define B01100010 /;"	d
+B01100011	binary.h	/^#define B01100011 /;"	d
+B011001	binary.h	/^#define B011001 /;"	d
+B0110010	binary.h	/^#define B0110010 /;"	d
+B01100100	binary.h	/^#define B01100100 /;"	d
+B01100101	binary.h	/^#define B01100101 /;"	d
+B0110011	binary.h	/^#define B0110011 /;"	d
+B01100110	binary.h	/^#define B01100110 /;"	d
+B01100111	binary.h	/^#define B01100111 /;"	d
+B01101	binary.h	/^#define B01101 /;"	d
+B011010	binary.h	/^#define B011010 /;"	d
+B0110100	binary.h	/^#define B0110100 /;"	d
+B01101000	binary.h	/^#define B01101000 /;"	d
+B01101001	binary.h	/^#define B01101001 /;"	d
+B0110101	binary.h	/^#define B0110101 /;"	d
+B01101010	binary.h	/^#define B01101010 /;"	d
+B01101011	binary.h	/^#define B01101011 /;"	d
+B011011	binary.h	/^#define B011011 /;"	d
+B0110110	binary.h	/^#define B0110110 /;"	d
+B01101100	binary.h	/^#define B01101100 /;"	d
+B01101101	binary.h	/^#define B01101101 /;"	d
+B0110111	binary.h	/^#define B0110111 /;"	d
+B01101110	binary.h	/^#define B01101110 /;"	d
+B01101111	binary.h	/^#define B01101111 /;"	d
+B0111	binary.h	/^#define B0111 /;"	d
+B01110	binary.h	/^#define B01110 /;"	d
+B011100	binary.h	/^#define B011100 /;"	d
+B0111000	binary.h	/^#define B0111000 /;"	d
+B01110000	binary.h	/^#define B01110000 /;"	d
+B01110001	binary.h	/^#define B01110001 /;"	d
+B0111001	binary.h	/^#define B0111001 /;"	d
+B01110010	binary.h	/^#define B01110010 /;"	d
+B01110011	binary.h	/^#define B01110011 /;"	d
+B011101	binary.h	/^#define B011101 /;"	d
+B0111010	binary.h	/^#define B0111010 /;"	d
+B01110100	binary.h	/^#define B01110100 /;"	d
+B01110101	binary.h	/^#define B01110101 /;"	d
+B0111011	binary.h	/^#define B0111011 /;"	d
+B01110110	binary.h	/^#define B01110110 /;"	d
+B01110111	binary.h	/^#define B01110111 /;"	d
+B01111	binary.h	/^#define B01111 /;"	d
+B011110	binary.h	/^#define B011110 /;"	d
+B0111100	binary.h	/^#define B0111100 /;"	d
+B01111000	binary.h	/^#define B01111000 /;"	d
+B01111001	binary.h	/^#define B01111001 /;"	d
+B0111101	binary.h	/^#define B0111101 /;"	d
+B01111010	binary.h	/^#define B01111010 /;"	d
+B01111011	binary.h	/^#define B01111011 /;"	d
+B011111	binary.h	/^#define B011111 /;"	d
+B0111110	binary.h	/^#define B0111110 /;"	d
+B01111100	binary.h	/^#define B01111100 /;"	d
+B01111101	binary.h	/^#define B01111101 /;"	d
+B0111111	binary.h	/^#define B0111111 /;"	d
+B01111110	binary.h	/^#define B01111110 /;"	d
+B01111111	binary.h	/^#define B01111111 /;"	d
+B1	binary.h	/^#define B1 /;"	d
+B10	binary.h	/^#define B10 /;"	d
+B100	binary.h	/^#define B100 /;"	d
+B1000	binary.h	/^#define B1000 /;"	d
+B10000	binary.h	/^#define B10000 /;"	d
+B100000	binary.h	/^#define B100000 /;"	d
+B1000000	binary.h	/^#define B1000000 /;"	d
+B10000000	binary.h	/^#define B10000000 /;"	d
+B10000001	binary.h	/^#define B10000001 /;"	d
+B1000001	binary.h	/^#define B1000001 /;"	d
+B10000010	binary.h	/^#define B10000010 /;"	d
+B10000011	binary.h	/^#define B10000011 /;"	d
+B100001	binary.h	/^#define B100001 /;"	d
+B1000010	binary.h	/^#define B1000010 /;"	d
+B10000100	binary.h	/^#define B10000100 /;"	d
+B10000101	binary.h	/^#define B10000101 /;"	d
+B1000011	binary.h	/^#define B1000011 /;"	d
+B10000110	binary.h	/^#define B10000110 /;"	d
+B10000111	binary.h	/^#define B10000111 /;"	d
+B10001	binary.h	/^#define B10001 /;"	d
+B100010	binary.h	/^#define B100010 /;"	d
+B1000100	binary.h	/^#define B1000100 /;"	d
+B10001000	binary.h	/^#define B10001000 /;"	d
+B10001001	binary.h	/^#define B10001001 /;"	d
+B1000101	binary.h	/^#define B1000101 /;"	d
+B10001010	binary.h	/^#define B10001010 /;"	d
+B10001011	binary.h	/^#define B10001011 /;"	d
+B100011	binary.h	/^#define B100011 /;"	d
+B1000110	binary.h	/^#define B1000110 /;"	d
+B10001100	binary.h	/^#define B10001100 /;"	d
+B10001101	binary.h	/^#define B10001101 /;"	d
+B1000111	binary.h	/^#define B1000111 /;"	d
+B10001110	binary.h	/^#define B10001110 /;"	d
+B10001111	binary.h	/^#define B10001111 /;"	d
+B1001	binary.h	/^#define B1001 /;"	d
+B10010	binary.h	/^#define B10010 /;"	d
+B100100	binary.h	/^#define B100100 /;"	d
+B1001000	binary.h	/^#define B1001000 /;"	d
+B10010000	binary.h	/^#define B10010000 /;"	d
+B10010001	binary.h	/^#define B10010001 /;"	d
+B1001001	binary.h	/^#define B1001001 /;"	d
+B10010010	binary.h	/^#define B10010010 /;"	d
+B10010011	binary.h	/^#define B10010011 /;"	d
+B100101	binary.h	/^#define B100101 /;"	d
+B1001010	binary.h	/^#define B1001010 /;"	d
+B10010100	binary.h	/^#define B10010100 /;"	d
+B10010101	binary.h	/^#define B10010101 /;"	d
+B1001011	binary.h	/^#define B1001011 /;"	d
+B10010110	binary.h	/^#define B10010110 /;"	d
+B10010111	binary.h	/^#define B10010111 /;"	d
+B10011	binary.h	/^#define B10011 /;"	d
+B100110	binary.h	/^#define B100110 /;"	d
+B1001100	binary.h	/^#define B1001100 /;"	d
+B10011000	binary.h	/^#define B10011000 /;"	d
+B10011001	binary.h	/^#define B10011001 /;"	d
+B1001101	binary.h	/^#define B1001101 /;"	d
+B10011010	binary.h	/^#define B10011010 /;"	d
+B10011011	binary.h	/^#define B10011011 /;"	d
+B100111	binary.h	/^#define B100111 /;"	d
+B1001110	binary.h	/^#define B1001110 /;"	d
+B10011100	binary.h	/^#define B10011100 /;"	d
+B10011101	binary.h	/^#define B10011101 /;"	d
+B1001111	binary.h	/^#define B1001111 /;"	d
+B10011110	binary.h	/^#define B10011110 /;"	d
+B10011111	binary.h	/^#define B10011111 /;"	d
+B101	binary.h	/^#define B101 /;"	d
+B1010	binary.h	/^#define B1010 /;"	d
+B10100	binary.h	/^#define B10100 /;"	d
+B101000	binary.h	/^#define B101000 /;"	d
+B1010000	binary.h	/^#define B1010000 /;"	d
+B10100000	binary.h	/^#define B10100000 /;"	d
+B10100001	binary.h	/^#define B10100001 /;"	d
+B1010001	binary.h	/^#define B1010001 /;"	d
+B10100010	binary.h	/^#define B10100010 /;"	d
+B10100011	binary.h	/^#define B10100011 /;"	d
+B101001	binary.h	/^#define B101001 /;"	d
+B1010010	binary.h	/^#define B1010010 /;"	d
+B10100100	binary.h	/^#define B10100100 /;"	d
+B10100101	binary.h	/^#define B10100101 /;"	d
+B1010011	binary.h	/^#define B1010011 /;"	d
+B10100110	binary.h	/^#define B10100110 /;"	d
+B10100111	binary.h	/^#define B10100111 /;"	d
+B10101	binary.h	/^#define B10101 /;"	d
+B101010	binary.h	/^#define B101010 /;"	d
+B1010100	binary.h	/^#define B1010100 /;"	d
+B10101000	binary.h	/^#define B10101000 /;"	d
+B10101001	binary.h	/^#define B10101001 /;"	d
+B1010101	binary.h	/^#define B1010101 /;"	d
+B10101010	binary.h	/^#define B10101010 /;"	d
+B10101011	binary.h	/^#define B10101011 /;"	d
+B101011	binary.h	/^#define B101011 /;"	d
+B1010110	binary.h	/^#define B1010110 /;"	d
+B10101100	binary.h	/^#define B10101100 /;"	d
+B10101101	binary.h	/^#define B10101101 /;"	d
+B1010111	binary.h	/^#define B1010111 /;"	d
+B10101110	binary.h	/^#define B10101110 /;"	d
+B10101111	binary.h	/^#define B10101111 /;"	d
+B1011	binary.h	/^#define B1011 /;"	d
+B10110	binary.h	/^#define B10110 /;"	d
+B101100	binary.h	/^#define B101100 /;"	d
+B1011000	binary.h	/^#define B1011000 /;"	d
+B10110000	binary.h	/^#define B10110000 /;"	d
+B10110001	binary.h	/^#define B10110001 /;"	d
+B1011001	binary.h	/^#define B1011001 /;"	d
+B10110010	binary.h	/^#define B10110010 /;"	d
+B10110011	binary.h	/^#define B10110011 /;"	d
+B101101	binary.h	/^#define B101101 /;"	d
+B1011010	binary.h	/^#define B1011010 /;"	d
+B10110100	binary.h	/^#define B10110100 /;"	d
+B10110101	binary.h	/^#define B10110101 /;"	d
+B1011011	binary.h	/^#define B1011011 /;"	d
+B10110110	binary.h	/^#define B10110110 /;"	d
+B10110111	binary.h	/^#define B10110111 /;"	d
+B10111	binary.h	/^#define B10111 /;"	d
+B101110	binary.h	/^#define B101110 /;"	d
+B1011100	binary.h	/^#define B1011100 /;"	d
+B10111000	binary.h	/^#define B10111000 /;"	d
+B10111001	binary.h	/^#define B10111001 /;"	d
+B1011101	binary.h	/^#define B1011101 /;"	d
+B10111010	binary.h	/^#define B10111010 /;"	d
+B10111011	binary.h	/^#define B10111011 /;"	d
+B101111	binary.h	/^#define B101111 /;"	d
+B1011110	binary.h	/^#define B1011110 /;"	d
+B10111100	binary.h	/^#define B10111100 /;"	d
+B10111101	binary.h	/^#define B10111101 /;"	d
+B1011111	binary.h	/^#define B1011111 /;"	d
+B10111110	binary.h	/^#define B10111110 /;"	d
+B10111111	binary.h	/^#define B10111111 /;"	d
+B11	binary.h	/^#define B11 /;"	d
+B110	binary.h	/^#define B110 /;"	d
+B1100	binary.h	/^#define B1100 /;"	d
+B11000	binary.h	/^#define B11000 /;"	d
+B110000	binary.h	/^#define B110000 /;"	d
+B1100000	binary.h	/^#define B1100000 /;"	d
+B11000000	binary.h	/^#define B11000000 /;"	d
+B11000001	binary.h	/^#define B11000001 /;"	d
+B1100001	binary.h	/^#define B1100001 /;"	d
+B11000010	binary.h	/^#define B11000010 /;"	d
+B11000011	binary.h	/^#define B11000011 /;"	d
+B110001	binary.h	/^#define B110001 /;"	d
+B1100010	binary.h	/^#define B1100010 /;"	d
+B11000100	binary.h	/^#define B11000100 /;"	d
+B11000101	binary.h	/^#define B11000101 /;"	d
+B1100011	binary.h	/^#define B1100011 /;"	d
+B11000110	binary.h	/^#define B11000110 /;"	d
+B11000111	binary.h	/^#define B11000111 /;"	d
+B11001	binary.h	/^#define B11001 /;"	d
+B110010	binary.h	/^#define B110010 /;"	d
+B1100100	binary.h	/^#define B1100100 /;"	d
+B11001000	binary.h	/^#define B11001000 /;"	d
+B11001001	binary.h	/^#define B11001001 /;"	d
+B1100101	binary.h	/^#define B1100101 /;"	d
+B11001010	binary.h	/^#define B11001010 /;"	d
+B11001011	binary.h	/^#define B11001011 /;"	d
+B110011	binary.h	/^#define B110011 /;"	d
+B1100110	binary.h	/^#define B1100110 /;"	d
+B11001100	binary.h	/^#define B11001100 /;"	d
+B11001101	binary.h	/^#define B11001101 /;"	d
+B1100111	binary.h	/^#define B1100111 /;"	d
+B11001110	binary.h	/^#define B11001110 /;"	d
+B11001111	binary.h	/^#define B11001111 /;"	d
+B1101	binary.h	/^#define B1101 /;"	d
+B11010	binary.h	/^#define B11010 /;"	d
+B110100	binary.h	/^#define B110100 /;"	d
+B1101000	binary.h	/^#define B1101000 /;"	d
+B11010000	binary.h	/^#define B11010000 /;"	d
+B11010001	binary.h	/^#define B11010001 /;"	d
+B1101001	binary.h	/^#define B1101001 /;"	d
+B11010010	binary.h	/^#define B11010010 /;"	d
+B11010011	binary.h	/^#define B11010011 /;"	d
+B110101	binary.h	/^#define B110101 /;"	d
+B1101010	binary.h	/^#define B1101010 /;"	d
+B11010100	binary.h	/^#define B11010100 /;"	d
+B11010101	binary.h	/^#define B11010101 /;"	d
+B1101011	binary.h	/^#define B1101011 /;"	d
+B11010110	binary.h	/^#define B11010110 /;"	d
+B11010111	binary.h	/^#define B11010111 /;"	d
+B11011	binary.h	/^#define B11011 /;"	d
+B110110	binary.h	/^#define B110110 /;"	d
+B1101100	binary.h	/^#define B1101100 /;"	d
+B11011000	binary.h	/^#define B11011000 /;"	d
+B11011001	binary.h	/^#define B11011001 /;"	d
+B1101101	binary.h	/^#define B1101101 /;"	d
+B11011010	binary.h	/^#define B11011010 /;"	d
+B11011011	binary.h	/^#define B11011011 /;"	d
+B110111	binary.h	/^#define B110111 /;"	d
+B1101110	binary.h	/^#define B1101110 /;"	d
+B11011100	binary.h	/^#define B11011100 /;"	d
+B11011101	binary.h	/^#define B11011101 /;"	d
+B1101111	binary.h	/^#define B1101111 /;"	d
+B11011110	binary.h	/^#define B11011110 /;"	d
+B11011111	binary.h	/^#define B11011111 /;"	d
+B111	binary.h	/^#define B111 /;"	d
+B1110	binary.h	/^#define B1110 /;"	d
+B11100	binary.h	/^#define B11100 /;"	d
+B111000	binary.h	/^#define B111000 /;"	d
+B1110000	binary.h	/^#define B1110000 /;"	d
+B11100000	binary.h	/^#define B11100000 /;"	d
+B11100001	binary.h	/^#define B11100001 /;"	d
+B1110001	binary.h	/^#define B1110001 /;"	d
+B11100010	binary.h	/^#define B11100010 /;"	d
+B11100011	binary.h	/^#define B11100011 /;"	d
+B111001	binary.h	/^#define B111001 /;"	d
+B1110010	binary.h	/^#define B1110010 /;"	d
+B11100100	binary.h	/^#define B11100100 /;"	d
+B11100101	binary.h	/^#define B11100101 /;"	d
+B1110011	binary.h	/^#define B1110011 /;"	d
+B11100110	binary.h	/^#define B11100110 /;"	d
+B11100111	binary.h	/^#define B11100111 /;"	d
+B11101	binary.h	/^#define B11101 /;"	d
+B111010	binary.h	/^#define B111010 /;"	d
+B1110100	binary.h	/^#define B1110100 /;"	d
+B11101000	binary.h	/^#define B11101000 /;"	d
+B11101001	binary.h	/^#define B11101001 /;"	d
+B1110101	binary.h	/^#define B1110101 /;"	d
+B11101010	binary.h	/^#define B11101010 /;"	d
+B11101011	binary.h	/^#define B11101011 /;"	d
+B111011	binary.h	/^#define B111011 /;"	d
+B1110110	binary.h	/^#define B1110110 /;"	d
+B11101100	binary.h	/^#define B11101100 /;"	d
+B11101101	binary.h	/^#define B11101101 /;"	d
+B1110111	binary.h	/^#define B1110111 /;"	d
+B11101110	binary.h	/^#define B11101110 /;"	d
+B11101111	binary.h	/^#define B11101111 /;"	d
+B1111	binary.h	/^#define B1111 /;"	d
+B11110	binary.h	/^#define B11110 /;"	d
+B111100	binary.h	/^#define B111100 /;"	d
+B1111000	binary.h	/^#define B1111000 /;"	d
+B11110000	binary.h	/^#define B11110000 /;"	d
+B11110001	binary.h	/^#define B11110001 /;"	d
+B1111001	binary.h	/^#define B1111001 /;"	d
+B11110010	binary.h	/^#define B11110010 /;"	d
+B11110011	binary.h	/^#define B11110011 /;"	d
+B111101	binary.h	/^#define B111101 /;"	d
+B1111010	binary.h	/^#define B1111010 /;"	d
+B11110100	binary.h	/^#define B11110100 /;"	d
+B11110101	binary.h	/^#define B11110101 /;"	d
+B1111011	binary.h	/^#define B1111011 /;"	d
+B11110110	binary.h	/^#define B11110110 /;"	d
+B11110111	binary.h	/^#define B11110111 /;"	d
+B11111	binary.h	/^#define B11111 /;"	d
+B111110	binary.h	/^#define B111110 /;"	d
+B1111100	binary.h	/^#define B1111100 /;"	d
+B11111000	binary.h	/^#define B11111000 /;"	d
+B11111001	binary.h	/^#define B11111001 /;"	d
+B1111101	binary.h	/^#define B1111101 /;"	d
+B11111010	binary.h	/^#define B11111010 /;"	d
+B11111011	binary.h	/^#define B11111011 /;"	d
+B111111	binary.h	/^#define B111111 /;"	d
+B1111110	binary.h	/^#define B1111110 /;"	d
+B11111100	binary.h	/^#define B11111100 /;"	d
+B11111101	binary.h	/^#define B11111101 /;"	d
+B1111111	binary.h	/^#define B1111111 /;"	d
+B11111110	binary.h	/^#define B11111110 /;"	d
+B11111111	binary.h	/^#define B11111111 /;"	d
+BIN	Print.h	/^#define BIN /;"	d
+BUILD_TIME	version.h	/^#define BUILD_TIME /;"	d
+Binary_h	binary.h	/^#define Binary_h$/;"	d
+CDCCSInterfaceDescriptor	USBCore.h	/^} CDCCSInterfaceDescriptor;$/;"	t	typeref:struct:__anonb5ac37ee0608
+CDCCSInterfaceDescriptor4	USBCore.h	/^} CDCCSInterfaceDescriptor4;$/;"	t	typeref:struct:__anonb5ac37ee0708
+CDCDescriptor	USBCore.h	/^} CDCDescriptor;$/;"	t	typeref:struct:__anonb5ac37ee0a08
+CDC_ABSTRACT_CONTROL_MANAGEMENT	USBCore.h	/^#define CDC_ABSTRACT_CONTROL_MANAGEMENT /;"	d
+CDC_ABSTRACT_CONTROL_MODEL	USBCore.h	/^#define CDC_ABSTRACT_CONTROL_MODEL /;"	d
+CDC_ACM_INTERFACE	USBDesc.h	/^#define CDC_ACM_INTERFACE /;"	d
+CDC_CALL_MANAGEMENT	USBCore.h	/^#define CDC_CALL_MANAGEMENT /;"	d
+CDC_COMMUNICATION_INTERFACE_CLASS	USBCore.h	/^#define CDC_COMMUNICATION_INTERFACE_CLASS /;"	d
+CDC_CS_ENDPOINT	USBCore.h	/^#define CDC_CS_ENDPOINT /;"	d
+CDC_CS_INTERFACE	USBCore.h	/^#define CDC_CS_INTERFACE /;"	d
+CDC_DATA_INTERFACE	USBDesc.h	/^#define CDC_DATA_INTERFACE /;"	d
+CDC_DATA_INTERFACE_CLASS	USBCore.h	/^#define CDC_DATA_INTERFACE_CLASS /;"	d
+CDC_ENDPOINT_ACM	USBDesc.h	/^#define CDC_ENDPOINT_ACM /;"	d
+CDC_ENDPOINT_IN	USBDesc.h	/^#define CDC_ENDPOINT_IN /;"	d
+CDC_ENDPOINT_OUT	USBDesc.h	/^#define CDC_ENDPOINT_OUT /;"	d
+CDC_ENPOINT_COUNT	USBDesc.h	/^#define CDC_ENPOINT_COUNT /;"	d
+CDC_FIRST_ENDPOINT	USBDesc.h	/^#define CDC_FIRST_ENDPOINT /;"	d
+CDC_GET_LINE_CODING	USBCore.h	/^#define CDC_GET_LINE_CODING /;"	d
+CDC_GetInterface	CDC.cpp	/^int CDC_GetInterface(u8* interfaceNum)$/;"	f	typeref:typename:int
+CDC_HEADER	USBCore.h	/^#define CDC_HEADER /;"	d
+CDC_INTERFACE_COUNT	USBDesc.h	/^#define CDC_INTERFACE_COUNT /;"	d
+CDC_RX	USBDesc.h	/^#define CDC_RX /;"	d
+CDC_SEND_BREAK	USBCore.h	/^#define CDC_SEND_BREAK /;"	d
+CDC_SET_CONTROL_LINE_STATE	USBCore.h	/^#define CDC_SET_CONTROL_LINE_STATE /;"	d
+CDC_SET_LINE_CODING	USBCore.h	/^#define CDC_SET_LINE_CODING /;"	d
+CDC_Setup	CDC.cpp	/^bool CDC_Setup(USBSetup& setup)$/;"	f	typeref:typename:bool
+CDC_TX	USBDesc.h	/^#define CDC_TX /;"	d
+CDC_UNION	USBCore.h	/^#define CDC_UNION /;"	d
+CDC_V1_10	USBCore.h	/^#define CDC_V1_10 /;"	d
+CHANGE	Arduino.h	/^#define CHANGE /;"	d
+CLEAR_FEATURE	USBCore.h	/^#define CLEAR_FEATURE /;"	d
+CMFunctionalDescriptor	USBCore.h	/^} CMFunctionalDescriptor;$/;"	t	typeref:struct:__anonb5ac37ee0808
+COM2A0	Tone.cpp	/^  #define COM2A0 /;"	d	file:
+COM2A1	Tone.cpp	/^  #define COM2A1 /;"	d	file:
+COMPILE_TIME_H_	compileTime.h	/^#define COMPILE_TIME_H_$/;"	d
+CONV_STR2DEC_1	compileTime.h	/^#define CONV_STR2DEC_1(/;"	d
+CONV_STR2DEC_2	compileTime.h	/^#define CONV_STR2DEC_2(/;"	d
+CONV_STR2DEC_3	compileTime.h	/^#define CONV_STR2DEC_3(/;"	d
+CONV_STR2DEC_4	compileTime.h	/^#define CONV_STR2DEC_4(/;"	d
+CORRECT_BRUTE	wiring.c	/^#define CORRECT_BRUTE /;"	d	file:
+CORRECT_EXACT_MICROS	wiring.c	/^#define CORRECT_EXACT_MICROS$/;"	d	file:
+CORRECT_EXACT_MILLIS	wiring.c	/^#define CORRECT_EXACT_MILLIS$/;"	d	file:
+CORRECT_HI	wiring.c	/^#define CORRECT_HI$/;"	d	file:
+CORRECT_LO	wiring.c	/^#define CORRECT_LO$/;"	d	file:
+CORRECT_ODD	wiring.c	/^#define CORRECT_ODD$/;"	d	file:
+CORRECT_ROLL	wiring.c	/^#define CORRECT_ROLL /;"	d	file:
+Character_h	WCharacter.h	/^#define Character_h$/;"	d
+ClassInterfaceRequest	USBCore.cpp	/^bool ClassInterfaceRequest(USBSetup& setup)$/;"	f	typeref:typename:bool	file:
+ClearIN	USBCore.cpp	/^static inline void ClearIN(void)$/;"	f	typeref:typename:void	file:
+ClearOUT	USBCore.cpp	/^static inline void ClearOUT(void)$/;"	f	typeref:typename:void	file:
+ClearSetupInt	USBCore.cpp	/^static inline void ClearSetupInt()$/;"	f	typeref:typename:void	file:
+Client	Client.h	/^class Client : public Stream {$/;"	c
+ConfigDescriptor	USBCore.h	/^} ConfigDescriptor;$/;"	t	typeref:struct:__anonb5ac37ee0208
+Contributing	travis-ci/arduino-ci-script/README.md	/^#### Contributing$/;"	t	chapter:arduino-ci-script
+Contribution Rules	travis-ci/arduino-ci-script/CONTRIBUTING.md	/^# Contribution Rules$/;"	c
+Creating a GitHub personal access token	travis-ci/arduino-ci-script/README.md	/^##### Creating a GitHub personal access token$/;"	T	subsubsection:arduino-ci-script""Publishing job reports
+Creating a gist	travis-ci/arduino-ci-script/README.md	/^##### Creating a gist$/;"	T	subsubsection:arduino-ci-script""Publishing job reports
+DEC	Print.h	/^#define DEC /;"	d
+DEFAULT	Arduino.h	/^  #define DEFAULT /;"	d
+DEFAULT	wiring_analog.c	/^  #define DEFAULT /;"	d	file:
+DEG_TO_RAD	Arduino.h	/^#define DEG_TO_RAD /;"	d
+DEVICE_CLASS	USBCore.cpp	/^#define DEVICE_CLASS /;"	d	file:
+DEVICE_REMOTE_WAKEUP	USBCore.h	/^#define DEVICE_REMOTE_WAKEUP /;"	d
+DISPLAY	Arduino.h	/^#define DISPLAY /;"	d
+D_CDCCS	USBCore.h	/^#define D_CDCCS(/;"	d
+D_CDCCS4	USBCore.h	/^#define D_CDCCS4(/;"	d
+D_CONFIG	USBCore.h	/^#define D_CONFIG(/;"	d
+D_DEVICE	USBCore.h	/^#define D_DEVICE(/;"	d
+D_ENDPOINT	USBCore.h	/^#define D_ENDPOINT(/;"	d
+D_IAD	USBCore.h	/^#define D_IAD(/;"	d
+D_INTERFACE	USBCore.h	/^#define D_INTERFACE(/;"	d
+DeviceDescriptor	USBCore.h	/^} DeviceDescriptor;$/;"	t	typeref:struct:__anonb5ac37ee0108
+EEPROM	EEPROM.h	/^static EEPROMClass EEPROM;$/;"	v	typeref:typename:EEPROMClass
+EEPROMClass	EEPROM.h	/^struct EEPROMClass{$/;"	s
+EEPROM_h	EEPROM.h	/^#define EEPROM_h$/;"	d
+EEPtr	EEPROM.h	/^    EEPtr( const int index )$/;"	f	struct:EEPtr
+EEPtr	EEPROM.h	/^struct EEPtr{$/;"	s
+EERef	EEPROM.h	/^    EERef( const int index )$/;"	f	struct:EERef
+EERef	EEPROM.h	/^struct EERef{$/;"	s
+ENDPOINT_HALT	USBCore.h	/^#define ENDPOINT_HALT /;"	d
+EP_DOUBLE_64	USBCore.cpp	/^#define EP_DOUBLE_64 /;"	d	file:
+EP_SINGLE_16	USBCore.cpp	/^#define EP_SINGLE_16 /;"	d	file:
+EP_SINGLE_64	USBCore.cpp	/^#define EP_SINGLE_64 /;"	d	file:
+EP_TYPE_BULK_IN	USBAPI.h	/^#define EP_TYPE_BULK_IN /;"	d
+EP_TYPE_BULK_OUT	USBAPI.h	/^#define EP_TYPE_BULK_OUT /;"	d
+EP_TYPE_CONTROL	USBAPI.h	/^#define EP_TYPE_CONTROL /;"	d
+EP_TYPE_INTERRUPT_IN	USBAPI.h	/^#define EP_TYPE_INTERRUPT_IN /;"	d
+EP_TYPE_INTERRUPT_OUT	USBAPI.h	/^#define EP_TYPE_INTERRUPT_OUT /;"	d
+EP_TYPE_ISOCHRONOUS_IN	USBAPI.h	/^#define EP_TYPE_ISOCHRONOUS_IN /;"	d
+EP_TYPE_ISOCHRONOUS_OUT	USBAPI.h	/^#define EP_TYPE_ISOCHRONOUS_OUT /;"	d
+EULER	Arduino.h	/^#define EULER /;"	d
+EVEN_PARITY	USBAPI.h	/^    EVEN_PARITY = 2,$/;"	e	enum:Serial_::__anon816a78bf0203
+EXACT_DEN	wiring.c	/^#define EXACT_DEN /;"	d	file:
+EXACT_NUM	wiring.c	/^#define EXACT_NUM /;"	d	file:
+EXACT_REM	wiring.c	/^#define EXACT_REM /;"	d	file:
+EXTERNAL	Arduino.h	/^  #define EXTERNAL /;"	d
+EXTERNAL_INT_0	Arduino.h	/^#define EXTERNAL_INT_0 /;"	d
+EXTERNAL_INT_1	Arduino.h	/^#define EXTERNAL_INT_1 /;"	d
+EXTERNAL_INT_2	Arduino.h	/^#define EXTERNAL_INT_2 /;"	d
+EXTERNAL_INT_3	Arduino.h	/^#define EXTERNAL_INT_3 /;"	d
+EXTERNAL_INT_4	Arduino.h	/^#define EXTERNAL_INT_4 /;"	d
+EXTERNAL_INT_5	Arduino.h	/^#define EXTERNAL_INT_5 /;"	d
+EXTERNAL_INT_6	Arduino.h	/^#define EXTERNAL_INT_6 /;"	d
+EXTERNAL_INT_7	Arduino.h	/^#define EXTERNAL_INT_7 /;"	d
+EndpointDescriptor	USBCore.h	/^} EndpointDescriptor;$/;"	t	typeref:struct:__anonb5ac37ee0408
+Exactness of `delayMicroseconds()`	README.md	/^### Exactness of `delayMicroseconds()`$/;"	S	section:Arduino core files for MCUdude's cores""Supported clock frequencies
+Exactness of `micros()` and `delay()`	README.md	/^### Exactness of `micros()` and `delay()`$/;"	S	section:Arduino core files for MCUdude's cores""Supported clock frequencies
+Exactness of `millis()`	README.md	/^### Exactness of `millis()`$/;"	S	section:Arduino core files for MCUdude's cores""Supported clock frequencies
+F	WString.h	/^#define F(/;"	d
+FALLING	Arduino.h	/^#define FALLING /;"	d
+FEATURE_REMOTE_WAKEUP_ENABLED	USBCore.h	/^#define FEATURE_REMOTE_WAKEUP_ENABLED /;"	d
+FEATURE_SELFPOWERED_ENABLED	USBCore.h	/^#define FEATURE_SELFPOWERED_ENABLED /;"	d
+FRACT_INC	wiring.c	/^#define FRACT_INC /;"	d	file:
+FRACT_INC_PLUS	wiring.c	/^#define FRACT_INC_PLUS /;"	d	file:
+FRACT_INC_PLUS	wiring.c	/^#define FRACT_INC_PLUS$/;"	d	file:
+FRACT_MAX	wiring.c	/^#define FRACT_MAX /;"	d	file:
+FifoByteCount	USBCore.cpp	/^static inline u8 FifoByteCount()$/;"	f	typeref:typename:u8	file:
+FifoFree	USBCore.cpp	/^static inline u8 FifoFree()$/;"	f	typeref:typename:u8	file:
+FrameNumber	USBCore.cpp	/^static inline u8 FrameNumber()$/;"	f	typeref:typename:u8	file:
+GET_CONFIGURATION	USBCore.h	/^#define GET_CONFIGURATION /;"	d
+GET_DESCRIPTOR	USBCore.h	/^#define GET_DESCRIPTOR /;"	d
+GET_INTERFACE	USBCore.h	/^#define GET_INTERFACE /;"	d
+GET_LEAP_DAYS	compileTime.h	/^#define GET_LEAP_DAYS /;"	d
+GET_MONTH	compileTime.h	/^#define GET_MONTH(/;"	d
+GET_MONTH2DAYS	compileTime.h	/^#define GET_MONTH2DAYS(/;"	d
+GET_STATUS	USBCore.h	/^#define GET_STATUS /;"	d
+HALF_PI	Arduino.h	/^#define HALF_PI /;"	d
+HAVE_CDCSERIAL	USBAPI.h	/^#define HAVE_CDCSERIAL$/;"	d
+HAVE_HWSERIAL0	HardwareSerial.h	/^  #define HAVE_HWSERIAL0$/;"	d
+HAVE_HWSERIAL1	HardwareSerial.h	/^  #define HAVE_HWSERIAL1$/;"	d
+HAVE_HWSERIAL2	HardwareSerial.h	/^  #define HAVE_HWSERIAL2$/;"	d
+HAVE_HWSERIAL3	HardwareSerial.h	/^  #define HAVE_HWSERIAL3$/;"	d
+HEX	Print.h	/^#define HEX /;"	d
+HIGH	Arduino.h	/^#define HIGH /;"	d
+HardwareSerial	HardwareSerial.h	/^class HardwareSerial : public Stream$/;"	c
+HardwareSerial	HardwareSerial_private.h	/^HardwareSerial::HardwareSerial($/;"	f	class:HardwareSerial
+HardwareSerial_h	HardwareSerial.h	/^#define HardwareSerial_h$/;"	d
+IADDescriptor	USBCore.h	/^} IADDescriptor;$/;"	t	typeref:struct:__anonb5ac37ee0508
+IMANUFACTURER	USBDesc.h	/^#define IMANUFACTURER /;"	d
+IMPLEMENT_ISR	WInterrupts.c	/^#define IMPLEMENT_ISR(/;"	d	file:
+INADDR_NONE	IPAddress.h	/^const IPAddress INADDR_NONE(0,0,0,0);$/;"	v	typeref:typename:const IPAddress
+INPUT	Arduino.h	/^#define INPUT /;"	d
+INPUT_PULLUP	Arduino.h	/^#define INPUT_PULLUP /;"	d
+INTERFACE_COUNT	USBDesc.h	/^#define INTERFACE_COUNT /;"	d
+INTERNAL	Arduino.h	/^  #define INTERNAL /;"	d
+INTERNAL1V1	Arduino.h	/^  #define INTERNAL1V1 /;"	d
+INTERNAL2V56	Arduino.h	/^  #define INTERNAL2V56 /;"	d
+IPAddress	IPAddress.cpp	/^IPAddress::IPAddress()$/;"	f	class:IPAddress
+IPAddress	IPAddress.cpp	/^IPAddress::IPAddress(const uint8_t *address)$/;"	f	class:IPAddress
+IPAddress	IPAddress.cpp	/^IPAddress::IPAddress(uint32_t address)$/;"	f	class:IPAddress
+IPAddress	IPAddress.cpp	/^IPAddress::IPAddress(uint8_t first_octet, uint8_t second_octet, uint8_t third_octet, uint8_t fou/;"	f	class:IPAddress
+IPAddress	IPAddress.h	/^class IPAddress : public Printable {$/;"	c
+IPAddress_h	IPAddress.h	/^#define IPAddress_h$/;"	d
+IPRODUCT	USBDesc.h	/^#define IPRODUCT /;"	d
+ISERIAL	USBDesc.h	/^#define ISERIAL /;"	d
+ISERIAL_MAX_LEN	USBDesc.h	/^#define ISERIAL_MAX_LEN /;"	d
+ISR	HardwareSerial0.cpp	/^  ISR(USART_RX_vect)$/;"	f
+ISR	HardwareSerial0.cpp	/^ISR(UART0_UDRE_vect)$/;"	f
+ISR	HardwareSerial1.cpp	/^ISR(UART1_RX_vect)$/;"	f
+ISR	HardwareSerial1.cpp	/^ISR(UART1_UDRE_vect)$/;"	f
+ISR	HardwareSerial2.cpp	/^ISR(USART2_RX_vect)$/;"	f
+ISR	HardwareSerial2.cpp	/^ISR(USART2_UDRE_vect)$/;"	f
+ISR	HardwareSerial3.cpp	/^ISR(USART3_RX_vect)$/;"	f
+ISR	HardwareSerial3.cpp	/^ISR(USART3_UDRE_vect)$/;"	f
+ISR	Tone.cpp	/^ISR(TIMER0_COMPA_vect)$/;"	f
+ISR	Tone.cpp	/^ISR(TIMER1_COMPA_vect)$/;"	f
+ISR	Tone.cpp	/^ISR(TIMER2_COMP_vect)$/;"	f
+ISR	Tone.cpp	/^ISR(TIMER3_COMPA_vect)$/;"	f
+ISR	Tone.cpp	/^ISR(TIMER4_COMPA_vect)$/;"	f
+ISR	Tone.cpp	/^ISR(TIMER5_COMPA_vect)$/;"	f
+ISR	USBCore.cpp	/^ISR(USB_COM_vect)$/;"	f
+ISR	USBCore.cpp	/^ISR(USB_GEN_vect)$/;"	f
+ISR	main.cpp	/^ISR(PCINT1_vect) $/;"	f
+ISR	wiring.c	/^ISR(TIM0_OVF_vect)$/;"	f
+InitControl	USBCore.cpp	/^void InitControl(int end)$/;"	f	typeref:typename:void
+InitEP	USBCore.cpp	/^void InitEP(u8 index, u8 type, u8 size)$/;"	f	typeref:typename:void	file:
+InitEndpoints	USBCore.cpp	/^void InitEndpoints()$/;"	f	typeref:typename:void	file:
+Installation	travis-ci/arduino-ci-script/README.md	/^#### Installation$/;"	t	chapter:arduino-ci-script
+InterfaceDescriptor	USBCore.h	/^} InterfaceDescriptor;$/;"	t	typeref:struct:__anonb5ac37ee0308
+Issues	travis-ci/arduino-ci-script/CONTRIBUTING.md	/^## Issues$/;"	s	chapter:Contribution Rules
+L10	wiring_pulse.S	/^.L10:$/;"	l
+L13	wiring_pulse.S	/^.L13:$/;"	l
+L2	wiring_pulse.S	/^.L2:$/;"	l
+L4	wiring_pulse.S	/^.L4:$/;"	l
+L6	wiring_pulse.S	/^.L6:$/;"	l
+L7	wiring_pulse.S	/^.L7:$/;"	l
+L9	wiring_pulse.S	/^.L9:$/;"	l
+LFBB1	wiring_pulse.S	/^.LFBB1:$/;"	l
+LM0	wiring_pulse.S	/^.LM0:$/;"	l
+LM1	wiring_pulse.S	/^.LM1:$/;"	l
+LM10	wiring_pulse.S	/^.LM10:$/;"	l
+LM11	wiring_pulse.S	/^.LM11:$/;"	l
+LM2	wiring_pulse.S	/^.LM2:$/;"	l
+LM3	wiring_pulse.S	/^.LM3:$/;"	l
+LM4	wiring_pulse.S	/^.LM4:$/;"	l
+LM5	wiring_pulse.S	/^.LM5:$/;"	l
+LM6	wiring_pulse.S	/^.LM6:$/;"	l
+LM7	wiring_pulse.S	/^.LM7:$/;"	l
+LM8	wiring_pulse.S	/^.LM8:$/;"	l
+LM9	wiring_pulse.S	/^.LM9:$/;"	l
+LOW	Arduino.h	/^#define LOW /;"	d
+LSBFIRST	Arduino.h	/^#define LSBFIRST /;"	d
+L__stack_usage	wiring_pulse.S	/^.L__stack_usage = 6$/;"	d
+LineInfo	CDC.cpp	/^} LineInfo;$/;"	t	typeref:struct:__anonccb3a5e00108	file:
+LockEP	USBCore.cpp	/^    LockEP(u8 ep) : _sreg(SREG)$/;"	f	class:LockEP	file:
+LockEP	USBCore.cpp	/^class LockEP$/;"	c	file:
+LookaheadMode	Stream.h	/^enum LookaheadMode{$/;"	g
+MAGIC_KEY	USBCore.h	/^#define MAGIC_KEY /;"	d
+MAGIC_KEY_POS	USBCore.h	/^#define MAGIC_KEY_POS /;"	d
+MARK_PARITY	USBAPI.h	/^    MARK_PARITY = 3,$/;"	e	enum:Serial_::__anon816a78bf0203
+MICROSECONDS_PER_TIMER0_OVERFLOW	wiring.c	/^#define MICROSECONDS_PER_TIMER0_OVERFLOW /;"	d	file:
+MILLIS_INC	wiring.c	/^#define MILLIS_INC /;"	d	file:
+MSBFIRST	Arduino.h	/^#define MSBFIRST /;"	d
+MSCDescriptor	USBCore.h	/^} MSCDescriptor;$/;"	t	typeref:struct:__anonb5ac37ee0b08
+MSC_GET_MAX_LUN	USBCore.h	/^#define MSC_GET_MAX_LUN /;"	d
+MSC_PROTOCOL_BULK_ONLY	USBCore.h	/^#define MSC_PROTOCOL_BULK_ONLY /;"	d
+MSC_RESET	USBCore.h	/^#define MSC_RESET /;"	d
+MSC_SUBCLASS_SCSI	USBCore.h	/^#define MSC_SUBCLASS_SCSI /;"	d
+MultiTarget	Stream.h	/^  struct MultiTarget {$/;"	s	class:Stream
+NEW_H	new.h	/^#define NEW_H$/;"	d
+NEW_LUFA_SIGNATURE	USBCore.h	/^#define NEW_LUFA_SIGNATURE /;"	d
+NOT_AN_INTERRUPT	Arduino.h	/^#define NOT_AN_INTERRUPT /;"	d
+NOT_A_PIN	Arduino.h	/^#define NOT_A_PIN /;"	d
+NOT_A_PORT	Arduino.h	/^#define NOT_A_PORT /;"	d
+NOT_ON_TIMER	Arduino.h	/^#define NOT_ON_TIMER /;"	d
+NO_IGNORE_CHAR	Stream.h	/^#define NO_IGNORE_CHAR /;"	d
+NO_PARITY	USBAPI.h	/^    NO_PARITY = 0,$/;"	e	enum:Serial_::__anon816a78bf0203
+OCIE2A	Tone.cpp	/^  #define OCIE2A /;"	d	file:
+OCR2A	Tone.cpp	/^  #define OCR2A /;"	d	file:
+OCT	Print.h	/^#define OCT /;"	d
+ODD_PARITY	USBAPI.h	/^    ODD_PARITY = 1,$/;"	e	enum:Serial_::__anon816a78bf0203
+ONE_AND_HALF_STOP_BIT	USBAPI.h	/^    ONE_AND_HALF_STOP_BIT = 1,$/;"	e	enum:Serial_::__anon816a78bf0103
+ONE_STOP_BIT	USBAPI.h	/^    ONE_STOP_BIT = 0,$/;"	e	enum:Serial_::__anon816a78bf0103
+OUTPUT	Arduino.h	/^#define OUTPUT /;"	d
+PA	Arduino.h	/^#define PA /;"	d
+PARSE_TIMEOUT	Stream.cpp	/^#define PARSE_TIMEOUT /;"	d	file:
+PB	Arduino.h	/^#define PB /;"	d
+PC	Arduino.h	/^#define PC /;"	d
+PD	Arduino.h	/^#define PD /;"	d
+PE	Arduino.h	/^#define PE /;"	d
+PF	Arduino.h	/^#define PF /;"	d
+PG	Arduino.h	/^#define PG /;"	d
+PH	Arduino.h	/^#define PH /;"	d
+PI	Arduino.h	/^#define PI /;"	d
+PJ	Arduino.h	/^#define PJ /;"	d
+PK	Arduino.h	/^#define PK /;"	d
+PL	Arduino.h	/^#define PL /;"	d
+PLAY_BUTTON_STATE	main.cpp	/^enum PLAY_BUTTON_STATE$/;"	g	file:
+PLAY_BUTTON_STATE_HIGH	main.cpp	/^	PLAY_BUTTON_STATE_HIGH,$/;"	e	enum:PLAY_BUTTON_STATE	file:
+PLAY_BUTTON_STATE_IDLE	main.cpp	/^	PLAY_BUTTON_STATE_IDLE = 0x00,$/;"	e	enum:PLAY_BUTTON_STATE	file:
+PLAY_BUTTON_STATE_LOW	main.cpp	/^	PLAY_BUTTON_STATE_LOW,$/;"	e	enum:PLAY_BUTTON_STATE	file:
+PLUGGABLE_USB_ENABLED	USBDesc.h	/^#define PLUGGABLE_USB_ENABLED$/;"	d
+POWER_ADC	Arduino.h	/^#define POWER_ADC /;"	d
+POWER_ALL	Arduino.h	/^#define POWER_ALL /;"	d
+POWER_SERIAL0	Arduino.h	/^#define POWER_SERIAL0 /;"	d
+POWER_SERIAL1	Arduino.h	/^#define POWER_SERIAL1 /;"	d
+POWER_SPI	Arduino.h	/^#define POWER_SPI /;"	d
+POWER_TIMER0	Arduino.h	/^#define POWER_TIMER0 /;"	d
+POWER_TIMER1	Arduino.h	/^#define POWER_TIMER1 /;"	d
+POWER_TIMER2	Arduino.h	/^#define POWER_TIMER2 /;"	d
+POWER_TIMER3	Arduino.h	/^#define POWER_TIMER3 /;"	d
+POWER_WIRE	Arduino.h	/^#define POWER_WIRE /;"	d
+PROGMEM1	Arduino.h	/^  #define PROGMEM1 /;"	d
+PROGMEM2	Arduino.h	/^  #define PROGMEM2 /;"	d
+PROGMEM3	Arduino.h	/^  #define PROGMEM3 /;"	d
+PUSB_h	PluggableUSB.h	/^#define PUSB_h$/;"	d
+PluggableUSB	PluggableUSB.cpp	/^PluggableUSB_& PluggableUSB()$/;"	f	typeref:typename:PluggableUSB_ &
+PluggableUSBModule	PluggableUSB.h	/^  PluggableUSBModule(uint8_t numEps, uint8_t numIfs, uint8_t *epType) :$/;"	f	class:PluggableUSBModule
+PluggableUSBModule	PluggableUSB.h	/^class PluggableUSBModule {$/;"	c
+PluggableUSB_	PluggableUSB.cpp	/^PluggableUSB_::PluggableUSB_() : lastIf(CDC_ACM_INTERFACE + CDC_INTERFACE_COUNT),$/;"	f	class:PluggableUSB_
+PluggableUSB_	PluggableUSB.h	/^class PluggableUSB_ {$/;"	c
+Print	Print.h	/^    Print() : write_error(0) {}$/;"	f	class:Print
+Print	Print.h	/^class Print$/;"	c
+Print_h	Print.h	/^#define Print_h$/;"	d
+Printable	Printable.h	/^class Printable$/;"	c
+Printable_h	Printable.h	/^#define Printable_h$/;"	d
+Problematic IDE versions	travis-ci/arduino-ci-script/README.md	/^##### Problematic IDE versions$/;"	T	subsubsection:arduino-ci-script""Troubleshooting
+Publishing job reports	travis-ci/arduino-ci-script/README.md	/^#### Publishing job reports$/;"	t	chapter:arduino-ci-script
+Pull Requests	travis-ci/arduino-ci-script/CONTRIBUTING.md	/^## Pull Requests$/;"	s	chapter:Contribution Rules
+R1	main.cpp	/^#define R1 /;"	d	file:
+R2	main.cpp	/^#define R2 /;"	d	file:
+RAD_TO_DEG	Arduino.h	/^#define RAD_TO_DEG /;"	d
+REQUEST_CLASS	USBCore.h	/^#define REQUEST_CLASS /;"	d
+REQUEST_DEVICE	USBCore.h	/^#define REQUEST_DEVICE /;"	d
+REQUEST_DEVICETOHOST	USBCore.h	/^#define REQUEST_DEVICETOHOST /;"	d
+REQUEST_DEVICETOHOST_CLASS_INTERFACE	USBCore.h	/^#define REQUEST_DEVICETOHOST_CLASS_INTERFACE /;"	d
+REQUEST_DEVICETOHOST_STANDARD_INTERFACE	USBCore.h	/^#define REQUEST_DEVICETOHOST_STANDARD_INTERFACE /;"	d
+REQUEST_DIRECTION	USBCore.h	/^#define REQUEST_DIRECTION /;"	d
+REQUEST_ENDPOINT	USBCore.h	/^#define REQUEST_ENDPOINT /;"	d
+REQUEST_HOSTTODEVICE	USBCore.h	/^#define REQUEST_HOSTTODEVICE /;"	d
+REQUEST_HOSTTODEVICE_CLASS_INTERFACE	USBCore.h	/^#define REQUEST_HOSTTODEVICE_CLASS_INTERFACE /;"	d
+REQUEST_INTERFACE	USBCore.h	/^#define REQUEST_INTERFACE /;"	d
+REQUEST_OTHER	USBCore.h	/^#define REQUEST_OTHER /;"	d
+REQUEST_RECIPIENT	USBCore.h	/^#define REQUEST_RECIPIENT /;"	d
+REQUEST_STANDARD	USBCore.h	/^#define REQUEST_STANDARD /;"	d
+REQUEST_TYPE	USBCore.h	/^#define REQUEST_TYPE /;"	d
+REQUEST_VENDOR	USBCore.h	/^#define REQUEST_VENDOR /;"	d
+RISING	Arduino.h	/^#define RISING /;"	d
+RXCIE0	HardwareSerial_private.h	/^#define RXCIE0 /;"	d
+RXEN0	HardwareSerial_private.h	/^#define RXEN0 /;"	d
+ReadWriteAllowed	USBCore.cpp	/^static inline u8 ReadWriteAllowed()$/;"	f	typeref:typename:u8	file:
+ReceivedSetupInt	USBCore.cpp	/^static inline u8 ReceivedSetupInt()$/;"	f	typeref:typename:u8	file:
+Recv	USBCore.cpp	/^static inline void Recv(volatile u8* data, u8 count)$/;"	f	typeref:typename:void	file:
+Recv8	USBCore.cpp	/^static inline u8 Recv8()$/;"	f	typeref:typename:u8	file:
+ReleaseRX	USBCore.cpp	/^static inline void ReleaseRX()$/;"	f	typeref:typename:void	file:
+ReleaseTX	USBCore.cpp	/^static inline void ReleaseTX()$/;"	f	typeref:typename:void	file:
+RxLEDPulse	USBCore.cpp	/^volatile u8 RxLEDPulse; \/**< Milliseconds remaining for data Rx LED pulse *\/$/;"	v	typeref:typename:volatile u8
+SEC_PER_DAY	compileTime.h	/^#define SEC_PER_DAY /;"	d
+SEC_PER_HOUR	compileTime.h	/^#define SEC_PER_HOUR /;"	d
+SEC_PER_MIN	compileTime.h	/^#define SEC_PER_MIN /;"	d
+SEC_PER_YEAR	compileTime.h	/^#define SEC_PER_YEAR /;"	d
+SERIAL	Arduino.h	/^#define SERIAL /;"	d
+SERIAL_5E1	HardwareSerial.h	/^#define SERIAL_5E1 /;"	d
+SERIAL_5E2	HardwareSerial.h	/^#define SERIAL_5E2 /;"	d
+SERIAL_5N1	HardwareSerial.h	/^#define SERIAL_5N1 /;"	d
+SERIAL_5N2	HardwareSerial.h	/^#define SERIAL_5N2 /;"	d
+SERIAL_5O1	HardwareSerial.h	/^#define SERIAL_5O1 /;"	d
+SERIAL_5O2	HardwareSerial.h	/^#define SERIAL_5O2 /;"	d
+SERIAL_6E1	HardwareSerial.h	/^#define SERIAL_6E1 /;"	d
+SERIAL_6E2	HardwareSerial.h	/^#define SERIAL_6E2 /;"	d
+SERIAL_6N1	HardwareSerial.h	/^#define SERIAL_6N1 /;"	d
+SERIAL_6N2	HardwareSerial.h	/^#define SERIAL_6N2 /;"	d
+SERIAL_6O1	HardwareSerial.h	/^#define SERIAL_6O1 /;"	d
+SERIAL_6O2	HardwareSerial.h	/^#define SERIAL_6O2 /;"	d
+SERIAL_7E1	HardwareSerial.h	/^#define SERIAL_7E1 /;"	d
+SERIAL_7E2	HardwareSerial.h	/^#define SERIAL_7E2 /;"	d
+SERIAL_7N1	HardwareSerial.h	/^#define SERIAL_7N1 /;"	d
+SERIAL_7N2	HardwareSerial.h	/^#define SERIAL_7N2 /;"	d
+SERIAL_7O1	HardwareSerial.h	/^#define SERIAL_7O1 /;"	d
+SERIAL_7O2	HardwareSerial.h	/^#define SERIAL_7O2 /;"	d
+SERIAL_8E1	HardwareSerial.h	/^#define SERIAL_8E1 /;"	d
+SERIAL_8E2	HardwareSerial.h	/^#define SERIAL_8E2 /;"	d
+SERIAL_8N1	HardwareSerial.h	/^#define SERIAL_8N1 /;"	d
+SERIAL_8N2	HardwareSerial.h	/^#define SERIAL_8N2 /;"	d
+SERIAL_8O1	HardwareSerial.h	/^#define SERIAL_8O1 /;"	d
+SERIAL_8O2	HardwareSerial.h	/^#define SERIAL_8O2 /;"	d
+SERIAL_BUFFER_SIZE	USBAPI.h	/^#define SERIAL_BUFFER_SIZE /;"	d
+SERIAL_RX_BUFFER_SIZE	HardwareSerial.h	/^#define SERIAL_RX_BUFFER_SIZE /;"	d
+SERIAL_TX_BUFFER_SIZE	HardwareSerial.h	/^#define SERIAL_TX_BUFFER_SIZE /;"	d
+SET_ADDRESS	USBCore.h	/^#define SET_ADDRESS /;"	d
+SET_CONFIGURATION	USBCore.h	/^#define SET_CONFIGURATION /;"	d
+SET_DESCRIPTOR	USBCore.h	/^#define SET_DESCRIPTOR /;"	d
+SET_FEATURE	USBCore.h	/^#define SET_FEATURE /;"	d
+SET_INTERFACE	USBCore.h	/^#define SET_INTERFACE /;"	d
+SKIP_ALL	Stream.h	/^    SKIP_ALL,       \/\/ All invalid characters are ignored.$/;"	e	enum:LookaheadMode
+SKIP_NONE	Stream.h	/^    SKIP_NONE,      \/\/ Nothing is skipped, and the stream is not touched unless the first wait/;"	e	enum:LookaheadMode
+SKIP_WHITESPACE	Stream.h	/^    SKIP_WHITESPACE \/\/ Only tabs, spaces, line feeds & carriage returns are skipped.$/;"	e	enum:LookaheadMode
+SLEEP_ADC	Arduino.h	/^#define SLEEP_ADC /;"	d
+SLEEP_EXTENDED_STANDBY	Arduino.h	/^#define SLEEP_EXTENDED_STANDBY /;"	d
+SLEEP_IDLE	Arduino.h	/^#define SLEEP_IDLE /;"	d
+SLEEP_POWER_DOWN	Arduino.h	/^#define SLEEP_POWER_DOWN /;"	d
+SLEEP_POWER_SAVE	Arduino.h	/^#define SLEEP_POWER_SAVE /;"	d
+SLEEP_STANDBY	Arduino.h	/^#define SLEEP_STANDBY /;"	d
+SPACE_PARITY	USBAPI.h	/^    SPACE_PARITY = 4,$/;"	e	enum:Serial_::__anon816a78bf0203
+STRING_LANGUAGE	USBCore.cpp	/^const u16 STRING_LANGUAGE[2] = {$/;"	v	typeref:typename:const u16[2]
+STRING_MANUFACTURER	USBCore.cpp	/^const u8 STRING_MANUFACTURER[] PROGMEM = USB_MANUFACTURER;$/;"	v	typeref:typename:const u8[]PROGMEM
+STRING_PRODUCT	USBCore.cpp	/^const u8 STRING_PRODUCT[] PROGMEM = USB_PRODUCT;$/;"	v	typeref:typename:const u8[]PROGMEM
+SYSTIM_KEEP_ALIVE	systim.h	/^#define SYSTIM_KEEP_ALIVE	/;"	d
+SYSTIM_TIMEOUT	systim.h	/^#define SYSTIM_TIMEOUT	/;"	d
+Script hangs after an arduino command	travis-ci/arduino-ci-script/README.md	/^##### Script hangs after an arduino command$/;"	T	subsubsection:arduino-ci-script""Troubleshooting
+Send8	USBCore.cpp	/^static inline void Send8(u8 d)$/;"	f	typeref:typename:void	file:
+SendConfiguration	USBCore.cpp	/^bool SendConfiguration(int maxlen)$/;"	f	typeref:typename:bool	file:
+SendControl	USBCore.cpp	/^bool SendControl(u8 d)$/;"	f	typeref:typename:bool	file:
+SendDescriptor	USBCore.cpp	/^bool SendDescriptor(USBSetup& setup)$/;"	f	typeref:typename:bool	file:
+SendInterfaces	USBCore.cpp	/^static u8 SendInterfaces()$/;"	f	typeref:typename:u8	file:
+Serial	CDC.cpp	/^Serial_ Serial;$/;"	v	typeref:typename:Serial_
+Serial	HardwareSerial0.cpp	/^  HardwareSerial Serial(&UBRR0H, &UBRR0L, &UCSR0A, &UCSR0B, &UCSR0C, &UDR0);$/;"	v	typeref:typename:HardwareSerial
+Serial	HardwareSerial0.cpp	/^  HardwareSerial Serial(&UBRRH, &UBRRL, &UCSRA, &UCSRB, &UCSRC, &UDR);$/;"	v	typeref:typename:HardwareSerial
+Serial0_available	HardwareSerial0.cpp	/^bool Serial0_available() {$/;"	f	typeref:typename:bool
+Serial1	HardwareSerial1.cpp	/^HardwareSerial Serial1(&UBRR1H, &UBRR1L, &UCSR1A, &UCSR1B, &UCSR1C, &UDR1);$/;"	v	typeref:typename:HardwareSerial
+Serial1_available	HardwareSerial1.cpp	/^bool Serial1_available() {$/;"	f	typeref:typename:bool
+Serial2	HardwareSerial2.cpp	/^HardwareSerial Serial2(&UBRR2H, &UBRR2L, &UCSR2A, &UCSR2B, &UCSR2C, &UDR2);$/;"	v	typeref:typename:HardwareSerial
+Serial2_available	HardwareSerial2.cpp	/^bool Serial2_available() {$/;"	f	typeref:typename:bool
+Serial3	HardwareSerial3.cpp	/^HardwareSerial Serial3(&UBRR3H, &UBRR3L, &UCSR3A, &UCSR3B, &UCSR3C, &UDR3);$/;"	v	typeref:typename:HardwareSerial
+Serial3_available	HardwareSerial3.cpp	/^bool Serial3_available() {$/;"	f	typeref:typename:bool
+Serial_	USBAPI.h	/^  Serial_() { peek_buffer = -1; };$/;"	f	class:Serial_
+Serial_	USBAPI.h	/^class Serial_ : public Stream$/;"	c
+Server	Server.h	/^class Server : public Print {$/;"	c
+SetEP	USBCore.cpp	/^static inline void SetEP(u8 ep)$/;"	f	typeref:typename:void	file:
+Special version names:	travis-ci/arduino-ci-script/README.md	/^##### Special version names:$/;"	T	subsubsection:arduino-ci-script""Usage
+Stall	USBCore.cpp	/^static inline void Stall()$/;"	f	typeref:typename:void	file:
+Stalled	USBCore.cpp	/^static inline u8 Stalled()$/;"	f	typeref:typename:u8	file:
+Stream	Stream.h	/^    Stream() {_timeout=1000;}$/;"	f	class:Stream
+Stream	Stream.h	/^class Stream : public Print$/;"	c
+Stream_h	Stream.h	/^#define Stream_h$/;"	d
+String	WString.cpp	/^String::String(String &&rval)$/;"	f	class:String
+String	WString.cpp	/^String::String(StringSumHelper &&rval)$/;"	f	class:String
+String	WString.cpp	/^String::String(char c)$/;"	f	class:String
+String	WString.cpp	/^String::String(const String &value)$/;"	f	class:String
+String	WString.cpp	/^String::String(const __FlashStringHelper *pstr)$/;"	f	class:String
+String	WString.cpp	/^String::String(const char *cstr)$/;"	f	class:String
+String	WString.cpp	/^String::String(double value, unsigned char decimalPlaces)$/;"	f	class:String
+String	WString.cpp	/^String::String(float value, unsigned char decimalPlaces)$/;"	f	class:String
+String	WString.cpp	/^String::String(int value, unsigned char base)$/;"	f	class:String
+String	WString.cpp	/^String::String(long value, unsigned char base)$/;"	f	class:String
+String	WString.cpp	/^String::String(unsigned char value, unsigned char base)$/;"	f	class:String
+String	WString.cpp	/^String::String(unsigned int value, unsigned char base)$/;"	f	class:String
+String	WString.cpp	/^String::String(unsigned long value, unsigned char base)$/;"	f	class:String
+String	WString.h	/^class String$/;"	c
+StringIfHelper	WString.h	/^  void StringIfHelper() const {}$/;"	f	class:String	typeref:typename:void
+StringIfHelperType	WString.h	/^  typedef void (String::*StringIfHelperType)() const;$/;"	t	class:String	typeref:typename:void (String::*)()const
+StringSumHelper	WString.h	/^  StringSumHelper(char c) : String(c) {}$/;"	f	class:StringSumHelper
+StringSumHelper	WString.h	/^  StringSumHelper(const String &s) : String(s) {}$/;"	f	class:StringSumHelper
+StringSumHelper	WString.h	/^  StringSumHelper(const char *p) : String(p) {}$/;"	f	class:StringSumHelper
+StringSumHelper	WString.h	/^  StringSumHelper(double num) : String(num) {}$/;"	f	class:StringSumHelper
+StringSumHelper	WString.h	/^  StringSumHelper(float num) : String(num) {}$/;"	f	class:StringSumHelper
+StringSumHelper	WString.h	/^  StringSumHelper(int num) : String(num) {}$/;"	f	class:StringSumHelper
+StringSumHelper	WString.h	/^  StringSumHelper(long num) : String(num) {}$/;"	f	class:StringSumHelper
+StringSumHelper	WString.h	/^  StringSumHelper(unsigned char num) : String(num) {}$/;"	f	class:StringSumHelper
+StringSumHelper	WString.h	/^  StringSumHelper(unsigned int num) : String(num) {}$/;"	f	class:StringSumHelper
+StringSumHelper	WString.h	/^  StringSumHelper(unsigned long num) : String(num) {}$/;"	f	class:StringSumHelper
+StringSumHelper	WString.h	/^class StringSumHelper : public String$/;"	c
+String_class_h	WString.h	/^#define String_class_h$/;"	d
+Supported clock frequencies	README.md	/^## Supported clock frequencies$/;"	s	chapter:Arduino core files for MCUdude's cores
+Supported devices	README.md	/^## Supported devices$/;"	s	chapter:Arduino core files for MCUdude's cores
+TCCR2A	Tone.cpp	/^  #define TCCR2A /;"	d	file:
+TCCR2B	Tone.cpp	/^  #define TCCR2B /;"	d	file:
+TEST_MODE	USBCore.h	/^#define TEST_MODE /;"	d
+TIMER0	Arduino.h	/^#define TIMER0 /;"	d
+TIMER0A	Arduino.h	/^#define TIMER0A /;"	d
+TIMER0B	Arduino.h	/^#define TIMER0B /;"	d
+TIMER1A	Arduino.h	/^#define TIMER1A /;"	d
+TIMER1B	Arduino.h	/^#define TIMER1B /;"	d
+TIMER1C	Arduino.h	/^#define TIMER1C /;"	d
+TIMER2	Arduino.h	/^#define TIMER2 /;"	d
+TIMER2A	Arduino.h	/^#define TIMER2A /;"	d
+TIMER2B	Arduino.h	/^#define TIMER2B /;"	d
+TIMER2_COMPA_vect	Tone.cpp	/^  #define TIMER2_COMPA_vect /;"	d	file:
+TIMER3A	Arduino.h	/^#define TIMER3A /;"	d
+TIMER3B	Arduino.h	/^#define TIMER3B /;"	d
+TIMER3C	Arduino.h	/^#define TIMER3C /;"	d
+TIMER4A	Arduino.h	/^#define TIMER4A /;"	d
+TIMER4B	Arduino.h	/^#define TIMER4B /;"	d
+TIMER4C	Arduino.h	/^#define TIMER4C /;"	d
+TIMER4D	Arduino.h	/^#define TIMER4D /;"	d
+TIMER5A	Arduino.h	/^#define TIMER5A /;"	d
+TIMER5B	Arduino.h	/^#define TIMER5B /;"	d
+TIMER5C	Arduino.h	/^#define TIMER5C /;"	d
+TIMER_WITH_FULL_PRESCALER	Tone.cpp	/^  #define TIMER_WITH_FULL_PRESCALER /;"	d	file:
+TIMSK1	Tone.cpp	/^  #define TIMSK1 /;"	d	file:
+TIMSK2	Tone.cpp	/^  #define TIMSK2 /;"	d	file:
+TOBYTES	USBCore.h	/^#define TOBYTES(/;"	d
+TRANSFER_PGM	USBAPI.h	/^#define TRANSFER_PGM /;"	d
+TRANSFER_RELEASE	USBAPI.h	/^#define TRANSFER_RELEASE /;"	d
+TRANSFER_ZERO	USBAPI.h	/^#define TRANSFER_ZERO /;"	d
+TWO_PI	Arduino.h	/^#define TWO_PI /;"	d
+TWO_STOP_BITS	USBAPI.h	/^    TWO_STOP_BITS = 2,$/;"	e	enum:Serial_::__anon816a78bf0103
+TXC0	HardwareSerial_private.h	/^#define TXC0 /;"	d
+TXEN0	HardwareSerial_private.h	/^#define TXEN0 /;"	d
+TX_RX_LED_PULSE_MS	USBCore.cpp	/^#define TX_RX_LED_PULSE_MS /;"	d	file:
+Troubleshooting	travis-ci/arduino-ci-script/README.md	/^#### Troubleshooting$/;"	t	chapter:arduino-ci-script
+TxLEDPulse	USBCore.cpp	/^volatile u8 TxLEDPulse; \/**< Milliseconds remaining for data Tx LED pulse *\/$/;"	v	typeref:typename:volatile u8
+U2X0	HardwareSerial_private.h	/^#define U2X0 /;"	d
+UDP	Udp.h	/^class UDP : public Stream {$/;"	c
+UDRE0	HardwareSerial_private.h	/^#define UDRE0 /;"	d
+UDRIE0	HardwareSerial_private.h	/^#define UDRIE0 /;"	d
+UNIX_START_YEAR	compileTime.h	/^#define UNIX_START_YEAR /;"	d
+UPE	HardwareSerial_private.h	/^#define UPE /;"	d
+UPE0	HardwareSerial_private.h	/^#define UPE0 /;"	d
+USBConnected	USBCore.cpp	/^u8 USBConnected()$/;"	f	typeref:typename:u8
+USBDevice	USBCore.cpp	/^USBDevice_ USBDevice;$/;"	v	typeref:typename:USBDevice_
+USBDevice_	USBAPI.h	/^class USBDevice_$/;"	c
+USBDevice_	USBCore.cpp	/^USBDevice_::USBDevice_()$/;"	f	class:USBDevice_
+USBGetConfiguration	USBCore.cpp	/^u8 USBGetConfiguration(void)$/;"	f	typeref:typename:u8
+USBSetup	USBAPI.h	/^} USBSetup;$/;"	t	typeref:struct:__anon816a78bf0308
+USB_Available	USBCore.cpp	/^u8 USB_Available(u8 ep)$/;"	f	typeref:typename:u8
+USB_CONFIGUARTION_DESC_SIZE	USBCore.h	/^#define USB_CONFIGUARTION_DESC_SIZE /;"	d
+USB_CONFIGURATION_DESCRIPTOR_TYPE	USBCore.h	/^#define USB_CONFIGURATION_DESCRIPTOR_TYPE /;"	d
+USB_CONFIG_BUS_POWERED	USBCore.h	/^#define USB_CONFIG_BUS_POWERED /;"	d
+USB_CONFIG_POWERED_MASK	USBCore.h	/^#define USB_CONFIG_POWERED_MASK /;"	d
+USB_CONFIG_POWER_MA	USBCore.h	/^#define USB_CONFIG_POWER_MA(/;"	d
+USB_CONFIG_REMOTE_WAKEUP	USBCore.h	/^#define USB_CONFIG_REMOTE_WAKEUP /;"	d
+USB_CONFIG_SELF_POWERED	USBCore.h	/^#define USB_CONFIG_SELF_POWERED /;"	d
+USB_ClockDisable	USBCore.cpp	/^static inline void USB_ClockDisable()$/;"	f	typeref:typename:void	file:
+USB_ClockEnable	USBCore.cpp	/^static inline void USB_ClockEnable()$/;"	f	typeref:typename:void	file:
+USB_DEVICE_CLASS_COMMUNICATIONS	USBCore.h	/^#define USB_DEVICE_CLASS_COMMUNICATIONS /;"	d
+USB_DEVICE_CLASS_HUMAN_INTERFACE	USBCore.h	/^#define USB_DEVICE_CLASS_HUMAN_INTERFACE /;"	d
+USB_DEVICE_CLASS_STORAGE	USBCore.h	/^#define USB_DEVICE_CLASS_STORAGE /;"	d
+USB_DEVICE_CLASS_VENDOR_SPECIFIC	USBCore.h	/^#define USB_DEVICE_CLASS_VENDOR_SPECIFIC /;"	d
+USB_DEVICE_DESCRIPTOR_TYPE	USBCore.h	/^#define USB_DEVICE_DESCRIPTOR_TYPE /;"	d
+USB_DEVICE_DESC_SIZE	USBCore.h	/^#define USB_DEVICE_DESC_SIZE /;"	d
+USB_DeviceDescriptorIAD	USBCore.cpp	/^const DeviceDescriptor USB_DeviceDescriptorIAD =$/;"	v	typeref:typename:const DeviceDescriptor
+USB_ENDPOINTS	USBDesc.h	/^#define USB_ENDPOINTS /;"	d
+USB_ENDPOINT_DESCRIPTOR_TYPE	USBCore.h	/^#define USB_ENDPOINT_DESCRIPTOR_TYPE /;"	d
+USB_ENDPOINT_DESC_SIZE	USBCore.h	/^#define USB_ENDPOINT_DESC_SIZE /;"	d
+USB_ENDPOINT_DIRECTION_MASK	USBCore.h	/^#define USB_ENDPOINT_DIRECTION_MASK /;"	d
+USB_ENDPOINT_IN	USBCore.h	/^#define USB_ENDPOINT_IN(/;"	d
+USB_ENDPOINT_OUT	USBCore.h	/^#define USB_ENDPOINT_OUT(/;"	d
+USB_ENDPOINT_TYPE_BULK	USBCore.h	/^#define USB_ENDPOINT_TYPE_BULK /;"	d
+USB_ENDPOINT_TYPE_CONTROL	USBCore.h	/^#define USB_ENDPOINT_TYPE_CONTROL /;"	d
+USB_ENDPOINT_TYPE_INTERRUPT	USBCore.h	/^#define USB_ENDPOINT_TYPE_INTERRUPT /;"	d
+USB_ENDPOINT_TYPE_ISOCHRONOUS	USBCore.h	/^#define USB_ENDPOINT_TYPE_ISOCHRONOUS /;"	d
+USB_ENDPOINT_TYPE_MASK	USBCore.h	/^#define USB_ENDPOINT_TYPE_MASK /;"	d
+USB_EP_SIZE	USBAPI.h	/^#define USB_EP_SIZE /;"	d
+USB_Flush	USBCore.cpp	/^void USB_Flush(u8 ep)$/;"	f	typeref:typename:void
+USB_INTERFACE_DESCRIPTOR_TYPE	USBCore.h	/^#define USB_INTERFACE_DESCRIPTOR_TYPE /;"	d
+USB_INTERFACE_DESC_SIZE	USBCore.h	/^#define USB_INTERFACE_DESC_SIZE /;"	d
+USB_MANUFACTURER	USBCore.cpp	/^#  define USB_MANUFACTURER /;"	d	file:
+USB_PRODUCT	USBCore.cpp	/^#define USB_PRODUCT /;"	d	file:
+USB_RECV_TIMEOUT	USBCore.cpp	/^#define USB_RECV_TIMEOUT$/;"	d	file:
+USB_Recv	USBCore.cpp	/^int USB_Recv(u8 ep)$/;"	f	typeref:typename:int
+USB_Recv	USBCore.cpp	/^int USB_Recv(u8 ep, void* d, int len)$/;"	f	typeref:typename:int
+USB_RecvControl	USBCore.cpp	/^int USB_RecvControl(void* d, int len)$/;"	f	typeref:typename:int
+USB_STRING_DESCRIPTOR_TYPE	USBCore.h	/^#define USB_STRING_DESCRIPTOR_TYPE /;"	d
+USB_Send	USBCore.cpp	/^int USB_Send(u8 ep, const void* d, int len)$/;"	f	typeref:typename:int
+USB_SendControl	USBCore.cpp	/^int USB_SendControl(u8 flags, const void* d, int len)$/;"	f	typeref:typename:int
+USB_SendSpace	USBCore.cpp	/^u8 USB_SendSpace(u8 ep)$/;"	f	typeref:typename:u8
+USB_SendStringDescriptor	USBCore.cpp	/^static bool USB_SendStringDescriptor(const u8*string_P, u8 string_len, uint8_t flags) {$/;"	f	typeref:typename:bool	file:
+USB_VERSION	USBCore.h	/^#define USB_VERSION /;"	d
+USE_TIMER1	Tone.cpp	/^  #define USE_TIMER1$/;"	d	file:
+USE_TIMER2	Tone.cpp	/^  #define USE_TIMER2$/;"	d	file:
+USE_TIMER3	Tone.cpp	/^  #define USE_TIMER3$/;"	d	file:
+Usage	travis-ci/arduino-ci-script/README.md	/^#### Usage$/;"	t	chapter:arduino-ci-script
+Verbose output	travis-ci/arduino-ci-script/README.md	/^##### Verbose output$/;"	T	subsubsection:arduino-ci-script""Troubleshooting
+WEAK	CDC.cpp	/^#define WEAK /;"	d	file:
+WIRING_EXTRAS_H	wiring_extras.h	/^#define WIRING_EXTRAS_H$/;"	d
+WaitForINOrOUT	USBCore.cpp	/^static inline u8 WaitForINOrOUT()$/;"	f	typeref:typename:u8	file:
+WaitIN	USBCore.cpp	/^static inline void WaitIN(void)$/;"	f	typeref:typename:void	file:
+WaitOUT	USBCore.cpp	/^static inline void WaitOUT(void)$/;"	f	typeref:typename:void	file:
+WiringPrivate_h	wiring_private.h	/^#define WiringPrivate_h$/;"	d
+_MORENOP_	wiring.c	/^#define _MORENOP_ /;"	d	file:
+_NOP	Arduino.h	/^#define _NOP(/;"	d
+__DELAY_H_	systim.h	/^#define __DELAY_H_$/;"	d
+__TIME_DAYS__	compileTime.h	/^#define __TIME_DAYS__ /;"	d
+__TIME_HOURS__	compileTime.h	/^#define __TIME_HOURS__ /;"	d
+__TIME_MINUTES__	compileTime.h	/^#define __TIME_MINUTES__ /;"	d
+__TIME_MONTH__	compileTime.h	/^#define __TIME_MONTH__ /;"	d
+__TIME_SECONDS__	compileTime.h	/^#define __TIME_SECONDS__ /;"	d
+__TIME_UNIX__	compileTime.h	/^#define __TIME_UNIX__ /;"	d
+__TIME_YEARS__	compileTime.h	/^#define __TIME_YEARS__ /;"	d
+__USBAPI__	USBAPI.h	/^#define __USBAPI__$/;"	d
+__USBCORE_H__	USBCore.h	/^#define __USBCORE_H__$/;"	d
+__VERSION_H	version.h	/^#define __VERSION_H$/;"	d
+__anon368727fa010a	IPAddress.h	/^    union {$/;"	u	class:IPAddress
+__anon816a78bf0103	USBAPI.h	/^  enum {$/;"	g	class:Serial_
+__anon816a78bf0203	USBAPI.h	/^  enum {$/;"	g	class:Serial_
+__anon816a78bf0308	USBAPI.h	/^{$/;"	s
+__anonb5ac37ee0108	USBCore.h	/^typedef struct {$/;"	s
+__anonb5ac37ee0208	USBCore.h	/^typedef struct {$/;"	s
+__anonb5ac37ee0308	USBCore.h	/^{$/;"	s
+__anonb5ac37ee0408	USBCore.h	/^{$/;"	s
+__anonb5ac37ee0508	USBCore.h	/^{$/;"	s
+__anonb5ac37ee0608	USBCore.h	/^{$/;"	s
+__anonb5ac37ee0708	USBCore.h	/^{$/;"	s
+__anonb5ac37ee0808	USBCore.h	/^{$/;"	s
+__anonb5ac37ee0908	USBCore.h	/^{$/;"	s
+__anonb5ac37ee0a08	USBCore.h	/^{$/;"	s
+__anonb5ac37ee0b08	USBCore.h	/^{$/;"	s
+__anonccb3a5e00108	CDC.cpp	/^{$/;"	s	file:
+__cxa_deleted_virtual	abi.cpp	/^void __cxa_deleted_virtual(void) {$/;"	f	typeref:typename:void
+__cxa_pure_virtual	abi.cpp	/^void __cxa_pure_virtual(void) {$/;"	f	typeref:typename:void
+__empty	hooks.c	/^static void __empty() {$/;"	f	typeref:typename:void	file:
+_address	IPAddress.h	/^    } _address;$/;"	m	class:IPAddress	typeref:union:IPAddress::__anon368727fa010a
+_cdcInterface	CDC.cpp	/^const CDCDescriptor _cdcInterface =$/;"	v	typeref:typename:const CDCDescriptor
+_cend	USBCore.cpp	/^static int _cend;$/;"	v	typeref:typename:int	file:
+_cmark	USBCore.cpp	/^static int _cmark;$/;"	v	typeref:typename:int	file:
+_initEndpoints	USBCore.cpp	/^u8 _initEndpoints[USB_ENDPOINTS] =$/;"	v	typeref:typename:u8[]
+_portMode	wiring_extras.cpp	/^void _portMode(uint8_t port, uint8_t mode)$/;"	f	typeref:typename:void
+_portRead	wiring_extras.cpp	/^uint8_t _portRead(uint8_t port)$/;"	f	typeref:typename:uint8_t
+_portWrite	wiring_extras.cpp	/^void _portWrite(uint8_t port, uint8_t val)$/;"	f	typeref:typename:void
+_rx_buffer	HardwareSerial.h	/^    unsigned char _rx_buffer[SERIAL_RX_BUFFER_SIZE];$/;"	m	class:HardwareSerial	typeref:typename:unsigned char[]
+_rx_buffer	USBAPI.h	/^  unsigned char _rx_buffer[SERIAL_BUFFER_SIZE];$/;"	m	class:Serial_	typeref:typename:unsigned char[]
+_rx_buffer_head	HardwareSerial.h	/^    volatile rx_buffer_index_t _rx_buffer_head;$/;"	m	class:HardwareSerial	typeref:typename:volatile rx_buffer_index_t
+_rx_buffer_head	USBAPI.h	/^  volatile uint8_t _rx_buffer_head;$/;"	m	class:Serial_	typeref:typename:volatile uint8_t
+_rx_buffer_tail	HardwareSerial.h	/^    volatile rx_buffer_index_t _rx_buffer_tail;$/;"	m	class:HardwareSerial	typeref:typename:volatile rx_buffer_index_t
+_rx_buffer_tail	USBAPI.h	/^  volatile uint8_t _rx_buffer_tail;$/;"	m	class:Serial_	typeref:typename:volatile uint8_t
+_rx_complete_irq	HardwareSerial_private.h	/^void HardwareSerial::_rx_complete_irq(void)$/;"	f	class:HardwareSerial	typeref:typename:void
+_sreg	USBCore.cpp	/^    u8 _sreg;$/;"	m	class:LockEP	typeref:typename:u8	file:
+_startMillis	Stream.h	/^    unsigned long _startMillis;  \/\/ used for timeout measurement$/;"	m	class:Stream	typeref:typename:unsigned long
+_timeout	Stream.h	/^    unsigned long _timeout;      \/\/ number of milliseconds to wait for the next char before ab/;"	m	class:Stream	typeref:typename:unsigned long
+_tx_buffer	HardwareSerial.h	/^    unsigned char _tx_buffer[SERIAL_TX_BUFFER_SIZE];$/;"	m	class:HardwareSerial	typeref:typename:unsigned char[]
+_tx_buffer_head	HardwareSerial.h	/^    volatile tx_buffer_index_t _tx_buffer_head;$/;"	m	class:HardwareSerial	typeref:typename:volatile tx_buffer_index_t
+_tx_buffer_tail	HardwareSerial.h	/^    volatile tx_buffer_index_t _tx_buffer_tail;$/;"	m	class:HardwareSerial	typeref:typename:volatile tx_buffer_index_t
+_tx_udr_empty_irq	HardwareSerial.cpp	/^void HardwareSerial::_tx_udr_empty_irq(void)$/;"	f	class:HardwareSerial	typeref:typename:void
+_ubrrh	HardwareSerial.h	/^    volatile uint8_t * const _ubrrh;$/;"	m	class:HardwareSerial	typeref:typename:volatile uint8_t * const
+_ubrrl	HardwareSerial.h	/^    volatile uint8_t * const _ubrrl;$/;"	m	class:HardwareSerial	typeref:typename:volatile uint8_t * const
+_ucsra	HardwareSerial.h	/^    volatile uint8_t * const _ucsra;$/;"	m	class:HardwareSerial	typeref:typename:volatile uint8_t * const
+_ucsrb	HardwareSerial.h	/^    volatile uint8_t * const _ucsrb;$/;"	m	class:HardwareSerial	typeref:typename:volatile uint8_t * const
+_ucsrc	HardwareSerial.h	/^    volatile uint8_t * const _ucsrc;$/;"	m	class:HardwareSerial	typeref:typename:volatile uint8_t * const
+_udr	HardwareSerial.h	/^    volatile uint8_t * const _udr;$/;"	m	class:HardwareSerial	typeref:typename:volatile uint8_t * const
+_updatedLUFAbootloader	CDC.cpp	/^bool _updatedLUFAbootloader = false;$/;"	v	typeref:typename:bool
+_usbConfiguration	USBCore.cpp	/^volatile u8 _usbConfiguration = 0;$/;"	v	typeref:typename:volatile u8
+_usbCurrentStatus	USBCore.cpp	/^volatile u8 _usbCurrentStatus = 0; \/\/ meaning of bits see usb_20.pdf, Figure 9-4. Information /;"	v	typeref:typename:volatile u8
+_usbLineInfo	CDC.cpp	/^static volatile LineInfo _usbLineInfo = { 57600, 0x00, 0x00, 0x00, 0x00 };$/;"	v	typeref:typename:volatile LineInfo	file:
+_usbSuspendState	USBCore.cpp	/^volatile u8 _usbSuspendState = 0; \/\/ copy of UDINT to check SUSPI and WAKEUPI bits$/;"	v	typeref:typename:volatile u8
+_written	HardwareSerial.h	/^    bool _written;$/;"	m	class:HardwareSerial	typeref:typename:bool
+`build_sketch sketchPath boardID allowFail IDEversion`	travis-ci/arduino-ci-script/README.md	/^##### `build_sketch sketchPath boardID allowFail IDEversion`$/;"	T	subsubsection:arduino-ci-script""Usage
+`build_sketch sketchPath boardID allowFail [IDEversionList]`	travis-ci/arduino-ci-script/README.md	/^##### `build_sketch sketchPath boardID allowFail [IDEversionList]`$/;"	T	subsubsection:arduino-ci-script""Usage
+`build_sketch sketchPath boardID allowFail startIDEversion endIDEversion`	travis-ci/arduino-ci-script/README.md	/^##### `build_sketch sketchPath boardID allowFail startIDEversion endIDEversion`$/;"	T	subsubsection:arduino-ci-script""Usage
+`display_report`	travis-ci/arduino-ci-script/README.md	/^##### `display_report`$/;"	T	subsubsection:arduino-ci-script""Usage
+`install_ide [IDEversionList]`	travis-ci/arduino-ci-script/README.md	/^##### `install_ide [IDEversionList]`$/;"	T	subsubsection:arduino-ci-script""Usage
+`install_ide startIDEversion [endIDEversion]`	travis-ci/arduino-ci-script/README.md	/^##### `install_ide startIDEversion [endIDEversion]`$/;"	T	subsubsection:arduino-ci-script""Usage
+`install_library libraryName`	travis-ci/arduino-ci-script/README.md	/^##### `install_library libraryName`$/;"	T	subsubsection:arduino-ci-script""Usage
+`install_library libraryURL [branchName [newFolderName]]`	travis-ci/arduino-ci-script/README.md	/^##### `install_library libraryURL [branchName [newFolderName]]`$/;"	T	subsubsection:arduino-ci-script""Usage
+`install_library libraryURL [newFolderName]`	travis-ci/arduino-ci-script/README.md	/^##### `install_library libraryURL [newFolderName]`$/;"	T	subsubsection:arduino-ci-script""Usage
+`install_library`	travis-ci/arduino-ci-script/README.md	/^##### `install_library`$/;"	T	subsubsection:arduino-ci-script""Usage
+`install_package packageID [packageURL]`	travis-ci/arduino-ci-script/README.md	/^##### `install_package packageID [packageURL]`$/;"	T	subsubsection:arduino-ci-script""Usage
+`install_package packageURL [branchName]`	travis-ci/arduino-ci-script/README.md	/^##### `install_package packageURL [branchName]`$/;"	T	subsubsection:arduino-ci-script""Usage
+`install_package packageURL`	travis-ci/arduino-ci-script/README.md	/^##### `install_package packageURL`$/;"	T	subsubsection:arduino-ci-script""Usage
+`install_package`	travis-ci/arduino-ci-script/README.md	/^##### `install_package`$/;"	T	subsubsection:arduino-ci-script""Usage
+`publish_report_to_gist REPORT_GITHUB_TOKEN REPORT_GIST_URL doLinkComment`	travis-ci/arduino-ci-script/README.md	/^##### `publish_report_to_gist REPORT_GITHUB_TOKEN REPORT_GIST_URL doLinkComment`$/;"	T	subsubsection:arduino-ci-script""Usage
+`publish_report_to_repository REPORT_GITHUB_TOKEN repositoryURL reportBranch reportFolder doLinkComment`	travis-ci/arduino-ci-script/README.md	/^##### `publish_report_to_repository REPORT_GITHUB_TOKEN repositoryURL reportBranch reportFolder /;"	T	subsubsection:arduino-ci-script""Usage
+`set_application_folder APPLICATION_FOLDER`	travis-ci/arduino-ci-script/README.md	/^##### `set_application_folder APPLICATION_FOLDER`$/;"	T	subsubsection:arduino-ci-script""Usage
+`set_board_testing BOARD_TESTING`	travis-ci/arduino-ci-script/README.md	/^##### `set_board_testing BOARD_TESTING`$/;"	T	subsubsection:arduino-ci-script""Usage
+`set_library_testing LIBRARY_TESTING`	travis-ci/arduino-ci-script/README.md	/^##### `set_library_testing LIBRARY_TESTING`$/;"	T	subsubsection:arduino-ci-script""Usage
+`set_script_verbosity SCRIPT_VERBOSITY_LEVEL`	travis-ci/arduino-ci-script/README.md	/^##### `set_script_verbosity SCRIPT_VERBOSITY_LEVEL`$/;"	T	subsubsection:arduino-ci-script""Usage
+`set_sketchbook_folder SKETCHBOOK_FOLDER`	travis-ci/arduino-ci-script/README.md	/^##### `set_sketchbook_folder SKETCHBOOK_FOLDER`$/;"	T	subsubsection:arduino-ci-script""Usage
+`set_verbose_output_during_compilation verboseOutputDuringCompilation`	travis-ci/arduino-ci-script/README.md	/^##### `set_verbose_output_during_compilation verboseOutputDuringCompilation`$/;"	T	subsubsection:arduino-ci-script""Usage
+abs	Arduino.h	/^#define abs(/;"	d
+addr	USBCore.h	/^    u8 addr;$/;"	m	struct:__anonb5ac37ee0408	typeref:typename:u8
+alternate	USBCore.h	/^    u8 alternate;$/;"	m	struct:__anonb5ac37ee0308	typeref:typename:u8
+analogInPinToBit	Arduino.h	/^#define analogInPinToBit(/;"	d
+analogRead	wiring_analog.c	/^int analogRead(uint8_t pin)$/;"	f	typeref:typename:int
+analogReference	wiring_analog.c	/^void analogReference(uint8_t mode)$/;"	f	typeref:typename:void
+analogWrite	wiring_analog.c	/^void analogWrite(uint8_t pin, int val)$/;"	f	typeref:typename:void
+analog_reference	wiring_analog.c	/^uint8_t analog_reference = DEFAULT;$/;"	v	typeref:typename:uint8_t
+arduino-ci-script	travis-ci/arduino-ci-script/README.md	/^arduino-ci-script$/;"	c
+atexit	main.cpp	/^int atexit(void (* \/*func*\/ )()) { return 0; }$/;"	f	typeref:typename:int
+attach	USBCore.cpp	/^void USBDevice_::attach()$/;"	f	class:USBDevice_	typeref:typename:void
+attachInterrupt	WInterrupts.c	/^void attachInterrupt(uint8_t interruptNum, void (*userFunc)(void), int mode) $/;"	f	typeref:typename:void
+attr	USBCore.h	/^    u8 attr;$/;"	m	struct:__anonb5ac37ee0408	typeref:typename:u8
+attributes	USBCore.h	/^    u8  attributes;$/;"	m	struct:__anonb5ac37ee0208	typeref:typename:u8
+available	CDC.cpp	/^int Serial_::available(void)$/;"	f	class:Serial_	typeref:typename:int
+available	HardwareSerial.cpp	/^int HardwareSerial::available(void)$/;"	f	class:HardwareSerial	typeref:typename:int
+availableForWrite	CDC.cpp	/^int Serial_::availableForWrite(void)$/;"	f	class:Serial_	typeref:typename:int
+availableForWrite	HardwareSerial.cpp	/^int HardwareSerial::availableForWrite(void)$/;"	f	class:HardwareSerial	typeref:typename:int
+availableForWrite	Print.h	/^    virtual int availableForWrite() { return 0; }$/;"	f	class:Print	typeref:typename:int
+bCharFormat	CDC.cpp	/^  u8  bCharFormat;$/;"	m	struct:__anonccb3a5e00108	typeref:typename:u8	file:
+bDataBits	CDC.cpp	/^  u8  bDataBits;$/;"	m	struct:__anonccb3a5e00108	typeref:typename:u8	file:
+bDataInterface	USBCore.h	/^    u8  bDataInterface;$/;"	m	struct:__anonb5ac37ee0808	typeref:typename:u8
+bNumConfigurations	USBCore.h	/^    u8  bNumConfigurations;$/;"	m	struct:__anonb5ac37ee0108	typeref:typename:u8
+bParityType	CDC.cpp	/^  u8  bParityType;$/;"	m	struct:__anonccb3a5e00108	typeref:typename:u8	file:
+bRequest	USBAPI.h	/^  uint8_t bRequest;$/;"	m	struct:__anon816a78bf0308	typeref:typename:uint8_t
+baud	CDC.cpp	/^unsigned long Serial_::baud() {$/;"	f	class:Serial_	typeref:typename:unsigned long
+begin	CDC.cpp	/^void Serial_::begin(unsigned long \/* baud_count *\/)$/;"	f	class:Serial_	typeref:typename:void
+begin	CDC.cpp	/^void Serial_::begin(unsigned long \/* baud_count *\/, byte \/* config *\/)$/;"	f	class:Serial_	typeref:typename:void
+begin	EEPROM.h	/^    EEPtr begin()                        { return 0x00; }$/;"	f	struct:EEPROMClass	typeref:typename:EEPtr
+begin	HardwareSerial.cpp	/^void HardwareSerial::begin(unsigned long baud, byte config)$/;"	f	class:HardwareSerial	typeref:typename:void
+begin	HardwareSerial.h	/^    void begin(unsigned long baud) { begin(baud, SERIAL_8N1); }$/;"	f	class:HardwareSerial	typeref:typename:void
+begin	WString.h	/^  char* begin() { return buffer; }$/;"	f	class:String	typeref:typename:char *
+begin	WString.h	/^  const char* begin() const { return c_str(); }$/;"	f	class:String	typeref:typename:const char *
+beginMulticast	Udp.h	/^  virtual uint8_t beginMulticast(IPAddress, uint16_t) { return 0; }  \/\/ initialize, start list/;"	f	class:UDP	typeref:typename:uint8_t
+bit	Arduino.h	/^#define bit(/;"	d
+bitClear	Arduino.h	/^#define bitClear(/;"	d
+bitRead	Arduino.h	/^#define bitRead(/;"	d
+bitSet	Arduino.h	/^#define bitSet(/;"	d
+bitWrite	Arduino.h	/^#define bitWrite(/;"	d
+bmCapabilities	USBCore.h	/^    u8  bmCapabilities;$/;"	m	struct:__anonb5ac37ee0808	typeref:typename:u8
+bmCapabilities	USBCore.h	/^    u8  bmCapabilities;$/;"	m	struct:__anonb5ac37ee0908	typeref:typename:u8
+bmRequestType	USBAPI.h	/^  uint8_t bmRequestType;$/;"	m	struct:__anon816a78bf0308	typeref:typename:uint8_t
+boolean	Arduino.h	/^typedef bool boolean;$/;"	t	typeref:typename:bool
+breakValue	CDC.cpp	/^static volatile int32_t breakValue = -1;$/;"	v	typeref:typename:volatile int32_t	file:
+buffer	WString.h	/^  char *buffer;         \/\/ the actual char array$/;"	m	class:String	typeref:typename:char *
+build_sketch	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function build_sketch()$/;"	f
+build_this_sketch	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function build_this_sketch()$/;"	f
+byte	Arduino.h	/^typedef uint8_t byte;$/;"	t	typeref:typename:uint8_t
+bytes	IPAddress.h	/^        uint8_t bytes[4];  \/\/ IPv4 address$/;"	m	union:IPAddress::__anon368727fa010a	typeref:typename:uint8_t[4]
+c_str	WString.h	/^  const char* c_str() const { return buffer; }$/;"	f	class:String	typeref:typename:const char *
+callManagement	USBCore.h	/^    CMFunctionalDescriptor      callManagement;         \/\/ Call Management$/;"	m	struct:__anonb5ac37ee0a08	typeref:typename:CMFunctionalDescriptor
+capacity	WString.h	/^  unsigned int capacity;  \/\/ the array length minus one (for the '\\0')$/;"	m	class:String	typeref:typename:unsigned int
+cbi	wiring_private.h	/^#define cbi(/;"	d
+changeBuffer	WString.cpp	/^unsigned char String::changeBuffer(unsigned int maxStrLen)$/;"	f	class:String	typeref:typename:unsigned char
+charAt	WString.cpp	/^char String::charAt(unsigned int loc) const$/;"	f	class:String	typeref:typename:char
+check_success	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function check_success()$/;"	f
+chk4TimeoutSYSTIM	systim.cpp	/^uint8_t chk4TimeoutSYSTIM(uint32_t btime, uint32_t period)$/;"	f	typeref:typename:uint8_t
+chkALGOBOT	main.cpp	/^void chkALGOBOT() { }$/;"	f	typeref:typename:void
+chkBTN	main.cpp	/^uint8_t chkBTN(void)$/;"	f	typeref:typename:uint8_t
+cif	USBCore.h	/^    InterfaceDescriptor         cif;    \/\/ $/;"	m	struct:__anonb5ac37ee0a08	typeref:typename:InterfaceDescriptor
+cifin	USBCore.h	/^    EndpointDescriptor          cifin;$/;"	m	struct:__anonb5ac37ee0a08	typeref:typename:EndpointDescriptor
+clearWriteError	Print.h	/^    void clearWriteError() { setWriteError(0); }$/;"	f	class:Print	typeref:typename:void
+clen	USBCore.h	/^    u16 clen;           \/\/ total length$/;"	m	struct:__anonb5ac37ee0208	typeref:typename:u16
+client_h	Client.h	/^#define client_h$/;"	d
+clockCyclesPerMicrosecond	Arduino.h	/^#define clockCyclesPerMicrosecond(/;"	d
+clockCyclesToMicroseconds	Arduino.h	/^#define clockCyclesToMicroseconds(/;"	d
+comment_report_link	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function comment_report_link()$/;"	f
+compareTo	WString.cpp	/^int String::compareTo(const String &s) const$/;"	f	class:String	typeref:typename:int
+concat	WString.cpp	/^unsigned char String::concat(char c)$/;"	f	class:String	typeref:typename:unsigned char
+concat	WString.cpp	/^unsigned char String::concat(const String &s)$/;"	f	class:String	typeref:typename:unsigned char
+concat	WString.cpp	/^unsigned char String::concat(const __FlashStringHelper * str)$/;"	f	class:String	typeref:typename:unsigned char
+concat	WString.cpp	/^unsigned char String::concat(const char *cstr)$/;"	f	class:String	typeref:typename:unsigned char
+concat	WString.cpp	/^unsigned char String::concat(const char *cstr, unsigned int length)$/;"	f	class:String	typeref:typename:unsigned char
+concat	WString.cpp	/^unsigned char String::concat(double num)$/;"	f	class:String	typeref:typename:unsigned char
+concat	WString.cpp	/^unsigned char String::concat(float num)$/;"	f	class:String	typeref:typename:unsigned char
+concat	WString.cpp	/^unsigned char String::concat(int num)$/;"	f	class:String	typeref:typename:unsigned char
+concat	WString.cpp	/^unsigned char String::concat(long num)$/;"	f	class:String	typeref:typename:unsigned char
+concat	WString.cpp	/^unsigned char String::concat(unsigned char num)$/;"	f	class:String	typeref:typename:unsigned char
+concat	WString.cpp	/^unsigned char String::concat(unsigned int num)$/;"	f	class:String	typeref:typename:unsigned char
+concat	WString.cpp	/^unsigned char String::concat(unsigned long num)$/;"	f	class:String	typeref:typename:unsigned char
+config	USBCore.h	/^    u8  config;$/;"	m	struct:__anonb5ac37ee0208	typeref:typename:u8
+configured	USBCore.cpp	/^bool USBDevice_::configured()$/;"	f	class:USBDevice_	typeref:typename:bool
+constrain	Arduino.h	/^#define constrain(/;"	d
+controlManagement	USBCore.h	/^    ACMFunctionalDescriptor     controlManagement;      \/\/ ACM$/;"	m	struct:__anonb5ac37ee0a08	typeref:typename:ACMFunctionalDescriptor
+copy	WString.cpp	/^String & String::copy(const __FlashStringHelper *pstr, unsigned int length)$/;"	f	class:String	typeref:typename:String &
+copy	WString.cpp	/^String & String::copy(const char *cstr, unsigned int length)$/;"	f	class:String	typeref:typename:String &
+countPulseASM	wiring_pulse.S	/^countPulseASM:$/;"	l
+create_folder	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function create_folder()$/;"	f
+curlDataHere	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^      eval curl --header "\\"Authorization: token ${token}\\"" --data @- "\\"https:\/\/api.githu/;"	h
+d0	USBCore.h	/^    u8 d0;$/;"	m	struct:__anonb5ac37ee0608	typeref:typename:u8
+d0	USBCore.h	/^    u8 d0;$/;"	m	struct:__anonb5ac37ee0708	typeref:typename:u8
+d1	USBCore.h	/^    u8 d1;$/;"	m	struct:__anonb5ac37ee0608	typeref:typename:u8
+degrees	Arduino.h	/^#define degrees(/;"	d
+delay	wiring.c	/^void delay(unsigned long ms)$/;"	f	typeref:typename:void
+delayMicroseconds	wiring.c	/^void delayMicroseconds(unsigned int us)$/;"	f	typeref:typename:void
+detach	USBCore.cpp	/^void USBDevice_::detach()$/;"	f	class:USBDevice_	typeref:typename:void
+detachInterrupt	WInterrupts.c	/^void detachInterrupt(uint8_t interruptNum) $/;"	f	typeref:typename:void
+determine_ide_version_extremes	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function determine_ide_version_extremes()$/;"	f
+deviceClass	USBCore.h	/^    u8  deviceClass;$/;"	m	struct:__anonb5ac37ee0108	typeref:typename:u8
+deviceProtocol	USBCore.h	/^    u8  deviceProtocol;$/;"	m	struct:__anonb5ac37ee0108	typeref:typename:u8
+deviceSubClass	USBCore.h	/^    u8  deviceSubClass;$/;"	m	struct:__anonb5ac37ee0108	typeref:typename:u8
+deviceVersion	USBCore.h	/^    u16 deviceVersion;  \/\/ 0x100$/;"	m	struct:__anonb5ac37ee0108	typeref:typename:u16
+dif	USBCore.h	/^    InterfaceDescriptor         dif;$/;"	m	struct:__anonb5ac37ee0a08	typeref:typename:InterfaceDescriptor
+digitalPinToBitMask	Arduino.h	/^#define digitalPinToBitMask(/;"	d
+digitalPinToPort	Arduino.h	/^#define digitalPinToPort(/;"	d
+digitalPinToTimer	Arduino.h	/^#define digitalPinToTimer(/;"	d
+digitalRead	wiring_digital.c	/^int digitalRead(uint8_t pin)$/;"	f	typeref:typename:int
+digitalWrite	wiring_digital.c	/^void digitalWrite(uint8_t pin, uint8_t val)$/;"	f	typeref:typename:void
+disablePower	wiring_extras.h	/^static inline void disablePower(uint8_t P)$/;"	f	typeref:typename:void
+disableSleep	wiring_extras.h	/^static inline void disableSleep()$/;"	f	typeref:typename:void
+disableTimer	Tone.cpp	/^void disableTimer(uint8_t _timer)$/;"	f	typeref:typename:void
+disable_verbosity	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function disable_verbosity()$/;"	f
+display_report	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function display_report()$/;"	f
+dtr	CDC.cpp	/^bool Serial_::dtr() {$/;"	f	class:Serial_	typeref:typename:bool
+dtype	USBCore.h	/^    u8  dtype;          \/\/ 2$/;"	m	struct:__anonb5ac37ee0208	typeref:typename:u8
+dtype	USBCore.h	/^    u8  dtype;      \/\/ 0x24$/;"	m	struct:__anonb5ac37ee0808	typeref:typename:u8
+dtype	USBCore.h	/^    u8  dtype;      \/\/ 0x24$/;"	m	struct:__anonb5ac37ee0908	typeref:typename:u8
+dtype	USBCore.h	/^    u8 dtype;           \/\/ 1 USB_DEVICE_DESCRIPTOR_TYPE$/;"	m	struct:__anonb5ac37ee0108	typeref:typename:u8
+dtype	USBCore.h	/^    u8 dtype;           \/\/ 11$/;"	m	struct:__anonb5ac37ee0508	typeref:typename:u8
+dtype	USBCore.h	/^    u8 dtype;   \/\/ 0x24$/;"	m	struct:__anonb5ac37ee0608	typeref:typename:u8
+dtype	USBCore.h	/^    u8 dtype;   \/\/ 0x24$/;"	m	struct:__anonb5ac37ee0708	typeref:typename:u8
+dtype	USBCore.h	/^    u8 dtype;   \/\/ 4$/;"	m	struct:__anonb5ac37ee0308	typeref:typename:u8
+dtype	USBCore.h	/^    u8 dtype;   \/\/ 5$/;"	m	struct:__anonb5ac37ee0408	typeref:typename:u8
+dwDTERate	CDC.cpp	/^  u32 dwDTERate;$/;"	m	struct:__anonccb3a5e00108	typeref:typename:u32	file:
+dword	IPAddress.h	/^        uint32_t dword;$/;"	m	union:IPAddress::__anon368727fa010a	typeref:typename:uint32_t
+enablePower	wiring_extras.h	/^static inline void enablePower(uint8_t P)$/;"	f	typeref:typename:void
+enableSleep	wiring_extras.h	/^static inline void enableSleep()$/;"	f	typeref:typename:void
+enable_verbosity	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function enable_verbosity()$/;"	f
+end	CDC.cpp	/^void Serial_::end(void)$/;"	f	class:Serial_	typeref:typename:void
+end	EEPROM.h	/^    EEPtr end()                          { return length(); } \/\/Standards requires this to be /;"	f	struct:EEPROMClass	typeref:typename:EEPtr
+end	HardwareSerial.cpp	/^void HardwareSerial::end()$/;"	f	class:HardwareSerial	typeref:typename:void
+end	WString.h	/^  char* end() { return buffer + length(); }$/;"	f	class:String	typeref:typename:char *
+end	WString.h	/^  const char* end() const { return c_str() + length(); }$/;"	f	class:String	typeref:typename:const char *
+endpointType	PluggableUSB.h	/^  const uint8_t *endpointType;$/;"	m	class:PluggableUSBModule	typeref:typename:const uint8_t *
+endsWith	WString.cpp	/^unsigned char String::endsWith( const String &s2 ) const$/;"	f	class:String	typeref:typename:unsigned char
+equals	WString.cpp	/^unsigned char String::equals(const String &s2) const$/;"	f	class:String	typeref:typename:unsigned char
+equals	WString.cpp	/^unsigned char String::equals(const char *cstr) const$/;"	f	class:String	typeref:typename:unsigned char
+equalsIgnoreCase	WString.cpp	/^unsigned char String::equalsIgnoreCase( const String &s2 ) const$/;"	f	class:String	typeref:typename:unsigned char
+extract	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function extract$/;"	f
+extract	travis-ci/arduino-ci-script/extract.sh	/^function extract$/;"	f
+find	Stream.cpp	/^bool  Stream::find(char *target)$/;"	f	class:Stream	typeref:typename:bool
+find	Stream.cpp	/^bool Stream::find(char *target, size_t length)$/;"	f	class:Stream	typeref:typename:bool
+find	Stream.h	/^  bool find(char target) { return find (&target, 1); }$/;"	f	class:Stream	typeref:typename:bool
+find	Stream.h	/^  bool find(uint8_t *target) { return find ((char *)target); }$/;"	f	class:Stream	typeref:typename:bool
+find	Stream.h	/^  bool find(uint8_t *target, size_t length) { return find ((char *)target, length); }$/;"	f	class:Stream	typeref:typename:bool
+findMulti	Stream.cpp	/^int Stream::findMulti( struct Stream::MultiTarget *targets, int tCount) {$/;"	f	class:Stream	typeref:typename:int
+findUntil	Stream.cpp	/^bool  Stream::findUntil(char *target, char *terminator)$/;"	f	class:Stream	typeref:typename:bool
+findUntil	Stream.cpp	/^bool Stream::findUntil(char *target, size_t targetLen, char *terminator, size_t termLen)$/;"	f	class:Stream	typeref:typename:bool
+findUntil	Stream.h	/^  bool findUntil(uint8_t *target, char *terminator) { return findUntil((char *)target, terminato/;"	f	class:Stream	typeref:typename:bool
+findUntil	Stream.h	/^  bool findUntil(uint8_t *target, size_t targetLen, char *terminate, size_t termLen) {return fin/;"	f	class:Stream	typeref:typename:bool
+firstInterface	USBCore.h	/^    u8 firstInterface;$/;"	m	struct:__anonb5ac37ee0508	typeref:typename:u8
+flush	CDC.cpp	/^void Serial_::flush(void)$/;"	f	class:Serial_	typeref:typename:void
+flush	HardwareSerial.cpp	/^void HardwareSerial::flush()$/;"	f	class:HardwareSerial	typeref:typename:void
+flush	Print.h	/^    virtual void flush() { \/* Empty implementation for backward compatibility *\/ }$/;"	f	class:Print	typeref:typename:void
+fromString	IPAddress.cpp	/^bool IPAddress::fromString(const char *address)$/;"	f	class:IPAddress	typeref:typename:bool
+fromString	IPAddress.h	/^    bool fromString(const String &address) { return fromString(address.c_str()); }$/;"	f	class:IPAddress	typeref:typename:bool
+functionClass	USBCore.h	/^    u8 functionClass;$/;"	m	struct:__anonb5ac37ee0508	typeref:typename:u8
+functionProtocol	USBCore.h	/^    u8 functionProtocol;$/;"	m	struct:__anonb5ac37ee0508	typeref:typename:u8
+functionalDescriptor	USBCore.h	/^    CDCCSInterfaceDescriptor    functionalDescriptor;   \/\/ CDC_UNION$/;"	m	struct:__anonb5ac37ee0a08	typeref:typename:CDCCSInterfaceDescriptor
+funtionSubClass	USBCore.h	/^    u8 funtionSubClass;$/;"	m	struct:__anonb5ac37ee0508	typeref:typename:u8
+g_playButtonState	main.cpp	/^uint8_t g_playButtonState;$/;"	v	typeref:typename:uint8_t
+g_playButtonTimer	main.cpp	/^uint32_t g_playButtonTimer;$/;"	v	typeref:typename:uint32_t
+g_playState	main.cpp	/^uint8_t g_playState = 0x00;$/;"	v	typeref:typename:uint8_t
+g_playTimer	main.cpp	/^uint32_t g_playTimer;$/;"	v	typeref:typename:uint32_t
+g_runFlag	main.cpp	/^volatile uint8_t g_runFlag = 0x00;$/;"	v	typeref:typename:volatile uint8_t
+g_upload_flag	main.cpp	/^volatile uint8_t g_upload_flag = 0x00;$/;"	v	typeref:typename:volatile uint8_t
+generate_ide_version_list_array	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function generate_ide_version_list_array()$/;"	f
+get	EEPROM.h	/^    template< typename T > T &get( int idx, T &t ){$/;"	f	struct:EEPROMClass	typeref:typename:T &
+getBatteryVoltage	main.cpp	/^uint16_t getBatteryVoltage(void)$/;"	f	typeref:typename:uint16_t
+getBytes	WString.cpp	/^void String::getBytes(unsigned char *buf, unsigned int bufsize, unsigned int index) const$/;"	f	class:String	typeref:typename:void
+getDescriptor	PluggableUSB.cpp	/^int PluggableUSB_::getDescriptor(USBSetup& setup)$/;"	f	class:PluggableUSB_	typeref:typename:int
+getElapsedTimeSYSTIM	systim.cpp	/^uint32_t getElapsedTimeSYSTIM(uint32_t t_beg)$/;"	f	typeref:typename:uint32_t
+getInterface	PluggableUSB.cpp	/^int PluggableUSB_::getInterface(uint8_t* interfaceCount)$/;"	f	class:PluggableUSB_	typeref:typename:int
+getSYSTIM	systim.cpp	/^uint32_t getSYSTIM(void)$/;"	f	typeref:typename:uint32_t
+getShortName	PluggableUSB.cpp	/^void PluggableUSB_::getShortName(char *iSerialNum)$/;"	f	class:PluggableUSB_	typeref:typename:void
+getShortName	PluggableUSB.h	/^  virtual uint8_t getShortName(char *name) { name[0] = 'A'+pluggedInterface; return 1; }$/;"	f	class:PluggableUSBModule	typeref:typename:uint8_t
+getTimeout	Stream.h	/^  unsigned long getTimeout(void) { return _timeout; }$/;"	f	class:Stream	typeref:typename:unsigned long
+getWriteError	Print.h	/^    int getWriteError() { return write_error; }$/;"	f	class:Print	typeref:typename:int
+header	USBCore.h	/^    CDCCSInterfaceDescriptor    header;$/;"	m	struct:__anonb5ac37ee0a08	typeref:typename:CDCCSInterfaceDescriptor
+highByte	Arduino.h	/^#define highByte(/;"	d
+iInterface	USBCore.h	/^    u8 iInterface;$/;"	m	struct:__anonb5ac37ee0308	typeref:typename:u8
+iInterface	USBCore.h	/^    u8 iInterface;$/;"	m	struct:__anonb5ac37ee0508	typeref:typename:u8
+iManufacturer	USBCore.h	/^    u8  iManufacturer;$/;"	m	struct:__anonb5ac37ee0108	typeref:typename:u8
+iProduct	USBCore.h	/^    u8  iProduct;$/;"	m	struct:__anonb5ac37ee0108	typeref:typename:u8
+iSerialNumber	USBCore.h	/^    u8  iSerialNumber;$/;"	m	struct:__anonb5ac37ee0108	typeref:typename:u8
+iad	USBCore.h	/^    IADDescriptor               iad;    \/\/ Only needed on compound device$/;"	m	struct:__anonb5ac37ee0a08	typeref:typename:IADDescriptor
+iconfig	USBCore.h	/^    u8  iconfig;$/;"	m	struct:__anonb5ac37ee0208	typeref:typename:u8
+idProduct	USBCore.h	/^    u16 idProduct;$/;"	m	struct:__anonb5ac37ee0108	typeref:typename:u16
+idVendor	USBCore.h	/^    u16 idVendor;$/;"	m	struct:__anonb5ac37ee0108	typeref:typename:u16
+in	USBCore.h	/^    EndpointDescriptor          in;$/;"	m	struct:__anonb5ac37ee0a08	typeref:typename:EndpointDescriptor
+in	USBCore.h	/^    EndpointDescriptor          in;$/;"	m	struct:__anonb5ac37ee0b08	typeref:typename:EndpointDescriptor
+index	EEPROM.h	/^    int index; \/\/Index of current EEPROM cell.$/;"	m	struct:EEPtr	typeref:typename:int
+index	EEPROM.h	/^    int index; \/\/Index of current EEPROM cell.$/;"	m	struct:EERef	typeref:typename:int
+index	Stream.h	/^    size_t index;     \/\/ index used by the search routine.$/;"	m	struct:Stream::MultiTarget	typeref:typename:size_t
+indexOf	WString.cpp	/^int String::indexOf( char ch, unsigned int fromIndex ) const$/;"	f	class:String	typeref:typename:int
+indexOf	WString.cpp	/^int String::indexOf(char c) const$/;"	f	class:String	typeref:typename:int
+indexOf	WString.cpp	/^int String::indexOf(const String &s2) const$/;"	f	class:String	typeref:typename:int
+indexOf	WString.cpp	/^int String::indexOf(const String &s2, unsigned int fromIndex) const$/;"	f	class:String	typeref:typename:int
+init	WString.cpp	/^inline void String::init(void)$/;"	f	class:String	typeref:typename:void
+init	wiring.c	/^void init()$/;"	f	typeref:typename:void
+initALGOBOT	main.cpp	/^void initALGOBOT() { }$/;"	f	typeref:typename:void
+initVariant	main.cpp	/^void initVariant() { }$/;"	f	typeref:typename:void
+install_ide	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function install_ide()$/;"	f
+install_ide_version	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function install_ide_version()$/;"	f
+install_library	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function install_library()$/;"	f
+install_package	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function install_package()$/;"	f
+intFunc	WInterrupts.c	/^static volatile voidFuncPtr intFunc[EXTERNAL_NUM_INTERRUPTS] = $/;"	v	typeref:typename:volatile voidFuncPtr[]	file:
+interfaceClass	USBCore.h	/^    u8 interfaceClass;$/;"	m	struct:__anonb5ac37ee0308	typeref:typename:u8
+interfaceCount	USBCore.h	/^    u8 interfaceCount;$/;"	m	struct:__anonb5ac37ee0508	typeref:typename:u8
+interfaceSubClass	USBCore.h	/^    u8 interfaceSubClass;$/;"	m	struct:__anonb5ac37ee0308	typeref:typename:u8
+interrupts	Arduino.h	/^#define interrupts(/;"	d
+interval	USBCore.h	/^    u8 interval;$/;"	m	struct:__anonb5ac37ee0408	typeref:typename:u8
+invalidate	WString.cpp	/^void String::invalidate(void)$/;"	f	class:String	typeref:typename:void
+isAlpha	WCharacter.h	/^inline boolean isAlpha(int c)$/;"	f	typeref:typename:boolean
+isAlphaNumeric	WCharacter.h	/^inline boolean isAlphaNumeric(int c) $/;"	f	typeref:typename:boolean
+isAscii	WCharacter.h	/^inline boolean isAscii(int c)$/;"	f	typeref:typename:boolean
+isControl	WCharacter.h	/^inline boolean isControl(int c)$/;"	f	typeref:typename:boolean
+isDigit	WCharacter.h	/^inline boolean isDigit(int c)$/;"	f	typeref:typename:boolean
+isGraph	WCharacter.h	/^inline boolean isGraph(int c)$/;"	f	typeref:typename:boolean
+isHexadecimalDigit	WCharacter.h	/^inline boolean isHexadecimalDigit(int c)$/;"	f	typeref:typename:boolean
+isLowerCase	WCharacter.h	/^inline boolean isLowerCase(int c)$/;"	f	typeref:typename:boolean
+isPrintable	WCharacter.h	/^inline boolean isPrintable(int c)$/;"	f	typeref:typename:boolean
+isPunct	WCharacter.h	/^inline boolean isPunct(int c)$/;"	f	typeref:typename:boolean
+isSpace	WCharacter.h	/^inline boolean isSpace(int c)$/;"	f	typeref:typename:boolean
+isUpperCase	WCharacter.h	/^inline boolean isUpperCase(int c)$/;"	f	typeref:typename:boolean
+isWhitespace	WCharacter.h	/^inline boolean isWhitespace(int c)$/;"	f	typeref:typename:boolean
+lastEp	PluggableUSB.h	/^  uint8_t lastEp;$/;"	m	class:PluggableUSB_	typeref:typename:uint8_t
+lastIf	PluggableUSB.h	/^  uint8_t lastIf;$/;"	m	class:PluggableUSB_	typeref:typename:uint8_t
+lastIndexOf	WString.cpp	/^int String::lastIndexOf( char theChar ) const$/;"	f	class:String	typeref:typename:int
+lastIndexOf	WString.cpp	/^int String::lastIndexOf(char ch, unsigned int fromIndex) const$/;"	f	class:String	typeref:typename:int
+lastIndexOf	WString.cpp	/^int String::lastIndexOf(const String &s2) const$/;"	f	class:String	typeref:typename:int
+lastIndexOf	WString.cpp	/^int String::lastIndexOf(const String &s2, unsigned int fromIndex) const$/;"	f	class:String	typeref:typename:int
+len	Stream.h	/^    size_t len;       \/\/ length of string you're searching for$/;"	m	struct:Stream::MultiTarget	typeref:typename:size_t
+len	USBCore.h	/^    u8  len;            \/\/ 9$/;"	m	struct:__anonb5ac37ee0208	typeref:typename:u8
+len	USBCore.h	/^    u8  len;$/;"	m	struct:__anonb5ac37ee0808	typeref:typename:u8
+len	USBCore.h	/^    u8  len;$/;"	m	struct:__anonb5ac37ee0908	typeref:typename:u8
+len	USBCore.h	/^    u8 len;             \/\/ 18$/;"	m	struct:__anonb5ac37ee0108	typeref:typename:u8
+len	USBCore.h	/^    u8 len;             \/\/ 8$/;"	m	struct:__anonb5ac37ee0508	typeref:typename:u8
+len	USBCore.h	/^    u8 len;     \/\/ 4$/;"	m	struct:__anonb5ac37ee0708	typeref:typename:u8
+len	USBCore.h	/^    u8 len;     \/\/ 5$/;"	m	struct:__anonb5ac37ee0608	typeref:typename:u8
+len	USBCore.h	/^    u8 len;     \/\/ 7$/;"	m	struct:__anonb5ac37ee0408	typeref:typename:u8
+len	USBCore.h	/^    u8 len;     \/\/ 9$/;"	m	struct:__anonb5ac37ee0308	typeref:typename:u8
+len	WString.h	/^  unsigned int len;       \/\/ the String length (not counting the '\\0')$/;"	m	class:String	typeref:typename:unsigned int
+length	EEPROM.h	/^    uint16_t length()                    { return E2END + 1; }$/;"	f	struct:EEPROMClass	typeref:typename:uint16_t
+length	WString.h	/^  inline unsigned int length(void) const {return len;}$/;"	f	class:String	typeref:typename:unsigned int
+lineState	CDC.cpp	/^  u8  lineState;$/;"	m	struct:__anonccb3a5e00108	typeref:typename:u8	file:
+loop	main.cpp	/^void loop() { }$/;"	f	typeref:typename:void
+lowByte	Arduino.h	/^#define lowByte(/;"	d
+main	main.cpp	/^int main(void)$/;"	f	typeref:typename:int
+makeWord	WMath.cpp	/^unsigned int makeWord(unsigned char h, unsigned char l) { return (h << 8) | l; }$/;"	f	typeref:typename:unsigned int
+makeWord	WMath.cpp	/^unsigned int makeWord(unsigned int w) { return w; }$/;"	f	typeref:typename:unsigned int
+map	WMath.cpp	/^long map(long x, long in_min, long in_max, long out_min, long out_max)$/;"	f	typeref:typename:long
+max	Arduino.h	/^#define max(/;"	d
+maxPower	USBCore.h	/^    u8  maxPower;$/;"	m	struct:__anonb5ac37ee0208	typeref:typename:u8
+micros	wiring.c	/^unsigned long micros() {$/;"	f	typeref:typename:unsigned long
+microsecondsToClockCycles	Arduino.h	/^#define microsecondsToClockCycles(/;"	d
+millis	wiring.c	/^unsigned long millis()$/;"	f	typeref:typename:unsigned long
+min	Arduino.h	/^#define min(/;"	d
+move	WString.cpp	/^void String::move(String &rhs)$/;"	f	class:String	typeref:typename:void
+msc	USBCore.h	/^    InterfaceDescriptor         msc;$/;"	m	struct:__anonb5ac37ee0b08	typeref:typename:InterfaceDescriptor
+next	PluggableUSB.h	/^  PluggableUSBModule *next = NULL;$/;"	m	class:PluggableUSBModule	typeref:typename:PluggableUSBModule *
+noInterrupts	Arduino.h	/^#define noInterrupts(/;"	d
+noPullup	wiring_extras.h	/^static inline void noPullup(uint8_t PIN) { digitalWrite(PIN, LOW); }$/;"	f	typeref:typename:void
+noSleep	wiring_extras.h	/^#define noSleep(/;"	d
+noTone	Tone.cpp	/^void noTone(uint8_t _pin)$/;"	f	typeref:typename:void
+nothing	WInterrupts.c	/^static void nothing(void) $/;"	f	typeref:typename:void	file:
+numEndpoints	PluggableUSB.h	/^  const uint8_t numEndpoints;$/;"	m	class:PluggableUSBModule	typeref:typename:const uint8_t
+numEndpoints	USBCore.h	/^    u8 numEndpoints;$/;"	m	struct:__anonb5ac37ee0308	typeref:typename:u8
+numInterfaces	PluggableUSB.h	/^  const uint8_t numInterfaces;$/;"	m	class:PluggableUSBModule	typeref:typename:const uint8_t
+numInterfaces	USBCore.h	/^    u8  numInterfaces;$/;"	m	struct:__anonb5ac37ee0208	typeref:typename:u8
+number	USBCore.h	/^    u8 number;$/;"	m	struct:__anonb5ac37ee0308	typeref:typename:u8
+numbits	CDC.cpp	/^uint8_t Serial_::numbits() {$/;"	f	class:Serial_	typeref:typename:uint8_t
+operator !=	EEPROM.h	/^    bool operator!=( const EEPtr &ptr ) { return index != ptr.index; }$/;"	f	struct:EEPtr	typeref:typename:bool
+operator !=	WString.h	/^  unsigned char operator != (const String &rhs) const {return !equals(rhs);}$/;"	f	class:String	typeref:typename:unsigned char
+operator !=	WString.h	/^  unsigned char operator != (const char *cstr) const {return !equals(cstr);}$/;"	f	class:String	typeref:typename:unsigned char
+operator %=	EEPROM.h	/^    EERef &operator %=( uint8_t in )     { return *this = **this % in; }$/;"	f	struct:EERef	typeref:typename:EERef &
+operator &=	EEPROM.h	/^    EERef &operator &=( uint8_t in )     { return *this = **this & in; }$/;"	f	struct:EERef	typeref:typename:EERef &
+operator *	EEPROM.h	/^    EERef operator*()                   { return index; }$/;"	f	struct:EEPtr	typeref:typename:EERef
+operator *	EEPROM.h	/^    uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }$/;"	f	struct:EERef	typeref:typename:uint8_t
+operator *=	EEPROM.h	/^    EERef &operator *=( uint8_t in )     { return *this = **this * in; }$/;"	f	struct:EERef	typeref:typename:EERef &
+operator +	WString.cpp	/^StringSumHelper & operator + (const StringSumHelper &lhs, char c)$/;"	f	typeref:typename:StringSumHelper &
+operator +	WString.cpp	/^StringSumHelper & operator + (const StringSumHelper &lhs, const String &rhs)$/;"	f	typeref:typename:StringSumHelper &
+operator +	WString.cpp	/^StringSumHelper & operator + (const StringSumHelper &lhs, const __FlashStringHelper *rhs)$/;"	f	typeref:typename:StringSumHelper &
+operator +	WString.cpp	/^StringSumHelper & operator + (const StringSumHelper &lhs, const char *cstr)$/;"	f	typeref:typename:StringSumHelper &
+operator +	WString.cpp	/^StringSumHelper & operator + (const StringSumHelper &lhs, double num)$/;"	f	typeref:typename:StringSumHelper &
+operator +	WString.cpp	/^StringSumHelper & operator + (const StringSumHelper &lhs, float num)$/;"	f	typeref:typename:StringSumHelper &
+operator +	WString.cpp	/^StringSumHelper & operator + (const StringSumHelper &lhs, int num)$/;"	f	typeref:typename:StringSumHelper &
+operator +	WString.cpp	/^StringSumHelper & operator + (const StringSumHelper &lhs, long num)$/;"	f	typeref:typename:StringSumHelper &
+operator +	WString.cpp	/^StringSumHelper & operator + (const StringSumHelper &lhs, unsigned char num)$/;"	f	typeref:typename:StringSumHelper &
+operator +	WString.cpp	/^StringSumHelper & operator + (const StringSumHelper &lhs, unsigned int num)$/;"	f	typeref:typename:StringSumHelper &
+operator +	WString.cpp	/^StringSumHelper & operator + (const StringSumHelper &lhs, unsigned long num)$/;"	f	typeref:typename:StringSumHelper &
+operator ++	EEPROM.h	/^    EEPtr operator++ (int)              { return index++; }$/;"	f	struct:EEPtr	typeref:typename:EEPtr
+operator ++	EEPROM.h	/^    EEPtr& operator++()                 { return ++index, *this; }$/;"	f	struct:EEPtr	typeref:typename:EEPtr &
+operator ++	EEPROM.h	/^    EERef& operator++()                  { return *this += 1; }$/;"	f	struct:EERef	typeref:typename:EERef &
+operator ++	EEPROM.h	/^    uint8_t operator++ (int){ $/;"	f	struct:EERef	typeref:typename:uint8_t
+operator +=	EEPROM.h	/^    EERef &operator +=( uint8_t in )     { return *this = **this + in; }$/;"	f	struct:EERef	typeref:typename:EERef &
+operator +=	WString.h	/^  String & operator += (char c)     {concat(c); return (*this);}$/;"	f	class:String	typeref:typename:String &
+operator +=	WString.h	/^  String & operator += (const String &rhs)  {concat(rhs); return (*this);}$/;"	f	class:String	typeref:typename:String &
+operator +=	WString.h	/^  String & operator += (const __FlashStringHelper *str){concat(str); return (*this);}$/;"	f	class:String	typeref:typename:String &
+operator +=	WString.h	/^  String & operator += (const char *cstr)   {concat(cstr); return (*this);}$/;"	f	class:String	typeref:typename:String &
+operator +=	WString.h	/^  String & operator += (double num)   {concat(num); return (*this);}$/;"	f	class:String	typeref:typename:String &
+operator +=	WString.h	/^  String & operator += (float num)    {concat(num); return (*this);}$/;"	f	class:String	typeref:typename:String &
+operator +=	WString.h	/^  String & operator += (int num)      {concat(num); return (*this);}$/;"	f	class:String	typeref:typename:String &
+operator +=	WString.h	/^  String & operator += (long num)     {concat(num); return (*this);}$/;"	f	class:String	typeref:typename:String &
+operator +=	WString.h	/^  String & operator += (unsigned char num)    {concat(num); return (*this);}$/;"	f	class:String	typeref:typename:String &
+operator +=	WString.h	/^  String & operator += (unsigned int num)   {concat(num); return (*this);}$/;"	f	class:String	typeref:typename:String &
+operator +=	WString.h	/^  String & operator += (unsigned long num)  {concat(num); return (*this);}$/;"	f	class:String	typeref:typename:String &
+operator --	EEPROM.h	/^    EEPtr operator-- (int)              { return index--; }$/;"	f	struct:EEPtr	typeref:typename:EEPtr
+operator --	EEPROM.h	/^    EEPtr& operator--()                 { return --index, *this; }$/;"	f	struct:EEPtr	typeref:typename:EEPtr &
+operator --	EEPROM.h	/^    EERef& operator--()                  { return *this -= 1; }$/;"	f	struct:EERef	typeref:typename:EERef &
+operator --	EEPROM.h	/^    uint8_t operator-- (int){ $/;"	f	struct:EERef	typeref:typename:uint8_t
+operator -=	EEPROM.h	/^    EERef &operator -=( uint8_t in )     { return *this = **this - in; }$/;"	f	struct:EERef	typeref:typename:EERef &
+operator /=	EEPROM.h	/^    EERef &operator \/=( uint8_t in )     { return *this = **this \/ in; }$/;"	f	struct:EERef	typeref:typename:EERef &
+operator <	WString.cpp	/^unsigned char String::operator<(const String &rhs) const$/;"	f	class:String	typeref:typename:unsigned char
+operator <<=	EEPROM.h	/^    EERef &operator <<=( uint8_t in )    { return *this = **this << in; }$/;"	f	struct:EERef	typeref:typename:EERef &
+operator <=	WString.cpp	/^unsigned char String::operator<=(const String &rhs) const$/;"	f	class:String	typeref:typename:unsigned char
+operator =	EEPROM.h	/^    EEPtr &operator=( int in )          { return index = in, *this; }$/;"	f	struct:EEPtr	typeref:typename:EEPtr &
+operator =	EEPROM.h	/^    EERef &operator=( const EERef &ref ) { return *this = *ref; }$/;"	f	struct:EERef	typeref:typename:EERef &
+operator =	EEPROM.h	/^    EERef &operator=( uint8_t in )       { return eeprom_write_byte( (uint8_t*) index, in ), *th/;"	f	struct:EERef	typeref:typename:EERef &
+operator =	IPAddress.cpp	/^IPAddress& IPAddress::operator=(const uint8_t *address)$/;"	f	class:IPAddress	typeref:typename:IPAddress &
+operator =	IPAddress.cpp	/^IPAddress& IPAddress::operator=(uint32_t address)$/;"	f	class:IPAddress	typeref:typename:IPAddress &
+operator =	WString.cpp	/^String & String::operator = (String &&rval)$/;"	f	class:String	typeref:typename:String &
+operator =	WString.cpp	/^String & String::operator = (StringSumHelper &&rval)$/;"	f	class:String	typeref:typename:String &
+operator =	WString.cpp	/^String & String::operator = (const String &rhs)$/;"	f	class:String	typeref:typename:String &
+operator =	WString.cpp	/^String & String::operator = (const __FlashStringHelper *pstr)$/;"	f	class:String	typeref:typename:String &
+operator =	WString.cpp	/^String & String::operator = (const char *cstr)$/;"	f	class:String	typeref:typename:String &
+operator ==	IPAddress.cpp	/^bool IPAddress::operator==(const uint8_t* addr) const$/;"	f	class:IPAddress	typeref:typename:bool
+operator ==	IPAddress.h	/^    bool operator==(const IPAddress& addr) const { return _address.dword == addr._address.dword;/;"	f	class:IPAddress	typeref:typename:bool
+operator ==	WString.h	/^  unsigned char operator == (const String &rhs) const {return equals(rhs);}$/;"	f	class:String	typeref:typename:unsigned char
+operator ==	WString.h	/^  unsigned char operator == (const char *cstr) const {return equals(cstr);}$/;"	f	class:String	typeref:typename:unsigned char
+operator >	WString.cpp	/^unsigned char String::operator>(const String &rhs) const$/;"	f	class:String	typeref:typename:unsigned char
+operator >=	WString.cpp	/^unsigned char String::operator>=(const String &rhs) const$/;"	f	class:String	typeref:typename:unsigned char
+operator >>=	EEPROM.h	/^    EERef &operator >>=( uint8_t in )    { return *this = **this >> in; }$/;"	f	struct:EERef	typeref:typename:EERef &
+operator StringIfHelperType	WString.h	/^  operator StringIfHelperType() const { return buffer ? &String::StringIfHelper : 0; }$/;"	f	class:String
+operator []	EEPROM.h	/^    EERef operator[]( const int idx )    { return idx; }$/;"	f	struct:EEPROMClass	typeref:typename:EERef
+operator []	IPAddress.h	/^    uint8_t operator[](int index) const { return _address.bytes[index]; };$/;"	f	class:IPAddress	typeref:typename:uint8_t
+operator []	IPAddress.h	/^    uint8_t& operator[](int index) { return _address.bytes[index]; };$/;"	f	class:IPAddress	typeref:typename:uint8_t &
+operator []	WString.cpp	/^char & String::operator[](unsigned int index)$/;"	f	class:String	typeref:typename:char &
+operator []	WString.cpp	/^char String::operator[]( unsigned int index ) const$/;"	f	class:String	typeref:typename:char
+operator ^=	EEPROM.h	/^    EERef &operator ^=( uint8_t in )     { return *this = **this ^ in; }$/;"	f	struct:EERef	typeref:typename:EERef &
+operator bool	CDC.cpp	/^Serial_::operator bool() {$/;"	f	class:Serial_
+operator bool	HardwareSerial.h	/^    operator bool() { return true; }$/;"	f	class:HardwareSerial
+operator delete	new.cpp	/^void operator delete(void * ptr) {$/;"	f	typeref:typename:void
+operator delete	new.cpp	/^void operator delete(void * ptr, size_t)$/;"	f	typeref:typename:void
+operator delete[]	new.cpp	/^void operator delete[](void * ptr) {$/;"	f	typeref:typename:void
+operator delete[]	new.cpp	/^void operator delete[](void * ptr, size_t)$/;"	f	typeref:typename:void
+operator int	EEPROM.h	/^    operator int() const                { return index; }$/;"	f	struct:EEPtr
+operator new	new.cpp	/^void *operator new(size_t size) {$/;"	f	typeref:typename:void *
+operator new[]	new.cpp	/^void *operator new[](size_t size) {$/;"	f	typeref:typename:void *
+operator uint32_t	IPAddress.h	/^    operator uint32_t() const { return _address.dword; };$/;"	f	class:IPAddress
+operator uint8_t	EEPROM.h	/^    operator uint8_t() const             { return **this; }$/;"	f	struct:EERef
+operator |=	EEPROM.h	/^    EERef &operator |=( uint8_t in )     { return *this = **this | in; }$/;"	f	struct:EERef	typeref:typename:EERef &
+out	USBCore.h	/^    EndpointDescriptor          out;$/;"	m	struct:__anonb5ac37ee0a08	typeref:typename:EndpointDescriptor
+out	USBCore.h	/^    EndpointDescriptor          out;$/;"	m	struct:__anonb5ac37ee0b08	typeref:typename:EndpointDescriptor
+packetSize	USBCore.h	/^    u16 packetSize;$/;"	m	struct:__anonb5ac37ee0408	typeref:typename:u16
+packetSize0	USBCore.h	/^    u8  packetSize0;    \/\/ Packet 0$/;"	m	struct:__anonb5ac37ee0108	typeref:typename:u8
+paritytype	CDC.cpp	/^uint8_t Serial_::paritytype() {$/;"	f	class:Serial_	typeref:typename:uint8_t
+parseFloat	Stream.cpp	/^float Stream::parseFloat(LookaheadMode lookahead, char ignore)$/;"	f	class:Stream	typeref:typename:float
+parseFloat	Stream.h	/^  float parseFloat(char ignore) { return parseFloat(SKIP_ALL, ignore); }$/;"	f	class:Stream	typeref:typename:float
+parseInt	Stream.cpp	/^long Stream::parseInt(LookaheadMode lookahead, char ignore)$/;"	f	class:Stream	typeref:typename:long
+parseInt	Stream.h	/^  long parseInt(char ignore) { return parseInt(SKIP_ALL, ignore); }$/;"	f	class:Stream	typeref:typename:long
+peek	CDC.cpp	/^int Serial_::peek(void)$/;"	f	class:Serial_	typeref:typename:int
+peek	HardwareSerial.cpp	/^int HardwareSerial::peek(void)$/;"	f	class:HardwareSerial	typeref:typename:int
+peekNextDigit	Stream.cpp	/^int Stream::peekNextDigit(LookaheadMode lookahead, bool detectDecimal)$/;"	f	class:Stream	typeref:typename:int
+peek_buffer	USBAPI.h	/^  int peek_buffer;$/;"	m	class:Serial_	typeref:typename:int
+pinMode	wiring_digital.c	/^void pinMode(uint8_t pin, uint8_t mode)$/;"	f	typeref:typename:void
+plug	PluggableUSB.cpp	/^bool PluggableUSB_::plug(PluggableUSBModule *node)$/;"	f	class:PluggableUSB_	typeref:typename:bool
+pluggedEndpoint	PluggableUSB.h	/^  uint8_t pluggedEndpoint;$/;"	m	class:PluggableUSBModule	typeref:typename:uint8_t
+pluggedInterface	PluggableUSB.h	/^  uint8_t pluggedInterface;$/;"	m	class:PluggableUSBModule	typeref:typename:uint8_t
+poll	USBCore.cpp	/^void USBDevice_::poll()$/;"	f	class:USBDevice_	typeref:typename:void
+portInputRegister	Arduino.h	/^#define portInputRegister(/;"	d
+portMode	wiring_extras.h	/^static inline void portMode(uint8_t PORT, uint8_t MODE)$/;"	f	typeref:typename:void
+portModeRegister	Arduino.h	/^#define portModeRegister(/;"	d
+portOutputRegister	Arduino.h	/^#define portOutputRegister(/;"	d
+portRead	wiring_extras.h	/^static inline uint8_t portRead(uint8_t PORT)$/;"	f	typeref:typename:uint8_t
+portWrite	wiring_extras.h	/^static inline void portWrite(uint8_t PORT, uint8_t VALUE)$/;"	f	typeref:typename:void
+print	Print.cpp	/^size_t Print::print(char c)$/;"	f	class:Print	typeref:typename:size_t
+print	Print.cpp	/^size_t Print::print(const Printable& x)$/;"	f	class:Print	typeref:typename:size_t
+print	Print.cpp	/^size_t Print::print(const String &s)$/;"	f	class:Print	typeref:typename:size_t
+print	Print.cpp	/^size_t Print::print(const __FlashStringHelper *ifsh)$/;"	f	class:Print	typeref:typename:size_t
+print	Print.cpp	/^size_t Print::print(const char str[])$/;"	f	class:Print	typeref:typename:size_t
+print	Print.cpp	/^size_t Print::print(double n, int digits)$/;"	f	class:Print	typeref:typename:size_t
+print	Print.cpp	/^size_t Print::print(int n, int base)$/;"	f	class:Print	typeref:typename:size_t
+print	Print.cpp	/^size_t Print::print(long n, int base)$/;"	f	class:Print	typeref:typename:size_t
+print	Print.cpp	/^size_t Print::print(unsigned char b, int base)$/;"	f	class:Print	typeref:typename:size_t
+print	Print.cpp	/^size_t Print::print(unsigned int n, int base)$/;"	f	class:Print	typeref:typename:size_t
+print	Print.cpp	/^size_t Print::print(unsigned long n, int base)$/;"	f	class:Print	typeref:typename:size_t
+printFloat	Print.cpp	/^size_t Print::printFloat(double number, uint8_t digits) $/;"	f	class:Print	typeref:typename:size_t
+printNumber	Print.cpp	/^size_t Print::printNumber(unsigned long n, uint8_t base)$/;"	f	class:Print	typeref:typename:size_t
+printTo	IPAddress.cpp	/^size_t IPAddress::printTo(Print& p) const$/;"	f	class:IPAddress	typeref:typename:size_t
+printf	Print.cpp	/^int16_t Print::printf(const __FlashStringHelper *format, ...)$/;"	f	class:Print	typeref:typename:int16_t
+printf	Print.cpp	/^int16_t Print::printf(const char *format, ...)$/;"	f	class:Print	typeref:typename:int16_t
+printf_putchar	Print.cpp	/^static int16_t printf_putchar(char c, FILE *fp)$/;"	f	typeref:typename:int16_t	file:
+println	Print.cpp	/^size_t Print::println(char c)$/;"	f	class:Print	typeref:typename:size_t
+println	Print.cpp	/^size_t Print::println(const Printable& x)$/;"	f	class:Print	typeref:typename:size_t
+println	Print.cpp	/^size_t Print::println(const String &s)$/;"	f	class:Print	typeref:typename:size_t
+println	Print.cpp	/^size_t Print::println(const __FlashStringHelper *ifsh)$/;"	f	class:Print	typeref:typename:size_t
+println	Print.cpp	/^size_t Print::println(const char c[])$/;"	f	class:Print	typeref:typename:size_t
+println	Print.cpp	/^size_t Print::println(double num, int digits)$/;"	f	class:Print	typeref:typename:size_t
+println	Print.cpp	/^size_t Print::println(int num, int base)$/;"	f	class:Print	typeref:typename:size_t
+println	Print.cpp	/^size_t Print::println(long num, int base)$/;"	f	class:Print	typeref:typename:size_t
+println	Print.cpp	/^size_t Print::println(unsigned char b, int base)$/;"	f	class:Print	typeref:typename:size_t
+println	Print.cpp	/^size_t Print::println(unsigned int num, int base)$/;"	f	class:Print	typeref:typename:size_t
+println	Print.cpp	/^size_t Print::println(unsigned long num, int base)$/;"	f	class:Print	typeref:typename:size_t
+println	Print.cpp	/^size_t Print::println(void)$/;"	f	class:Print	typeref:typename:size_t
+protocol	USBCore.h	/^    u8 protocol;$/;"	m	struct:__anonb5ac37ee0308	typeref:typename:u8
+publish_report_to_gist	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function publish_report_to_gist()$/;"	f
+publish_report_to_repository	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function publish_report_to_repository()$/;"	f
+pullup	wiring_extras.h	/^static inline void pullup(uint8_t PIN) { digitalWrite(PIN, HIGH); }$/;"	f	typeref:typename:void
+pulseIn	wiring_pulse.c	/^unsigned long pulseIn(uint8_t pin, uint8_t state, unsigned long timeout)$/;"	f	typeref:typename:unsigned long
+pulseInLong	wiring_pulse.c	/^unsigned long pulseInLong(uint8_t pin, uint8_t state, unsigned long timeout)$/;"	f	typeref:typename:unsigned long
+put	EEPROM.h	/^    template< typename T > const T &put( int idx, const T &t ){$/;"	f	struct:EEPROMClass	typeref:typename:const T &
+radians	Arduino.h	/^#define radians(/;"	d
+random	WMath.cpp	/^long random(long howbig)$/;"	f	typeref:typename:long
+random	WMath.cpp	/^long random(long howsmall, long howbig)$/;"	f	typeref:typename:long
+randomSeed	WMath.cpp	/^void randomSeed(unsigned long seed)$/;"	f	typeref:typename:void
+rawIPAddress	Client.h	/^  uint8_t* rawIPAddress(IPAddress& addr) { return addr.raw_address(); };$/;"	f	class:Client	typeref:typename:uint8_t *
+rawIPAddress	Udp.h	/^  uint8_t* rawIPAddress(IPAddress& addr) { return addr.raw_address(); };$/;"	f	class:UDP	typeref:typename:uint8_t *
+raw_address	IPAddress.h	/^    uint8_t* raw_address() { return _address.bytes; };$/;"	f	class:IPAddress	typeref:typename:uint8_t *
+read	CDC.cpp	/^int Serial_::read(void)$/;"	f	class:Serial_	typeref:typename:int
+read	EEPROM.h	/^    uint8_t read( int idx )              { return EERef( idx ); }$/;"	f	struct:EEPROMClass	typeref:typename:uint8_t
+read	HardwareSerial.cpp	/^int HardwareSerial::read(void)$/;"	f	class:HardwareSerial	typeref:typename:int
+readBreak	CDC.cpp	/^int32_t Serial_::readBreak() {$/;"	f	class:Serial_	typeref:typename:int32_t
+readBytes	Stream.cpp	/^size_t Stream::readBytes(char *buffer, size_t length)$/;"	f	class:Stream	typeref:typename:size_t
+readBytes	Stream.h	/^  size_t readBytes( uint8_t *buffer, size_t length) { return readBytes((char *)buffer, length); /;"	f	class:Stream	typeref:typename:size_t
+readBytesUntil	Stream.cpp	/^size_t Stream::readBytesUntil(char terminator, char *buffer, size_t length)$/;"	f	class:Stream	typeref:typename:size_t
+readBytesUntil	Stream.h	/^  size_t readBytesUntil( char terminator, uint8_t *buffer, size_t length) { return readBytesUnti/;"	f	class:Stream	typeref:typename:size_t
+readString	Stream.cpp	/^String Stream::readString()$/;"	f	class:Stream	typeref:typename:String
+readStringUntil	Stream.cpp	/^String Stream::readStringUntil(char terminator)$/;"	f	class:Stream	typeref:typename:String
+remove	WString.cpp	/^void String::remove(unsigned int index){$/;"	f	class:String	typeref:typename:void
+remove	WString.cpp	/^void String::remove(unsigned int index, unsigned int count){$/;"	f	class:String	typeref:typename:void
+replace	WString.cpp	/^void String::replace(char find, char replace)$/;"	f	class:String	typeref:typename:void
+replace	WString.cpp	/^void String::replace(const String& find, const String& replace)$/;"	f	class:String	typeref:typename:void
+reserve	WString.cpp	/^unsigned char String::reserve(unsigned int size)$/;"	f	class:String	typeref:typename:unsigned char
+return_handler	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function return_handler()$/;"	f
+rootNode	PluggableUSB.h	/^  PluggableUSBModule* rootNode;$/;"	m	class:PluggableUSB_	typeref:typename:PluggableUSBModule *
+round	Arduino.h	/^#define round(/;"	d
+rts	CDC.cpp	/^bool Serial_::rts() {$/;"	f	class:Serial_	typeref:typename:bool
+rx_buffer_index_t	HardwareSerial.h	/^typedef uint16_t rx_buffer_index_t;$/;"	t	typeref:typename:uint16_t
+rx_buffer_index_t	HardwareSerial.h	/^typedef uint8_t rx_buffer_index_t;$/;"	t	typeref:typename:uint8_t
+sbi	wiring_private.h	/^#define sbi(/;"	d
+serialEventRun	HardwareSerial.cpp	/^void serialEventRun(void)$/;"	f	typeref:typename:void
+server_h	Server.h	/^#define server_h$/;"	d
+setCharAt	WString.cpp	/^void String::setCharAt(unsigned int loc, char c) $/;"	f	class:String	typeref:typename:void
+setTimeout	Stream.cpp	/^void Stream::setTimeout(unsigned long timeout)  \/\/ sets the maximum number of milliseconds to /;"	f	class:Stream	typeref:typename:void
+setWriteError	Print.h	/^    void setWriteError(int err = 1) { write_error = err; }$/;"	f	class:Print	typeref:typename:void
+set_application_folder	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function set_application_folder()$/;"	f
+set_board_testing	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function set_board_testing()$/;"	f
+set_ide_preference	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function set_ide_preference()$/;"	f
+set_library_testing	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function set_library_testing()$/;"	f
+set_more_verbose_script_output	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function set_more_verbose_script_output()$/;"	f
+set_parameters	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function set_parameters()$/;"	f
+set_script_verbosity	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function set_script_verbosity()$/;"	f
+set_sketchbook_folder	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function set_sketchbook_folder()$/;"	f
+set_verbose_output_during_compilation	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function set_verbose_output_during_compilation()$/;"	f
+set_verbose_script_output	travis-ci/arduino-ci-script/arduino-ci-script.sh	/^function set_verbose_script_output()$/;"	f
+setup	PluggableUSB.cpp	/^bool PluggableUSB_::setup(USBSetup& setup)$/;"	f	class:PluggableUSB_	typeref:typename:bool
+setup	main.cpp	/^void setup() { }$/;"	f	typeref:typename:void
+shiftIn	wiring_shift.c	/^uint8_t shiftIn(uint8_t dataPin, uint8_t clockPin, uint8_t bitOrder) {$/;"	f	typeref:typename:uint8_t
+shiftOut	wiring_shift.c	/^void shiftOut(uint8_t dataPin, uint8_t clockPin, uint8_t bitOrder, uint8_t val)$/;"	f	typeref:typename:void
+sleep	wiring_extras.h	/^static inline void sleep()$/;"	f	typeref:typename:void
+sleepMode	wiring_extras.h	/^static inline void sleepMode(uint8_t P)$/;"	f	typeref:typename:void
+sq	Arduino.h	/^#define sq(/;"	d
+startSleep	wiring_extras.h	/^static inline void startSleep()$/;"	f	typeref:typename:void
+startsWith	WString.cpp	/^unsigned char String::startsWith( const String &s2 ) const$/;"	f	class:String	typeref:typename:unsigned char
+startsWith	WString.cpp	/^unsigned char String::startsWith( const String &s2, unsigned int offset ) const$/;"	f	class:String	typeref:typename:unsigned char
+state	Arduino.h	/^        uint8_t state;$/;"	m	class:ALGOBOT_INFO	typeref:typename:uint8_t
+stopALGOBOT	main.cpp	/^void stopALGOBOT() { }$/;"	f	typeref:typename:void
+stopbits	CDC.cpp	/^uint8_t Serial_::stopbits() {$/;"	f	class:Serial_	typeref:typename:uint8_t
+str	Stream.h	/^    const char *str;  \/\/ string you're searching for$/;"	m	struct:Stream::MultiTarget	typeref:typename:const char *
+substring	WString.cpp	/^String String::substring(unsigned int left, unsigned int right) const$/;"	f	class:String	typeref:typename:String
+substring	WString.h	/^  String substring( unsigned int beginIndex ) const { return substring(beginIndex, len); };$/;"	f	class:String	typeref:typename:String
+subtype	USBCore.h	/^    u8  subtype;    \/\/ 1$/;"	m	struct:__anonb5ac37ee0808	typeref:typename:u8
+subtype	USBCore.h	/^    u8  subtype;    \/\/ 1$/;"	m	struct:__anonb5ac37ee0908	typeref:typename:u8
+subtype	USBCore.h	/^    u8 subtype;$/;"	m	struct:__anonb5ac37ee0608	typeref:typename:u8
+subtype	USBCore.h	/^    u8 subtype;$/;"	m	struct:__anonb5ac37ee0708	typeref:typename:u8
+timedPeek	Stream.cpp	/^int Stream::timedPeek()$/;"	f	class:Stream	typeref:typename:int
+timedRead	Stream.cpp	/^int Stream::timedRead()$/;"	f	class:Stream	typeref:typename:int
+timer0_fract	wiring.c	/^volatile unsigned char timer0_fract = 0;$/;"	v	typeref:typename:volatile unsigned char
+timer0_millis	wiring.c	/^volatile unsigned long timer0_millis = 0;$/;"	v	typeref:typename:volatile unsigned long
+timer0_overflow_count	wiring.c	/^volatile unsigned long timer0_overflow_count = 0;$/;"	v	typeref:typename:volatile unsigned long
+timer0_pin_mask	Tone.cpp	/^  volatile uint8_t timer0_pin_mask;$/;"	v	typeref:typename:volatile uint8_t
+timer0_pin_port	Tone.cpp	/^  volatile uint8_t *timer0_pin_port;$/;"	v	typeref:typename:volatile uint8_t *
+timer0_toggle_count	Tone.cpp	/^  volatile long timer0_toggle_count;$/;"	v	typeref:typename:volatile long
+timer1_pin_mask	Tone.cpp	/^volatile uint8_t timer1_pin_mask;$/;"	v	typeref:typename:volatile uint8_t
+timer1_pin_port	Tone.cpp	/^volatile uint8_t *timer1_pin_port;$/;"	v	typeref:typename:volatile uint8_t *
+timer1_toggle_count	Tone.cpp	/^volatile long timer1_toggle_count;$/;"	v	typeref:typename:volatile long
+timer2_pin_mask	Tone.cpp	/^volatile uint8_t timer2_pin_mask;$/;"	v	typeref:typename:volatile uint8_t
+timer2_pin_port	Tone.cpp	/^volatile uint8_t *timer2_pin_port;$/;"	v	typeref:typename:volatile uint8_t *
+timer2_toggle_count	Tone.cpp	/^volatile long timer2_toggle_count;$/;"	v	typeref:typename:volatile long
+timer3_pin_mask	Tone.cpp	/^  volatile uint8_t timer3_pin_mask;$/;"	v	typeref:typename:volatile uint8_t
+timer3_pin_port	Tone.cpp	/^  volatile uint8_t *timer3_pin_port;$/;"	v	typeref:typename:volatile uint8_t *
+timer3_toggle_count	Tone.cpp	/^  volatile long timer3_toggle_count;$/;"	v	typeref:typename:volatile long
+timer4_pin_mask	Tone.cpp	/^  volatile uint8_t timer4_pin_mask;$/;"	v	typeref:typename:volatile uint8_t
+timer4_pin_port	Tone.cpp	/^  volatile uint8_t *timer4_pin_port;$/;"	v	typeref:typename:volatile uint8_t *
+timer4_toggle_count	Tone.cpp	/^  volatile long timer4_toggle_count;$/;"	v	typeref:typename:volatile long
+timer5_pin_mask	Tone.cpp	/^  volatile uint8_t timer5_pin_mask;$/;"	v	typeref:typename:volatile uint8_t
+timer5_pin_port	Tone.cpp	/^  volatile uint8_t *timer5_pin_port;$/;"	v	typeref:typename:volatile uint8_t *
+timer5_toggle_count	Tone.cpp	/^  volatile long timer5_toggle_count;$/;"	v	typeref:typename:volatile long
+toAscii	WCharacter.h	/^inline int toAscii(int c)$/;"	f	typeref:typename:int
+toCharArray	WString.h	/^  void toCharArray(char *buf, unsigned int bufsize, unsigned int index=0) const$/;"	f	class:String	typeref:typename:void
+toDouble	WString.cpp	/^double String::toDouble(void) const$/;"	f	class:String	typeref:typename:double
+toFloat	WString.cpp	/^float String::toFloat(void) const$/;"	f	class:String	typeref:typename:float
+toInt	WString.cpp	/^long String::toInt(void) const$/;"	f	class:String	typeref:typename:long
+toLowerCase	WCharacter.h	/^inline int toLowerCase(int c)$/;"	f	typeref:typename:int
+toLowerCase	WString.cpp	/^void String::toLowerCase(void)$/;"	f	class:String	typeref:typename:void
+toUpperCase	WCharacter.h	/^inline int toUpperCase(int c)$/;"	f	typeref:typename:int
+toUpperCase	WString.cpp	/^void String::toUpperCase(void)$/;"	f	class:String	typeref:typename:void
+tone	Tone.cpp	/^void tone(uint8_t _pin, unsigned int frequency, unsigned long duration)$/;"	f	typeref:typename:void
+toneBegin	Tone.cpp	/^static int8_t toneBegin(uint8_t _pin)$/;"	f	typeref:typename:int8_t	file:
+tone_pin_to_timer_PGM	Tone.cpp	/^  const uint8_t PROGMEM tone_pin_to_timer_PGM[] = { 1 \/*, 0 *\/ };$/;"	v	typeref:typename:const uint8_t PROGMEM[]
+tone_pin_to_timer_PGM	Tone.cpp	/^  const uint8_t PROGMEM tone_pin_to_timer_PGM[] = { 2 \/*, 1 *\/ };$/;"	v	typeref:typename:const uint8_t PROGMEM[]
+tone_pin_to_timer_PGM	Tone.cpp	/^  const uint8_t PROGMEM tone_pin_to_timer_PGM[] = { 2 \/*, 1, 0 *\/ };$/;"	v	typeref:typename:const uint8_t PROGMEM[]
+tone_pin_to_timer_PGM	Tone.cpp	/^  const uint8_t PROGMEM tone_pin_to_timer_PGM[] = { 2 \/*, 3, 4, 5, 1, 0 *\/ };$/;"	v	typeref:typename:const uint8_t PROGMEM[]
+tone_pin_to_timer_PGM	Tone.cpp	/^  const uint8_t PROGMEM tone_pin_to_timer_PGM[] = { 3 \/*, 1 *\/ };$/;"	v	typeref:typename:const uint8_t PROGMEM[]
+tone_pins	Tone.cpp	/^  static uint8_t tone_pins[AVAILABLE_TONE_PINS] = { 255 \/*, 255 *\/ };$/;"	v	typeref:typename:uint8_t[]	file:
+tone_pins	Tone.cpp	/^  static uint8_t tone_pins[AVAILABLE_TONE_PINS] = { 255 \/*, 255, 255 *\/ };$/;"	v	typeref:typename:uint8_t[]	file:
+tone_pins	Tone.cpp	/^  static uint8_t tone_pins[AVAILABLE_TONE_PINS] = { 255 \/*, 255, 255, 255, 255, 255 *\/ };$/;"	v	typeref:typename:uint8_t[]	file:
+trim	WString.cpp	/^void String::trim(void)$/;"	f	class:String	typeref:typename:void
+turnOffPWM	wiring_digital.c	/^static void turnOffPWM(uint8_t timer)$/;"	f	typeref:typename:void	file:
+tx_buffer_index_t	HardwareSerial.h	/^typedef uint16_t tx_buffer_index_t;$/;"	t	typeref:typename:uint16_t
+tx_buffer_index_t	HardwareSerial.h	/^typedef uint8_t tx_buffer_index_t;$/;"	t	typeref:typename:uint8_t
+u16	USBAPI.h	/^typedef unsigned short u16;$/;"	t	typeref:typename:unsigned short
+u32	USBAPI.h	/^typedef unsigned long u32;$/;"	t	typeref:typename:unsigned long
+u8	USBAPI.h	/^typedef unsigned char u8;$/;"	t	typeref:typename:unsigned char
+udp_h	Udp.h	/^#define udp_h$/;"	d
+update	EEPROM.h	/^    EERef &update( uint8_t in )          { return  in != *this ? *this = in : *this; }$/;"	f	struct:EERef	typeref:typename:EERef &
+update	EEPROM.h	/^    void update( int idx, uint8_t val )  { EERef( idx ).update( val ); }$/;"	f	struct:EEPROMClass	typeref:typename:void
+usbVersion	USBCore.h	/^    u16 usbVersion;     \/\/ 0x200 or 0x210$/;"	m	struct:__anonb5ac37ee0108	typeref:typename:u16
+voidFuncPtr	wiring_private.h	/^typedef void (*voidFuncPtr)(void);$/;"	t	typeref:typename:void (*)(void)
+wIndex	USBAPI.h	/^  uint16_t wIndex;$/;"	m	struct:__anon816a78bf0308	typeref:typename:uint16_t
+wLength	USBAPI.h	/^  uint16_t wLength;$/;"	m	struct:__anon816a78bf0308	typeref:typename:uint16_t
+wValueH	USBAPI.h	/^  uint8_t wValueH;$/;"	m	struct:__anon816a78bf0308	typeref:typename:uint8_t
+wValueL	USBAPI.h	/^  uint8_t wValueL;$/;"	m	struct:__anon816a78bf0308	typeref:typename:uint8_t
+wakeupHost	USBCore.cpp	/^bool USBDevice_::wakeupHost()$/;"	f	class:USBDevice_	typeref:typename:bool
+word	Arduino.h	/^#define word(/;"	d
+word	Arduino.h	/^typedef unsigned int word;$/;"	t	typeref:typename:unsigned int
+write	CDC.cpp	/^size_t Serial_::write(const uint8_t *buffer, size_t size)$/;"	f	class:Serial_	typeref:typename:size_t
+write	CDC.cpp	/^size_t Serial_::write(uint8_t c)$/;"	f	class:Serial_	typeref:typename:size_t
+write	EEPROM.h	/^    void write( int idx, uint8_t val )   { (EERef( idx )) = val; }$/;"	f	struct:EEPROMClass	typeref:typename:void
+write	HardwareSerial.cpp	/^size_t HardwareSerial::write(uint8_t c)$/;"	f	class:HardwareSerial	typeref:typename:size_t
+write	HardwareSerial.h	/^    inline size_t write(int n) { return write((uint8_t)n); }$/;"	f	class:HardwareSerial	typeref:typename:size_t
+write	HardwareSerial.h	/^    inline size_t write(long n) { return write((uint8_t)n); }$/;"	f	class:HardwareSerial	typeref:typename:size_t
+write	HardwareSerial.h	/^    inline size_t write(unsigned int n) { return write((uint8_t)n); }$/;"	f	class:HardwareSerial	typeref:typename:size_t
+write	HardwareSerial.h	/^    inline size_t write(unsigned long n) { return write((uint8_t)n); }$/;"	f	class:HardwareSerial	typeref:typename:size_t
+write	Print.cpp	/^size_t Print::write(const uint8_t *buffer, size_t size)$/;"	f	class:Print	typeref:typename:size_t
+write	Print.h	/^    size_t write(const char *buffer, size_t size) {$/;"	f	class:Print	typeref:typename:size_t
+write	Print.h	/^    size_t write(const char *str) {$/;"	f	class:Print	typeref:typename:size_t
+write_error	Print.h	/^    int write_error;$/;"	m	class:Print	typeref:typename:int
+~LockEP	USBCore.cpp	/^    ~LockEP()$/;"	f	class:LockEP	file:
+~String	WString.cpp	/^String::~String()$/;"	f	class:String
