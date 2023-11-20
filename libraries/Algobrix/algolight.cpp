@@ -13,7 +13,7 @@
 AlgoLight Light1(LED_A_PIN,1);
 AlgoLight Light2(LED_B_PIN,2);
 
-const char c_color_name[6][8] = 
+const char c_color_name[7][8] = 
 {
 	"White",
 	"Red",
@@ -21,8 +21,9 @@ const char c_color_name[6][8] =
 	"Blue",
 	"Purple",
 	"Yellow",
+	"Orange",
 };
-const uint32_t c_color_value [6] = 
+const uint32_t c_color_value [LIGHT_COLOR_CNT] = 
 {
     LIGHT_COLOR_WHITE,
     LIGHT_COLOR_RED,
@@ -30,6 +31,7 @@ const uint32_t c_color_value [6] =
     LIGHT_COLOR_BLUE,
     LIGHT_COLOR_PURPLE,
     LIGHT_COLOR_YELLOW,
+    LIGHT_COLOR_ORANGE,
 };
 
 

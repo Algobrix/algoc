@@ -32,8 +32,9 @@ enum ALGOLED_LIGHT_COLOR
     LIGHT_COLOR_GREEN = 0x00ff00,
     LIGHT_COLOR_BLUE = 0x0000ff,
     LIGHT_COLOR_PURPLE = 0xff00ff,
-    LIGHT_COLOR_YELLOW = 0x00ffff,
-	LIGHT_COLOR_CNT,
+    LIGHT_COLOR_YELLOW = 0xFF6F00,
+    LIGHT_COLOR_ORANGE = 0xFF4F00,
+	LIGHT_COLOR_CNT = 7,
 };
 
 
@@ -70,7 +71,7 @@ class AlgoLight
 /* Exported variables ****************************************************** */
 extern AlgoLight Light1;
 extern AlgoLight Light2;
-extern const uint32_t c_color_value [6];
+extern const uint32_t c_color_value [LIGHT_COLOR_CNT];
 
 
 /* Exported functions ****************************************************** */
