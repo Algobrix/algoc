@@ -564,15 +564,19 @@ ISR(TIMER3_COMPA_vect)
 	}
 	else
 	{
+		Serial.println(MotorA.rotations);
 		MotorA.speed_cnt++;
-		*MotorA.pOCR = 10;
+		*MotorA.pOCR = 9;
 		*MotorA.pTCNT = 0;
 		*MotorA.pTIFR = 0;
 	}
 	if(MotorA.state == ALGOMOTOR_STATE_ROTATION)
 	{
-		if(MotorA.rotations < 10)
+		if(MotorA.rotations <= 10)
 		{
+			*MotorA.pOCR = 0;
+			*MotorA.pTCNT = 0;
+			*MotorA.pTIFR = 0;
 			MotorA.stop();
 		}
 		else
