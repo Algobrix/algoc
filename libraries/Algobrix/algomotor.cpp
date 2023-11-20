@@ -256,12 +256,12 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 			this->period = FOREVER;
 			this->timer = getSYSTIM();
 			// setRotationCnt(rotation);
-			this->rotations = rotation * 2 * 360 * 5;
+			this->rotations = (rotation * 2 * 360);
 			this->rotCnt = 0;
 			this->speed = 0;
 			this->speed_cnt = 0;
 			this->speed_timer = getSYSTIM();
-			*pOCR = 10;
+			*pOCR = 9;
 			*pTCNT = 0;
 			*pTIFR = 0;
 
@@ -444,6 +444,9 @@ void AlgoMotor::changeSpeed(uint8_t pwm)
                 {
                     outputState = 0; 
                     digitalWrite(_pwmPin, pwmValue);
+					pOCR = 0;
+					pTCNT = 0;
+					pTIFR = 0;
                     TIMSK2 = (TIMSK2 & B11111011) | B00000000; // Disable Compare B Interrupt
                     break;
                 }
