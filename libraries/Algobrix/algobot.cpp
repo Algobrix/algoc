@@ -564,7 +564,6 @@ ISR(TIMER3_COMPA_vect)
 	}
 	else
 	{
-		Serial.println(MotorA.rotations);
 		MotorA.speed_cnt++;
 		*MotorA.pOCR = 9;
 		*MotorA.pTCNT = 0;

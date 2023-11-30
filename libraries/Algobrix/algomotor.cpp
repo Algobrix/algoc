@@ -120,7 +120,7 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 						while(chk4TimeoutSYSTIM(this->timer,this->period) == SYSTIM_KEEP_ALIVE)
 						{
 							yield();
-							if((g_ALGOBOT_INFO.state != ALGOBOT_STATE_RUN) && (g_ALGOBOT_INFO.state != ALGOBOT_STATE_PAUSE))
+							if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_RUN)
 							{
 								stop();
 								this->status = ALGOMOTOR_STATUS_INIT;
@@ -231,6 +231,11 @@ uint16_t AlgoMotor::getNumberOfRotations(void)
 
 uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread, float rotation,uint8_t power,uint8_t dir,uint8_t mode)
 {
+	while(g_ALGOBOT_INFO.state == ALGOBOT_STATE_PAUSE)
+	{
+		yield();
+	}
+
 	if(cthread.sequance != sequance)
 	{
 		return 0;
@@ -467,7 +472,7 @@ void AlgoMotor::changeSpeed(uint8_t pwm)
     }
 }
 
-void AlgoMotor::stop(void) 
+void AlgoMotor::stop()
 {
 	if(state == ALGOMOTOR_STATE_IDLE)
 	{
@@ -490,6 +495,40 @@ void AlgoMotor::stop(void)
 	this->prevState = this->state;
 	this->state = ALGOMOTOR_STATE_IDLE;
 	this->status = ALGOMOTOR_STATUS_INIT;
+	return;
+
+}
+void AlgoMotor::stop(int line,int sequance,AlgoThread & cthread)
+{
+	if(cthread.sequance != sequance)
+	{
+		return;
+	}
+	if(state == ALGOMOTOR_STATE_IDLE)
+	{
+
+		cthread.sequance++;
+		return;
+	}
+	else if(state == ALGOMOTOR_STATE_ROTATION)
+	{
+		changeSpeed(0);
+		if(this->rotationCounterFlag)	
+		{
+			*this->rotationCounterFloat = (float) *this->pOCR / 720;
+		}
+	}
+	else
+	{
+		changeSpeed(0);
+	}
+	Serial.print(F("Stop motor: "));
+	Serial.println (this->id);;;
+	this->prevState = this->state;
+	this->state = ALGOMOTOR_STATE_IDLE;
+	this->status = ALGOMOTOR_STATUS_INIT;
+	cthread.sequance++;
+	return;
 }
 uint32_t AlgoMotor::getRuntime(void)
 {
@@ -658,17 +697,17 @@ void stopMotor(System name,char motorPort)
 	{
 		case('A'):
 		{
-			MotorA.stop();
+			MotorA.stop(name.line,name.sequance,name.cthread);
 			break;
 		}
 		case('B'):
 		{
-			MotorB.stop();
+			MotorB.stop(name.line,name.sequance,name.cthread);
 			break;
 		}
 		case('C'):
 		{
-			MotorC.stop();
+			MotorC.stop(name.line,name.sequance,name.cthread);
 			break;
 		}
 	}
