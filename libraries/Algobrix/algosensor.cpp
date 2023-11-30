@@ -39,6 +39,14 @@ uint8_t AlgoSensor::getValue()
             return 0;
         }
         this->owi->readValue(0xbe,&value);
+		if(value < 100)
+		{
+			this->p_value = value;
+		}
+		else
+		{
+			value = this->p_value;
+		}
     }
     else
     {

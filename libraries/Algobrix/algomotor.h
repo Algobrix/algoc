@@ -91,7 +91,8 @@ class AlgoMotor
         void setPower(uint32_t power);
         void setRotationCnt(float rot);
 		uint16_t getNumberOfRotations(void);
-        void stop(void);
+		void stop();
+		void stop(int line,int sequance,AlgoThread & cthread);
         uint32_t getRuntime(void);
 		uint8_t rotationRaw(float rotation,uint8_t power,uint8_t dir);
 };

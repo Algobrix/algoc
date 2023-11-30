@@ -39,6 +39,7 @@ class AlgoSensor
         uint8_t pin;
         uint8_t type;
         OWI * owi;
+		uint8_t p_value;
         
     public:
         AlgoSensor(uint8_t pin,OWI * owi);

@@ -26,6 +26,8 @@
 #define dprintln(...)							
 #endif
 
+#define repeat(system,condition)				while((g_ALGOBOT_INFO.state != ALGOBOT_STATE_IDLE) && (condition))
+
 
 /* Exported macros ********************************************************* */
 
