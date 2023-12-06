@@ -64,16 +64,20 @@ void chkALGOBOT(void)
     chkLIGHT();
 }
 
+void stopActuators(void)
+{
+
+	A.stop();
+	B.stop();
+	C.stop();
+	Light1.stop();
+	Light2.stop();
+}
 void stopALGOBOT(void)
 {
 	g_ALGOBOT_INFO.state = ALGOBOT_STATE_IDLE;
 	AlgoThread & cThread = threadAlgoC;
-    stopMotor(ALGOC,'A');
-    stopMotor(ALGOC,'B');
-    stopMotor(ALGOC,'C');
-    stopLight(ALGOC,1);
-    stopLight(ALGOC,2);
-    stopSound(ALGOC);
+	stopActuators();
 	resetAllThreads();
 }
 
@@ -282,6 +286,17 @@ void chk4CmdALGOBOT(void)
 	}
 }
 
+void blinkLed(void) 
+{
+	if(chk4TimeoutSYSTIM(g_playTimer,200) == SYSTIM_TIMEOUT)
+	{
+		g_playTimer = getSYSTIM();
+		g_playState ^= 0x01;
+		pinMode(PLAY_LED_PIN,OUTPUT);
+		digitalWrite(PLAY_LED_PIN,g_playState);
+	}
+
+}
 uint8_t yield(void)
 {
     if(g_ALGOBOT_INFO.state == ALGOBOT_STATE_HALT)
@@ -290,14 +305,9 @@ uint8_t yield(void)
     }
     if((g_ALGOBOT_INFO.state == ALGOBOT_STATE_RUN) || (g_ALGOBOT_INFO.state == ALGOBOT_STATE_PAUSE))
 	{
-		if(chk4TimeoutSYSTIM(g_playTimer,200) == SYSTIM_TIMEOUT)
-		{
-			g_playTimer = getSYSTIM();
-			g_playState ^= 0x01;
-			pinMode(PLAY_LED_PIN,OUTPUT);
-			digitalWrite(PLAY_LED_PIN,g_playState);
-		}
+		blinkLed();
 	}
+
     chkALGOBOT();
 	if((g_cmd == 0x00) && Serial.available())
 	{

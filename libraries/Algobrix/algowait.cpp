@@ -39,6 +39,7 @@ void wait(System name,float seconds)
 					yield();
 					if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_RUN)
 					{
+						stopActuators();
 						name.cthread.sequance++;
 						name.cthread.waitState = ALGOTHREAD_WAIT_STATE_INIT;
 						return;
