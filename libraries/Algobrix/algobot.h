@@ -15,6 +15,7 @@
 #include <algosensor.h>
 #include <algobreak.h>
 #include <algothread.h>
+#include <algoserial.h>
 
 /* Exported constants ****************************************************** */
 #define DEBUG_ENABLED
@@ -39,6 +40,8 @@
 void initALGOBOT(void);
 void stopALGOBOT(void);
 int random(System name);
+void blinkLed(void);
+void stopActuators(void);
 
 #endif 
 /* ***************************** END OF FILE ******************************* */

@@ -64,6 +64,11 @@ void AlgoLight::stop(void)
 
 uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,float time,uint8_t power,uint32_t color, uint8_t mode)
 {
+	while(g_ALGOBOT_INFO.state == ALGOBOT_STATE_PAUSE)
+	{
+		yield();
+	}
+
 	if(cthread.sequance != sequance)
 	{
 		return 0;
@@ -82,7 +87,14 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 			Serial.print(F("] with power ["));
 			Serial.print(power);
 			Serial.print(F("] for period ["));
-			Serial.print(time);
+			if(time == 0)
+			{
+				Serial.print(F("FOREVER"));
+			}
+			else
+			{
+				Serial.print(time);
+			}
 			Serial.println(F("] seconds"));
 			this->period = time * 1000; // time in seconds
 			this->timer = getSYSTIM();
@@ -90,19 +102,21 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 			uint8_t g =  ((color >> 8) & 0xff) * ((float)power/LIGHT_POWER_LEVEL_CNT);
 			uint8_t b =  ((color) & 0xff) * ((float)power/LIGHT_POWER_LEVEL_CNT);
 			this->setColor(r,g,b);
-			if((mode == OP_STATUS_BLOCKING) && (this->period != FOREVER))
+			// if((mode == OP_STATUS_BLOCKING) && (this->period != FOREVER))
+			if(mode == OP_STATUS_BLOCKING)
 			{
 				this->state = ALGOLED_LIGHT_STATE_ON;
 				this->timer = getSYSTIM();
 				this->status = ALGOLED_LIGHT_STATUS_RUNNING;
 				if(&cthread == &threadAlgoC)
 				{
-					while(chk4TimeoutSYSTIM(this->timer,this->period) == SYSTIM_KEEP_ALIVE)
+					while((this->period == FOREVER) || (chk4TimeoutSYSTIM(this->timer,this->period) == SYSTIM_KEEP_ALIVE))
 					{
 						yield();
 						if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_RUN)
 						{
-							this->stop();
+							stopActuators();
+							cthread.sequance++;
 							this->status = ALGOLED_LIGHT_STATUS_INIT;
 							return 	ALGOLED_LIGHT_STATUS_COMPLETED;
 						}

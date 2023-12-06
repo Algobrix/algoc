@@ -122,7 +122,8 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 							yield();
 							if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_RUN)
 							{
-								stop();
+								stopActuators();
+								cthread.sequance++;
 								this->status = ALGOMOTOR_STATUS_INIT;
 								return 	ALGOMOTOR_STATUS_COMPLETED;
 							}
@@ -491,7 +492,7 @@ void AlgoMotor::stop()
 		changeSpeed(0);
 	}
 	Serial.print(F("Stop motor: "));
-	Serial.println (this->id);;;
+	Serial.println (this->id);
 	this->prevState = this->state;
 	this->state = ALGOMOTOR_STATE_IDLE;
 	this->status = ALGOMOTOR_STATUS_INIT;

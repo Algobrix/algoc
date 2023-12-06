@@ -85,6 +85,7 @@ CYCLE_TIME	algosensor.h	/^#define CYCLE_TIME /;"	d
 Color	neopixel.h	/^  static uint32_t Color(uint8_t r, uint8_t g, uint8_t b) {$/;"	f	class:NeoPixel	typeref:typename:uint32_t
 Color	neopixel.h	/^  static uint32_t Color(uint8_t r, uint8_t g, uint8_t b, uint8_t w) {$/;"	f	class:NeoPixel	typeref:typename:uint32_t
 ColorHSV	neopixel.cpp	/^uint32_t NeoPixel::ColorHSV(uint16_t hue, uint8_t sat, uint8_t val) {$/;"	f	class:NeoPixel	typeref:typename:uint32_t
+DEBUG_ENABLED	algobot.h	/^#define DEBUG_ENABLED$/;"	d
 END_LOOP	algothread.h	/^#define END_LOOP(/;"	d
 END_SUBTHREAD	algothread.h	/^#define END_SUBTHREAD(/;"	d
 END_THREAD	algothread.h	/^#define END_THREAD(/;"	d
@@ -97,11 +98,13 @@ ISR	algobot.cpp	/^ISR(TIMER3_COMPA_vect) $/;"	f
 ISR	algobot.cpp	/^ISR(TIMER4_COMPA_vect) $/;"	f
 KENDRYTE_K210	neopixel.cpp	/^#define KENDRYTE_K210 /;"	d	file:
 LIGHT_COLOR_BLUE	algolight.h	/^    LIGHT_COLOR_BLUE = 0x0000ff,$/;"	e	enum:ALGOLED_LIGHT_COLOR
+LIGHT_COLOR_CNT	algolight.h	/^	LIGHT_COLOR_CNT = 7,$/;"	e	enum:ALGOLED_LIGHT_COLOR
 LIGHT_COLOR_GREEN	algolight.h	/^    LIGHT_COLOR_GREEN = 0x00ff00,$/;"	e	enum:ALGOLED_LIGHT_COLOR
+LIGHT_COLOR_ORANGE	algolight.h	/^    LIGHT_COLOR_ORANGE = 0xFF4F00,$/;"	e	enum:ALGOLED_LIGHT_COLOR
 LIGHT_COLOR_PURPLE	algolight.h	/^    LIGHT_COLOR_PURPLE = 0xff00ff,$/;"	e	enum:ALGOLED_LIGHT_COLOR
 LIGHT_COLOR_RED	algolight.h	/^    LIGHT_COLOR_RED = 0xff0000,$/;"	e	enum:ALGOLED_LIGHT_COLOR
 LIGHT_COLOR_WHITE	algolight.h	/^    LIGHT_COLOR_WHITE = 0xffffff,$/;"	e	enum:ALGOLED_LIGHT_COLOR
-LIGHT_COLOR_YELLOW	algolight.h	/^    LIGHT_COLOR_YELLOW = 0x00ffff,$/;"	e	enum:ALGOLED_LIGHT_COLOR
+LIGHT_COLOR_YELLOW	algolight.h	/^    LIGHT_COLOR_YELLOW = 0xFF6F00,$/;"	e	enum:ALGOLED_LIGHT_COLOR
 LIGHT_POWER_LEVEL_CNT	algolight.h	/^#define LIGHT_POWER_LEVEL_CNT /;"	d
 Light1	algolight.cpp	/^AlgoLight Light1(LED_A_PIN,1);$/;"	v	typeref:typename:AlgoLight
 Light2	algolight.cpp	/^AlgoLight Light2(LED_B_PIN,2);$/;"	v	typeref:typename:AlgoLight
@@ -209,6 +212,7 @@ __ALGOBREAK_H	algobreak.h	/^#define __ALGOBREAK_H$/;"	d
 __ALGOLED_LIGHT_H	algolight.h	/^#define __ALGOLED_LIGHT_H$/;"	d
 __ALGOLIGHT_H	algodebug.h	/^#define __ALGOLIGHT_H$/;"	d
 __ALGOMOTOR_H	algomotor.h	/^#define __ALGOMOTOR_H$/;"	d
+__ALGOSERIAL_H	algoserial.h	/^#define __ALGOSERIAL_H$/;"	d
 __ALGOTHREAD_H	algothread.h	/^#define __ALGOTHREAD_H$/;"	d
 __ALGOWAIT_H	algowait.h	/^#define __ALGOWAIT_H$/;"	d
 __NEOPIXEL_H	neopixel.h	/^#define __NEOPIXEL_H$/;"	d
@@ -235,10 +239,11 @@ bOffset	neopixel.h	/^  uint8_t bOffset;    \/\/\/< Index of blue byte$/;"	m	clas
 begin	neopixel.cpp	/^void NeoPixel::begin(void) {$/;"	f	class:NeoPixel	typeref:typename:void
 begin	softserial.cpp	/^void SoftSerial::begin(long speed)$/;"	f	class:SoftSerial	typeref:typename:void
 begun	neopixel.h	/^  bool begun;         \/\/\/< true if begin() previously called$/;"	m	class:NeoPixel	typeref:typename:bool
+blinkLed	algobot.cpp	/^void blinkLed(void) $/;"	f	typeref:typename:void
 breakPoint	algobreak.cpp	/^uint8_t breakPoint(System name,char breakChar)$/;"	f	typeref:typename:uint8_t
 brightness	neopixel.h	/^  uint8_t brightness; \/\/\/< Strip brightness 0-255 (stored as +1)$/;"	m	class:NeoPixel	typeref:typename:uint8_t
-c_color_name	algolight.cpp	/^const char c_color_name[6][8] = $/;"	v	typeref:typename:const char[6][8]
-c_color_value	algolight.cpp	/^const uint32_t c_color_value [6] = $/;"	v	typeref:typename:const uint32_t[6]
+c_color_name	algolight.cpp	/^const char c_color_name[7][8] = $/;"	v	typeref:typename:const char[7][8]
+c_color_value	algolight.cpp	/^const uint32_t c_color_value [LIGHT_COLOR_CNT] = $/;"	v	typeref:typename:const uint32_t[]
 c_current_build_time	algobot.cpp	/^const uint32_t c_current_build_time = __TIME_UNIX__;$/;"	v	typeref:typename:const uint32_t
 c_volume_char	algosound.cpp	/^const char c_volume_char[10] = {'B', 'D', 'E', 'I', 'K', 'L', 'M', 'P', 'T', 't'}; \/\/ 'B'(LOWE/;"	v	typeref:typename:const char[10]
 canShow	neopixel.h	/^  bool canShow(void) {$/;"	f	class:NeoPixel	typeref:typename:bool
@@ -257,12 +262,23 @@ currentTrack	algosound.h	/^        byte currentTrack = 0;$/;"	m	class:AlgoSound	
 cw	algomotor.h	/^	cw = 1,$/;"	e	enum:MOTOR_DIRECTION
 ddr_	owi.h	/^        uint8_t * ddr_;$/;"	m	class:OWI	typeref:typename:uint8_t *
 direction	algomotor.h	/^        uint8_t direction;$/;"	m	class:AlgoMotor	typeref:typename:uint8_t
+dprint	algobot.h	/^#define dprint(/;"	d
+dprintln	algobot.h	/^#define dprintln(/;"	d
 end	softserial.cpp	/^void SoftSerial::end()$/;"	f	class:SoftSerial	typeref:typename:void
 endTime	neopixel.h	/^  uint32_t endTime;   \/\/\/< Latch timing reference$/;"	m	class:NeoPixel	typeref:typename:uint32_t
+enterChar	algoserial.cpp	/^char enterChar(System name)$/;"	f	typeref:typename:char
+enterNumber	algoserial.cpp	/^float enterNumber(System name)$/;"	f	typeref:typename:float
+enterString	algoserial.cpp	/^char * enterString(System name)$/;"	f	typeref:typename:char *
 fill	neopixel.cpp	/^void NeoPixel::fill(uint32_t c, uint16_t first, uint16_t count) {$/;"	f	class:NeoPixel	typeref:typename:void
 flush	softserial.cpp	/^void SoftSerial::flush()$/;"	f	class:SoftSerial	typeref:typename:void
 gOffset	neopixel.h	/^  uint8_t gOffset;    \/\/\/< Index of green byte$/;"	m	class:NeoPixel	typeref:typename:uint8_t
 g_ALGOBOT_INFO	algobot.cpp	/^volatile ALGOBOT_INFO g_ALGOBOT_INFO;$/;"	v	typeref:typename:volatile ALGOBOT_INFO
+g_cmd	algobot.cpp	/^uint8_t g_cmd;$/;"	v	typeref:typename:uint8_t
+g_cmd_char_cnt	algobot.cpp	/^uint8_t g_cmd_char_cnt;$/;"	v	typeref:typename:uint8_t
+g_cmd_data	algobot.cpp	/^char g_cmd_data[8];$/;"	v	typeref:typename:char[8]
+g_cmd_data_idx	algobot.cpp	/^uint8_t g_cmd_data_idx = 0;$/;"	v	typeref:typename:uint8_t
+g_cmd_light_color	algobot.cpp	/^uint8_t g_cmd_light_color = LIGHT_COLOR_WHITE;$/;"	v	typeref:typename:uint8_t
+g_cmd_motor_power	algobot.cpp	/^float g_cmd_motor_power = 5;$/;"	v	typeref:typename:float
 gamma32	neopixel.cpp	/^uint32_t NeoPixel::gamma32(uint32_t x) {$/;"	f	class:NeoPixel	typeref:typename:uint32_t
 gamma8	neopixel.h	/^  static uint8_t gamma8(uint8_t x) {$/;"	f	class:NeoPixel	typeref:typename:uint8_t
 getBrightness	neopixel.cpp	/^uint8_t NeoPixel::getBrightness(void) const { return brightness - 1; }$/;"	f	class:NeoPixel	typeref:typename:uint8_t
@@ -317,6 +333,7 @@ owi2	algosensor.cpp	/^OWI owi2(PC2,(uint8_t *)& PINC,(uint8_t *)& PORTC,(uint8_t
 pOCR	algomotor.h	/^        uint16_t * pOCR;$/;"	m	class:AlgoMotor	typeref:typename:uint16_t *
 pTCNT	algomotor.h	/^        uint16_t * pTCNT;$/;"	m	class:AlgoMotor	typeref:typename:uint16_t *
 pTIFR	algomotor.h	/^        uint8_t * pTIFR;$/;"	m	class:AlgoMotor	typeref:typename:uint8_t *
+p_value	algosensor.h	/^		uint8_t p_value;$/;"	m	class:AlgoSensor	typeref:typename:uint8_t
 pause	algosound.cpp	/^void AlgoSound::pause(void) $/;"	f	class:AlgoSound	typeref:typename:void
 peek	softserial.cpp	/^int SoftSerial::peek()$/;"	f	class:SoftSerial	typeref:typename:int
 period	algolight.h	/^        uint32_t period;$/;"	m	class:AlgoLight	typeref:typename:uint32_t
@@ -341,15 +358,20 @@ prevState	algomotor.h	/^		uint8_t prevState;$/;"	m	class:AlgoMotor	typeref:typen
 pwmValue	algomotor.h	/^        uint8_t pwmValue;$/;"	m	class:AlgoMotor	typeref:typename:uint8_t
 rOffset	neopixel.h	/^  uint8_t rOffset;    \/\/\/< Red index within each 3- or 4-byte pixel$/;"	m	class:NeoPixel	typeref:typename:uint8_t
 rainbow	neopixel.cpp	/^void NeoPixel::rainbow(uint16_t first_hue, int8_t reps,$/;"	f	class:NeoPixel	typeref:typename:void
+random	algobot.cpp	/^int random(System name)$/;"	f	typeref:typename:int
 read	softserial.cpp	/^int SoftSerial::read()$/;"	f	class:SoftSerial	typeref:typename:int
 readValue	owi.cpp	/^uint8_t OWI::readValue(uint8_t reg,uint8_t * value)$/;"	f	class:OWI	typeref:typename:uint8_t
+repeat	algobot.h	/^#define repeat(/;"	d
 reset	owi.cpp	/^void OWI::reset(void)$/;"	f	class:OWI	typeref:typename:void
 resetAllThreads	algothread.cpp	/^void resetAllThreads(void)$/;"	f	typeref:typename:void
 resetThreadConfiguration	algothread.cpp	/^void resetThreadConfiguration(AlgoThread & thread)$/;"	f	typeref:typename:void
+resistenceToStop	algomotor.cpp	/^void resistenceToStop(System name, char motorPort, float  threshold)$/;"	f	typeref:typename:void
 rotCnt	algomotor.h	/^		uint16_t rotCnt;$/;"	m	class:AlgoMotor	typeref:typename:uint16_t
 rotation	algomotor.cpp	/^uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread, float rotation/;"	f	class:AlgoMotor	typeref:typename:uint8_t
-rotationCounter	algomotor.h	/^		float * rotationCounter;$/;"	m	class:AlgoMotor	typeref:typename:float *
 rotationCounterFlag	algomotor.h	/^		uint8_t rotationCounterFlag;$/;"	m	class:AlgoMotor	typeref:typename:uint8_t
+rotationCounterFloat	algomotor.h	/^		float * rotationCounterFloat;$/;"	m	class:AlgoMotor	typeref:typename:float *
+rotationCounterInt	algomotor.h	/^		int * rotationCounterInt;$/;"	m	class:AlgoMotor	typeref:typename:int *
+rotationRaw	algomotor.cpp	/^uint8_t AlgoMotor::rotationRaw(float rotation,uint8_t power,uint8_t dir)$/;"	f	class:AlgoMotor	typeref:typename:uint8_t
 rotations	algomotor.cpp	/^void rotations(System name,char motorPort,float rotations,float power,int direction,bool isBlock/;"	f	typeref:typename:void
 rotations	algomotor.h	/^		uint16_t rotations;$/;"	m	class:AlgoMotor	typeref:typename:uint16_t
 rotationsAB	algomotor.cpp	/^void rotationsAB(System name,float rotations,float power,int direction,bool isBlocking)$/;"	f	typeref:typename:void
@@ -358,7 +380,9 @@ rp2040Init	neopixel.cpp	/^void NeoPixel::rp2040Init(uint8_t pin, bool is800KHz)$
 rp2040Show	neopixel.cpp	/^void  NeoPixel::rp2040Show(uint8_t pin, uint8_t *pixels, uint32_t numBytes, bool is800KHz)$/;"	f	class:NeoPixel	typeref:typename:void
 run	algolight.cpp	/^uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,float time,uint8_t p/;"	f	class:AlgoLight	typeref:typename:uint8_t
 run	algomotor.cpp	/^uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,int power,int dir,/;"	f	class:AlgoMotor	typeref:typename:uint8_t
+runRaw	algolight.cpp	/^uint8_t AlgoLight::runRaw(float time,uint8_t power,uint32_t color)$/;"	f	class:AlgoLight	typeref:typename:uint8_t
 rxByte	owi.cpp	/^uint8_t OWI::rxByte(void)$/;"	f	class:OWI	typeref:typename:uint8_t
+s_algoserial_buffer	algoserial.cpp	/^static char s_algoserial_buffer[32];$/;"	v	typeref:typename:char[32]	file:
 scriptRowId	algosound.h	/^        byte scriptRowId = 0;$/;"	m	class:AlgoSound	typeref:typename:byte
 sequance	algothread.h	/^		uint8_t sequance;$/;"	m	class:AlgoThread	typeref:typename:uint8_t
 sequance	system.h	/^		uint32_t sequance;$/;"	m	class:System	typeref:typename:uint32_t
@@ -375,7 +399,6 @@ setThreadCompletedFlag	algothread.cpp	/^bool setThreadCompletedFlag(AlgoThread &
 setVolume	algosound.cpp	/^void AlgoSound::setVolume(int volumeLevel) $/;"	f	class:AlgoSound	typeref:typename:void
 show	neopixel.cpp	/^void NeoPixel::show(void) {$/;"	f	class:NeoPixel	typeref:typename:void
 sine8	neopixel.h	/^  static uint8_t sine8(uint8_t x) {$/;"	f	class:NeoPixel	typeref:typename:uint8_t
-slowToStop	algomotor.cpp	/^void slowToStop(System name, char motorPort, int  threshold)$/;"	f	typeref:typename:void
 sm	neopixel.h	/^  int sm = 0;$/;"	m	class:NeoPixel	typeref:typename:int
 soundSerial	algosound.h	/^        SoftSerial soundSerial;$/;"	m	class:AlgoSound	typeref:typename:SoftSerial
 speed	algomotor.h	/^		uint16_t speed;$/;"	m	class:AlgoMotor	typeref:typename:uint16_t
@@ -383,6 +406,7 @@ speed_cnt	algomotor.h	/^		uint16_t speed_cnt;$/;"	m	class:AlgoMotor	typeref:type
 speed_drop_threshold	algomotor.h	/^		uint8_t speed_drop_threshold;$/;"	m	class:AlgoMotor	typeref:typename:uint8_t
 speed_timer	algomotor.h	/^		uint32_t speed_timer;$/;"	m	class:AlgoMotor	typeref:typename:uint32_t
 startCounting	algomotor.cpp	/^void startCounting(System name, char motorPort, float & rotationCounter)$/;"	f	typeref:typename:void
+startCounting	algomotor.cpp	/^void startCounting(System name, char motorPort, int & rotationCounter)$/;"	f	typeref:typename:void
 state	algolight.h	/^        uint8_t state;$/;"	m	class:AlgoLight	typeref:typename:uint8_t
 state	algomotor.h	/^        uint8_t state;$/;"	m	class:AlgoMotor	typeref:typename:uint8_t
 state	algosound.h	/^		uint8_t state;$/;"	m	class:AlgoSound	typeref:typename:uint8_t
@@ -392,7 +416,8 @@ status	algomotor.h	/^		uint8_t status;$/;"	m	class:AlgoMotor	typeref:typename:ui
 status	algosound.h	/^        uint8_t status;$/;"	m	class:AlgoSound	typeref:typename:uint8_t
 status	algothread.h	/^		uint8_t status;$/;"	m	class:AlgoThread	typeref:typename:uint8_t
 stop	algolight.cpp	/^void AlgoLight::stop(void)$/;"	f	class:AlgoLight	typeref:typename:void
-stop	algomotor.cpp	/^void AlgoMotor::stop(void) $/;"	f	class:AlgoMotor	typeref:typename:void
+stop	algomotor.cpp	/^void AlgoMotor::stop()$/;"	f	class:AlgoMotor	typeref:typename:void
+stop	algomotor.cpp	/^void AlgoMotor::stop(int line,int sequance,AlgoThread & cthread)$/;"	f	class:AlgoMotor	typeref:typename:void
 stop	algosound.cpp	/^void AlgoSound::stop(void) $/;"	f	class:AlgoSound	typeref:typename:void
 stopALGOBOT	algobot.cpp	/^void stopALGOBOT(void)$/;"	f	typeref:typename:void
 stopCounting	algomotor.cpp	/^void stopCounting(System name, char motorPort)$/;"	f	typeref:typename:void
@@ -474,7 +499,9 @@ waitSensor	algosensor.cpp	/^void waitSensor(System name,int sensorPort, int sign
 waitSignal	algosensor.cpp	/^void waitSignal(System name,int sensorPort, bool logicState)$/;"	f	typeref:typename:void
 waitState	algothread.h	/^		uint8_t waitState;$/;"	m	class:AlgoThread	typeref:typename:uint8_t
 waitTimer	algothread.h	/^		uint32_t waitTimer;$/;"	m	class:AlgoThread	typeref:typename:uint32_t
+write	algoserial.h	/^template <typename Var> void write(System name,Var line)$/;"	f	typeref:typename:void
 write	softserial.cpp	/^size_t SoftSerial::write(uint8_t b)$/;"	f	class:SoftSerial	typeref:typename:size_t
+writeLine	algoserial.h	/^template <typename Var> void writeLine(System name,Var line)$/;"	f	typeref:typename:void
 yield	algobot.cpp	/^uint8_t yield(void)$/;"	f	typeref:typename:uint8_t
 ~NeoPixel	neopixel.cpp	/^NeoPixel::~NeoPixel() {$/;"	f	class:NeoPixel
 ~SoftSerial	softserial.cpp	/^SoftSerial::~SoftSerial()$/;"	f	class:SoftSerial
