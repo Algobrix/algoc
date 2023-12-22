@@ -72,6 +72,7 @@ void stopActuators(void)
 	C.stop();
 	Light1.stop();
 	Light2.stop();
+	soundPlayer.stop();
 }
 void stopALGOBOT(void)
 {
@@ -308,7 +309,51 @@ uint8_t yield(void)
 		blinkLed();
 	}
 
-    chkALGOBOT();
+	if(!(PINC & (1 << PC0)))
+	{
+		digitalWrite(PLAY_LED_PIN,0);
+		uint32_t timer = getSYSTIM();
+		uint8_t flag = 0;
+		while(!(PINC & (1 << PC0)))
+		{
+			if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_POWER_OFF)
+			{
+				if(chk4TimeoutSYSTIM(timer,2000) == SYSTIM_TIMEOUT)
+				{
+					g_ALGOBOT_INFO.state = ALGOBOT_STATE_POWER_OFF;
+					digitalWrite(PLAY_BUTTON_PIN,HIGH);
+					pinMode(PLAY_BUTTON_PIN,LOW);
+					digitalWrite(PLAY_LED_PIN,0);
+					flag = 1;
+					Serial.println("Power off");
+
+				}
+				else if(chk4TimeoutSYSTIM(timer,500) == SYSTIM_TIMEOUT)		
+				{
+					flag = 1;
+					g_ALGOBOT_INFO.state = ALGOBOT_STATE_HALT;
+					digitalWrite(PLAY_LED_PIN,1);
+				}
+			}
+		}
+		if((flag == 0) && (g_ALGOBOT_INFO.state != ALGOBOT_STATE_IDLE) && (g_ALGOBOT_INFO.state != ALGOBOT_STATE_POWER_OFF))
+		{
+			cli();
+			// resetAllThreads();
+			if(chk4TimeoutSYSTIM(g_button_timer,500) == SYSTIM_TIMEOUT)
+			{
+				Serial.println("Runn");
+				g_ALGOBOT_INFO.state = ALGOBOT_STATE_RUN;
+			}
+			sei();
+		}
+		else
+		{
+			return 1;
+		}
+	}
+
+	chkALGOBOT();
 	if((g_cmd == 0x00) && Serial.available())
 	{
 		char control = Serial.read();
@@ -418,8 +463,7 @@ void chkMOTOR(void)
 			{
 				if((MotorA.speed * (MotorA.speed_drop_threshold/100.)) > MotorA.speed_cnt)
 				{
-					MotorA.stop();
-					MotorA.status = ALGOMOTOR_STATUS_INIT;
+					MotorA.state = ALGOMOTOR_STATE_OFF;
 				}
 				MotorA.speed_cnt = 0;
 			}
@@ -447,8 +491,7 @@ void chkMOTOR(void)
 			{
 				if((MotorB.speed * (MotorB.speed_drop_threshold/100.)) > MotorB.speed_cnt)
 				{
-					MotorB.stop();
-					MotorB.status = ALGOMOTOR_STATUS_INIT;
+					MotorB.state = ALGOMOTOR_STATE_OFF;
 				}
 				MotorB.speed_cnt = 0;
 			}
@@ -476,8 +519,7 @@ void chkMOTOR(void)
 			{
 				if((MotorC.speed * (MotorC.speed_drop_threshold/100.)) > MotorC.speed_cnt)
 				{
-					MotorC.stop();
-					MotorC.status = ALGOMOTOR_STATUS_INIT;
+					MotorC.state = ALGOMOTOR_STATE_OFF;
 				}
 				MotorC.speed_cnt = 0;
 			}
@@ -566,22 +608,20 @@ ISR(TIMER3_COMPA_vect)
 		}
 		if(MotorA.rotationCounterInt != 0)
 		{
-			*MotorA.rotationCounterInt = MotorA.rotCnt / 360;
+			*MotorA.rotationCounterInt = MotorA.rotCnt / 360.;
 		}
-		*MotorA.pOCR = 1;
 		*MotorA.pTCNT = 0;
 		*MotorA.pTIFR = 0;
 	}
 	else
 	{
 		MotorA.speed_cnt++;
-		*MotorA.pOCR = 9;
 		*MotorA.pTCNT = 0;
 		*MotorA.pTIFR = 0;
 	}
 	if(MotorA.state == ALGOMOTOR_STATE_ROTATION)
 	{
-		if(MotorA.rotations <= 10)
+		if(MotorA.rotations <= *MotorA.pOCR)
 		{
 			*MotorA.pOCR = 0;
 			*MotorA.pTCNT = 0;
@@ -590,7 +630,7 @@ ISR(TIMER3_COMPA_vect)
 		}
 		else
 		{
-			MotorA.rotations -= 10;
+			MotorA.rotations -= *MotorA.pOCR;
 		}
 	}
 
@@ -612,27 +652,27 @@ ISR(TIMER1_COMPA_vect)
 	  {
 		  *MotorB.rotationCounterInt = MotorB.rotCnt / 360;
 	  }
-
-	  *MotorB.pOCR = 1;
 	  *MotorB.pTCNT = 0;
 	  *MotorB.pTIFR = 0;
   }
   else
   {
 	  MotorB.speed_cnt++;
-	  *MotorB.pOCR = 10;
 	  *MotorB.pTCNT = 0;
 	  *MotorB.pTIFR = 0;
   }
   if(MotorB.state == ALGOMOTOR_STATE_ROTATION)
   {
-	  if(MotorB.rotations < 10)
+	  if(MotorB.rotations <= *MotorB.pOCR)
 	  {
+		  *MotorB.pOCR = 0;
+		  *MotorB.pTCNT = 0;
+		  *MotorB.pTIFR = 0;
 		  MotorB.stop();
 	  }
 	  else
 	  {
-		  MotorB.rotations -= 10;
+		  MotorB.rotations -= *MotorB.pOCR;
 	  }
   }
 
@@ -655,26 +695,27 @@ ISR(TIMER4_COMPA_vect)
 	  {
 		  *MotorC.rotationCounterInt = MotorC.rotCnt / 360;
 	  }
-	  *MotorC.pOCR = 1;
 	  *MotorC.pTCNT = 0;
 	  *MotorC.pTIFR = 0;
   }
   else
   {
 	  MotorC.speed_cnt++;
-	  *MotorC.pOCR = 10;
 	  *MotorC.pTCNT = 0;
 	  *MotorC.pTIFR = 0;
   }
   if(MotorC.state == ALGOMOTOR_STATE_ROTATION)
   {
-	  if(MotorC.rotations < 10)
+	  if(MotorC.rotations <= *MotorB.pOCR)
 	  {
+		  *MotorC.pOCR = 0;
+		  *MotorC.pTCNT = 0;
+		  *MotorC.pTIFR = 0;
 		  MotorC.stop();
 	  }
 	  else
 	  {
-		  MotorC.rotations -= 10;
+		  MotorC.rotations -= *MotorB.pOCR;
 	  }
   }
 

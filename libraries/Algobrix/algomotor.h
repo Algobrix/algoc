@@ -86,7 +86,7 @@ class AlgoMotor
 
         AlgoMotor(uint8_t dirPin, uint8_t pwmPin,uint16_t * TCNT,uint8_t * TIFR,uint16_t * OCR,char id); 
         uint8_t run(int line,int sequance,AlgoThread & cthread, float time,int power,int dir,int mode);
-		uint8_t rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread, float rotation,uint8_t power,uint8_t dir,uint8_t mode);
+		uint8_t rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread, float rotation,uint8_t power,int8_t dir,uint8_t mode);
         void changeSpeed(uint8_t pwm);
         void setPower(uint32_t power);
         void setRotationCnt(float rot);
@@ -94,7 +94,7 @@ class AlgoMotor
 		void stop();
 		void stop(int line,int sequance,AlgoThread & cthread);
         uint32_t getRuntime(void);
-		uint8_t rotationRaw(float rotation,uint8_t power,uint8_t dir);
+		uint8_t rotationRaw(float rotation,uint8_t power,int8_t dir);
 };
 /* Exported variables ****************************************************** */
 extern AlgoMotor MotorA;
@@ -121,6 +121,11 @@ void stopCounting(System name, char motorPort);
 bool isMotorBusy(System name, char motorPort);
 
 void resistenceToStop(System name, char motorPort, float  threshold);
+
+template <typename Number> void startCounting(System name,char motorPOrt, Number parameter)
+{
+
+}
 
 #endif 
 /* ***************************** END OF FILE ******************************* */

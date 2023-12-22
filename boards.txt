@@ -20,7 +20,7 @@ AlgoC.upload.maximum_data_size=2048
 AlgoC.upload.speed=115200
 
 # General
-AlgoC.name=AlgoC
+AlgoC.name=AlgoC Firmware
 AlgoC.upload.tool=avrdude
 AlgoC.upload.maximum_data_size=2048
 AlgoC.bootloader.tool=avrdude

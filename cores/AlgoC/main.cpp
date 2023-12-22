@@ -92,39 +92,34 @@ static uint8_t chkBTN(void);
 
 ISR(PCINT1_vect) 
 {
-    if (!(PINC & (1 << PC0)))
+	if(!digitalRead(PLAY_BUTTON_PIN))
     { 
-		if(chk4TimeoutSYSTIM(g_button_timer,500) == SYSTIM_TIMEOUT)		
+		if(g_ALGOBOT_INFO.state == ALGOBOT_STATE_RUN)
 		{
-			if(g_ALGOBOT_INFO.state == ALGOBOT_STATE_RUN)
-			{
-				g_ALGOBOT_INFO.state = ALGOBOT_STATE_PAUSE;
-				// millis_stop();
-			}
-			else 
-			{
-				g_ALGOBOT_INFO.state = ALGOBOT_STATE_RUN;
-				// millis_start();
-			}
+			g_button_timer = getSYSTIM();
+			g_ALGOBOT_INFO.state = ALGOBOT_STATE_PAUSE;
+		}
+		else if(g_ALGOBOT_INFO.state == ALGOBOT_STATE_PAUSE)
+		{
+
+		}
+		else if(g_ALGOBOT_INFO.state == ALGOBOT_STATE_POWER_OFF)
+		{
+			g_button_timer = getSYSTIM();
 		}
 		else
 		{
-			if(g_ALGOBOT_INFO.state == ALGOBOT_STATE_RUN)
-			{
-				g_ALGOBOT_INFO.state = ALGOBOT_STATE_HALT;
-				PCIFR = 0b00000000; //Clear all flags
-				resetAllThreads();
-				PCMSK1 &= ~(0x01);
-				PCIFR = 0b00000000; //Clear all flags
-			}
-			else
-			{
-				g_ALGOBOT_INFO.state = ALGOBOT_STATE_IDLE;
-			}
+			g_button_timer = getSYSTIM();
+			g_ALGOBOT_INFO.state = ALGOBOT_STATE_INIT;
 		}
-		g_button_timer = getSYSTIM();
     }
-	PCIFR = 0b00000000; //Clear all flags
+	else
+	{
+
+	}
+	PCIFR = 0x00; //Clear all flags
+	// PCIFR |= (1 << PCIF1);
+	// PCIFR |= 0xff;
 }
 
 int main(void)
@@ -138,7 +133,7 @@ int main(void)
 	// time_t t;
 	// srand((unsigned) time(&t));
 
-    PCMSK1 |= 0x00; //PCINT8 PD5 C0
+    PCMSK1 = 0x00; //PCINT8 PD5 C0
     PCIFR = 0b00000000; //Clear all flags
     PCICR |= 0x02; //Turn on port C PCIE2
 
@@ -213,10 +208,27 @@ int main(void)
     }
 
 
+	PCIFR = 0b00000000; //Clear all flags
+	PCMSK1 |= 0x01;
 
     for (;;) 
     {
         g_battery_voltage = getBatteryVoltage();
+		// Serial.println("Power on: ");
+		if(g_ALGOBOT_INFO.state == ALGOBOT_STATE_POWER_OFF)
+		{
+			g_battery_voltage = getBatteryVoltage();
+			if(g_battery_voltage > 5000)
+			{
+				g_ALGOBOT_INFO.state = ALGOBOT_STATE_IDLE;
+				digitalWrite(PLAY_LED_PIN,1);
+			}
+			else
+			{
+				g_ALGOBOT_INFO.state = ALGOBOT_STATE_POWER_OFF;
+			}
+		}
+
         buttonState = g_serial_control_flags & SERIAL_CONTROL_PLAY ? 0 :  chkBTN() ;
 		g_serial_control_flags &= ~(SERIAL_CONTROL_PLAY);
         if(chk4TimeoutSYSTIM(batteryTimer,200) == SYSTIM_TIMEOUT)
@@ -254,18 +266,18 @@ int main(void)
             g_ALGOBOT_INFO.state = ALGOBOT_STATE_RUN;
 			uint8_t p = 0;
 			Serial.println("\r\n\r\n");
-			for( p = 0; p < 20; p++ )
+			for( p = 0; p < 35; p++ )
 			{
 				Serial.print(F("-"));
 			}
-			Serial.print(F("\r\nApplication started\r\n"));
-			for( p = 0; p < 20; p++ )
+			Serial.print(F("\r\nApplication started. Battery voltage is: "));
+			Serial.print(g_battery_voltage/1000.);
+			Serial.println(" V");
+			for( p = 0; p < 35; p++ )
 			{
 				Serial.print(F("-"));
 			}
 			Serial.println("");
-			PCIFR = 0b00000000; //Clear all flags
-            PCMSK1 |= 0x01;
             digitalWrite(PLAY_LED_PIN,0);
 
 			chkALGOBOT();
@@ -289,26 +301,25 @@ int main(void)
 
 				// }
 			}
-			PCMSK1 &= ~(0x01);
-			PCIFR = 0b00000000; //Clear all flags
 			g_ALGOBOT_INFO.state = ALGOBOT_STATE_IDLE;
 			Serial.println("Stopping");
+			PCIFR = 0x00; //Clear all flags
 
 			stopALGOBOT();
 			g_playButtonTimer = getSYSTIM();
-			while(digitalRead(PLAY_BUTTON_PIN) == 0)
-			{
-				if(chk4TimeoutSYSTIM(g_playButtonTimer,3000) == SYSTIM_TIMEOUT)
-				{
-					stopALGOBOT();
-					pinMode(PLAY_BUTTON_PIN,OUTPUT);
-					digitalWrite(PLAY_BUTTON_PIN,HIGH);
-					g_runFlag = 0;
-					digitalWrite(PLAY_LED_PIN,0x00);
-					batteryState == 0x00;
-					digitalWrite(POWER_LED_PIN,0x00);
-				}
-			}
+			// while(digitalRead(PLAY_BUTTON_PIN) == 0)
+			// {
+			// 	if(chk4TimeoutSYSTIM(g_playButtonTimer,3000) == SYSTIM_TIMEOUT)
+			// 	{
+			// 		stopALGOBOT();
+			// 		pinMode(PLAY_BUTTON_PIN,OUTPUT);
+			// 		digitalWrite(PLAY_BUTTON_PIN,HIGH);
+			// 		g_runFlag = 0;
+			// 		digitalWrite(PLAY_LED_PIN,0x00);
+			// 		batteryState == 0x00;
+			// 		digitalWrite(POWER_LED_PIN,0x00);
+			// 	}
+			// }
 			delay(50);
 			if(g_runFlag)
 			{
@@ -349,15 +360,15 @@ uint16_t getBatteryVoltage(void)
 {
     uint32_t vout = 0.0;
     uint32_t vin = 0.0;
-    pinMode(PLAY_BUTTON_PIN,OUTPUT);
-    digitalWrite(PLAY_BUTTON_PIN,HIGH);
+    // pinMode(PLAY_BUTTON_PIN,OUTPUT);
+    // digitalWrite(PLAY_BUTTON_PIN,HIGH);
 	uint32_t timer = getSYSTIM();
 	while(chk4TimeoutSYSTIM(timer,5) == SYSTIM_KEEP_ALIVE)
 	{
 
 	}
-    digitalWrite(PLAY_BUTTON_PIN,LOW);
-    pinMode(PLAY_BUTTON_PIN,INPUT);
+    // digitalWrite(PLAY_BUTTON_PIN,LOW);
+    // pinMode(PLAY_BUTTON_PIN,INPUT);
     vout = analogRead(POWER_METER_PIN);
     vout = (vout * 5000) / 1024;
     vin = vout / (R2 / (R1 + R2));
@@ -366,52 +377,29 @@ uint16_t getBatteryVoltage(void)
 
 uint8_t chkBTN(void)
 {
-	switch(g_playButtonState)
+	if(g_ALGOBOT_INFO.state == ALGOBOT_STATE_INIT)
 	{
-		case (PLAY_BUTTON_STATE_IDLE):
+		uint32_t timer = getSYSTIM();
+		while(digitalRead(PLAY_BUTTON_PIN) == 0)
 		{
-			if(g_ALGOBOT_INFO.state == ALGOBOT_STATE_IDLE)
+			g_battery_voltage = getBatteryVoltage();
+			if(g_battery_voltage < 5000)
 			{
-				if(digitalRead(PLAY_BUTTON_PIN) == 0)
+				if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_POWER_OFF)
 				{
-					g_playButtonState = PLAY_BUTTON_STATE_LOW;
-					g_playButtonTimer = getSYSTIM();
+					g_ALGOBOT_INFO.state = ALGOBOT_STATE_POWER_OFF;
+					digitalWrite(PLAY_BUTTON_PIN,HIGH);
+					pinMode(PLAY_BUTTON_PIN,LOW);
+					digitalWrite(PLAY_LED_PIN,0);
+					break;
 				}
 			}
-			break;
 		}
-		case (PLAY_BUTTON_STATE_LOW):
+		if(g_battery_voltage > 7000)
 		{
-			if(chk4TimeoutSYSTIM(g_playButtonTimer,3000) == SYSTIM_TIMEOUT)
-			{
-				stopALGOBOT();
-				pinMode(PLAY_BUTTON_PIN,OUTPUT);
-				digitalWrite(PLAY_BUTTON_PIN,HIGH);
-				g_runFlag = 0;
-				digitalWrite(PLAY_LED_PIN,0x00);
-				digitalWrite(POWER_LED_PIN,0x00);
-				while(digitalRead(PLAY_BUTTON_PIN) == 0)
-				{
-
-				}
-				delay(50);
-			}
-			if(digitalRead(PLAY_BUTTON_PIN) != 0)
-			{
-				g_playButtonState = PLAY_BUTTON_STATE_IDLE;
-				return 0;
-			}
-			return 1;
-			break;
-		}
-		case (PLAY_BUTTON_STATE_HIGH):
-		{
-			break;
-		}
-		default:
-		{
-			g_playButtonState = PLAY_BUTTON_STATE_IDLE;
+			return 0;
 		}
 	}
+
 	return 1;
 }

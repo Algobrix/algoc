@@ -371,7 +371,7 @@ rotation	algomotor.cpp	/^uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequ
 rotationCounterFlag	algomotor.h	/^		uint8_t rotationCounterFlag;$/;"	m	class:AlgoMotor	typeref:typename:uint8_t
 rotationCounterFloat	algomotor.h	/^		float * rotationCounterFloat;$/;"	m	class:AlgoMotor	typeref:typename:float *
 rotationCounterInt	algomotor.h	/^		int * rotationCounterInt;$/;"	m	class:AlgoMotor	typeref:typename:int *
-rotationRaw	algomotor.cpp	/^uint8_t AlgoMotor::rotationRaw(float rotation,uint8_t power,uint8_t dir)$/;"	f	class:AlgoMotor	typeref:typename:uint8_t
+rotationRaw	algomotor.cpp	/^uint8_t AlgoMotor::rotationRaw(float rotation,uint8_t power,int8_t dir)$/;"	f	class:AlgoMotor	typeref:typename:uint8_t
 rotations	algomotor.cpp	/^void rotations(System name,char motorPort,float rotations,float power,int direction,bool isBlock/;"	f	typeref:typename:void
 rotations	algomotor.h	/^		uint16_t rotations;$/;"	m	class:AlgoMotor	typeref:typename:uint16_t
 rotationsAB	algomotor.cpp	/^void rotationsAB(System name,float rotations,float power,int direction,bool isBlocking)$/;"	f	typeref:typename:void
@@ -420,6 +420,7 @@ stop	algomotor.cpp	/^void AlgoMotor::stop()$/;"	f	class:AlgoMotor	typeref:typena
 stop	algomotor.cpp	/^void AlgoMotor::stop(int line,int sequance,AlgoThread & cthread)$/;"	f	class:AlgoMotor	typeref:typename:void
 stop	algosound.cpp	/^void AlgoSound::stop(void) $/;"	f	class:AlgoSound	typeref:typename:void
 stopALGOBOT	algobot.cpp	/^void stopALGOBOT(void)$/;"	f	typeref:typename:void
+stopActuators	algobot.cpp	/^void stopActuators(void)$/;"	f	typeref:typename:void
 stopCounting	algomotor.cpp	/^void stopCounting(System name, char motorPort)$/;"	f	typeref:typename:void
 stopLight	algolight.cpp	/^void stopLight(System name, int lightPort)$/;"	f	typeref:typename:void
 stopMotor	algomotor.cpp	/^void stopMotor(System name,char motorPort)$/;"	f	typeref:typename:void

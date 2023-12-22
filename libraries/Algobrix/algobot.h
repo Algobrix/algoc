@@ -35,7 +35,7 @@
 /* Exported types ********************************************************** */
 
 /* Exported variables ****************************************************** */
-
+extern volatile uint32_t g_button_timer;
 /* Exported functions ****************************************************** */
 void initALGOBOT(void);
 void stopALGOBOT(void);

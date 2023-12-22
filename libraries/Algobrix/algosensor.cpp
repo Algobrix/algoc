@@ -35,7 +35,7 @@ uint8_t AlgoSensor::getValue()
         if(digitalRead(pin) == 0) 
         {
             this->type = ALGOSENSOR_TYPE_PWM;
-            Serial.println("PWM device detected\n");
+            // Serial.println("PWM device detected\n");
             return 0;
         }
         this->owi->readValue(0xbe,&value);
@@ -60,7 +60,7 @@ uint8_t AlgoSensor::getValue()
             /* dutyCycle = 100; */
             this->type = ALGOSENSOR_TYPE_1WIRE;
             dutyCycle = 0;
-            Serial.println("1Wire device detected\n");
+            // Serial.println("1Wire device detected\n");
         } 
         else 
         {
@@ -68,8 +68,6 @@ uint8_t AlgoSensor::getValue()
         }
         value = uint8_t(round(dutyCycle / 10));
     }
-    /* Serial.print("Value:"); */
-    /* Serial.println(value); */
     return value;
 }
 
@@ -127,8 +125,6 @@ void waitSensor(System name,int sensorPort, int signalValue)
 					delay(10);
 					yield();
 					cvalue = Sensor(sensorPort);
-					Serial.print("Value: ");
-					Serial.println(cvalue);
 					if(cvalue == signalValue)
 					{
 						break;
@@ -192,8 +188,6 @@ int waitSensor(System name,int sensorPort, int minSignalValue, int maxSignalValu
 					delay(10);
 					yield();
 					cvalue = Sensor(sensorPort);
-					Serial.print("Current sensor value: ");
-					Serial.println(cvalue);
 					if((cvalue >= minSignalValue) && (cvalue <= maxSignalValue))
 					{
 						break;
@@ -260,9 +254,6 @@ void waitSignal(System name,int sensorPort, bool logicState)
 					delay(10);
 					yield();
 					cvalue = Sensor(sensorPort);
-					Serial.print("Current value: ");
-					Serial.println(cvalue);
-
 					if((logicState == false) && cvalue == 0)
 					{
 						break;
@@ -306,10 +297,10 @@ void waitSignal(System name,int sensorPort, bool logicState)
 
 int getSensor(System name,int sensorPort)
 {
-	// if(name.cthread.sequance != name.sequance)
-	// {
-	// 	return 0;
-	// }
+	if(name.cthread.sequance != name.sequance)
+	{
+		return 0;
+	}
 	yield();
 	Serial.print("On line [");
 	Serial.print(name.line);
@@ -319,7 +310,7 @@ int getSensor(System name,int sensorPort)
 	int cvalue = Sensor(sensorPort);
 	Serial.print(cvalue);
 	Serial.println("]");
-	// name.cthread.sequance++;
+	name.cthread.sequance++;
 	return cvalue;
 }
 
