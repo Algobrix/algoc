@@ -48,7 +48,9 @@ void AlgoSound::play(byte trackId)
 }
 void AlgoSound::stop(void) 
 {
+
     String trackCommand = getTrackCommand(this->currentTrack);
+	this->state = ALGOSOUND_STATE_IDLE;
 	delay(10);
     if(getStatus() == ALGOSOUND_STATE_PLAYING) 
     {
@@ -99,6 +101,11 @@ uint8_t AlgoSound::getStatus(void)
 
 void playSound(System name,int sound,int power,bool isBlocking) 
 {
+	while(g_ALGOBOT_INFO.state == ALGOBOT_STATE_PAUSE)
+	{
+		yield();
+	}
+
 	if(name.cthread.sequance != name.sequance)
 	{
 		return;
@@ -133,7 +140,8 @@ void playSound(System name,int sound,int power,bool isBlocking)
 						yield();
 						if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_RUN)
 						{
-							stopSound();
+							stopActuators();
+							name.cthread.sequance++;
 							soundPlayer.status = ALGOSOUND_STATUS_INIT;
 							return;
 						}
@@ -189,6 +197,7 @@ bool isSoundBusy(System name)
 	}
 
 	name.cthread.sequance++;
+	soundPlayer.state = soundPlayer.getStatus();
 	if(soundPlayer.state != ALGOSOUND_STATE_PLAYING)
 	{
 		return false;

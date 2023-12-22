@@ -95,10 +95,15 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 			this->speed = 0;
 			this->speed_cnt = 0;
 			this->speed_timer = getSYSTIM();
-			if(MotorA.rotationCounterFlag == 0)
+			if(this->rotationCounterFlag == 0)
 			{
-				// setRotationCnt(50);
 				*pOCR = 10;
+				*pTCNT = 0;
+				*pTIFR = 0;
+			}
+			else
+			{
+				*pOCR = 1;
 				*pTCNT = 0;
 				*pTIFR = 0;
 			}
@@ -157,6 +162,10 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 								stop();
 								this->status = ALGOMOTOR_STATUS_INIT;
 								return 	ALGOMOTOR_STATUS_COMPLETED;
+							}
+							if(this->state == ALGOMOTOR_STATE_OFF)
+							{
+								break;
 							}
 						}
 					}
@@ -230,7 +239,7 @@ uint16_t AlgoMotor::getNumberOfRotations(void)
 	return rotCnt;
 }
 
-uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread, float rotation,uint8_t power,uint8_t dir,uint8_t mode)
+uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread, float rotation,uint8_t power,int8_t dir,uint8_t mode)
 {
 	while(g_ALGOBOT_INFO.state == ALGOBOT_STATE_PAUSE)
 	{
@@ -247,6 +256,27 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 	{
 		case (ALGOMOTOR_STATUS_INIT):
 		{
+			if(dir == 1)
+			{
+				this->direction = 0;
+			}
+			else if(dir == -1)
+			{
+				this->direction = 1;
+			}
+			else
+			{
+				this->status = ALGOMOTOR_STATUS_INIT;
+				Serial.print(F("Control the motor ["));
+				Serial.print(id);
+				Serial.print(F("] on line ["));
+				Serial.print(line);
+				Serial.print(F("] has a unsupported value ["));
+				Serial.print(dir);
+				Serial.println(F("]"));
+				cthread.sequance++;
+				return 	ALGOMOTOR_STATUS_COMPLETED;
+			}
 			Serial.print("Control the motor [");
 			Serial.print(id);
 			Serial.print("] on line [");
@@ -258,18 +288,9 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 			Serial.print("] for number of rotations [");
 			Serial.print(rotation);
 			Serial.println("]");
-			this->direction = (dir == 1) ? 1 : 0;
 			this->period = FOREVER;
 			this->timer = getSYSTIM();
-			// setRotationCnt(rotation);
-			this->rotations = (rotation * 2 * 360);
-			this->rotCnt = 0;
-			this->speed = 0;
-			this->speed_cnt = 0;
-			this->speed_timer = getSYSTIM();
-			*pOCR = 9;
-			*pTCNT = 0;
-			*pTIFR = 0;
+			setRotationCnt(rotation);
 
 			digitalWrite(_directionPin, this->direction);
 			if(power > 10)
@@ -348,7 +369,7 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 	}
 }
 
-uint8_t AlgoMotor::rotationRaw(float rotation,uint8_t power,uint8_t dir)
+uint8_t AlgoMotor::rotationRaw(float rotation,uint8_t power,int8_t dir)
 {
 	Serial.print("Control the motor [");
 	Serial.print(id);
@@ -362,15 +383,7 @@ uint8_t AlgoMotor::rotationRaw(float rotation,uint8_t power,uint8_t dir)
 	this->direction = (dir == 1) ? 1 : 0;
 	this->period = FOREVER;
 	this->timer = getSYSTIM();
-	// setRotationCnt(rotation);
-	this->rotations = rotation * 2 * 360;
-	this->rotCnt = 0;
-	this->speed = 0;
-	this->speed_cnt = 0;
-	this->speed_timer = getSYSTIM();
-	*pOCR = 10;
-	*pTCNT = 0;
-	*pTIFR = 0;
+	setRotationCnt(rotation);
 
 	digitalWrite(_directionPin, this->direction);
 	if(power > 10)
@@ -482,10 +495,6 @@ void AlgoMotor::stop()
 	else if(state == ALGOMOTOR_STATE_ROTATION)
 	{
 		changeSpeed(0);
-		if(this->rotationCounterFlag)	
-		{
-			*this->rotationCounterFloat = (float) *this->pOCR / 720;
-		}
 	}
 	else
 	{
@@ -538,16 +547,21 @@ uint32_t AlgoMotor::getRuntime(void)
 
 void AlgoMotor::setPower(uint32_t power)
 {
-	// {
-	// 	uint32_t battery = g_battery_voltage;
-	// 	if(battery > 9000)
-	// 	{
-	// 		battery = 9000;
-	// 	}
-	// 	uint8_t period = 255 * (0.8 + (9000-battery)/10000.);
-	// 	uint32_t value = (power * period)/MOTOR_POWER_LEVEL_CNT;
-	// }
-	uint32_t value = (power * 255)/MOTOR_POWER_LEVEL_CNT;
+	uint32_t value;
+	if(1)
+	{
+		uint32_t battery = g_battery_voltage;
+		if(battery > 9000)
+		{
+			battery = 9000;
+		}
+		uint8_t period = 255 * (0.8 + (9000-battery)/10000.);
+		value = (power * period)/MOTOR_POWER_LEVEL_CNT;
+	}
+	else
+	{
+		value = (power * 255)/MOTOR_POWER_LEVEL_CNT;
+	}
 	// Serial.print("Scale speed: ");
 	// Serial.println(value);
 	// Serial.print("Scale period: ");
@@ -559,10 +573,23 @@ void AlgoMotor::setPower(uint32_t power)
 
 void AlgoMotor::setRotationCnt(float rot)
 {
-    uint16_t pulseCnt = rot * 2 * 360;
-    *pOCR = pulseCnt;
-    *pTCNT = 0;
-    *pTIFR = 0;
+	this->rotations = (rot * 360);
+	this->rotCnt = 0;
+	this->speed = 0;
+	this->speed_cnt = 0;
+	this->speed_timer = getSYSTIM();
+	if(this->rotationCounterFlag == 0)
+	{
+		*pOCR = 9;
+		*pTCNT = 0;
+		*pTIFR = 0;
+	}
+	else
+	{
+		*pOCR = 1;
+		*pTCNT = 0;
+		*pTIFR = 0;
+	}
 }
 
 
@@ -590,7 +617,6 @@ void move(System name,char motorPort,float seconds,float power,int direction,boo
 	}
 }
 			
-
 
 int isMotorCompleted(AlgoMotor & motor)
 {
@@ -721,6 +747,8 @@ float numberOfRotations(System name,AlgoMotor & motor)
 	cnt = cnt / 720.;
 	return cnt;
 }
+
+
 void startCounting(System name, char motorPort, float & rotationCounter)
 {
 	if(name.cthread.sequance != name.sequance)
@@ -736,7 +764,7 @@ void startCounting(System name, char motorPort, float & rotationCounter)
 			MotorA.rotationCounterFloat = &rotationCounter;
 			MotorA.rotationCounterInt = 0;
 			MotorA.rotationCounterFlag = 1;
-			*MotorA.pOCR = 2;
+			*MotorA.pOCR = 1;
 			*MotorA.pTCNT = 0;
 			*MotorA.pTIFR = 0;
 
@@ -748,7 +776,7 @@ void startCounting(System name, char motorPort, float & rotationCounter)
 			MotorB.rotationCounterFloat = &rotationCounter;
 			MotorB.rotationCounterInt = 0;
 			MotorB.rotationCounterFlag = 1;
-			*MotorB.pOCR = 2;
+			*MotorB.pOCR = 1;
 			*MotorB.pTCNT = 0;
 			*MotorB.pTIFR = 0;
 			break;
@@ -759,7 +787,7 @@ void startCounting(System name, char motorPort, float & rotationCounter)
 			MotorC.rotationCounterFloat = &rotationCounter;
 			MotorC.rotationCounterInt = 0;
 			MotorC.rotationCounterFlag = 1;
-			*MotorC.pOCR = 2;
+			*MotorC.pOCR = 1;
 			*MotorC.pTCNT = 0;
 			*MotorC.pTIFR = 0;
 			break;
