@@ -597,7 +597,20 @@ ISR(TIMER2_COMPB_vect)
 ISR(TIMER3_COMPA_vect) 
 {
 	noInterrupts();
-
+	if(MotorA.state == ALGOMOTOR_STATE_ROTATION)
+	{
+		if(MotorA.rotations <= *MotorA.pOCR)
+		{
+			*MotorA.pOCR = 0;
+			*MotorA.pTCNT = 0;
+			*MotorA.pTIFR = 0;
+			MotorA.stop();
+		}
+		else
+		{
+			MotorA.rotations -= *MotorA.pOCR;
+		}
+	}
 	if(MotorA.rotationCounterFlag)
 	{
 		MotorA.rotCnt++;
@@ -615,25 +628,11 @@ ISR(TIMER3_COMPA_vect)
 	}
 	else
 	{
+		MotorA.rotCnt++;
 		MotorA.speed_cnt++;
 		*MotorA.pTCNT = 0;
 		*MotorA.pTIFR = 0;
 	}
-	if(MotorA.state == ALGOMOTOR_STATE_ROTATION)
-	{
-		if(MotorA.rotations <= *MotorA.pOCR)
-		{
-			*MotorA.pOCR = 0;
-			*MotorA.pTCNT = 0;
-			*MotorA.pTIFR = 0;
-			MotorA.stop();
-		}
-		else
-		{
-			MotorA.rotations -= *MotorA.pOCR;
-		}
-	}
-
 	interrupts();
 }
 
@@ -723,7 +722,6 @@ ISR(TIMER4_COMPA_vect)
 
   interrupts();
 }
-
 
 
 /* ***************************** END OF FILE ******************************* */

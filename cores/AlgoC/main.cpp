@@ -168,7 +168,7 @@ int main(void)
     uint32_t batteryTimer = getSYSTIM();
     g_playTimer = getSYSTIM();
 
-	g_playState = 0x00;
+	g_playState = 0x01;
     pinMode(POWER_LED_PIN,OUTPUT);
 	digitalWrite(PLAY_LED_PIN,g_playState);
 
@@ -203,7 +203,7 @@ int main(void)
     if(g_battery_voltage < 7000)
     {
         g_upload_flag = 0;
-        g_playState = 0x01;
+        g_playState = 0x00;
         digitalWrite(PLAY_LED_PIN,g_playState);
     }
 
