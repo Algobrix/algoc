@@ -316,6 +316,7 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 						}
 						if(chk4TimeoutSYSTIM(this->speed_timer,200) == SYSTIM_TIMEOUT)
 						{
+							Serial.println(g_ALGOBOT_INFO.state);
 							this->speed_timer = getSYSTIM();
 							if(this->speed == 0)
 							{
@@ -463,9 +464,6 @@ void AlgoMotor::changeSpeed(uint8_t pwm)
                 {
                     outputState = 0; 
                     digitalWrite(_pwmPin, pwmValue);
-					pOCR = 0;
-					pTCNT = 0;
-					pTIFR = 0;
                     TIMSK2 = (TIMSK2 & B11111011) | B00000000; // Disable Compare B Interrupt
                     break;
                 }
@@ -488,20 +486,18 @@ void AlgoMotor::changeSpeed(uint8_t pwm)
 
 void AlgoMotor::stop()
 {
-	if(state == ALGOMOTOR_STATE_IDLE)
-	{
-		return;
-	}
-	else if(state == ALGOMOTOR_STATE_ROTATION)
-	{
-		changeSpeed(0);
-	}
-	else
-	{
-		changeSpeed(0);
-	}
-	Serial.print(F("Stop motor: "));
-	Serial.println (this->id);
+	changeSpeed(0);
+	// if(state == ALGOMOTOR_STATE_IDLE)
+	// {
+	// 	return;
+	// }
+	// else if(state == ALGOMOTOR_STATE_ROTATION)
+	// {
+	// }
+	// else
+	// {
+	// 	changeSpeed(0);
+	// }
 	this->prevState = this->state;
 	this->state = ALGOMOTOR_STATE_IDLE;
 	this->status = ALGOMOTOR_STATUS_INIT;
@@ -580,7 +576,7 @@ void AlgoMotor::setRotationCnt(float rot)
 	this->speed_timer = getSYSTIM();
 	if(this->rotationCounterFlag == 0)
 	{
-		*pOCR = 9;
+		*pOCR = 1;
 		*pTCNT = 0;
 		*pTIFR = 0;
 	}
