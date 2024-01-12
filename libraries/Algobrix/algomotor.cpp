@@ -277,19 +277,20 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 				cthread.sequance++;
 				return 	ALGOMOTOR_STATUS_COMPLETED;
 			}
-			Serial.print("Control the motor [");
-			Serial.print(id);
-			Serial.print("] on line [");
-			Serial.print(line);
-			Serial.print("]. Set direction [");
-			Serial.print(dir);
-			Serial.print("] with power [");
-			Serial.print(power);
-			Serial.print("] for number of rotations [");
-			Serial.print(rotation);
-			Serial.println("]");
+			// Serial.print("Control the motor [");
+			// Serial.print(id);
+			// Serial.print("] on line [");
+			// Serial.print(line);
+			// Serial.print("]. Set direction [");
+			// Serial.print(dir);
+			// Serial.print("] with power [");
+			// Serial.print(power);
+			// Serial.print("] for number of rotations [");
+			// Serial.print(rotation);
+			// Serial.println("]");
 			this->period = FOREVER;
 			this->timer = getSYSTIM();
+			this->power = power;
 			setRotationCnt(rotation);
 
 			digitalWrite(_directionPin, this->direction);
@@ -316,7 +317,6 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 						}
 						if(chk4TimeoutSYSTIM(this->speed_timer,200) == SYSTIM_TIMEOUT)
 						{
-							Serial.println(g_ALGOBOT_INFO.state);
 							this->speed_timer = getSYSTIM();
 							if(this->speed == 0)
 							{
@@ -529,7 +529,7 @@ void AlgoMotor::stop(int line,int sequance,AlgoThread & cthread)
 		changeSpeed(0);
 	}
 	Serial.print(F("Stop motor: "));
-	Serial.println (this->id);;;
+	Serial.println (this->id);
 	this->prevState = this->state;
 	this->state = ALGOMOTOR_STATE_IDLE;
 	this->status = ALGOMOTOR_STATUS_INIT;
@@ -569,24 +569,64 @@ void AlgoMotor::setPower(uint32_t power)
 
 void AlgoMotor::setRotationCnt(float rot)
 {
-	this->rotations = (rot * 360);
 	this->rotCnt = 0;
 	this->speed = 0;
 	this->speed_cnt = 0;
-	this->speed_timer = getSYSTIM();
-	if(this->rotationCounterFlag == 0)
+	if(rot < 1)
 	{
-		*pOCR = 1;
-		*pTCNT = 0;
-		*pTIFR = 0;
+		this->rotations = 0;
+		if(this->rotationCounterFlag == 0)
+		{
+			int tmp = 0;
+			if(rot < 0.2)
+			{
+				float power_coeff = 1.51;
+				float rot_coeff = -8.59;
+				float intercept_coeff = 1.87;
+				tmp = (rot * 360) - ((power_coeff * this->power) + (rot_coeff * rot) - intercept_coeff);
+			}
+			else if(rot)
+			{
+				float power_coeff = 1.86;
+				float rot_coeff = 1.27;
+				float intercept_coeff = -0.71;
+				tmp = (rot * 360) - ((power_coeff * this->power) + (rot_coeff * rot) - intercept_coeff);
+			}
+			if(tmp <= 0)
+			{
+				tmp = 1;
+			}
+			*pOCR = tmp;
+			*pTCNT = 0;
+			*pTIFR = 0;
+		}
+		else
+		{
+			*pOCR = rot * 360 * 2;
+			*pTCNT = 0;
+			*pTIFR = 0;
+		}
+
 	}
 	else
 	{
-		*pOCR = 1;
-		*pTCNT = 0;
-		*pTIFR = 0;
+		this->rotations = (rot * 360);
+		if(this->rotationCounterFlag == 0)
+		{
+			*pOCR = 1;
+			*pTCNT = 0;
+			*pTIFR = 0;
+		}
+		else
+		{
+			*pOCR = 1;
+			*pTCNT = 0;
+			*pTIFR = 0;
+		}
+
 	}
-}
+	this->speed_timer = getSYSTIM();
+	}
 
 
 void move(System name,char motorPort,float seconds,float power,int direction,bool isBlocking)

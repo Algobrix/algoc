@@ -64,6 +64,7 @@ class AlgoMotor
 		uint8_t status;
         uint8_t outputState;
         uint8_t pwmValue;
+		uint8_t power;
         uint8_t direction;
 		uint16_t rotCnt;
 		uint16_t rotations;

@@ -25,11 +25,11 @@ void wait(System name,float seconds)
 	{
 		case(ALGOTHREAD_WAIT_STATE_INIT):
 		{
-			Serial.print("Wait on line [");
-			Serial.print(name.line);
-			Serial.print("] for [");
-			Serial.print(seconds);
-			Serial.println("] seconds");
+			// Serial.print("Wait on line [");
+			// Serial.print(name.line);
+			// Serial.print("] for [");
+			// Serial.print(seconds);
+			// Serial.println("] seconds");
 			name.cthread.waitTimer = getSYSTIM();
             name.cthread.waitPeriod = seconds * 1000;
 			if(&name.cthread == &threadAlgoC)

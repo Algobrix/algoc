@@ -601,9 +601,18 @@ ISR(TIMER3_COMPA_vect)
 	{
 		if(MotorA.rotations <= *MotorA.pOCR)
 		{
-			*MotorA.pOCR = 0;
-			*MotorA.pTCNT = 0;
-			*MotorA.pTIFR = 0;
+			if(0)
+			{
+				*MotorA.pOCR = 0;
+				*MotorA.pTCNT = 0;
+				*MotorA.pTIFR = 0;
+			}
+			else
+			{
+				*MotorA.pOCR = 1;
+				*MotorA.pTCNT = 0;
+				*MotorA.pTIFR = 0;
+			}
 			MotorA.stop();
 		}
 		else
@@ -611,6 +620,7 @@ ISR(TIMER3_COMPA_vect)
 			MotorA.rotations -= *MotorA.pOCR;
 		}
 	}
+
 	if(MotorA.rotationCounterFlag)
 	{
 		MotorA.rotCnt++;
@@ -628,17 +638,34 @@ ISR(TIMER3_COMPA_vect)
 	}
 	else
 	{
+		// Serial.println(MotorA.rotCnt);
 		MotorA.rotCnt++;
 		MotorA.speed_cnt++;
 		*MotorA.pTCNT = 0;
 		*MotorA.pTIFR = 0;
 	}
+
 	interrupts();
 }
 
 ISR(TIMER1_COMPA_vect) 
 {
   noInterrupts();
+  if(MotorB.state == ALGOMOTOR_STATE_ROTATION)
+  {
+	  if(MotorB.rotations <= *MotorB.pOCR)
+	  {
+		  *MotorB.pOCR = 0;
+		  *MotorB.pTCNT = 0;
+		  *MotorB.pTIFR = 0;
+		  MotorB.stop();
+	  }
+	  else
+	  {
+		  MotorB.rotations -= *MotorB.pOCR;
+	  }
+  }
+
   if(MotorB.rotationCounterFlag)
   {
 	  MotorB.rotCnt++;
@@ -659,20 +686,6 @@ ISR(TIMER1_COMPA_vect)
 	  MotorB.speed_cnt++;
 	  *MotorB.pTCNT = 0;
 	  *MotorB.pTIFR = 0;
-  }
-  if(MotorB.state == ALGOMOTOR_STATE_ROTATION)
-  {
-	  if(MotorB.rotations <= *MotorB.pOCR)
-	  {
-		  *MotorB.pOCR = 0;
-		  *MotorB.pTCNT = 0;
-		  *MotorB.pTIFR = 0;
-		  MotorB.stop();
-	  }
-	  else
-	  {
-		  MotorB.rotations -= *MotorB.pOCR;
-	  }
   }
 
   interrupts();
