@@ -277,81 +277,89 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 				cthread.sequance++;
 				return 	ALGOMOTOR_STATUS_COMPLETED;
 			}
-			// Serial.print("Control the motor [");
-			// Serial.print(id);
-			// Serial.print("] on line [");
-			// Serial.print(line);
-			// Serial.print("]. Set direction [");
-			// Serial.print(dir);
-			// Serial.print("] with power [");
-			// Serial.print(power);
-			// Serial.print("] for number of rotations [");
-			// Serial.print(rotation);
-			// Serial.println("]");
+			Serial.print("Control the motor [");
+			Serial.print(id);
+			Serial.print("] on line [");
+			Serial.print(line);
+			Serial.print("]. Set direction [");
+			Serial.print(dir);
+			Serial.print("] with power [");
+			Serial.print(power);
+			Serial.print("] for number of rotations [");
+			Serial.print(rotation);
+			Serial.println("]");
 			this->period = FOREVER;
 			this->timer = getSYSTIM();
 			this->power = power;
-			setRotationCnt(rotation);
-
 			digitalWrite(_directionPin, this->direction);
 			if(power > 10)
 			{
 				power = 10;
 			}
 			setPower(power);
-			if(mode == OP_STATUS_BLOCKING)
+			if(rotation != FOREVER)
 			{
-				this->prevState = this->state;
-				this->state = ALGOMOTOR_STATE_ROTATION;
-				this->timer = getSYSTIM();
-				if(&cthread == &threadAlgoC)
+				setRotationCnt(rotation);
+				if(mode == OP_STATUS_BLOCKING)
 				{
-					while(this->state == ALGOMOTOR_STATE_ROTATION)
+					this->prevState = this->state;
+					this->state = ALGOMOTOR_STATE_ROTATION;
+					this->timer = getSYSTIM();
+					if(&cthread == &threadAlgoC)
 					{
-						yield();
-						if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_RUN)
+						while(this->state == ALGOMOTOR_STATE_ROTATION)
 						{
-							stop();
-							this->status = ALGOMOTOR_STATUS_INIT;
-							return 	ALGOMOTOR_STATUS_COMPLETED;
-						}
-						if(chk4TimeoutSYSTIM(this->speed_timer,200) == SYSTIM_TIMEOUT)
-						{
-							this->speed_timer = getSYSTIM();
-							if(this->speed == 0)
+							yield();
+							if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_RUN)
 							{
-								this->speed = this->speed_cnt;
-								this->speed_cnt = 0;
+								stop();
+								this->status = ALGOMOTOR_STATUS_INIT;
+								return 	ALGOMOTOR_STATUS_COMPLETED;
 							}
-							else
+							if(chk4TimeoutSYSTIM(this->speed_timer,200) == SYSTIM_TIMEOUT)
 							{
-								if((this->speed * (this->speed_drop_threshold/100.)) > this->speed_cnt)
+								this->speed_timer = getSYSTIM();
+								if(this->speed == 0)
 								{
-									break;
+									this->speed = this->speed_cnt;
+									this->speed_cnt = 0;
 								}
-								this->speed_cnt = 0;
+								else
+								{
+									if((this->speed * (this->speed_drop_threshold/100.)) > this->speed_cnt)
+									{
+										break;
+									}
+									this->speed_cnt = 0;
+								}
 							}
-						}
 
+						}
+						stop();
+						this->status = ALGOMOTOR_STATUS_INIT;
+						cthread.sequance++;
+						return 	ALGOMOTOR_STATUS_COMPLETED;
 					}
-					stop();
-					this->status = ALGOMOTOR_STATUS_INIT;
-					cthread.sequance++;
-					return 	ALGOMOTOR_STATUS_COMPLETED;
+					else
+					{
+						this->status = ALGOMOTOR_STATUS_RUNNING;
+						return 	ALGOMOTOR_STATUS_RUNNING;
+					}
+
 				}
 				else
 				{
-					this->status = ALGOMOTOR_STATUS_RUNNING;
-					return 	ALGOMOTOR_STATUS_RUNNING;
+					this->prevState = this->state;
+					this->state = ALGOMOTOR_STATE_ROTATION;
+					cthread.sequance++;
+					return 	ALGOMOTOR_STATUS_COMPLETED;
 				}
 
 			}
 			else
 			{
 				this->prevState = this->state;
-				this->state = ALGOMOTOR_STATE_ROTATION;
-				cthread.sequance++;
-				return 	ALGOMOTOR_STATUS_COMPLETED;
+				this->state = ALGOMOTOR_STATE_ON;
 			}
 			break;
 		}
@@ -544,9 +552,9 @@ uint32_t AlgoMotor::getRuntime(void)
 void AlgoMotor::setPower(uint32_t power)
 {
 	uint32_t value;
+	uint32_t battery = g_battery_voltage;
 	if(1)
 	{
-		uint32_t battery = g_battery_voltage;
 		if(battery > 9000)
 		{
 			battery = 9000;
@@ -558,12 +566,12 @@ void AlgoMotor::setPower(uint32_t power)
 	{
 		value = (power * 255)/MOTOR_POWER_LEVEL_CNT;
 	}
-	// Serial.print("Scale speed: ");
-	// Serial.println(value);
-	// Serial.print("Scale period: ");
-	// Serial.println(period);
-	// Serial.print("Battery: ");
-	// Serial.println(battery);
+	Serial.print("Scale speed: ");
+	Serial.println(value);
+	Serial.print("Scale period: ");
+	Serial.println(period);
+	Serial.print("Battery: ");
+	Serial.println(battery);
     changeSpeed(value);
 }
 
