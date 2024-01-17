@@ -566,12 +566,12 @@ void AlgoMotor::setPower(uint32_t power)
 	{
 		value = (power * 255)/MOTOR_POWER_LEVEL_CNT;
 	}
-	Serial.print("Scale speed: ");
-	Serial.println(value);
-	Serial.print("Scale period: ");
-	Serial.println(period);
-	Serial.print("Battery: ");
-	Serial.println(battery);
+	// Serial.print("Scale speed: ");
+	// Serial.println(value);
+	// Serial.print("Scale period: ");
+	// Serial.println(period);
+	// Serial.print("Battery: ");
+	// Serial.println(battery);
     changeSpeed(value);
 }
 
@@ -790,101 +790,6 @@ float numberOfRotations(System name,AlgoMotor & motor)
 	float cnt = motor.rotCnt;
 	cnt = cnt / 720.;
 	return cnt;
-}
-
-
-void startCounting(System name, char motorPort, float & rotationCounter)
-{
-	if(name.cthread.sequance != name.sequance)
-	{
-		return;
-	}
-
-	switch(motorPort)
-	{
-		case('A'):
-		{
-			MotorA.rotCnt = 0;
-			MotorA.rotationCounterFloat = &rotationCounter;
-			MotorA.rotationCounterInt = 0;
-			MotorA.rotationCounterFlag = 1;
-			*MotorA.pOCR = 1;
-			*MotorA.pTCNT = 0;
-			*MotorA.pTIFR = 0;
-
-			break;
-		}
-		case('B'):
-		{
-			MotorB.rotCnt = 0;
-			MotorB.rotationCounterFloat = &rotationCounter;
-			MotorB.rotationCounterInt = 0;
-			MotorB.rotationCounterFlag = 1;
-			*MotorB.pOCR = 1;
-			*MotorB.pTCNT = 0;
-			*MotorB.pTIFR = 0;
-			break;
-		}
-		case('C'):
-		{
-			MotorC.rotCnt = 0;
-			MotorC.rotationCounterFloat = &rotationCounter;
-			MotorC.rotationCounterInt = 0;
-			MotorC.rotationCounterFlag = 1;
-			*MotorC.pOCR = 1;
-			*MotorC.pTCNT = 0;
-			*MotorC.pTIFR = 0;
-			break;
-		}
-	}
-	name.cthread.sequance++;
-}
-
-void startCounting(System name, char motorPort, int & rotationCounter)
-{
-	if(name.cthread.sequance != name.sequance)
-	{
-		return;
-	}
-
-	switch(motorPort)
-	{
-		case('A'):
-		{
-			MotorA.rotCnt = 0;
-			MotorA.rotationCounterInt = &rotationCounter;
-			MotorA.rotationCounterFloat = 0;
-			MotorA.rotationCounterFlag = 1;
-			*MotorA.pOCR = 2;
-			*MotorA.pTCNT = 0;
-			*MotorA.pTIFR = 0;
-
-			break;
-		}
-		case('B'):
-		{
-			MotorB.rotCnt = 0;
-			MotorB.rotationCounterInt = &rotationCounter;
-			MotorB.rotationCounterFloat = 0;
-			MotorB.rotationCounterFlag = 1;
-			*MotorB.pOCR = 2;
-			*MotorB.pTCNT = 0;
-			*MotorB.pTIFR = 0;
-			break;
-		}
-		case('C'):
-		{
-			MotorC.rotCnt = 0;
-			MotorC.rotationCounterInt = &rotationCounter;
-			MotorC.rotationCounterFloat = 0;
-			MotorC.rotationCounterFlag = 1;
-			*MotorC.pOCR = 2;
-			*MotorC.pTCNT = 0;
-			*MotorC.pTIFR = 0;
-			break;
-		}
-	}
-	name.cthread.sequance++;
 }
 
 
