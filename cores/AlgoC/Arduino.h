@@ -341,6 +341,7 @@ class ALGOBOT_INFO
 {
     public:
         uint8_t state;
+		uint8_t stopFlag;
 };
 
 #define FOREVER                                     0

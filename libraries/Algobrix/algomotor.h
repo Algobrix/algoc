@@ -115,18 +115,208 @@ void rotationsABC(System name,float rotations,float power,int direction,bool isB
 
 void stopMotor(System name,char motorPort);
 
-void startCounting(System name, char motorPort, float  & rotationCounter);
-void startCounting(System name, char motorPort, int & rotationCounter);
 void stopCounting(System name, char motorPort);
 
 bool isMotorBusy(System name, char motorPort);
 
 void resistenceToStop(System name, char motorPort, float  threshold);
 
-template <typename Number> void startCounting(System name,char motorPOrt, Number parameter)
+
+// Specializations for known types
+template <typename T>
+struct TypeName {
+    static int numberIsInt(T number) { return 1; }
+};
+template <>
+struct TypeName<int> {
+    static int numberIsInt(int number) { return 1; }
+};
+
+template <>
+struct TypeName<float> {
+    static int numberIsInt(float number) { return 0; }
+};
+
+template <typename Number> void startCounting(System name,char motorPort, Number & parameter)
 {
+	if(TypeName<Number>::numberIsInt(parameter))
+	{
+		Serial.println("Parameter is int");
+	}
+	else
+	{
+		Serial.println("Parameter is float");
+	}
+	if(name.cthread.sequance != name.sequance)
+	{
+		return;
+	}
+
+	switch(motorPort)
+	{
+		case('A'):
+		{
+			MotorA.rotCnt = 0;
+			if(TypeName<Number>::numberIsInt(parameter))
+			{
+				MotorA.rotationCounterInt = (int *) &parameter;
+				MotorA.rotationCounterFloat = 0;
+			}
+			else
+			{
+				MotorA.rotationCounterFloat = (float *) &parameter;
+				MotorA.rotationCounterInt = 0;
+			}
+			MotorA.rotationCounterFlag = 1;
+			*MotorA.pOCR = 1;
+			*MotorA.pTCNT = 0;
+			*MotorA.pTIFR = 0;
+
+			break;
+		}
+		case('B'):
+		{
+			MotorB.rotCnt = 0;
+			if(TypeName<Number>::numberIsInt(parameter))
+			{
+				MotorB.rotationCounterInt = (int *) &parameter;
+				MotorB.rotationCounterFloat = 0;
+			}
+			else
+			{
+				MotorB.rotationCounterFloat = (float *) &parameter;
+				MotorB.rotationCounterInt = 0;
+			}
+			MotorB.rotationCounterFlag = 1;
+
+			*MotorB.pOCR = 1;
+			*MotorB.pTCNT = 0;
+			*MotorB.pTIFR = 0;
+			break;
+		}
+		case('C'):
+		{
+			MotorC.rotCnt = 0;
+			if(TypeName<Number>::numberIsInt(parameter))
+			{
+				MotorC.rotationCounterInt = (int *) &parameter;
+				MotorC.rotationCounterFloat = 0;
+			}
+			else
+			{
+				MotorC.rotationCounterFloat = (float *) &parameter;
+				MotorC.rotationCounterInt = 0;
+			}
+			MotorC.rotationCounterFlag = 1;
+			*MotorC.pOCR = 1;
+			*MotorC.pTCNT = 0;
+			*MotorC.pTIFR = 0;
+			break;
+		}
+	}
+	name.cthread.sequance++;
 
 }
+
+#ifdef TEST
+void startCounting(System name, char motorPort, float  & rotationCounter);
+void startCounting(System name, char motorPort, int & rotationCounter);
+void startCounting(System name, char motorPort, float & rotationCounter)
+{
+	if(name.cthread.sequance != name.sequance)
+	{
+		return;
+	}
+
+	switch(motorPort)
+	{
+		case('A'):
+		{
+			MotorA.rotCnt = 0;
+			MotorA.rotationCounterFloat = &rotationCounter;
+			MotorA.rotationCounterInt = 0;
+			MotorA.rotationCounterFlag = 1;
+			*MotorA.pOCR = 1;
+			*MotorA.pTCNT = 0;
+			*MotorA.pTIFR = 0;
+
+			break;
+		}
+		case('B'):
+		{
+			MotorB.rotCnt = 0;
+			MotorB.rotationCounterFloat = &rotationCounter;
+			MotorB.rotationCounterInt = 0;
+			MotorB.rotationCounterFlag = 1;
+			*MotorB.pOCR = 1;
+			*MotorB.pTCNT = 0;
+			*MotorB.pTIFR = 0;
+			break;
+		}
+		case('C'):
+		{
+			MotorC.rotCnt = 0;
+			MotorC.rotationCounterFloat = &rotationCounter;
+			MotorC.rotationCounterInt = 0;
+			MotorC.rotationCounterFlag = 1;
+			*MotorC.pOCR = 1;
+			*MotorC.pTCNT = 0;
+			*MotorC.pTIFR = 0;
+			break;
+		}
+	}
+	name.cthread.sequance++;
+}
+
+void startCounting(System name, char motorPort, int & rotationCounter)
+{
+	if(name.cthread.sequance != name.sequance)
+	{
+		return;
+	}
+
+	switch(motorPort)
+	{
+		case('A'):
+		{
+			MotorA.rotCnt = 0;
+			MotorA.rotationCounterInt = &rotationCounter;
+			MotorA.rotationCounterFloat = 0;
+			MotorA.rotationCounterFlag = 1;
+			*MotorA.pOCR = 2;
+			*MotorA.pTCNT = 0;
+			*MotorA.pTIFR = 0;
+
+			break;
+		}
+		case('B'):
+		{
+			MotorB.rotCnt = 0;
+			MotorB.rotationCounterInt = &rotationCounter;
+			MotorB.rotationCounterFloat = 0;
+			MotorB.rotationCounterFlag = 1;
+			*MotorB.pOCR = 2;
+			*MotorB.pTCNT = 0;
+			*MotorB.pTIFR = 0;
+			break;
+		}
+		case('C'):
+		{
+			MotorC.rotCnt = 0;
+			MotorC.rotationCounterInt = &rotationCounter;
+			MotorC.rotationCounterFloat = 0;
+			MotorC.rotationCounterFlag = 1;
+			*MotorC.pOCR = 2;
+			*MotorC.pTCNT = 0;
+			*MotorC.pTIFR = 0;
+			break;
+		}
+	}
+	name.cthread.sequance++;
+}
+#endif
+
+
 
 #endif 
 /* ***************************** END OF FILE ******************************* */

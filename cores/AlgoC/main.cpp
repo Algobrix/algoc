@@ -98,6 +98,7 @@ ISR(PCINT1_vect)
 		{
 			g_button_timer = getSYSTIM();
 			g_ALGOBOT_INFO.state = ALGOBOT_STATE_PAUSE;
+			g_ALGOBOT_INFO.stopFlag = 0x01;
 		}
 		else if(g_ALGOBOT_INFO.state == ALGOBOT_STATE_PAUSE)
 		{
@@ -200,7 +201,7 @@ int main(void)
     Serial.print(F("Device started. Battery voltage is "));
     Serial.print(g_battery_voltage/1000.);
     Serial.println(" V");
-    if(g_battery_voltage < 7000)
+    if(g_battery_voltage < 5500)
     {
         g_upload_flag = 0;
         g_playState = 0x00;
@@ -266,14 +267,14 @@ int main(void)
             g_ALGOBOT_INFO.state = ALGOBOT_STATE_RUN;
 			uint8_t p = 0;
 			Serial.println("\r\n\r\n");
-			for( p = 0; p < 35; p++ )
+			for( p = 0; p < 47; p++ )
 			{
 				Serial.print(F("-"));
 			}
 			Serial.print(F("\r\nApplication started. Battery voltage is: "));
 			Serial.print(g_battery_voltage/1000.);
 			Serial.println(" V");
-			for( p = 0; p < 35; p++ )
+			for( p = 0; p < 47; p++ )
 			{
 				Serial.print(F("-"));
 			}

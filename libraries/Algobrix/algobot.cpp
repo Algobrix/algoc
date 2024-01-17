@@ -66,7 +66,6 @@ void chkALGOBOT(void)
 
 void stopActuators(void)
 {
-
 	A.stop();
 	B.stop();
 	C.stop();
@@ -307,6 +306,11 @@ uint8_t yield(void)
     if((g_ALGOBOT_INFO.state == ALGOBOT_STATE_RUN) || (g_ALGOBOT_INFO.state == ALGOBOT_STATE_PAUSE))
 	{
 		blinkLed();
+		if(g_ALGOBOT_INFO.stopFlag)
+		{
+			g_ALGOBOT_INFO.stopFlag = 0;
+			stopActuators();
+		}
 	}
 
 	if(!(PINC & (1 << PC0)))
@@ -650,45 +654,56 @@ ISR(TIMER3_COMPA_vect)
 
 ISR(TIMER1_COMPA_vect) 
 {
-  noInterrupts();
-  if(MotorB.state == ALGOMOTOR_STATE_ROTATION)
-  {
-	  if(MotorB.rotations <= *MotorB.pOCR)
-	  {
-		  *MotorB.pOCR = 0;
-		  *MotorB.pTCNT = 0;
-		  *MotorB.pTIFR = 0;
-		  MotorB.stop();
-	  }
-	  else
-	  {
-		  MotorB.rotations -= *MotorB.pOCR;
-	  }
-  }
+ 	noInterrupts();
+	if(MotorB.state == ALGOMOTOR_STATE_ROTATION)
+	{
+		if(MotorB.rotations <= *MotorB.pOCR)
+		{
+			if(0)
+			{
+				*MotorB.pOCR = 0;
+				*MotorB.pTCNT = 0;
+				*MotorB.pTIFR = 0;
+			}
+			else
+			{
+				*MotorB.pOCR = 1;
+				*MotorB.pTCNT = 0;
+				*MotorB.pTIFR = 0;
+			}
+			MotorB.stop();
+		}
+		else
+		{
+			MotorB.rotations -= *MotorB.pOCR;
+		}
+	}
 
-  if(MotorB.rotationCounterFlag)
-  {
-	  MotorB.rotCnt++;
-	  MotorB.speed_cnt++;
-	  if(MotorB.rotationCounterFloat != 0)
-	  {
-		  *MotorB.rotationCounterFloat = (float) MotorB.rotCnt / 360;
-	  }
-	  if(MotorB.rotationCounterInt != 0)
-	  {
-		  *MotorB.rotationCounterInt = MotorB.rotCnt / 360;
-	  }
-	  *MotorB.pTCNT = 0;
-	  *MotorB.pTIFR = 0;
-  }
-  else
-  {
-	  MotorB.speed_cnt++;
-	  *MotorB.pTCNT = 0;
-	  *MotorB.pTIFR = 0;
-  }
+	if(MotorB.rotationCounterFlag)
+	{
+		MotorB.rotCnt++;
+		MotorB.speed_cnt++;
+		if(MotorB.rotationCounterFloat != 0)
+		{
+			*MotorB.rotationCounterFloat = (float) MotorB.rotCnt / 360;
+		}
+		if(MotorB.rotationCounterInt != 0)
+		{
+			*MotorB.rotationCounterInt = MotorB.rotCnt / 360.;
+		}
+		*MotorB.pTCNT = 0;
+		*MotorB.pTIFR = 0;
+	}
+	else
+	{
+		// Serial.println(MotorB.rotCnt);
+		MotorB.rotCnt++;
+		MotorB.speed_cnt++;
+		*MotorB.pTCNT = 0;
+		*MotorB.pTIFR = 0;
+	}
 
-  interrupts();
+	interrupts();
 }
 
 ISR(TIMER4_COMPA_vect) 

@@ -277,81 +277,89 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 				cthread.sequance++;
 				return 	ALGOMOTOR_STATUS_COMPLETED;
 			}
-			// Serial.print("Control the motor [");
-			// Serial.print(id);
-			// Serial.print("] on line [");
-			// Serial.print(line);
-			// Serial.print("]. Set direction [");
-			// Serial.print(dir);
-			// Serial.print("] with power [");
-			// Serial.print(power);
-			// Serial.print("] for number of rotations [");
-			// Serial.print(rotation);
-			// Serial.println("]");
+			Serial.print("Control the motor [");
+			Serial.print(id);
+			Serial.print("] on line [");
+			Serial.print(line);
+			Serial.print("]. Set direction [");
+			Serial.print(dir);
+			Serial.print("] with power [");
+			Serial.print(power);
+			Serial.print("] for number of rotations [");
+			Serial.print(rotation);
+			Serial.println("]");
 			this->period = FOREVER;
 			this->timer = getSYSTIM();
 			this->power = power;
-			setRotationCnt(rotation);
-
 			digitalWrite(_directionPin, this->direction);
 			if(power > 10)
 			{
 				power = 10;
 			}
 			setPower(power);
-			if(mode == OP_STATUS_BLOCKING)
+			if(rotation != FOREVER)
 			{
-				this->prevState = this->state;
-				this->state = ALGOMOTOR_STATE_ROTATION;
-				this->timer = getSYSTIM();
-				if(&cthread == &threadAlgoC)
+				setRotationCnt(rotation);
+				if(mode == OP_STATUS_BLOCKING)
 				{
-					while(this->state == ALGOMOTOR_STATE_ROTATION)
+					this->prevState = this->state;
+					this->state = ALGOMOTOR_STATE_ROTATION;
+					this->timer = getSYSTIM();
+					if(&cthread == &threadAlgoC)
 					{
-						yield();
-						if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_RUN)
+						while(this->state == ALGOMOTOR_STATE_ROTATION)
 						{
-							stop();
-							this->status = ALGOMOTOR_STATUS_INIT;
-							return 	ALGOMOTOR_STATUS_COMPLETED;
-						}
-						if(chk4TimeoutSYSTIM(this->speed_timer,200) == SYSTIM_TIMEOUT)
-						{
-							this->speed_timer = getSYSTIM();
-							if(this->speed == 0)
+							yield();
+							if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_RUN)
 							{
-								this->speed = this->speed_cnt;
-								this->speed_cnt = 0;
+								stop();
+								this->status = ALGOMOTOR_STATUS_INIT;
+								return 	ALGOMOTOR_STATUS_COMPLETED;
 							}
-							else
+							if(chk4TimeoutSYSTIM(this->speed_timer,200) == SYSTIM_TIMEOUT)
 							{
-								if((this->speed * (this->speed_drop_threshold/100.)) > this->speed_cnt)
+								this->speed_timer = getSYSTIM();
+								if(this->speed == 0)
 								{
-									break;
+									this->speed = this->speed_cnt;
+									this->speed_cnt = 0;
 								}
-								this->speed_cnt = 0;
+								else
+								{
+									if((this->speed * (this->speed_drop_threshold/100.)) > this->speed_cnt)
+									{
+										break;
+									}
+									this->speed_cnt = 0;
+								}
 							}
-						}
 
+						}
+						stop();
+						this->status = ALGOMOTOR_STATUS_INIT;
+						cthread.sequance++;
+						return 	ALGOMOTOR_STATUS_COMPLETED;
 					}
-					stop();
-					this->status = ALGOMOTOR_STATUS_INIT;
-					cthread.sequance++;
-					return 	ALGOMOTOR_STATUS_COMPLETED;
+					else
+					{
+						this->status = ALGOMOTOR_STATUS_RUNNING;
+						return 	ALGOMOTOR_STATUS_RUNNING;
+					}
+
 				}
 				else
 				{
-					this->status = ALGOMOTOR_STATUS_RUNNING;
-					return 	ALGOMOTOR_STATUS_RUNNING;
+					this->prevState = this->state;
+					this->state = ALGOMOTOR_STATE_ROTATION;
+					cthread.sequance++;
+					return 	ALGOMOTOR_STATUS_COMPLETED;
 				}
 
 			}
 			else
 			{
 				this->prevState = this->state;
-				this->state = ALGOMOTOR_STATE_ROTATION;
-				cthread.sequance++;
-				return 	ALGOMOTOR_STATUS_COMPLETED;
+				this->state = ALGOMOTOR_STATE_ON;
 			}
 			break;
 		}
@@ -544,9 +552,9 @@ uint32_t AlgoMotor::getRuntime(void)
 void AlgoMotor::setPower(uint32_t power)
 {
 	uint32_t value;
+	uint32_t battery = g_battery_voltage;
 	if(1)
 	{
-		uint32_t battery = g_battery_voltage;
 		if(battery > 9000)
 		{
 			battery = 9000;
@@ -782,101 +790,6 @@ float numberOfRotations(System name,AlgoMotor & motor)
 	float cnt = motor.rotCnt;
 	cnt = cnt / 720.;
 	return cnt;
-}
-
-
-void startCounting(System name, char motorPort, float & rotationCounter)
-{
-	if(name.cthread.sequance != name.sequance)
-	{
-		return;
-	}
-
-	switch(motorPort)
-	{
-		case('A'):
-		{
-			MotorA.rotCnt = 0;
-			MotorA.rotationCounterFloat = &rotationCounter;
-			MotorA.rotationCounterInt = 0;
-			MotorA.rotationCounterFlag = 1;
-			*MotorA.pOCR = 1;
-			*MotorA.pTCNT = 0;
-			*MotorA.pTIFR = 0;
-
-			break;
-		}
-		case('B'):
-		{
-			MotorB.rotCnt = 0;
-			MotorB.rotationCounterFloat = &rotationCounter;
-			MotorB.rotationCounterInt = 0;
-			MotorB.rotationCounterFlag = 1;
-			*MotorB.pOCR = 1;
-			*MotorB.pTCNT = 0;
-			*MotorB.pTIFR = 0;
-			break;
-		}
-		case('C'):
-		{
-			MotorC.rotCnt = 0;
-			MotorC.rotationCounterFloat = &rotationCounter;
-			MotorC.rotationCounterInt = 0;
-			MotorC.rotationCounterFlag = 1;
-			*MotorC.pOCR = 1;
-			*MotorC.pTCNT = 0;
-			*MotorC.pTIFR = 0;
-			break;
-		}
-	}
-	name.cthread.sequance++;
-}
-
-void startCounting(System name, char motorPort, int & rotationCounter)
-{
-	if(name.cthread.sequance != name.sequance)
-	{
-		return;
-	}
-
-	switch(motorPort)
-	{
-		case('A'):
-		{
-			MotorA.rotCnt = 0;
-			MotorA.rotationCounterInt = &rotationCounter;
-			MotorA.rotationCounterFloat = 0;
-			MotorA.rotationCounterFlag = 1;
-			*MotorA.pOCR = 2;
-			*MotorA.pTCNT = 0;
-			*MotorA.pTIFR = 0;
-
-			break;
-		}
-		case('B'):
-		{
-			MotorB.rotCnt = 0;
-			MotorB.rotationCounterInt = &rotationCounter;
-			MotorB.rotationCounterFloat = 0;
-			MotorB.rotationCounterFlag = 1;
-			*MotorB.pOCR = 2;
-			*MotorB.pTCNT = 0;
-			*MotorB.pTIFR = 0;
-			break;
-		}
-		case('C'):
-		{
-			MotorC.rotCnt = 0;
-			MotorC.rotationCounterInt = &rotationCounter;
-			MotorC.rotationCounterFloat = 0;
-			MotorC.rotationCounterFlag = 1;
-			*MotorC.pOCR = 2;
-			*MotorC.pTCNT = 0;
-			*MotorC.pTIFR = 0;
-			break;
-		}
-	}
-	name.cthread.sequance++;
 }
 
 
