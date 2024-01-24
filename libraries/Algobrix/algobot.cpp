@@ -97,8 +97,6 @@ void chk4CmdALGOBOT(void)
 		if(g_cmd == 0x00 )
 		{
 			char data = Serial.read();
-			Serial.print("Data: ");
-			Serial.println(data,HEX);
 			switch(data)
 			{
 				case('p'):
@@ -110,6 +108,7 @@ void chk4CmdALGOBOT(void)
 				case('s'):
 				case('S'):
 				{
+					stopActuators();
 					resetAllThreads();
 					break;
 				}
@@ -157,8 +156,6 @@ void chk4CmdALGOBOT(void)
 			if(Serial.available())
 			{
 				char data = Serial.read();
-				Serial.print("Data: ");
-				Serial.println(data,HEX);
 				if(data == ' ')
 				{
 					runFlag = 1;
@@ -232,8 +229,6 @@ void chk4CmdALGOBOT(void)
 						{
 							g_cmd_motor_power = 0;
 						}
-						Serial.print("Received command: ");
-						Serial.println(g_cmd_motor_power);
 						g_cmd_data_idx = 0x00;
 						g_cmd = 0x00;
 						runFlag = 0;
@@ -247,8 +242,6 @@ void chk4CmdALGOBOT(void)
 						{
 							g_cmd_light_color = 0;
 						}
-						Serial.print("Received command: ");
-						Serial.println(g_cmd_light_color);
 
 						g_cmd_data_idx = 0x00;
 						g_cmd = 0x00;
@@ -346,7 +339,6 @@ uint8_t yield(void)
 			// resetAllThreads();
 			if(chk4TimeoutSYSTIM(g_button_timer,500) == SYSTIM_TIMEOUT)
 			{
-				Serial.println("Runn");
 				g_ALGOBOT_INFO.state = ALGOBOT_STATE_RUN;
 			}
 			sei();

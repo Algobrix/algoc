@@ -418,38 +418,6 @@ uint8_t AlgoMotor::rotationRaw(float rotation,uint8_t power,int8_t dir)
 	setPower(power);
 	this->prevState = this->state;
 	this->state = ALGOMOTOR_STATE_ROTATION;
-	this->timer = getSYSTIM();
-	while(this->state == ALGOMOTOR_STATE_ROTATION)
-	{
-		yield();
-		// if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_RO)
-		// {
-		// 	Serial.println("Test2");
-		// 	stop();
-		// 	this->status = ALGOMOTOR_STATUS_INIT;
-		// 	return 	ALGOMOTOR_STATUS_COMPLETED;
-		// }
-		if(chk4TimeoutSYSTIM(this->speed_timer,200) == SYSTIM_TIMEOUT)
-		{
-			this->speed_timer = getSYSTIM();
-			if(this->speed == 0)
-			{
-				this->speed = this->speed_cnt;
-				this->speed_cnt = 0;
-			}
-			else
-			{
-				if((this->speed * (this->speed_drop_threshold/100.)) > this->speed_cnt)
-				{
-					break;
-				}
-				this->speed_cnt = 0;
-			}
-		}
-
-	}
-	stop();
-	this->status = ALGOMOTOR_STATUS_INIT;
 	return 	ALGOMOTOR_STATUS_COMPLETED;
 }
 
