@@ -941,7 +941,7 @@ bool isMotorBusy(System name, char motorPort)
 
 }
 
-void resistenceToStop(System name, char motorPort, float  threshold)
+void resistanceToStop(System name, char motorPort, float  threshold)
 {
 	if(name.cthread.sequance != name.sequance)
 	{
