@@ -1,6 +1,6 @@
 /* Includes **************************************************************** */
 #include <algosensor.h>
-#include <algobot.h>
+#include <GoAlgo.h>
 
 /* Private constants ******************************************************* */
 

@@ -1,7 +1,7 @@
 /* Includes **************************************************************** */
 #include <Arduino.h>
 #include "algomotor.h"
-#include "algobot.h"
+#include "GoAlgo.h"
 #include "systim.h"
 
 /* Private constants ******************************************************* */

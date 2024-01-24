@@ -7,7 +7,7 @@
 #include <system.h>
 #include <neopixel.h>
 #include <algothread.h>
-#include <algobot.h>
+#include <GoAlgo.h>
 
 /* Exported constants ****************************************************** */
 #define LIGHT_POWER_LEVEL_CNT                           10

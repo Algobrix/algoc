@@ -2,11 +2,11 @@
   "packages": [
     {
       "name": "AlgoC",
-      "maintainer": "AlgoBrix",
+      "maintainer": "YoungEngineers",
       "websiteURL": "",
       "email": "",
       "help": {
-        "online": "https://github.com/Algobrix/algoc"
+        "online": "https://www.youngengineers.org/"
       },
       "platforms": [
         {

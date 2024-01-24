@@ -1,6 +1,6 @@
 /* Includes **************************************************************** */
 #include <algolight.h>
-#include <algobot.h>
+#include <GoAlgo.h>
 
 /* Private constants ******************************************************* */
 
