@@ -651,7 +651,6 @@ ISR(TIMER3_COMPA_vect)
 
 	interrupts();
 }
-
 ISR(TIMER1_COMPA_vect) 
 {
  	noInterrupts();
@@ -706,9 +705,24 @@ ISR(TIMER1_COMPA_vect)
 	interrupts();
 }
 
+
 ISR(TIMER4_COMPA_vect) 
 {
   noInterrupts();
+  if(MotorC.state == ALGOMOTOR_STATE_ROTATION)
+  {
+	  if(MotorC.rotations <= *MotorC.pOCR)
+	  {
+		  *MotorC.pOCR = 1;
+		  *MotorC.pTCNT = 0;
+		  *MotorC.pTIFR = 0;
+		  MotorC.stop();
+	  }
+	  else
+	  {
+		  MotorC.rotations -= *MotorB.pOCR;
+	  }
+  }
 
   if(MotorC.rotationCounterFlag)
   {
@@ -731,23 +745,6 @@ ISR(TIMER4_COMPA_vect)
 	  *MotorC.pTCNT = 0;
 	  *MotorC.pTIFR = 0;
   }
-  if(MotorC.state == ALGOMOTOR_STATE_ROTATION)
-  {
-	  if(MotorC.rotations <= *MotorB.pOCR)
-	  {
-		  *MotorC.pOCR = 0;
-		  *MotorC.pTCNT = 0;
-		  *MotorC.pTIFR = 0;
-		  MotorC.stop();
-	  }
-	  else
-	  {
-		  MotorC.rotations -= *MotorB.pOCR;
-	  }
-  }
-
-
-
   interrupts();
 }
 
