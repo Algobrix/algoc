@@ -1,6 +1,6 @@
 /* Define to prevent recursive inclusion *********************************** */
-#ifndef __ALGOBOT_H
-#define __ALGOBOT_H
+#ifndef __GOALGO_H
+#define __GOALGO_H
 
 /* Includes **************************************************************** */
 #include <Arduino.h>
@@ -9,7 +9,6 @@
 #include <algothread.h>
 #include <algolight.h>
 #include <algomotor.h>
-#include <algobot.h>
 #include <algosound.h>
 #include <algowait.h>
 #include <algosensor.h>

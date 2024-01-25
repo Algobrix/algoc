@@ -1,7 +1,7 @@
 /* Includes **************************************************************** */
 #include <Arduino.h>
 #include "algomotor.h"
-#include "algobot.h"
+#include "GoAlgo.h"
 #include "systim.h"
 
 /* Private constants ******************************************************* */
@@ -87,8 +87,14 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 			Serial.print(F("] with power ["));
 			Serial.print(power);
 			Serial.print(F("] for period ["));
-			Serial.print(time);
+			Serial.print(time < 0 ? 0 : time);
 			Serial.println(F("]"));
+			if(time < 0)
+			{
+				cthread.sequance++;
+				this->status = ALGOMOTOR_STATUS_INIT;
+				return 	ALGOMOTOR_STATUS_COMPLETED;
+			}
 			this->period = time * 1000;
 			this->timer = getSYSTIM();
 			this->rotCnt = 0;
@@ -277,6 +283,11 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 				cthread.sequance++;
 				return 	ALGOMOTOR_STATUS_COMPLETED;
 			}
+			if(rotation < 0)
+			{
+				rotation = 0;
+			}
+
 			Serial.print("Control the motor [");
 			Serial.print(id);
 			Serial.print("] on line [");
@@ -288,6 +299,11 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 			Serial.print("] for number of rotations [");
 			Serial.print(rotation);
 			Serial.println("]");
+			if(rotation == 0)
+			{
+				cthread.sequance++;
+				return 	ALGOMOTOR_STATUS_COMPLETED;
+			}
 			this->period = FOREVER;
 			this->timer = getSYSTIM();
 			this->power = power;
@@ -402,38 +418,6 @@ uint8_t AlgoMotor::rotationRaw(float rotation,uint8_t power,int8_t dir)
 	setPower(power);
 	this->prevState = this->state;
 	this->state = ALGOMOTOR_STATE_ROTATION;
-	this->timer = getSYSTIM();
-	while(this->state == ALGOMOTOR_STATE_ROTATION)
-	{
-		yield();
-		// if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_RO)
-		// {
-		// 	Serial.println("Test2");
-		// 	stop();
-		// 	this->status = ALGOMOTOR_STATUS_INIT;
-		// 	return 	ALGOMOTOR_STATUS_COMPLETED;
-		// }
-		if(chk4TimeoutSYSTIM(this->speed_timer,200) == SYSTIM_TIMEOUT)
-		{
-			this->speed_timer = getSYSTIM();
-			if(this->speed == 0)
-			{
-				this->speed = this->speed_cnt;
-				this->speed_cnt = 0;
-			}
-			else
-			{
-				if((this->speed * (this->speed_drop_threshold/100.)) > this->speed_cnt)
-				{
-					break;
-				}
-				this->speed_cnt = 0;
-			}
-		}
-
-	}
-	stop();
-	this->status = ALGOMOTOR_STATUS_INIT;
 	return 	ALGOMOTOR_STATUS_COMPLETED;
 }
 
@@ -580,61 +564,46 @@ void AlgoMotor::setRotationCnt(float rot)
 	this->rotCnt = 0;
 	this->speed = 0;
 	this->speed_cnt = 0;
-	if(rot < 1)
+	int rot_calc = 0;
+	if(rot < 0.2)
 	{
-		this->rotations = 0;
-		if(this->rotationCounterFlag == 0)
-		{
-			int tmp = 0;
-			if(rot < 0.2)
-			{
-				float power_coeff = 1.51;
-				float rot_coeff = -8.59;
-				float intercept_coeff = 1.87;
-				tmp = (rot * 360) - ((power_coeff * this->power) + (rot_coeff * rot) - intercept_coeff);
-			}
-			else if(rot)
-			{
-				float power_coeff = 1.86;
-				float rot_coeff = 1.27;
-				float intercept_coeff = -0.71;
-				tmp = (rot * 360) - ((power_coeff * this->power) + (rot_coeff * rot) - intercept_coeff);
-			}
-			if(tmp <= 0)
-			{
-				tmp = 1;
-			}
-			*pOCR = tmp;
-			*pTCNT = 0;
-			*pTIFR = 0;
-		}
-		else
-		{
-			*pOCR = rot * 360 * 2;
-			*pTCNT = 0;
-			*pTIFR = 0;
-		}
+		float power_coeff = 1.51;
+		float rot_coeff = -8.59;
+		float intercept_coeff = 1.87;
+		rot_calc = (rot * 360) - ((power_coeff * this->power) + (rot_coeff * rot) - intercept_coeff);
+	}
+	else if(rot < 1)
+	{
+		float power_coeff = 1.86;
+		float rot_coeff = 1.27;
+		float intercept_coeff = -0.71;
+		rot_calc = (rot * 360) - ((power_coeff * this->power) + (rot_coeff * rot) - intercept_coeff);
+	}
+	else if(rot)
+	{
+		rot_calc = rot * 180;
+	}
 
+	if(rot_calc <= 0)
+	{
+		rot_calc = 1;
+	}
+	this->rotations = rot_calc * 2;
+	if(this->rotationCounterFlag == 0)
+	{
+		*pOCR = 1;
+		*pTCNT = 0;
+		*pTIFR = 0;
 	}
 	else
 	{
-		this->rotations = (rot * 360);
-		if(this->rotationCounterFlag == 0)
-		{
-			*pOCR = 1;
-			*pTCNT = 0;
-			*pTIFR = 0;
-		}
-		else
-		{
-			*pOCR = 1;
-			*pTCNT = 0;
-			*pTIFR = 0;
-		}
+		*pOCR = 1;
+		*pTCNT = 0;
+		*pTIFR = 0;
+	}
 
-	}
 	this->speed_timer = getSYSTIM();
-	}
+}
 
 
 void move(System name,char motorPort,float seconds,float power,int direction,bool isBlocking)
@@ -940,7 +909,7 @@ bool isMotorBusy(System name, char motorPort)
 
 }
 
-void resistenceToStop(System name, char motorPort, float  threshold)
+void resistanceToStop(System name, char motorPort, float  threshold)
 {
 	if(name.cthread.sequance != name.sequance)
 	{

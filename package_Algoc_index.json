@@ -2,11 +2,11 @@
   "packages": [
     {
       "name": "AlgoC",
-      "maintainer": "AlgoBrix",
-      "websiteURL": "",
-      "email": "",
+      "maintainer": "YoungEngineers",
+      "websiteURL": "https://www.youngengineers.org/",
+      "email": "semir.tursunovic@microbitdesign.com",
       "help": {
-        "online": "https://github.com/Algobrix/algoc"
+        "online": "https://www.youngengineers.org/"
       },
       "platforms": [
         {

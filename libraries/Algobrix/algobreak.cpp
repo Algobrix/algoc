@@ -1,6 +1,6 @@
 /* Includes **************************************************************** */
 #include <Arduino.h>
-#include "algobot.h"
+#include "GoAlgo.h"
 #include "algobreak.h"
 
 /* Private types *********************************************************** */

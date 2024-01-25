@@ -1,5 +1,5 @@
 /* Includes **************************************************************** */
-#include "algobot.h"
+#include "GoAlgo.h"
 #include "compileTime.h"
 
 /* Private constants ******************************************************* */
@@ -97,8 +97,6 @@ void chk4CmdALGOBOT(void)
 		if(g_cmd == 0x00 )
 		{
 			char data = Serial.read();
-			Serial.print("Data: ");
-			Serial.println(data,HEX);
 			switch(data)
 			{
 				case('p'):
@@ -110,6 +108,7 @@ void chk4CmdALGOBOT(void)
 				case('s'):
 				case('S'):
 				{
+					stopActuators();
 					resetAllThreads();
 					break;
 				}
@@ -157,8 +156,6 @@ void chk4CmdALGOBOT(void)
 			if(Serial.available())
 			{
 				char data = Serial.read();
-				Serial.print("Data: ");
-				Serial.println(data,HEX);
 				if(data == ' ')
 				{
 					runFlag = 1;
@@ -232,8 +229,6 @@ void chk4CmdALGOBOT(void)
 						{
 							g_cmd_motor_power = 0;
 						}
-						Serial.print("Received command: ");
-						Serial.println(g_cmd_motor_power);
 						g_cmd_data_idx = 0x00;
 						g_cmd = 0x00;
 						runFlag = 0;
@@ -247,8 +242,6 @@ void chk4CmdALGOBOT(void)
 						{
 							g_cmd_light_color = 0;
 						}
-						Serial.print("Received command: ");
-						Serial.println(g_cmd_light_color);
 
 						g_cmd_data_idx = 0x00;
 						g_cmd = 0x00;
@@ -346,7 +339,6 @@ uint8_t yield(void)
 			// resetAllThreads();
 			if(chk4TimeoutSYSTIM(g_button_timer,500) == SYSTIM_TIMEOUT)
 			{
-				Serial.println("Runn");
 				g_ALGOBOT_INFO.state = ALGOBOT_STATE_RUN;
 			}
 			sei();
@@ -651,7 +643,6 @@ ISR(TIMER3_COMPA_vect)
 
 	interrupts();
 }
-
 ISR(TIMER1_COMPA_vect) 
 {
  	noInterrupts();
@@ -706,9 +697,24 @@ ISR(TIMER1_COMPA_vect)
 	interrupts();
 }
 
+
 ISR(TIMER4_COMPA_vect) 
 {
   noInterrupts();
+  if(MotorC.state == ALGOMOTOR_STATE_ROTATION)
+  {
+	  if(MotorC.rotations <= *MotorC.pOCR)
+	  {
+		  *MotorC.pOCR = 1;
+		  *MotorC.pTCNT = 0;
+		  *MotorC.pTIFR = 0;
+		  MotorC.stop();
+	  }
+	  else
+	  {
+		  MotorC.rotations -= *MotorB.pOCR;
+	  }
+  }
 
   if(MotorC.rotationCounterFlag)
   {
@@ -731,23 +737,6 @@ ISR(TIMER4_COMPA_vect)
 	  *MotorC.pTCNT = 0;
 	  *MotorC.pTIFR = 0;
   }
-  if(MotorC.state == ALGOMOTOR_STATE_ROTATION)
-  {
-	  if(MotorC.rotations <= *MotorB.pOCR)
-	  {
-		  *MotorC.pOCR = 0;
-		  *MotorC.pTCNT = 0;
-		  *MotorC.pTIFR = 0;
-		  MotorC.stop();
-	  }
-	  else
-	  {
-		  MotorC.rotations -= *MotorB.pOCR;
-	  }
-  }
-
-
-
   interrupts();
 }
 

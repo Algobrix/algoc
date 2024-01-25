@@ -119,7 +119,7 @@ void stopCounting(System name, char motorPort);
 
 bool isMotorBusy(System name, char motorPort);
 
-void resistenceToStop(System name, char motorPort, float  threshold);
+void resistanceToStop(System name, char motorPort, float  threshold);
 
 
 // Specializations for known types
