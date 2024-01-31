@@ -712,7 +712,7 @@ ISR(TIMER4_COMPA_vect)
 	  }
 	  else
 	  {
-		  MotorC.rotations -= *MotorB.pOCR;
+		  MotorC.rotations -= *MotorC.pOCR;
 	  }
   }
 

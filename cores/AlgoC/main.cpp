@@ -29,6 +29,9 @@
 #include <time.h>
 #include <../../libraries/Algobrix/softserial.h>
 
+
+#define ALGOC_VERSION							"v0.5.0"
+
 #define R1 20000.0 // resistance of R1 (20K)
 #define R2 10000.0 // resistance of R2 (10K)
 
@@ -198,7 +201,9 @@ int main(void)
 
 	// time_t t;
 	srand((unsigned) g_battery_voltage);
-    Serial.print(F("Device started. Battery voltage is "));
+    Serial.print(F("Device started with firmware version "));
+    Serial.print(F(ALGOC_VERSION));
+    Serial.print(F(". Battery voltage is "));
     Serial.print(g_battery_voltage/1000.);
     Serial.println(" V");
     if(g_battery_voltage < 5500)
@@ -267,14 +272,16 @@ int main(void)
             g_ALGOBOT_INFO.state = ALGOBOT_STATE_RUN;
 			uint8_t p = 0;
 			Serial.println("\r\n\r\n");
-			for( p = 0; p < 47; p++ )
+			for( p = 0; p < 75; p++ )
 			{
 				Serial.print(F("-"));
 			}
-			Serial.print(F("\r\nApplication started. Battery voltage is: "));
+			Serial.print(F("\r\nApplication started with firmware version "));
+			Serial.print(F(ALGOC_VERSION));
+			Serial.print(F(". Battery voltage is "));
 			Serial.print(g_battery_voltage/1000.);
 			Serial.println(" V");
-			for( p = 0; p < 47; p++ )
+			for( p = 0; p < 75; p++ )
 			{
 				Serial.print(F("-"));
 			}
