@@ -15,6 +15,7 @@
 #include <algobreak.h>
 #include <algothread.h>
 #include <algoserial.h>
+#include <algobutton.h>
 
 /* Exported constants ****************************************************** */
 #define DEBUG_ENABLED

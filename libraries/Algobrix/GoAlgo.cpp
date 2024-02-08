@@ -306,7 +306,8 @@ uint8_t yield(void)
 		}
 	}
 
-	if(!(PINC & (1 << PC0)))
+
+	if((g_button_fuction_acitve_flag == 0) &&(!(PINC & (1 << PC0))))
 	{
 		digitalWrite(PLAY_LED_PIN,0);
 		uint32_t timer = getSYSTIM();
@@ -712,7 +713,7 @@ ISR(TIMER4_COMPA_vect)
 	  }
 	  else
 	  {
-		  MotorC.rotations -= *MotorB.pOCR;
+		  MotorC.rotations -= *MotorC.pOCR;
 	  }
   }
 
