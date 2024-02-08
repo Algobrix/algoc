@@ -100,67 +100,6 @@ uint8_t Sensor(uint8_t port)
 }
 
 
-void waitSensor(System name,int sensorPort, int signalValue)
-{
-	if(name.cthread.sequance != name.sequance)
-	{
-		return;
-	}
-	yield();
-    uint8_t cvalue;
-	switch(name.cthread.waitState)
-	{
-		case(ALGOTHREAD_WAIT_STATE_INIT):
-		{
-			Serial.print("Wait for sensor on line [");
-			Serial.print(name.line);
-			Serial.print("] for value [");
-			Serial.print(signalValue);
-			Serial.println("]");
-			name.cthread.waitTimer = getSYSTIM();
-			if(&name.cthread == &threadAlgoC)
-			{
-				while(1)
-				{
-					delay(10);
-					yield();
-					cvalue = Sensor(sensorPort);
-					if(cvalue == signalValue)
-					{
-						break;
-					}
-					if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_RUN)
-					{
-						name.cthread.waitState = ALGOTHREAD_WAIT_STATE_INIT;
-						return;
-					}
-				}
-				name.cthread.waitState = ALGOTHREAD_WAIT_STATE_INIT;
-				name.cthread.sequance++;
-				return;
-			}
-			else
-			{
-				// cthread.waitState = ALGOTHREAD_WAIT_STATE_RUN;
-				return;
-			}
-			break;
-		}
-		case(ALGOTHREAD_WAIT_STATE_RUN):
-		{
-			cvalue = Sensor(sensorPort);
-			if(cvalue != 0x00)
-			{
-				name.cthread.waitState = ALGOTHREAD_WAIT_STATE_INIT;
-				name.cthread.sequance++;
-				return;
-			}
-			return;
-			break;
-		}
-	}
-}
-
 int waitSensor(System name,int sensorPort, int minSignalValue, int maxSignalValue)
 {
 	if(name.cthread.sequance != name.sequance)
