@@ -55,9 +55,8 @@ extern AlgoSensor Sensor2;
 uint8_t Sensor(AlgoSensor & sensor);
 uint8_t Sensor(uint8_t port);
 
-void waitSensor(System name,int sensorPort, int signalValue);
 int waitSensor(System name,int sensorPort, int minSignalValue, int maxSignalValue);
-void waitSignal(System name,int sensorPort, bool logicState);
+void waitForPressSensor(System name,int sensorPort, bool logicState);
 
 int getSensor(System name,int sensorPort);
 

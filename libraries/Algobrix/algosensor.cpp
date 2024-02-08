@@ -161,7 +161,7 @@ int waitSensor(System name,int sensorPort, int minSignalValue, int maxSignalValu
 	}
 }
 
-void waitSignal(System name,int sensorPort, bool logicState)
+void waitForPressSensor(System name,int sensorPort, bool logicState)
 {
 	if(name.cthread.sequance != name.sequance)
 	{
