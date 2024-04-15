@@ -1,6 +1,6 @@
 /* Includes **************************************************************** */
 #include <algosensor.h>
-#include <GoAlgo.h>
+#include <algoC.h>
 
 /* Private constants ******************************************************* */
 
@@ -112,6 +112,7 @@ int waitSensor(System name,int sensorPort, int minSignalValue, int maxSignalValu
 	{
 		case(ALGOTHREAD_WAIT_STATE_INIT):
 		{
+#ifdef SERIAL_ENABLE
 			Serial.print("Wait for sensor on line [");
 			Serial.print(name.line);
 			Serial.print("] for value in range [");
@@ -119,6 +120,7 @@ int waitSensor(System name,int sensorPort, int minSignalValue, int maxSignalValu
 			Serial.print("-");
 			Serial.print(maxSignalValue);
 			Serial.println("]");
+#endif
 			name.cthread.waitTimer = getSYSTIM();
 			if(&name.cthread == &threadAlgoC)
 			{
@@ -173,6 +175,7 @@ void waitForPressSensor(System name,int sensorPort, bool logicState)
 	{
 		case(ALGOTHREAD_WAIT_STATE_INIT):
 		{
+#ifdef SERIAL_ENABLE
 			Serial.print("Wait for sensor on line [");
 			Serial.print(name.line);
 			Serial.print("] for value in range [");
@@ -185,6 +188,7 @@ void waitForPressSensor(System name,int sensorPort, bool logicState)
 				Serial.print("False");
 			}
 			Serial.println("]");
+#endif
 			name.cthread.waitTimer = getSYSTIM();
 			if(&name.cthread == &threadAlgoC)
 			{
@@ -241,14 +245,16 @@ int getSensor(System name,int sensorPort)
 		return 0;
 	}
 	yield();
+	int cvalue = Sensor(sensorPort);
+#ifdef SERIAL_ENABLE
 	Serial.print("On line [");
 	Serial.print(name.line);
 	Serial.print("] current value from sensor on port [");
 	Serial.print(sensorPort);
 	Serial.print("] is [");
-	int cvalue = Sensor(sensorPort);
 	Serial.print(cvalue);
 	Serial.println("]");
+#endif
 	name.cthread.sequance++;
 	return cvalue;
 }

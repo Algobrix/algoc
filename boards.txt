@@ -65,6 +65,16 @@ AlgoC.bootloader.extended_fuses=0b1111{bootloader.cfd_bit}101
 #AlgoC.menu.BOD.disabled=BOD  disabled
 #AlgoC.menu.BOD.disabled.bootloader.extended_fuses=0b1111{bootloader.cfd_bit}111
 
+menu.serial=Debug
+
+AlgoC.menu.serial.enabled=Enabled
+AlgoC.menu.serial.enabled.build.serial_flag=-DSERIAL_ENABLE
+AlgoC.menu.serial.enabled.upload.maximum_size=32256
+
+AlgoC.menu.serial.disabled=Disabled
+AlgoC.menu.serial.disabled.build.serial_flag=-DSERIAL_DISABLE
+AlgoC.menu.serial.disabled.upload.maximum_size=32256
+
 # Compiler link time optimization
 #AlgoC.menu.LTO.Os=LTO disabled
 AlgoC.compiler.c.extra_flags=
@@ -94,4 +104,5 @@ AlgoC.build.clock_speed={build.f_cpu}
 AlgoC.build.f_cpu=16000000L
 
 AlgoC.bootloader.tool=avrdude
+
 

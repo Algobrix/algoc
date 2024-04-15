@@ -1,7 +1,7 @@
 /* Includes **************************************************************** */
 #include <Arduino.h>
 #include "algomotor.h"
-#include "GoAlgo.h"
+#include "algoC.h"
 #include "systim.h"
 
 /* Private constants ******************************************************* */
@@ -68,6 +68,7 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 			else
 			{
 				this->status = ALGOMOTOR_STATUS_INIT;
+#ifdef SERIAL_ENABLE
 				Serial.print(F("Control the motor ["));
 				Serial.print(id);
 				Serial.print(F("] on line ["));
@@ -75,9 +76,11 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 				Serial.print(F("] has a unsupported value ["));
 				Serial.print(dir);
 				Serial.println(F("]"));
+#endif
 				cthread.sequance++;
 				return 	ALGOMOTOR_STATUS_COMPLETED;
 			}
+#ifdef SERIAL_ENABLE
 			Serial.print(F("Control the motor ["));
 			Serial.print(id);
 			Serial.print(F("] on line ["));
@@ -89,6 +92,7 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 			Serial.print(F("] for period ["));
 			Serial.print(time < 0 ? 0 : time);
 			Serial.println(F("]"));
+#endif
 			if(time < 0)
 			{
 				cthread.sequance++;
@@ -273,6 +277,7 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 			else
 			{
 				this->status = ALGOMOTOR_STATUS_INIT;
+#ifdef SERIAL_ENABLE
 				Serial.print(F("Control the motor ["));
 				Serial.print(id);
 				Serial.print(F("] on line ["));
@@ -280,6 +285,7 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 				Serial.print(F("] has a unsupported value ["));
 				Serial.print(dir);
 				Serial.println(F("]"));
+#endif
 				cthread.sequance++;
 				return 	ALGOMOTOR_STATUS_COMPLETED;
 			}
@@ -288,6 +294,7 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 				rotation = 0;
 			}
 
+#ifdef SERIAL_ENABLE
 			Serial.print("Control the motor [");
 			Serial.print(id);
 			Serial.print("] on line [");
@@ -299,6 +306,7 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 			Serial.print("] for number of rotations [");
 			Serial.print(rotation);
 			Serial.println("]");
+#endif
 			if(rotation == 0)
 			{
 				cthread.sequance++;
@@ -396,6 +404,7 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 
 uint8_t AlgoMotor::rotationRaw(float rotation,uint8_t power,int8_t dir)
 {
+#ifdef SERIAL_ENABLE
 	Serial.print("Control the motor [");
 	Serial.print(id);
 	Serial.print("]. Set direction [");
@@ -405,6 +414,7 @@ uint8_t AlgoMotor::rotationRaw(float rotation,uint8_t power,int8_t dir)
 	Serial.print("] for number of rotations [");
 	Serial.print(rotation);
 	Serial.println("]");
+#endif
 	this->direction = (dir == 1) ? 1 : 0;
 	this->period = FOREVER;
 	this->timer = getSYSTIM();
@@ -520,8 +530,10 @@ void AlgoMotor::stop(int line,int sequance,AlgoThread & cthread)
 	{
 		changeSpeed(0);
 	}
+#ifdef SERIAL_ENABLE
 	Serial.print(F("Stop motor: "));
 	Serial.println (this->id);
+#endif
 	this->prevState = this->state;
 	this->state = ALGOMOTOR_STATE_IDLE;
 	this->status = ALGOMOTOR_STATUS_INIT;

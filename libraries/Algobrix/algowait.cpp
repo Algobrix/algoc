@@ -1,6 +1,6 @@
 /* Includes **************************************************************** */
 #include "algowait.h"
-#include "GoAlgo.h"
+#include "algoC.h"
 
 /* Private constants ******************************************************* */
 

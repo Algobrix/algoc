@@ -1,4 +1,4 @@
-#include <GoAlgo.h>
+#include <algoC.h>
 
 void thread0_run(void);
 void thread1_run(void);
