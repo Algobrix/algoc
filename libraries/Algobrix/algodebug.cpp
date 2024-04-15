@@ -1,5 +1,5 @@
 /* Includes **************************************************************** */
-#include <GoAlgo.h>
+#include <algoC.h>
 #include <algodebug.h>
 
 /* Private constants ******************************************************* */

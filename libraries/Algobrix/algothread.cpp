@@ -1,5 +1,5 @@
 /* Includes **************************************************************** */
-#include "GoAlgo.h" 
+#include "algoC.h" 
 #include "algothread.h"
 
 /* Private types *********************************************************** */
@@ -123,7 +123,9 @@ void resetAllThreads(void)
 	threadAlgoC.loopState = 0;
 	threadAlgoC.loopSequance = 0;
 	threadAlgoC.subThreadIdx = 0;
+#ifdef SERIAL_ENABLE
 	Serial.println("All threads are reseted");
+#endif
 }
 
 

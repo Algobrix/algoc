@@ -1,7 +1,7 @@
 /* Includes **************************************************************** */
 #include <Arduino.h>
 #include "algobutton.h"
-#include "GoAlgo.h"
+#include "algoC.h"
 #include "systim.h"
 
 /* Private types *********************************************************** */
@@ -57,10 +57,12 @@ int waitPlayButtonPress(System name,int numberOfPresses)
 			if(state == 1)
 			{
 				++press_counter;
+#ifdef SERIAL_ENABLE
 				Serial.print("Press detected: ");
 				Serial.print(press_counter);
 				Serial.print("/");
 				Serial.print(numberOfPresses);
+#endif
 			}
 		}
 		if(press_counter >= numberOfPresses)

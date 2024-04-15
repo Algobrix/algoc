@@ -1,5 +1,5 @@
 /* Includes **************************************************************** */
-#include "GoAlgo.h"
+#include "algoC.h"
 #include "compileTime.h"
 
 /* Private constants ******************************************************* */
@@ -103,6 +103,10 @@ void chk4CmdALGOBOT(void)
 				case('P'):
 				{
 					g_serial_control_flags |= SERIAL_CONTROL_PLAY;
+					while(Serial.available())
+					{
+						char tmp = Serial.read();
+					}
 					break;
 				}
 				case('s'):
@@ -110,6 +114,10 @@ void chk4CmdALGOBOT(void)
 				{
 					stopActuators();
 					resetAllThreads();
+					while(Serial.available())
+					{
+						char tmp = Serial.read();
+					}
 					break;
 				}
 				case('a'):
@@ -359,6 +367,10 @@ uint8_t yield(void)
 			case('p'):
 			case('P'):
 			{
+				while(Serial.available())
+				{
+					char tmp = Serial.read();
+				}
 				break;
 			}
 			case('s'):
@@ -366,6 +378,10 @@ uint8_t yield(void)
 			{
 				resetAllThreads();
 				stopALGOBOT();
+				while(Serial.available())
+				{
+					char tmp = Serial.read();
+				}
 				break;
 			}
 

@@ -1,4 +1,4 @@
-#include <GoAlgo.h>
+#include <algoC.h>
 
 
 void application(ALGOC_APP)

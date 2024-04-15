@@ -1,5 +1,5 @@
 /* Includes **************************************************************** */
-#include <GoAlgo.h>
+#include <algoC.h>
 #include "algoserial.h"
 #include <systim.h>
 

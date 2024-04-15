@@ -1,7 +1,7 @@
 /* Includes **************************************************************** */
 #include <Arduino.h>
 #include "algosound.h"
-#include "GoAlgo.h"
+#include "algoC.h"
 #include "systim.h"
 /* #include "comHandler.h" */
 
@@ -120,6 +120,7 @@ void playSound(System name,int sound,int power,bool isBlocking)
 	{
 		case (ALGOSOUND_STATUS_INIT):
 		{
+#ifdef SERIAL_ENABLE
 			Serial.print(F("Playing the sound ["));
 			Serial.print(sound);
 			Serial.print(F("] on line ["));
@@ -127,6 +128,7 @@ void playSound(System name,int sound,int power,bool isBlocking)
 			Serial.print(F("] with Power ["));
 			Serial.print(power);
 			Serial.println(F("]"));
+#endif
 			soundPlayer.setVolume(power);
 			soundPlayer.play(sound);
 			soundPlayer.state = ALGOSOUND_STATE_PLAYING;

@@ -1,6 +1,6 @@
 /* Includes **************************************************************** */
 #include <Arduino.h>
-#include "GoAlgo.h"
+#include "algoC.h"
 #include "algobreak.h"
 
 /* Private types *********************************************************** */
@@ -21,6 +21,7 @@ uint8_t breakPoint(System name,char breakChar)
 		return 0;
 	}
 
+#ifdef SERIAL_ENABLE
     Serial.print("Reached break point at line[");
     Serial.print(name.line);
     Serial.print("]. Enter [");
@@ -33,6 +34,7 @@ uint8_t breakPoint(System name,char breakChar)
         Serial.print("any char");
     }
     Serial.println("] to continue");
+#endif
 
     uint32_t time = getSYSTIM();
     while(1)

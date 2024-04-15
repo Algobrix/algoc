@@ -1,6 +1,6 @@
 /* Includes **************************************************************** */
 #include <algolight.h>
-#include <GoAlgo.h>
+#include <algoC.h>
 
 /* Private constants ******************************************************* */
 
@@ -78,6 +78,7 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 	{
 		case (ALGOLED_LIGHT_STATUS_INIT):
 		{
+#ifdef SERIAL_ENABLE
 			Serial.print(F("Control the LED ["));
 			Serial.print(this->id);
 			Serial.print(F("] on line ["));
@@ -96,6 +97,7 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 				Serial.print(time);
 			}
 			Serial.println(F("] seconds"));
+#endif
 			this->period = time * 1000; // time in seconds
 			this->timer = getSYSTIM();
 			uint8_t r =  ((color >> 16) & 0xff) * ((float)power/LIGHT_POWER_LEVEL_CNT);
@@ -121,7 +123,9 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 							return 	ALGOLED_LIGHT_STATUS_COMPLETED;
 						}
 					}
+#ifdef SERIAL_ENABLE
 					Serial.println("Stop Light");
+#endif
 					this->stop();
 					this->status = ALGOLED_LIGHT_STATUS_INIT;
 					cthread.sequance++;
@@ -151,7 +155,9 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 		{
 			if(chk4TimeoutSYSTIM(this->timer,this->period) == SYSTIM_TIMEOUT)
 			{
+#ifdef SERIAL_ENABLE
 				Serial.println("Stop light");
+#endif
 				this->stop();
 				this->status = ALGOLED_LIGHT_STATUS_INIT;
 				cthread.sequance++;
@@ -166,6 +172,7 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 uint8_t AlgoLight::runRaw(float time,uint8_t power,uint32_t color)
 {
 
+#ifdef SERIAL_ENABLE
 	Serial.print(F("Control the LED ["));
 	Serial.print(this->id);
 	Serial.print(F("]. Set color ["));
@@ -175,6 +182,7 @@ uint8_t AlgoLight::runRaw(float time,uint8_t power,uint32_t color)
 	Serial.print(F("] for period ["));
 	Serial.print(time);
 	Serial.println(F("] seconds"));
+#endif
 	this->period = time * 1000; // time in seconds
 	this->timer = getSYSTIM();
 	uint8_t r =  ((color >> 16) & 0xff) * ((float)power/LIGHT_POWER_LEVEL_CNT);
@@ -194,7 +202,9 @@ uint8_t AlgoLight::runRaw(float time,uint8_t power,uint32_t color)
 		// 	return 	ALGOLED_LIGHT_STATUS_COMPLETED;
 		// }
 	}
+#ifdef SERIAL_ENABLE
 	Serial.println("Stop Light");
+#endif
 	this->stop();
 	this->status = ALGOLED_LIGHT_STATUS_INIT;
 	return 	ALGOLED_LIGHT_STATUS_COMPLETED;
@@ -219,12 +229,14 @@ void light(System name,int lightPort, float seconds,int power,char * color,bool 
 	}
 	if(k == 8)
 	{
+#ifdef SERIAL_ENABLE
 		Serial.print("Specified color [");
 		Serial.print(color);
 		Serial.print("] for the light on the line [");
 		Serial.print(name.line);
 		Serial.print("Specified color for the light on the line [");
 		Serial.println("] is invalide");
+#endif
 	}
 	uint32_t colorValue = c_color_value[k];
 	switch(lightPort)
