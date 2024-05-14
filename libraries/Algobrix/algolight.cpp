@@ -15,13 +15,13 @@ AlgoLight Light2(LED_B_PIN,2);
 
 const char c_color_name[7][8] = 
 {
-	"White",
-	"Red",
-	"Green",
-	"Blue",
-	"Purple",
-	"Yellow",
-	"Orange",
+	"white",
+	"red",
+	"green",
+	"blue",
+	"purple",
+	"yellow",
+	"orange",
 };
 const uint32_t c_color_value [LIGHT_COLOR_CNT] = 
 {
@@ -42,18 +42,17 @@ const uint32_t c_color_value [LIGHT_COLOR_CNT] =
 /* Private function prototypes ********************************************* */
 
 /* Exported functions ****************************************************** */
-AlgoLight::AlgoLight(uint8_t pin,uint8_t id)
+AlgoLight::AlgoLight(uint8_t pin,uint8_t id):
+	neoPixelLed(pin,1)
 {
     this->_pin = pin;
 	this->id = id;
-    neoPixelLed =NeoPixel(1, this->_pin, NEO_GRB + NEO_KHZ800);
-    neoPixelLed.begin();
 }
 
 void AlgoLight::setColor(uint8_t r,uint8_t g,uint8_t b)
 {
-    neoPixelLed.setPixelColor(0, neoPixelLed.Color(r, g, b));
-    neoPixelLed.show();
+	this->neoPixelLed.setColor(r,g,b);
+	this->neoPixelLed.updateLeds();
 }
 
 void AlgoLight::stop(void)
@@ -219,6 +218,14 @@ int isLightCompleted(AlgoLight & light)
 void light(System name,int lightPort, float seconds,int power,char * color,bool isBlocking)
 {
 	uint8_t k = 0;
+	while( color[k] != '\0' )
+	{
+		if(color[k] >= 'A' && color[k] <='Z') 
+		{
+			color[k] = (color[k] - 'A') + 'a';
+		}
+		k++;
+	}
 	for( k = 0; k < 8; k++ )
 	{
 		uint8_t res = strcmp(color,c_color_name[k]);
@@ -257,18 +264,9 @@ void light(System name,int lightPort, float seconds,int power,char * color,bool 
 
 void light12(System name,float seconds,int power,char * color,bool isBlocking)
 {
-    if(isBlocking == true)
-    {
-		light(name,1,seconds,power,color,false);
-		name.cthread.sequance--;
-		light(name,2,seconds,power,color,true);
-    }
-    else
-    {
-		light(name,1,seconds,power,color,false);
-		name.cthread.sequance--;
-		light(name,2,seconds,power,color,false);
-	}
+	light(name,1,seconds,power,color,false);
+	name.cthread.sequance--;
+	light(name,2,seconds,power,color,isBlocking);
 }
 
 void RGB12(System name,int lightPort, float seconds,int power,int R,int G,int B,bool isBlocking)
@@ -276,22 +274,19 @@ void RGB12(System name,int lightPort, float seconds,int power,int R,int G,int B,
     uint32_t color = R;
     color = (color << 8) | G;
     color = (color << 8) | B;
-	if(isBlocking == true)
-    {
-		Light1.run(name.line,name.sequance,name.cthread,seconds,power,color,false);
-		name.cthread.sequance--;
-		Light2.run(name.line,name.sequance,name.cthread,seconds,power,color,true);
-    }
-    else
-    {
-		Light1.run(name.line,name.sequance,name.cthread,seconds,power,color,false);
-		name.cthread.sequance--;
-		Light2.run(name.line,name.sequance,name.cthread,seconds,power,color,false);
-	}
+	Light1.run(name.line,name.sequance,name.cthread,seconds,power,color,false);
+	name.cthread.sequance--;
+	Light2.run(name.line,name.sequance,name.cthread,seconds,power,color,isBlocking);
 }
 
 void stopLight(System name, int lightPort)
 {
+	if(name.cthread.sequance != name.sequance)
+	{
+		return;
+	}
+	yield();
+
     switch(lightPort)
     {
         case(1):
@@ -312,6 +307,8 @@ void stopLight(System name, int lightPort)
         }
     }
 
+	name.cthread.sequance++;
+
 }
 
 bool isLightBusy(System name, int lightPort )
@@ -321,23 +318,21 @@ bool isLightBusy(System name, int lightPort )
 		return false;
 	}
 
+	name.cthread.sequance++;
 	switch(lightPort)
 	{
 		case(1):
 		{
-			name.cthread.sequance++;
 			return (Light1.state == ALGOLED_LIGHT_STATE_OFF) ? false : true;
 			break;
 		}
 		case(2):
 		{
-			name.cthread.sequance++;
 			return (Light2.state == ALGOLED_LIGHT_STATE_OFF) ? false : true;
 			break;
 		}
 		default:
 		{
-			name.cthread.sequance++;
 		}
 	}
 	return false;

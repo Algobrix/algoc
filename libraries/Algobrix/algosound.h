@@ -21,6 +21,23 @@ enum ALGOSOUND_STATUS
 	ALGOSOUND_STATUS_RUNNING = 0x01,
 	ALGOSOUND_STATUS_COMPLETED = 0x00
 };
+
+enum ALGOSOUND_SOUNDS
+{
+	SIREN = 1,
+	BELL = 2,
+	BIRD = 3,
+	MUSIC = 4,
+	DOG = 5,
+	MONKEY = 6,
+	ELEPHANT = 7,
+	APPLAUSE = 8,
+	VIOLINE = 9,
+	GUITAR = 10,
+	TRUCK = 12,
+	SMASH=13,
+	CHEERING = 15,
+};
 /* Exported macros ********************************************************* */
 
 /* Exported types ********************************************************** */
@@ -28,10 +45,11 @@ class AlgoSound
 {
     private:
         SoftSerial soundSerial;
-        String getTrackCommand(byte trackNumber);
+        char * getTrackCommand(byte trackNumber);
 
     public:
         byte scriptRowId = 0;
+		char trackCommand[8];
         uint8_t status;
 		uint8_t state;
         uint32_t timer;

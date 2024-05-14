@@ -5,7 +5,8 @@
 /* Includes **************************************************************** */
 #include <Arduino.h>
 #include <system.h>
-#include <neopixel.h>
+// #include <neopixel.h>
+#include <TinyWS2812B.h>
 #include <algothread.h>
 #include <algoC.h>
 
@@ -51,7 +52,8 @@ enum ALGOLED_LIGHT_STATUS
 class AlgoLight
 {
     private:
-        NeoPixel neoPixelLed;
+        // NeoPixel neoPixelLed;
+		TinyWS2812B neoPixelLed;
         uint8_t _pin;
     public:
 		uint8_t id;

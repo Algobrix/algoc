@@ -34,7 +34,7 @@ void AlgoSound::play(byte trackId)
     {
         if(getStatus() == ALGOSOUND_STATE_IDLE) 
         {
-            String trackCommand = getTrackCommand(trackId);
+            char * trackCommand = getTrackCommand(trackId);
             this->currentTrack = trackId;
             this->timer = getSYSTIM();
             this->state = ALGOSOUND_STATE_PLAYING;
@@ -49,7 +49,7 @@ void AlgoSound::play(byte trackId)
 void AlgoSound::stop(void) 
 {
 
-    String trackCommand = getTrackCommand(this->currentTrack);
+    char * trackCommand = getTrackCommand(this->currentTrack);
 	this->state = ALGOSOUND_STATE_IDLE;
 	delay(10);
     if(getStatus() == ALGOSOUND_STATE_PLAYING) 
@@ -75,19 +75,34 @@ void AlgoSound::setVolume(int volumeLevel)
     soundSerial.println(c_volume_char[volumeLevel]);
 }
 
-String AlgoSound::getTrackCommand(byte trackNumber) 
+char * AlgoSound::getTrackCommand(byte trackNumber) 
 {
     // The command that we get is:
     // p 00xx --> xx = number of the file
-    String command = "p ";
+	uint8_t idx = 0;
+	this->trackCommand[idx++] = 'p';
+	this->trackCommand[idx++] = ' ' ;
     // Create starting 0's
     // Example: trackId is 10 (size of 2 chars\digits) the command will be "p 0010"
-    for(int i = String(trackNumber).length(); i < 4; i++) 
+	uint8_t len = 4;
+	if(trackNumber > 9)
+	{
+		len = 3;
+	}
+    for(int i = 0; i < len; i++) 
     {
-        command += "0";
+		this->trackCommand[idx++] = '0' ;
     }
-    command += String(trackNumber);
-    return command;
+	if(trackNumber > 9)
+	{
+		this->trackCommand[idx++] = '0' + trackNumber/10;
+		this->trackCommand[idx++] = '0' + trackNumber%10;
+	}
+	else
+	{
+		this->trackCommand[idx++] = '0' + trackNumber ;
+	}
+	return this->trackCommand;
 }
 uint8_t AlgoSound::getStatus(void) 
 {
@@ -183,7 +198,13 @@ void playSound(System name,int sound,int power,bool isBlocking)
 
 void stopSound(System name)
 {
+	if(name.cthread.sequance != name.sequance)
+	{
+		return;
+	}
+	yield();
     soundPlayer.stop();
+	name.cthread.sequance++;
 }
 
 void stopSound(void)

@@ -30,7 +30,7 @@
 #include <../../libraries/Algobrix/softserial.h>
 
 
-#define ALGOC_VERSION							"v0.5.1"
+#define ALGOC_VERSION							"v0.5.3"
 
 #define R1 20000.0 // resistance of R1 (20K)
 #define R2 10000.0 // resistance of R2 (10K)
@@ -201,11 +201,13 @@ int main(void)
 
 	// time_t t;
 	srand((unsigned) g_battery_voltage);
+#ifdef SERIAL_ENABLE
     Serial.print(F("Device started with firmware version "));
     Serial.print(F(ALGOC_VERSION));
     Serial.print(F(". Battery voltage is "));
     Serial.print(g_battery_voltage/1000.);
     Serial.println(" V");
+#endif
     if(g_battery_voltage < 5500)
     {
         g_upload_flag = 0;
@@ -271,6 +273,8 @@ int main(void)
 			g_upload_flag = 0;
             g_ALGOBOT_INFO.state = ALGOBOT_STATE_RUN;
 			uint8_t p = 0;
+
+#ifdef SERIAL_ENABLE
 			Serial.println("\r\n\r\n");
 			for( p = 0; p < 75; p++ )
 			{
@@ -286,6 +290,7 @@ int main(void)
 				Serial.print(F("-"));
 			}
 			Serial.println("");
+#endif
             digitalWrite(PLAY_LED_PIN,0);
 
 			chkALGOBOT();
@@ -310,7 +315,6 @@ int main(void)
 				// }
 			}
 			g_ALGOBOT_INFO.state = ALGOBOT_STATE_IDLE;
-			Serial.println("Stopping");
 			PCIFR = 0x00; //Clear all flags
 
 			stopALGOBOT();

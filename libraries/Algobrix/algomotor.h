@@ -17,6 +17,7 @@
 #define B                                               MotorB
 #define C                                               MotorC
 
+#define RESISTANCE_TO_STOP_SAMPLING_PERIOD				100
 
 enum MOTOR_DIRECTION
 {
@@ -81,6 +82,7 @@ class AlgoMotor
 		uint16_t speed_cnt;
 		uint16_t speed;
 		uint8_t speed_drop_threshold;
+		uint8_t resistanceToStopPeriod;
 
 		
 
