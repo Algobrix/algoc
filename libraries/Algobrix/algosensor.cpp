@@ -133,6 +133,12 @@ int waitSensor(System name,int sensorPort, int minSignalValue, int maxSignalValu
 					{
 						break;
 					}
+					if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_RUN)
+					{
+						stopActuators();
+						name.cthread.sequance++;
+						return 0;
+					}
 				}
 				name.cthread.waitState = ALGOTHREAD_WAIT_STATE_INIT;
 				name.cthread.sequance++;
@@ -156,6 +162,12 @@ int waitSensor(System name,int sensorPort, int minSignalValue, int maxSignalValu
 				name.cthread.sequance++;
 				// return OP_STATUS_COMPLETED;
 				return cvalue;
+			}
+			if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_RUN)
+			{
+				stopActuators();
+				name.cthread.sequance++;
+				return 0;
 			}
 			return 0xff;
 			break;

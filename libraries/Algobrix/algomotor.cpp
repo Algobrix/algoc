@@ -123,6 +123,7 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 				power = 10;
 			}
 			setPower(power);
+			this->resistanceToStopPeriod = 200 - (15 * (power - 1));
 			if((mode == OP_STATUS_BLOCKING))
 			{
 				this->prevState = this->state;
@@ -142,7 +143,7 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 								this->status = ALGOMOTOR_STATUS_INIT;
 								return 	ALGOMOTOR_STATUS_COMPLETED;
 							}
-							if(chk4TimeoutSYSTIM(this->speed_timer,200) == SYSTIM_TIMEOUT)
+							if(chk4TimeoutSYSTIM(this->speed_timer,this->resistanceToStopPeriod) == SYSTIM_TIMEOUT)
 							{
 								this->speed_timer = getSYSTIM();
 								if(this->speed == 0)
@@ -210,7 +211,7 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 		}
 		case (ALGOMOTOR_STATUS_RUNNING):
 		{
-			if(chk4TimeoutSYSTIM(this->speed_timer,200) == SYSTIM_TIMEOUT)
+			if(chk4TimeoutSYSTIM(this->speed_timer,this->resistanceToStopPeriod) == SYSTIM_TIMEOUT)
 			{
 				this->speed_timer = getSYSTIM();
 				if(this->speed == 0)
@@ -321,6 +322,7 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 				power = 10;
 			}
 			setPower(power);
+			this->resistanceToStopPeriod = 200 - (15 * (power - 1));
 			if(rotation != FOREVER)
 			{
 				setRotationCnt(rotation);
@@ -340,7 +342,7 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 								this->status = ALGOMOTOR_STATUS_INIT;
 								return 	ALGOMOTOR_STATUS_COMPLETED;
 							}
-							if(chk4TimeoutSYSTIM(this->speed_timer,200) == SYSTIM_TIMEOUT)
+							if(chk4TimeoutSYSTIM(this->speed_timer,this->resistanceToStopPeriod) == SYSTIM_TIMEOUT)
 							{
 								this->speed_timer = getSYSTIM();
 								if(this->speed == 0)
@@ -426,6 +428,7 @@ uint8_t AlgoMotor::rotationRaw(float rotation,uint8_t power,int8_t dir)
 		power = 10;
 	}
 	setPower(power);
+	this->resistanceToStopPeriod = 200 - (15 * (power - 1));
 	this->prevState = this->state;
 	this->state = ALGOMOTOR_STATE_ROTATION;
 	return 	ALGOMOTOR_STATUS_COMPLETED;
@@ -745,6 +748,12 @@ void rotationsABC(System name,float rotations,float power,int direction,bool isB
 
 void stopMotor(System name,char motorPort)
 {
+	if(name.cthread.sequance != name.sequance)
+	{
+		return;
+	}
+	yield();
+
 	switch(motorPort)
 	{
 		case('A'):
@@ -763,8 +772,8 @@ void stopMotor(System name,char motorPort)
 			break;
 		}
 	}
+	name.cthread.sequance++;
 }
-
 
 float numberOfRotations(System name,AlgoMotor & motor)
 {
@@ -773,114 +782,161 @@ float numberOfRotations(System name,AlgoMotor & motor)
 	return cnt;
 }
 
-
 void stopCounting(System name, char motorPort)
 {
 	if(name.cthread.sequance != name.sequance)
 	{
 		return;
 	}
+	AlgoMotor * motor = 0;
 	switch(motorPort)
 	{
 		case('A'):
 		{
-			if(MotorA.state == ALGOMOTOR_STATE_ROTATION)
-			{
-				MotorA.rotationCounterFlag = 0;
-				if(*MotorA.pTCNT != 0)
-				{
-					if(MotorA.rotationCounterFloat != 0)
-					{
-						*MotorA.rotationCounterFloat = (float) *MotorA.pTCNT / 720;
-					}
-					if(MotorA.rotationCounterInt != 0)
-					{
-						*MotorA.rotationCounterInt = *MotorA.pTCNT / 720;
-					}
-				}
-			}
-			else
-			{
-				MotorA.rotationCounterFlag = 0;
-				if(MotorA.rotationCounterFloat != 0)
-				{
-					*MotorA.rotationCounterFloat = (float) MotorA.rotCnt / 360;
-				}
-				if(MotorA.rotationCounterInt != 0)
-				{
-					*MotorA.rotationCounterInt = MotorA.rotCnt / 360;
-				}
-			}
+			motor = &MotorA;
 			break;
 		}
 		case('B'):
 		{
-			if(MotorB.state == ALGOMOTOR_STATE_ROTATION)
-			{
-				MotorB.rotationCounterFlag = 0;
-				if(*MotorB.pTCNT != 0)
-				{
-					if(MotorB.rotationCounterFloat != 0)
-					{
-						*MotorB.rotationCounterFloat = (float) *MotorB.pTCNT / 720;
-					}
-					if(MotorB.rotationCounterInt != 0)
-					{
-						*MotorB.rotationCounterInt = *MotorB.pTCNT / 720;
-					}
-				}
-
-			}
-			else
-			{
-				MotorB.rotationCounterFlag = 0;
-				if(MotorB.rotationCounterFloat != 0)
-				{
-					*MotorB.rotationCounterFloat = (float) MotorB.rotCnt / 360;
-				}
-				if(MotorB.rotationCounterInt != 0)
-				{
-					*MotorB.rotationCounterInt =  MotorB.rotCnt / 360;
-				}
-
-			}
+			motor = &MotorB;
 			break;
 		}
 		case('C'):
 		{
-			if(MotorC.state == ALGOMOTOR_STATE_ROTATION)
-			{
-				MotorC.rotationCounterFlag = 0;
-				if(*MotorC.pTCNT != 0)
-				{
-					if(MotorC.rotationCounterFloat != 0)
-					{
-						*MotorC.rotationCounterFloat = (float) *MotorC.pTCNT / 720;
-					}
-					if(MotorC.rotationCounterInt != 0)
-					{
-						*MotorC.rotationCounterInt = *MotorC.pTCNT / 720;
-					}
-
-				}
-
-			}
-			else
-			{
-				MotorC.rotationCounterFlag = 0;
-				if(MotorC.rotationCounterFloat != 0)
-				{
-					*MotorC.rotationCounterFloat = (float) MotorC.rotCnt / 360;
-				}
-				if(MotorC.rotationCounterInt != 0)
-				{
-					*MotorC.rotationCounterInt =  MotorC.rotCnt / 360;
-				}
-
-			}
+			motor = &MotorC;
 			break;
 		}
 	}
+
+	if(motor->state == ALGOMOTOR_STATE_ROTATION)
+	{
+		motor->rotationCounterFlag = 0;
+		if(*motor->pTCNT != 0)
+		{
+			if(motor->rotationCounterFloat != 0)
+			{
+				*motor->rotationCounterFloat = (float) *motor->pTCNT / 720;
+			}
+			if(motor->rotationCounterInt != 0)
+			{
+				*motor->rotationCounterInt = *motor->pTCNT / 720;
+			}
+		}
+	}
+	else
+	{
+		motor->rotationCounterFlag = 0;
+		if(motor->rotationCounterFloat != 0)
+		{
+			*motor->rotationCounterFloat = (float) motor->rotCnt / 360;
+		}
+		if(motor->rotationCounterInt != 0)
+		{
+			*motor->rotationCounterInt = motor->rotCnt / 360;
+		}
+	}
+
+// 	switch(motorPort)
+// 	{
+// 		case('A'):
+// 		{
+// 			if(MotorA.state == ALGOMOTOR_STATE_ROTATION)
+// 			{
+// 				MotorA.rotationCounterFlag = 0;
+// 				if(*MotorA.pTCNT != 0)
+// 				{
+// 					if(MotorA.rotationCounterFloat != 0)
+// 					{
+// 						*MotorA.rotationCounterFloat = (float) *MotorA.pTCNT / 720;
+// 					}
+// 					if(MotorA.rotationCounterInt != 0)
+// 					{
+// 						*MotorA.rotationCounterInt = *MotorA.pTCNT / 720;
+// 					}
+// 				}
+// 			}
+// 			else
+// 			{
+// 				MotorA.rotationCounterFlag = 0;
+// 				if(MotorA.rotationCounterFloat != 0)
+// 				{
+// 					*MotorA.rotationCounterFloat = (float) MotorA.rotCnt / 360;
+// 				}
+// 				if(MotorA.rotationCounterInt != 0)
+// 				{
+// 					*MotorA.rotationCounterInt = MotorA.rotCnt / 360;
+// 				}
+// 			}
+// 			break;
+// 		}
+// 		case('B'):
+// 		{
+// 			if(MotorB.state == ALGOMOTOR_STATE_ROTATION)
+// 			{
+// 				MotorB.rotationCounterFlag = 0;
+// 				if(*MotorB.pTCNT != 0)
+// 				{
+// 					if(MotorB.rotationCounterFloat != 0)
+// 					{
+// 						*MotorB.rotationCounterFloat = (float) *MotorB.pTCNT / 720;
+// 					}
+// 					if(MotorB.rotationCounterInt != 0)
+// 					{
+// 						*MotorB.rotationCounterInt = *MotorB.pTCNT / 720;
+// 					}
+// 				}
+
+// 			}
+// 			else
+// 			{
+// 				MotorB.rotationCounterFlag = 0;
+// 				if(MotorB.rotationCounterFloat != 0)
+// 				{
+// 					*MotorB.rotationCounterFloat = (float) MotorB.rotCnt / 360;
+// 				}
+// 				if(MotorB.rotationCounterInt != 0)
+// 				{
+// 					*MotorB.rotationCounterInt =  MotorB.rotCnt / 360;
+// 				}
+
+// 			}
+// 			break;
+// 		}
+// 		case('C'):
+// 		{
+// 			if(MotorC.state == ALGOMOTOR_STATE_ROTATION)
+// 			{
+// 				MotorC.rotationCounterFlag = 0;
+// 				if(*MotorC.pTCNT != 0)
+// 				{
+// 					if(MotorC.rotationCounterFloat != 0)
+// 					{
+// 						*MotorC.rotationCounterFloat = (float) *MotorC.pTCNT / 720;
+// 					}
+// 					if(MotorC.rotationCounterInt != 0)
+// 					{
+// 						*MotorC.rotationCounterInt = *MotorC.pTCNT / 720;
+// 					}
+
+// 				}
+
+// 			}
+// 			else
+// 			{
+// 				MotorC.rotationCounterFlag = 0;
+// 				if(MotorC.rotationCounterFloat != 0)
+// 				{
+// 					*MotorC.rotationCounterFloat = (float) MotorC.rotCnt / 360;
+// 				}
+// 				if(MotorC.rotationCounterInt != 0)
+// 				{
+// 					*MotorC.rotationCounterInt =  MotorC.rotCnt / 360;
+// 				}
+
+// 			}
+// 			break;
+// 		}
+	// }
 	name.cthread.sequance++;
 }
 
@@ -891,34 +947,31 @@ bool isMotorBusy(System name, char motorPort)
 		return false;
 	}
 
+	name.cthread.sequance++;
+	AlgoMotor * motor = 0;
 	switch(motorPort)
 	{
 		case('A'):
 		{
-			name.cthread.sequance++;
-			return (MotorA.state == ALGOMOTOR_STATE_IDLE) ? false : true;
+			motor = &MotorA;
 			break;
 		}
 		case('B'):
 		{
-			name.cthread.sequance++;
-			return (MotorB.state == ALGOMOTOR_STATE_IDLE) ? false : true;
+			motor = &MotorB;
 			break;
 		}
 		case('C'):
 		{
-			name.cthread.sequance++;
-			return (MotorC.state == ALGOMOTOR_STATE_IDLE) ? false : true;
+			motor = &MotorC;
 			break;
 		}
 		default:
 		{
-			name.cthread.sequance++;
+			return false;
 		}
 	}
-
-	return false;
-
+	return (motor->state == ALGOMOTOR_STATE_IDLE) ? false : true;
 }
 
 void resistanceToStop(System name, char motorPort, float  threshold)
@@ -933,24 +986,24 @@ void resistanceToStop(System name, char motorPort, float  threshold)
 	{
 		threshold = 100;
 	}
+
+	AlgoMotor * motor = 0;
+	name.cthread.sequance++;
 	switch(motorPort)
 	{
 		case('A'):
 		{
-			MotorA.speed_drop_threshold = 100 - threshold;
-			name.cthread.sequance++;
+			motor = &MotorA;
 			break;
 		}
 		case('B'):
 		{
-			MotorB.speed_drop_threshold = 100 - threshold;
-			name.cthread.sequance++;
+			motor = &MotorB;
 			break;
 		}
 		case('C'):
 		{
-			MotorC.speed_drop_threshold = 100 - threshold;
-			name.cthread.sequance++;
+			motor = &MotorC;
 			break;
 		}
 		default:
@@ -958,6 +1011,7 @@ void resistanceToStop(System name, char motorPort, float  threshold)
 
 		}
 	}
+	motor->speed_drop_threshold = 100 - threshold;
 }
 
 /* Private functions ******************************************************* */

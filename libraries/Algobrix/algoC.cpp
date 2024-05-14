@@ -41,20 +41,6 @@ void initALGOBOT(void)
     uint32_t timer = getSYSTIM();
     uint8_t state = 0;
     g_ALGOBOT_INFO.state = ALGOBOT_STATE_IDLE;
-    while(0)
-    {
-        if(chk4TimeoutSYSTIM(timer,200) == SYSTIM_TIMEOUT)
-        {
-            timer = getSYSTIM();
-            state ^= 0x01;
-            digitalWrite(PLAY_LED_PIN,state);
-        }
-        if(digitalRead(PLAY_BUTTON_PIN) == 0)
-        {
-            digitalWrite(PLAY_LED_PIN,0);
-            break;
-        }
-    }
 }
 
 void chkALGOBOT(void)
@@ -90,6 +76,7 @@ void wait4CompletionALGOBOT(void)
 }
 
 
+// #ifdef SERIAL_ENABLE
 void chk4CmdALGOBOT(void) 
 {
 	if(Serial.available())
@@ -137,23 +124,6 @@ void chk4CmdALGOBOT(void)
 				{
 					g_cmd = 'C';
 					break;
-				}
-				case('m'):
-				case('M'):
-				{
-					g_cmd = 'M';
-					break;
-				}
-				case('t'):
-				case('T'):
-				{
-					g_cmd = 'T';
-					break;
-				}
-				case('l'):
-				case('L'):
-				{
-					g_cmd = 'L';
 				}
 
 			}
@@ -225,67 +195,12 @@ void chk4CmdALGOBOT(void)
 						runFlag = 0;
 						break;
 					}
-					case('M'):
-					{
-						g_cmd_data[g_cmd_data_idx++] = '\0';
-						g_cmd_motor_power = atof(&g_cmd_data[0]);
-						if(g_cmd_motor_power > 10)
-						{
-							g_cmd_motor_power = 10;
-						}
-						else if(g_cmd_motor_power < 0)
-						{
-							g_cmd_motor_power = 0;
-						}
-						g_cmd_data_idx = 0x00;
-						g_cmd = 0x00;
-						runFlag = 0;
-						break;
-					}
-					case('T'):
-					{
-						g_cmd_data[g_cmd_data_idx++] = '\0';
-						g_cmd_light_color = atof(&g_cmd_data[0]);
-						if(g_cmd_light_color >= LIGHT_COLOR_CNT)
-						{
-							g_cmd_light_color = 0;
-						}
-
-						g_cmd_data_idx = 0x00;
-						g_cmd = 0x00;
-						runFlag = 0;
-						break;
-					}
-					case('L'):
-					{
-						uint8_t port = g_cmd_data[0] - '0';
-						g_cmd_data[g_cmd_data_idx++] = '\0';
-						float period = atof(&g_cmd_data[1]);
-						uint32_t colorValue = c_color_value[g_cmd_light_color];
-						switch(port)
-						{
-							case(1):
-							{
-								Light1.runRaw(period,g_cmd_motor_power,colorValue);
-								break;
-							}
-							case(2):
-							{
-								Light2.runRaw(period,g_cmd_motor_power,colorValue);
-								break;
-							}
-						}
-						g_cmd_data_idx = 0x00;
-						g_cmd = 0x00;
-						runFlag = 0;
-						break;
-					}
-
 				}
 			}
 		}
 	}
 }
+// #endif
 
 void blinkLed(void) 
 {
@@ -331,8 +246,6 @@ uint8_t yield(void)
 					pinMode(PLAY_BUTTON_PIN,LOW);
 					digitalWrite(PLAY_LED_PIN,0);
 					flag = 1;
-					Serial.println("Power off");
-
 				}
 				else if(chk4TimeoutSYSTIM(timer,500) == SYSTIM_TIMEOUT)		
 				{
@@ -359,35 +272,36 @@ uint8_t yield(void)
 	}
 
 	chkALGOBOT();
-	if((g_cmd == 0x00) && Serial.available())
-	{
-		char control = Serial.read();
-		switch(control)
-		{
-			case('p'):
-			case('P'):
-			{
-				while(Serial.available())
-				{
-					char tmp = Serial.read();
-				}
-				break;
-			}
-			case('s'):
-			case('S'):
-			{
-				resetAllThreads();
-				stopALGOBOT();
-				while(Serial.available())
-				{
-					char tmp = Serial.read();
-				}
-				break;
-			}
+	chk4CmdALGOBOT();
+	// if((g_cmd == 0x00) && Serial.available())
+	// {
+	// 	char control = Serial.read();
+	// 	switch(control)
+	// 	{
+	// 		case('p'):
+	// 		case('P'):
+	// 		{
+	// 			while(Serial.available())
+	// 			{
+	// 				char tmp = Serial.read();
+	// 			}
+	// 			break;
+	// 		}
+	// 		case('s'):
+	// 		case('S'):
+	// 		{
+	// 			resetAllThreads();
+	// 			stopALGOBOT();
+	// 			while(Serial.available())
+	// 			{
+	// 				char tmp = Serial.read();
+	// 			}
+	// 			break;
+	// 		}
 
-		}
+	// 	}
 
-	}
+	// }
 
 	return 0;
 }
@@ -454,91 +368,40 @@ void initENCODER(void)
 
 void chkMOTOR(void)
 {
-    if(MotorA.state == ALGOMOTOR_STATE_TIMED_ON)
-    {
-        if(chk4TimeoutSYSTIM(MotorA.timer,MotorA.period) == SYSTIM_TIMEOUT)
-        {
-            MotorA.stop();
-        }
-    }
-
-    if(MotorA.state != ALGOMOTOR_STATE_IDLE)
+	AlgoMotor * motor[3] = {&MotorA,&MotorB,&MotorC};
+	uint8_t k = 0;
+	for( k = 0; k < 3; k++ )
 	{
-		if(chk4TimeoutSYSTIM(MotorA.speed_timer,200) == SYSTIM_TIMEOUT)
+		if(motor[k]->state == ALGOMOTOR_STATE_TIMED_ON)
 		{
-			MotorA.speed_timer = getSYSTIM();
-			if(MotorA.speed == 0)
+			if(chk4TimeoutSYSTIM(motor[k]->timer,motor[k]->period) == SYSTIM_TIMEOUT)
 			{
-				MotorA.speed = MotorA.speed_cnt;
-				MotorA.speed_cnt = 0;
+				motor[k]->stop();
 			}
-			else
+		}
+
+		if(motor[k]->state != ALGOMOTOR_STATE_IDLE)
+		{
+			if(chk4TimeoutSYSTIM(motor[k]->speed_timer,motor[k]->resistanceToStopPeriod) == SYSTIM_TIMEOUT)
 			{
-				if((MotorA.speed * (MotorA.speed_drop_threshold/100.)) > MotorA.speed_cnt)
+				motor[k]->speed_timer = getSYSTIM();
+				if(motor[k]->speed == 0)
 				{
-					MotorA.state = ALGOMOTOR_STATE_OFF;
+					motor[k]->speed = motor[k]->speed_cnt;
+					motor[k]->speed_cnt = 0;
 				}
-				MotorA.speed_cnt = 0;
+				else
+				{
+					if((motor[k]->speed * (motor[k]->speed_drop_threshold/100.)) > motor[k]->speed_cnt)
+					{
+						motor[k]->state = ALGOMOTOR_STATE_OFF;
+						motor[k]->stop();
+					}
+					motor[k]->speed_cnt = 0;
+				}
 			}
 		}
 	}
-
-    if(MotorB.state == ALGOMOTOR_STATE_TIMED_ON)
-    {
-        if(chk4TimeoutSYSTIM(MotorB.timer,MotorB.period) == SYSTIM_TIMEOUT)
-        {
-            MotorB.stop();
-        }
-    }
-    if(MotorB.state != ALGOMOTOR_STATE_IDLE)
-	{
-		if(chk4TimeoutSYSTIM(MotorB.speed_timer,200) == SYSTIM_TIMEOUT)
-		{
-			MotorB.speed_timer = getSYSTIM();
-			if(MotorB.speed == 0)
-			{
-				MotorB.speed = MotorB.speed_cnt;
-				MotorB.speed_cnt = 0;
-			}
-			else
-			{
-				if((MotorB.speed * (MotorB.speed_drop_threshold/100.)) > MotorB.speed_cnt)
-				{
-					MotorB.state = ALGOMOTOR_STATE_OFF;
-				}
-				MotorB.speed_cnt = 0;
-			}
-		}
-	}
-
-    if(MotorC.state == ALGOMOTOR_STATE_TIMED_ON)
-    {
-        if(chk4TimeoutSYSTIM(MotorC.timer,MotorC.period) == SYSTIM_TIMEOUT)
-        {
-            MotorC.stop();
-        }
-    }
-	if(MotorC.state != ALGOMOTOR_STATE_IDLE)
-	{
-		if(chk4TimeoutSYSTIM(MotorC.speed_timer,200) == SYSTIM_TIMEOUT)
-		{
-			MotorC.speed_timer = getSYSTIM();
-			if(MotorC.speed == 0)
-			{
-				MotorC.speed = MotorC.speed_cnt;
-				MotorC.speed_cnt = 0;
-			}
-			else
-			{
-				if((MotorC.speed * (MotorC.speed_drop_threshold/100.)) > MotorC.speed_cnt)
-				{
-					MotorC.state = ALGOMOTOR_STATE_OFF;
-				}
-				MotorC.speed_cnt = 0;
-			}
-		}
-	}
-
 }
 
 void initLIGHT(void)
@@ -548,20 +411,19 @@ void initLIGHT(void)
 }
 void chkLIGHT(void)
 {
-    if(Light1.state == ALGOLED_LIGHT_STATE_TIMED_ON)
-    {
-        if(chk4TimeoutSYSTIM(Light1.timer,Light1.period) == SYSTIM_TIMEOUT)
-        {
-            Light1.stop();
-        }
-    }
-    if(Light2.state == ALGOLED_LIGHT_STATE_TIMED_ON)
-    {
-        if(chk4TimeoutSYSTIM(Light2.timer,Light2.period) == SYSTIM_TIMEOUT)
-        {
-            Light2.stop();
-        }
-    }
+	AlgoLight * light[2] = {&Light1,&Light2};
+	uint8_t k = 0;
+	for( k = 0; k < 2; k++ )
+	{
+		if(light[k]->state == ALGOLED_LIGHT_STATE_TIMED_ON)
+		{
+			if(chk4TimeoutSYSTIM(light[k]->timer,light[k]->period) == SYSTIM_TIMEOUT)
+			{
+				light[k]->stop();
+			}
+		}
+
+	}
 }
 
 void initUI(void)
@@ -651,7 +513,6 @@ ISR(TIMER3_COMPA_vect)
 	}
 	else
 	{
-		// Serial.println(MotorA.rotCnt);
 		MotorA.rotCnt++;
 		MotorA.speed_cnt++;
 		*MotorA.pTCNT = 0;
@@ -704,7 +565,6 @@ ISR(TIMER1_COMPA_vect)
 	}
 	else
 	{
-		// Serial.println(MotorB.rotCnt);
 		MotorB.rotCnt++;
 		MotorB.speed_cnt++;
 		*MotorB.pTCNT = 0;

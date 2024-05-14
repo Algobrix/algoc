@@ -18,13 +18,13 @@ AlgoThread & thread5 = threads[5];
 AlgoThread & thread6 = threads[6];
 AlgoThread & thread7 = threads[7];
 AlgoThread & thread8 = threads[8];
-AlgoThread & thread9 = threads[9];
-AlgoThread & thread10 = threads[10];
-AlgoThread & thread11 = threads[11];
-AlgoThread & thread12 = threads[12];
-AlgoThread & thread13 = threads[13];
-AlgoThread & thread14 = threads[14];
-AlgoThread & thread15 = threads[15];
+// AlgoThread & thread9 = threads[9];
+// AlgoThread & thread10 = threads[10];
+// AlgoThread & thread11 = threads[11];
+// AlgoThread & thread12 = threads[12];
+// AlgoThread & thread13 = threads[13];
+// AlgoThread & thread14 = threads[14];
+// AlgoThread & thread15 = threads[15];
 // AlgoThread & thread16 = threads[16];
 // AlgoThread & thread17 = threads[17];
 // AlgoThread & thread18 = threads[18];
@@ -220,66 +220,6 @@ void thread15_run(void)
 
 }
 void thread16_run(void)
-{ 
-
-}
-void thread17_run(void)
-{ 
-
-}
-void thread18_run(void)
-{ 
-
-}
-void thread19_run(void)
-{ 
-
-}
-void thread20_run(void)
-{ 
-
-}
-void thread21_run(void)
-{ 
-
-}
-void thread22_run(void)
-{ 
-
-}
-void thread23_run(void)
-{ 
-
-}
-void thread24_run(void)
-{ 
-
-}
-void thread25_run(void)
-{ 
-
-}
-void thread26_run(void)
-{ 
-
-}
-void thread27_run(void)
-{ 
-
-}
-void thread28_run(void)
-{ 
-
-}
-void thread29_run(void)
-{ 
-
-}
-void thread30_run(void)
-{ 
-
-}
-void thread31_run(void)
 { 
 
 }
