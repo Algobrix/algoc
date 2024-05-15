@@ -27,7 +27,7 @@
 #define dprintln(...)							
 #endif
 
-#define repeat(system,condition)				system.cthread.sequance++;while((g_ALGOBOT_INFO.state != ALGOBOT_STATE_IDLE) && (g_ALGOBOT_INFO.state != ALGOBOT_STATE_HALT) && (condition));
+#define repeat(system,condition)				system.cthread.sequance++;while((g_ALGOBOT_INFO.state != ALGOBOT_STATE_IDLE) && (g_ALGOBOT_INFO.state != ALGOBOT_STATE_HALT) && (condition))
 
 
 /* Exported macros ********************************************************* */
