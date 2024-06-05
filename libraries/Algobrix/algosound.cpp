@@ -234,6 +234,36 @@ bool isSoundBusy(System name)
 
 }
 
+void listAvailableSounds(System name)
+{
+	if(name.cthread.sequance != name.sequance)
+	{
+		return;
+	}
+
+	name.cthread.sequance++;
+
+#ifdef SERIAL_ENABLE
+			Serial.println(F("List of vailable sounds: "));
+			Serial.println(F("[1] - SIREN"));
+			Serial.println(F("[2] - BELL"));
+			Serial.println(F("[3] - BIRD"));
+			Serial.println(F("[4] - MUSIC"));
+			Serial.println(F("[5] - DOG"));
+			Serial.println(F("[6] - MONKEY"));
+			Serial.println(F("[7] - ELEPHANT"));
+			Serial.println(F("[8] - APPLAUSE"));
+			Serial.println(F("[9] - VIOLINE"));
+			Serial.println(F("[10] - GUITAR"));
+			Serial.println(F("[11] - ROBOT_LIFT"));
+			Serial.println(F("[12] - TRUCK"));
+			Serial.println(F("[13] - SMASH"));
+			Serial.println(F("[14] - CLOWN"));
+			Serial.println(F("[15] - CHEERING"));
+#endif
+	return;
+}
+
 /* Private functions ******************************************************* */
 
 /* ***************************** END OF FILE ******************************* */
