@@ -34,8 +34,10 @@ enum ALGOSOUND_SOUNDS
 	APPLAUSE = 8,
 	VIOLINE = 9,
 	GUITAR = 10,
+	ROBOT_LIFT = 11,
 	TRUCK = 12,
 	SMASH=13,
+	CLOWN=14,
 	CHEERING = 15,
 };
 /* Exported macros ********************************************************* */
@@ -69,7 +71,8 @@ extern AlgoSound soundPlayer;
 /* Exported functions ****************************************************** */
 void playSound(System name,int sound,int power,bool isBlocking);
 void stopSound(System name);
-void stopSound();
+void stopSound(void);
+void listAvailableSounds(System name);
 bool isSoundBusy(System name);
 #endif 
 /* ***************************** END OF FILE ******************************* */
