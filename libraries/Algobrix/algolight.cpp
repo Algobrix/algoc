@@ -249,11 +249,13 @@ void light(System name,int lightPort, float seconds,int power,char * color,bool 
 	switch(lightPort)
 	{
 		case(1):
+		case('1'):
 		{
 			Light1.run(name.line,name.sequance,name.cthread,seconds,power,colorValue,isBlocking);
 			break;
 		}
 		case(2):
+		case('2'):
 		{
 			Light2.run(name.line,name.sequance,name.cthread,seconds,power,colorValue,isBlocking);
 			break;
