@@ -772,7 +772,7 @@ void stopMotor(System name,char motorPort)
 			break;
 		}
 	}
-	name.cthread.sequance++;
+	// name.cthread.sequance++;
 }
 
 float numberOfRotations(System name,AlgoMotor & motor)
