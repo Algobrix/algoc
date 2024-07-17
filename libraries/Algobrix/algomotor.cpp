@@ -146,7 +146,7 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 							if(chk4TimeoutSYSTIM(this->speed_timer,this->resistanceToStopPeriod) == SYSTIM_TIMEOUT)
 							{
 								this->speed_timer = getSYSTIM();
-								if(this->speed == 0)
+								if((this->speed == 0) || (this->power == 0))
 								{
 									this->speed = this->speed_cnt;
 									this->speed_cnt = 0;
