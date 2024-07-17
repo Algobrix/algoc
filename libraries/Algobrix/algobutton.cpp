@@ -61,7 +61,7 @@ int waitPlayButtonPress(System name,int numberOfPresses)
 				Serial.print("Press detected: ");
 				Serial.print(press_counter);
 				Serial.print("/");
-				Serial.print(numberOfPresses);
+				Serial.println(numberOfPresses);
 #endif
 			}
 		}
