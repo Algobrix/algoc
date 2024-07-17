@@ -846,6 +846,25 @@
             }
           ],
           "toolsDependencies": []
+        },
+        {
+          "name": "AlgoC",
+          "architecture": "avr",
+          "version": "0.5.8",
+          "category": "Contributed",
+          "url": "https://github.com/Algobrix/algoc/archive/refs/tags/v0.5.8.zip",
+          "archiveFileName": "algoc-v0.5.8.zip",
+          "checksum": "SHA-256:00aef49b2c5e6e68c26f26d91a5256b798f37db2689ff19f09bd1d9a80e7f6c9",
+          "size": "10689215",
+          "help": {
+            "online": "https://github.com/Algobrix/algoc"
+          },
+          "boards": [
+            {
+              "name": "AlgoC_328PB"
+            }
+          ],
+          "toolsDependencies": []
         }
       ],
       "tools": []
