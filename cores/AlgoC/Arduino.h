@@ -344,7 +344,7 @@ class ALGOBOT_INFO
 		uint8_t stopFlag;
 };
 
-#define FOREVER                                     0
+#define FOREVER                                    INFINITY 
 
 enum OP_STATUS
 {

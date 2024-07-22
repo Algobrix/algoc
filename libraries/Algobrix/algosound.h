@@ -27,7 +27,7 @@ enum ALGOSOUND_SOUNDS
 	SIREN = 1,
 	BELL = 2,
 	BIRD = 3,
-	MUSIC = 4,
+	BEAT = 4,
 	DOG = 5,
 	MONKEY = 6,
 	ELEPHANT = 7,
