@@ -11,13 +11,11 @@
 
 /* Private variables ******************************************************* */
 volatile ALGOBOT_INFO g_ALGOBOT_INFO;
-const uint32_t c_current_build_time = __TIME_UNIX__;
 uint8_t g_cmd;
 uint8_t g_cmd_char_cnt;
 char g_cmd_data[8];
 uint8_t g_cmd_data_idx = 0;
 float g_cmd_motor_power = 5;
-uint8_t g_cmd_light_color = LIGHT_COLOR_WHITE;
 
 
 /* Private function prototypes ********************************************* */

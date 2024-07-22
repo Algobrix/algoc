@@ -131,7 +131,7 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 				this->timer = getSYSTIM();
 				if(&cthread == &threadAlgoC)
 				{
-					if(this->period != 0)
+					if(this->period != FOREVER)
 					{
 						while(chk4TimeoutSYSTIM(this->timer,this->period) == SYSTIM_KEEP_ALIVE)
 						{

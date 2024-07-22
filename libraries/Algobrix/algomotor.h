@@ -73,7 +73,7 @@ class AlgoMotor
 		int * rotationCounterInt;
 		uint8_t rotationCounterFlag;
         uint32_t timer;
-        uint32_t period;
+        float period;
         uint16_t * pOCR;
         uint16_t * pTCNT;
         uint8_t * pTIFR;

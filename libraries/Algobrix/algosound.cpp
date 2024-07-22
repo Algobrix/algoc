@@ -144,6 +144,8 @@ void playSound(System name,int sound,int power,bool isBlocking)
 			Serial.print(power);
 			Serial.println(F("]"));
 #endif
+			soundPlayer.stop();
+			delay(10); // delay is needed because sound player needs time between two comands. 
 			soundPlayer.setVolume(power);
 			soundPlayer.play(sound);
 			soundPlayer.state = ALGOSOUND_STATE_PLAYING;
@@ -248,7 +250,7 @@ void listAvailableSounds(System name)
 			Serial.println(F("[1] - SIREN"));
 			Serial.println(F("[2] - BELL"));
 			Serial.println(F("[3] - BIRD"));
-			Serial.println(F("[4] - MUSIC"));
+			Serial.println(F("[4] - BEAT"));
 			Serial.println(F("[5] - DOG"));
 			Serial.println(F("[6] - MONKEY"));
 			Serial.println(F("[7] - ELEPHANT"));
