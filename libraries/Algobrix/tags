@@ -62,7 +62,7 @@ ALGOTHREAD_WAIT_STATE	algothread.h	/^enum ALGOTHREAD_WAIT_STATE$/;"	g
 ALGOTHREAD_WAIT_STATE_INIT	algothread.h	/^	ALGOTHREAD_WAIT_STATE_INIT = 0x00,$/;"	e	enum:ALGOTHREAD_WAIT_STATE
 ALGOTHREAD_WAIT_STATE_RUN	algothread.h	/^	ALGOTHREAD_WAIT_STATE_RUN,$/;"	e	enum:ALGOTHREAD_WAIT_STATE
 APPLAUSE	algosound.h	/^	APPLAUSE = 8,$/;"	e	enum:ALGOSOUND_SOUNDS
-AlgoLight	algolight.cpp	/^AlgoLight::AlgoLight(uint8_t pin,uint8_t id)$/;"	f	class:AlgoLight
+AlgoLight	algolight.cpp	/^AlgoLight::AlgoLight(uint8_t pin,uint8_t id):$/;"	f	class:AlgoLight
 AlgoLight	algolight.h	/^class AlgoLight$/;"	c
 AlgoMotor	algomotor.cpp	/^AlgoMotor::AlgoMotor(uint8_t dirPin, uint8_t pwmPin,uint16_t * TCNT,uint8_t * TIFR,uint16_t * OC/;"	f	class:AlgoMotor
 AlgoMotor	algomotor.h	/^class AlgoMotor $/;"	c
@@ -72,41 +72,28 @@ AlgoSound	algosound.cpp	/^AlgoSound::AlgoSound(const byte txPin, const byte stat
 AlgoSound	algosound.h	/^class AlgoSound $/;"	c
 AlgoThread	algothread.h	/^class AlgoThread$/;"	c
 B	algomotor.h	/^#define B /;"	d
+BEAT	algosound.h	/^	BEAT = 4,$/;"	e	enum:ALGOSOUND_SOUNDS
 BELL	algosound.h	/^	BELL = 2,$/;"	e	enum:ALGOSOUND_SOUNDS
 BIRD	algosound.h	/^	BIRD = 3,$/;"	e	enum:ALGOSOUND_SOUNDS
 C	algomotor.h	/^#define C /;"	d
 CCW	algomotor.h	/^    CCW = -1,$/;"	e	enum:MOTOR_DIRECTION
 CHEERING	algosound.h	/^	CHEERING = 15,$/;"	e	enum:ALGOSOUND_SOUNDS
-CRGB_H	cRGB.h	/^#define CRGB_H$/;"	d
-CTOPVAL	neopixel.cpp	/^#define CTOPVAL /;"	d	file:
-CTOPVAL_400KHz	neopixel.cpp	/^#define CTOPVAL_400KHz /;"	d	file:
+CLOWN	algosound.h	/^	CLOWN=14,$/;"	e	enum:ALGOSOUND_SOUNDS
 CW	algomotor.h	/^    CW = 1,$/;"	e	enum:MOTOR_DIRECTION
-CYCLES_400	neopixel.cpp	/^#define CYCLES_400 /;"	d	file:
-CYCLES_400_T0H	neopixel.cpp	/^#define CYCLES_400_T0H /;"	d	file:
-CYCLES_400_T1H	neopixel.cpp	/^#define CYCLES_400_T1H /;"	d	file:
-CYCLES_800	neopixel.cpp	/^#define CYCLES_800 /;"	d	file:
-CYCLES_800_T0H	neopixel.cpp	/^#define CYCLES_800_T0H /;"	d	file:
-CYCLES_800_T1H	neopixel.cpp	/^#define CYCLES_800_T1H /;"	d	file:
 CYCLE_TIME	algosensor.h	/^#define CYCLE_TIME /;"	d
-Color	neopixel.h	/^  static uint32_t Color(uint8_t r, uint8_t g, uint8_t b) {$/;"	f	class:NeoPixel	typeref:typename:uint32_t
-Color	neopixel.h	/^  static uint32_t Color(uint8_t r, uint8_t g, uint8_t b, uint8_t w) {$/;"	f	class:NeoPixel	typeref:typename:uint32_t
-ColorHSV	neopixel.cpp	/^uint32_t NeoPixel::ColorHSV(uint16_t hue, uint8_t sat, uint8_t val) {$/;"	f	class:NeoPixel	typeref:typename:uint32_t
 DEBUG_ENABLED	algoC.h	/^#define DEBUG_ENABLED$/;"	d
 DOG	algosound.h	/^	DOG = 5,$/;"	e	enum:ALGOSOUND_SOUNDS
 ELEPHANT	algosound.h	/^	ELEPHANT = 7,$/;"	e	enum:ALGOSOUND_SOUNDS
 END_LOOP	algothread.h	/^#define END_LOOP(/;"	d
 END_SUBTHREAD	algothread.h	/^#define END_SUBTHREAD(/;"	d
 END_THREAD	algothread.h	/^#define END_THREAD(/;"	d
-F_CPU	WS2812.h	/^#define  F_CPU /;"	d
 GCC_VERSION	softserial.h	/^#define GCC_VERSION /;"	d
 GUITAR	algosound.h	/^	GUITAR = 10,$/;"	e	enum:ALGOSOUND_SOUNDS
-INST	neopixel.cpp	/^#define INST /;"	d	file:
 ISR	algoC.cpp	/^ISR(TIMER1_COMPA_vect) $/;"	f
 ISR	algoC.cpp	/^ISR(TIMER2_COMPA_vect) $/;"	f
 ISR	algoC.cpp	/^ISR(TIMER2_COMPB_vect) $/;"	f
 ISR	algoC.cpp	/^ISR(TIMER3_COMPA_vect) $/;"	f
 ISR	algoC.cpp	/^ISR(TIMER4_COMPA_vect) $/;"	f
-KENDRYTE_K210	neopixel.cpp	/^#define KENDRYTE_K210 /;"	d	file:
 LIGHT_COLOR_BLUE	algolight.h	/^    LIGHT_COLOR_BLUE = 0x0000ff,$/;"	e	enum:ALGOLED_LIGHT_COLOR
 LIGHT_COLOR_CNT	algolight.h	/^	LIGHT_COLOR_CNT = 7,$/;"	e	enum:ALGOLED_LIGHT_COLOR
 LIGHT_COLOR_GREEN	algolight.h	/^    LIGHT_COLOR_GREEN = 0x00ff00,$/;"	e	enum:ALGOLED_LIGHT_COLOR
@@ -118,10 +105,6 @@ LIGHT_COLOR_YELLOW	algolight.h	/^    LIGHT_COLOR_YELLOW = 0xFF6F00,$/;"	e	enum:A
 LIGHT_POWER_LEVEL_CNT	algolight.h	/^#define LIGHT_POWER_LEVEL_CNT /;"	d
 Light1	algolight.cpp	/^AlgoLight Light1(LED_A_PIN,1);$/;"	v	typeref:typename:AlgoLight
 Light2	algolight.cpp	/^AlgoLight Light2(LED_B_PIN,2);$/;"	v	typeref:typename:AlgoLight
-MAGIC_T0H	neopixel.cpp	/^#define MAGIC_T0H /;"	d	file:
-MAGIC_T0H_400KHz	neopixel.cpp	/^#define MAGIC_T0H_400KHz /;"	d	file:
-MAGIC_T1H	neopixel.cpp	/^#define MAGIC_T1H /;"	d	file:
-MAGIC_T1H_400KHz	neopixel.cpp	/^#define MAGIC_T1H_400KHz /;"	d	file:
 MONKEY	algosound.h	/^	MONKEY = 6,$/;"	e	enum:ALGOSOUND_SOUNDS
 MOTOR_A	algomotor.h	/^    MOTOR_A = 0x00,$/;"	e	enum:ALGOMOTOR_PORT_ID
 MOTOR_B	algomotor.h	/^    MOTOR_B,$/;"	e	enum:ALGOMOTOR_PORT_ID
@@ -129,51 +112,11 @@ MOTOR_C	algomotor.h	/^    MOTOR_C,$/;"	e	enum:ALGOMOTOR_PORT_ID
 MOTOR_DIRECTION	algomotor.h	/^enum MOTOR_DIRECTION$/;"	g
 MOTOR_MAX_POWER_LEVEL	algomotor.h	/^#define MOTOR_MAX_POWER_LEVEL /;"	d
 MOTOR_POWER_LEVEL_CNT	algomotor.h	/^#define MOTOR_POWER_LEVEL_CNT /;"	d
-MUSIC	algosound.h	/^	MUSIC = 4,$/;"	e	enum:ALGOSOUND_SOUNDS
 MotorA	algomotor.cpp	/^AlgoMotor MotorA(MOTOR_A_DIR, MOTOR_A_PWM,(uint16_t *) &TCNT3,(uint8_t *) &TIFR3,(uint16_t *)&OC/;"	v	typeref:typename:AlgoMotor
 MotorB	algomotor.cpp	/^AlgoMotor MotorB(MOTOR_B_DIR, MOTOR_B_PWM,(uint16_t *) &TCNT1,(uint8_t *) &TIFR1,(uint16_t *)&OC/;"	v	typeref:typename:AlgoMotor
 MotorC	algomotor.cpp	/^AlgoMotor MotorC(MOTOR_C_DIR, MOTOR_C_PWM,(uint16_t *) &TCNT4,(uint8_t *) &TIFR4,(uint16_t *)&OC/;"	v	typeref:typename:AlgoMotor
-NEO_BGR	neopixel.h	/^#define NEO_BGR /;"	d
-NEO_BGRW	neopixel.h	/^#define NEO_BGRW /;"	d
-NEO_BGWR	neopixel.h	/^#define NEO_BGWR /;"	d
-NEO_BRG	neopixel.h	/^#define NEO_BRG /;"	d
-NEO_BRGW	neopixel.h	/^#define NEO_BRGW /;"	d
-NEO_BRWG	neopixel.h	/^#define NEO_BRWG /;"	d
-NEO_BWGR	neopixel.h	/^#define NEO_BWGR /;"	d
-NEO_BWRG	neopixel.h	/^#define NEO_BWRG /;"	d
-NEO_GBR	neopixel.h	/^#define NEO_GBR /;"	d
-NEO_GBRW	neopixel.h	/^#define NEO_GBRW /;"	d
-NEO_GBWR	neopixel.h	/^#define NEO_GBWR /;"	d
-NEO_GRB	neopixel.h	/^#define NEO_GRB /;"	d
-NEO_GRBW	neopixel.h	/^#define NEO_GRBW /;"	d
-NEO_GRWB	neopixel.h	/^#define NEO_GRWB /;"	d
-NEO_GWBR	neopixel.h	/^#define NEO_GWBR /;"	d
-NEO_GWRB	neopixel.h	/^#define NEO_GWRB /;"	d
-NEO_KHZ400	neopixel.h	/^#define NEO_KHZ400 /;"	d
-NEO_KHZ800	neopixel.h	/^#define NEO_KHZ800 /;"	d
-NEO_RBG	neopixel.h	/^#define NEO_RBG /;"	d
-NEO_RBGW	neopixel.h	/^#define NEO_RBGW /;"	d
-NEO_RBWG	neopixel.h	/^#define NEO_RBWG /;"	d
-NEO_RGB	neopixel.h	/^#define NEO_RGB /;"	d
-NEO_RGBW	neopixel.h	/^#define NEO_RGBW /;"	d
-NEO_RGWB	neopixel.h	/^#define NEO_RGWB /;"	d
-NEO_RWBG	neopixel.h	/^#define NEO_RWBG /;"	d
-NEO_RWGB	neopixel.h	/^#define NEO_RWGB /;"	d
-NEO_WBGR	neopixel.h	/^#define NEO_WBGR /;"	d
-NEO_WBRG	neopixel.h	/^#define NEO_WBRG /;"	d
-NEO_WGBR	neopixel.h	/^#define NEO_WGBR /;"	d
-NEO_WGRB	neopixel.h	/^#define NEO_WGRB /;"	d
-NEO_WRBG	neopixel.h	/^#define NEO_WRBG /;"	d
-NEO_WRGB	neopixel.h	/^#define NEO_WRGB /;"	d
-NOPx7	neopixel.cpp	/^#define NOPx7 /;"	d	file:
 NUM_OF_MOTORS	algomotor.h	/^#define NUM_OF_MOTORS /;"	d
 NUM_OF_SENSORS	algosensor.h	/^#define NUM_OF_SENSORS /;"	d
-NeoPixel	neopixel.cpp	/^NeoPixel::NeoPixel()$/;"	f	class:NeoPixel
-NeoPixel	neopixel.cpp	/^NeoPixel::NeoPixel(uint16_t n, int16_t p, neoPixelType t)$/;"	f	class:NeoPixel
-NeoPixel	neopixel.h	/^class NeoPixel {$/;"	c
-OFFSET_B	WS2812.h	/^	#define OFFSET_B(/;"	d
-OFFSET_G	WS2812.h	/^	#define OFFSET_G(/;"	d
-OFFSET_R	WS2812.h	/^	#define OFFSET_R(/;"	d
 OWI	owi.cpp	/^OWI::OWI(uint8_t pin, uint8_t * pinr, uint8_t * port, uint8_t * ddr)$/;"	f	class:OWI
 OWI	owi.h	/^class OWI$/;"	c
 OWI_ALARM_SEARCH	owi.cpp	/^#define OWI_ALARM_SEARCH /;"	d	file:
@@ -199,12 +142,10 @@ OWI_SEARCH_ROM	owi.cpp	/^#define OWI_SEARCH_ROM /;"	d	file:
 OWI_SKIP_ROM	owi.cpp	/^#define OWI_SKIP_ROM /;"	d	file:
 OWI_WAIT_AFTER_RESET	owi.cpp	/^#define OWI_WAIT_AFTER_RESET /;"	d	file:
 OWI_WRITE	owi.cpp	/^#define OWI_WRITE /;"	d	file:
-PERIOD_400	neopixel.cpp	/^#define PERIOD_400 /;"	d	file:
-PERIOD_800	neopixel.cpp	/^#define PERIOD_800 /;"	d	file:
 PULSE_TIMEOUT	algosensor.h	/^#define PULSE_TIMEOUT /;"	d
+RESISTANCE_TO_STOP_SAMPLING_PERIOD	algomotor.h	/^#define RESISTANCE_TO_STOP_SAMPLING_PERIOD	/;"	d
 RGB12	algolight.cpp	/^void RGB12(System name,int lightPort, float seconds,int power,int R,int G,int B,bool isBlocking)$/;"	f	typeref:typename:void
-RGB_ORDER_ON_RUNTIME	WS2812.h	/^#define RGB_ORDER_ON_RUNTIME$/;"	d
-SCALE	neopixel.cpp	/^#define SCALE /;"	d	file:
+ROBOT_LIFT	algosound.h	/^	ROBOT_LIFT = 11,$/;"	e	enum:ALGOSOUND_SOUNDS
 SIREN	algosound.h	/^	SIREN = 1,$/;"	e	enum:ALGOSOUND_SOUNDS
 SMASH	algosound.h	/^	SMASH=13,$/;"	e	enum:ALGOSOUND_SOUNDS
 START_LOOP	algothread.h	/^#define START_LOOP(/;"	d
@@ -214,26 +155,19 @@ Sensor	algosensor.cpp	/^uint8_t Sensor(AlgoSensor & sensor)$/;"	f	typeref:typena
 Sensor	algosensor.cpp	/^uint8_t Sensor(uint8_t port)$/;"	f	typeref:typename:uint8_t
 Sensor1	algosensor.cpp	/^AlgoSensor Sensor1(SENSOR_A_PIN,&owi1);$/;"	v	typeref:typename:AlgoSensor
 Sensor2	algosensor.cpp	/^AlgoSensor Sensor2(SENSOR_B_PIN,&owi2);$/;"	v	typeref:typename:AlgoSensor
-SetHSV	cRGB.h	/^	void SetHSV(int hue, byte sat, byte val) {$/;"	f	struct:cRGB	typeref:typename:void
 SoftSerial	softserial.cpp	/^SoftSerial::SoftSerial(uint8_t transmitPin, bool inverse_logic \/* = false *\/):$/;"	f	class:SoftSerial
 SoftSerial	softserial.h	/^class SoftSerial : public Stream$/;"	c
 System	system.cpp	/^System::System(uint32_t line,uint32_t sequance,AlgoThread & cthread):$/;"	f	class:System
 System	system.h	/^class System $/;"	c
 THREAD_CNT	algothread.h	/^#define THREAD_CNT	/;"	d
-TIME_400_0	neopixel.cpp	/^#define TIME_400_0 /;"	d	file:
-TIME_400_1	neopixel.cpp	/^#define TIME_400_1 /;"	d	file:
-TIME_800_0	neopixel.cpp	/^#define TIME_800_0 /;"	d	file:
-TIME_800_1	neopixel.cpp	/^#define TIME_800_1 /;"	d	file:
 TRUCK	algosound.h	/^	TRUCK = 12,$/;"	e	enum:ALGOSOUND_SOUNDS
+TinyWS2812B	TinyWS2812B.cpp	/^TinyWS2812B::TinyWS2812B(int pin, int ledCount){$/;"	f	class:TinyWS2812B
+TinyWS2812B	TinyWS2812B.h	/^class TinyWS2812B{$/;"	c
+TinyWS2812B_h	TinyWS2812B.h	/^#define TinyWS2812B_h$/;"	d
 TypeName	algomotor.h	/^struct TypeName {$/;"	s
 TypeName	algomotor.h	/^struct TypeName<float> {$/;"	s
 TypeName	algomotor.h	/^struct TypeName<int> {$/;"	s
 VIOLINE	algosound.h	/^	VIOLINE = 9,$/;"	e	enum:ALGOSOUND_SOUNDS
-WS2812	WS2812.cpp	/^WS2812::WS2812() {$/;"	f	class:WS2812
-WS2812	WS2812.h	/^class WS2812 {$/;"	c
-WS2812_H_	WS2812.h	/^#define WS2812_H_$/;"	d
-_NeoPixelGammaTable	neopixel.h	/^static const uint8_t PROGMEM _NeoPixelGammaTable[256] = {$/;"	v	typeref:typename:const uint8_t PROGMEM[256]
-_NeoPixelSineTable	neopixel.h	/^static const uint8_t PROGMEM _NeoPixelSineTable[256] = {$/;"	v	typeref:typename:const uint8_t PROGMEM[256]
 __ALGOBREAK_H	algobreak.h	/^#define __ALGOBREAK_H$/;"	d
 __ALGOBUTTON_H	algobutton.h	/^#define __ALGOBUTTON_H$/;"	d
 __ALGOLED_LIGHT_H	algolight.h	/^#define __ALGOLED_LIGHT_H$/;"	d
@@ -243,7 +177,6 @@ __ALGOSERIAL_H	algoserial.h	/^#define __ALGOSERIAL_H$/;"	d
 __ALGOTHREAD_H	algothread.h	/^#define __ALGOTHREAD_H$/;"	d
 __ALGOWAIT_H	algowait.h	/^#define __ALGOWAIT_H$/;"	d
 __GOALGO_H	algoC.h	/^#define __GOALGO_H$/;"	d
-__NEOPIXEL_H	neopixel.h	/^#define __NEOPIXEL_H$/;"	d
 __OWI_H	owi.h	/^#define __OWI_H$/;"	d
 __SENSOR_H	algosensor.h	/^#define __SENSOR_H$/;"	d
 __SOFTSERIAL_H	softserial.h	/^#define __SOFTSERIAL_H$/;"	d
@@ -263,20 +196,12 @@ _transmitPortRegister	softserial.h	/^  volatile uint8_t *_transmitPortRegister;$
 _tx_delay	softserial.h	/^  uint16_t _tx_delay;$/;"	m	class:SoftSerial	typeref:typename:uint16_t
 areAllThreadsCompleted	algothread.cpp	/^bool areAllThreadsCompleted(void)$/;"	f	typeref:typename:bool
 available	softserial.cpp	/^int SoftSerial::available()$/;"	f	class:SoftSerial	typeref:typename:int
-b	cRGB.h	/^	uint8_t b;$/;"	m	struct:cRGB	typeref:typename:uint8_t
-bOffset	neopixel.h	/^  uint8_t bOffset;    \/\/\/< Index of blue byte$/;"	m	class:NeoPixel	typeref:typename:uint8_t
-begin	neopixel.cpp	/^void NeoPixel::begin(void) {$/;"	f	class:NeoPixel	typeref:typename:void
 begin	softserial.cpp	/^void SoftSerial::begin(long speed)$/;"	f	class:SoftSerial	typeref:typename:void
-begun	neopixel.h	/^  bool begun;         \/\/\/< true if begin() previously called$/;"	m	class:NeoPixel	typeref:typename:bool
 blinkLed	algoC.cpp	/^void blinkLed(void) $/;"	f	typeref:typename:void
 breakPoint	algobreak.cpp	/^uint8_t breakPoint(System name,char breakChar)$/;"	f	typeref:typename:uint8_t
-brightness	neopixel.h	/^  uint8_t brightness; \/\/\/< Strip brightness 0-255 (stored as +1)$/;"	m	class:NeoPixel	typeref:typename:uint8_t
-cRGB	cRGB.h	/^struct cRGB { $/;"	s
 c_color_name	algolight.cpp	/^const char c_color_name[7][8] = $/;"	v	typeref:typename:const char[7][8]
 c_color_value	algolight.cpp	/^const uint32_t c_color_value [LIGHT_COLOR_CNT] = $/;"	v	typeref:typename:const uint32_t[]
-c_current_build_time	algoC.cpp	/^const uint32_t c_current_build_time = __TIME_UNIX__;$/;"	v	typeref:typename:const uint32_t
 c_volume_char	algosound.cpp	/^const char c_volume_char[10] = {'B', 'D', 'E', 'I', 'K', 'L', 'M', 'P', 'T', 't'}; \/\/ 'B'(LOWE/;"	v	typeref:typename:const char[10]
-canShow	neopixel.h	/^  bool canShow(void) {$/;"	f	class:NeoPixel	typeref:typename:bool
 ccw	algomotor.h	/^    ccw = -1,$/;"	e	enum:MOTOR_DIRECTION
 changeSpeed	algomotor.cpp	/^void AlgoMotor::changeSpeed(uint8_t pwm) $/;"	f	class:AlgoMotor	typeref:typename:void
 chk4CmdALGOBOT	algoC.cpp	/^void chk4CmdALGOBOT(void) $/;"	f	typeref:typename:void
@@ -284,61 +209,44 @@ chkALGOBOT	algoC.cpp	/^void chkALGOBOT(void)$/;"	f	typeref:typename:void
 chkLIGHT	algoC.cpp	/^void chkLIGHT(void)$/;"	f	typeref:typename:void
 chkMOTOR	algoC.cpp	/^void chkMOTOR(void)$/;"	f	typeref:typename:void
 chkTHREADS	algothread.cpp	/^void chkTHREADS(void)$/;"	f	typeref:typename:void
-clear	neopixel.cpp	/^void NeoPixel::clear(void) { memset(pixels, 0, numBytes); }$/;"	f	class:NeoPixel	typeref:typename:void
 cntEnd	algothread.h	/^		uint8_t cntEnd;$/;"	m	class:AlgoThread	typeref:typename:uint8_t
 cntStart	algothread.h	/^		uint8_t cntStart;$/;"	m	class:AlgoThread	typeref:typename:uint8_t
-count_led	WS2812.h	/^	uint16_t count_led;$/;"	m	class:WS2812	typeref:typename:uint16_t
+colorData	TinyWS2812B.h	/^    byte colorData[3];$/;"	m	class:TinyWS2812B	typeref:typename:byte[3]
 cthread	system.h	/^		AlgoThread & cthread;$/;"	m	class:System	typeref:typename:AlgoThread &
 currentTrack	algosound.h	/^        byte currentTrack = 0;$/;"	m	class:AlgoSound	typeref:typename:byte
 cw	algomotor.h	/^	cw = 1,$/;"	e	enum:MOTOR_DIRECTION
 ddr_	owi.h	/^        uint8_t * ddr_;$/;"	m	class:OWI	typeref:typename:uint8_t *
-dim_curve	cRGB.h	/^const byte dim_curve[] = {$/;"	v	typeref:typename:const byte[]
 direction	algomotor.h	/^        uint8_t direction;$/;"	m	class:AlgoMotor	typeref:typename:uint8_t
 dprint	algoC.h	/^#define dprint(/;"	d
 dprintln	algoC.h	/^#define dprintln(/;"	d
 end	softserial.cpp	/^void SoftSerial::end()$/;"	f	class:SoftSerial	typeref:typename:void
-endTime	neopixel.h	/^  uint32_t endTime;   \/\/\/< Latch timing reference$/;"	m	class:NeoPixel	typeref:typename:uint32_t
 enterChar	algoserial.cpp	/^char enterChar(System name)$/;"	f	typeref:typename:char
 enterNumber	algoserial.cpp	/^float enterNumber(System name)$/;"	f	typeref:typename:float
 enterString	algoserial.cpp	/^char * enterString(System name)$/;"	f	typeref:typename:char *
-fill	neopixel.cpp	/^void NeoPixel::fill(uint32_t c, uint16_t first, uint16_t count) {$/;"	f	class:NeoPixel	typeref:typename:void
+findHardwarePortAndPin	TinyWS2812B.cpp	/^void TinyWS2812B::findHardwarePortAndPin(int pin){$/;"	f	class:TinyWS2812B	typeref:typename:void
 flush	softserial.cpp	/^void SoftSerial::flush()$/;"	f	class:SoftSerial	typeref:typename:void
-g	cRGB.h	/^	uint8_t g; $/;"	m	struct:cRGB	typeref:typename:uint8_t
-gOffset	neopixel.h	/^  uint8_t gOffset;    \/\/\/< Index of green byte$/;"	m	class:NeoPixel	typeref:typename:uint8_t
 g_ALGOBOT_INFO	algoC.cpp	/^volatile ALGOBOT_INFO g_ALGOBOT_INFO;$/;"	v	typeref:typename:volatile ALGOBOT_INFO
 g_button_fuction_acitve_flag	algobutton.cpp	/^uint8_t g_button_fuction_acitve_flag;$/;"	v	typeref:typename:uint8_t
 g_cmd	algoC.cpp	/^uint8_t g_cmd;$/;"	v	typeref:typename:uint8_t
 g_cmd_char_cnt	algoC.cpp	/^uint8_t g_cmd_char_cnt;$/;"	v	typeref:typename:uint8_t
 g_cmd_data	algoC.cpp	/^char g_cmd_data[8];$/;"	v	typeref:typename:char[8]
 g_cmd_data_idx	algoC.cpp	/^uint8_t g_cmd_data_idx = 0;$/;"	v	typeref:typename:uint8_t
-g_cmd_light_color	algoC.cpp	/^uint8_t g_cmd_light_color = LIGHT_COLOR_WHITE;$/;"	v	typeref:typename:uint8_t
 g_cmd_motor_power	algoC.cpp	/^float g_cmd_motor_power = 5;$/;"	v	typeref:typename:float
-gamma32	neopixel.cpp	/^uint32_t NeoPixel::gamma32(uint32_t x) {$/;"	f	class:NeoPixel	typeref:typename:uint32_t
-gamma8	neopixel.h	/^  static uint8_t gamma8(uint8_t x) {$/;"	f	class:NeoPixel	typeref:typename:uint8_t
-getBrightness	neopixel.cpp	/^uint8_t NeoPixel::getBrightness(void) const { return brightness - 1; }$/;"	f	class:NeoPixel	typeref:typename:uint8_t
 getNumberOfRotations	algomotor.cpp	/^uint16_t AlgoMotor::getNumberOfRotations(void)$/;"	f	class:AlgoMotor	typeref:typename:uint16_t
-getPin	neopixel.h	/^  int16_t getPin(void) const { return pin; };$/;"	f	class:NeoPixel	typeref:typename:int16_t
-getPixelColor	neopixel.cpp	/^uint32_t NeoPixel::getPixelColor(uint16_t n) const {$/;"	f	class:NeoPixel	typeref:typename:uint32_t
-getPixels	neopixel.h	/^  uint8_t *getPixels(void) const { return pixels; };$/;"	f	class:NeoPixel	typeref:typename:uint8_t *
 getPlayButtonState	algobutton.cpp	/^bool getPlayButtonState(System name)$/;"	f	typeref:typename:bool
 getRuntime	algomotor.cpp	/^uint32_t AlgoMotor::getRuntime(void)$/;"	f	class:AlgoMotor	typeref:typename:uint32_t
 getSensor	algosensor.cpp	/^int getSensor(System name,int sensorPort)$/;"	f	typeref:typename:int
 getStatus	algosound.cpp	/^uint8_t AlgoSound::getStatus(void) $/;"	f	class:AlgoSound	typeref:typename:uint8_t
 getTrackCommand	algosound.cpp	/^char * AlgoSound::getTrackCommand(byte trackNumber) $/;"	f	class:AlgoSound	typeref:typename:char *
 getValue	algosensor.cpp	/^uint8_t AlgoSensor::getValue() $/;"	f	class:AlgoSensor	typeref:typename:uint8_t
-get_crgb_at	WS2812.cpp	/^cRGB WS2812::get_crgb_at(uint16_t index) {$/;"	f	class:WS2812	typeref:typename:cRGB
-gpioPin	neopixel.h	/^  uint32_t gpioPin;       \/\/\/< Output GPIO PIN$/;"	m	class:NeoPixel	typeref:typename:uint32_t
-gpioPort	neopixel.h	/^  GPIO_TypeDef *gpioPort; \/\/\/< Output GPIO PORT$/;"	m	class:NeoPixel	typeref:typename:GPIO_TypeDef *
 id	algolight.h	/^		uint8_t id;$/;"	m	class:AlgoLight	typeref:typename:uint8_t
 id	algomotor.h	/^		char id;$/;"	m	class:AlgoMotor	typeref:typename:char
-init	neopixel.h	/^  bool init = true;$/;"	m	class:NeoPixel	typeref:typename:bool
 initALGOBOT	algoC.cpp	/^void initALGOBOT(void)$/;"	f	typeref:typename:void
 initENCODER	algoC.cpp	/^void initENCODER(void)$/;"	f	typeref:typename:void
 initLIGHT	algoC.cpp	/^void initLIGHT(void)$/;"	f	typeref:typename:void
 initMOTOR	algoC.cpp	/^void initMOTOR(void)$/;"	f	typeref:typename:void
 initTHREADS	algothread.cpp	/^void initTHREADS(void)$/;"	f	typeref:typename:void
 initUI	algoC.cpp	/^void initUI(void)$/;"	f	typeref:typename:void
-is800KHz	neopixel.h	/^  bool is800KHz; \/\/\/< true if 800 KHz pixels$/;"	m	class:NeoPixel	typeref:typename:bool
 isLightBusy	algolight.cpp	/^bool isLightBusy(System name, int lightPort )$/;"	f	typeref:typename:bool
 isLightCompleted	algolight.cpp	/^int isLightCompleted(AlgoLight & light)$/;"	f	typeref:typename:int
 isMotorBusy	algomotor.cpp	/^bool isMotorBusy(System name, char motorPort)$/;"	f	typeref:typename:bool
@@ -348,24 +256,21 @@ isThreadCompleted	algothread.cpp	/^bool isThreadCompleted(AlgoThread & thread)$/
 light	algolight.cpp	/^void light(System name,int lightPort, float seconds,int power,char * color,bool isBlocking)$/;"	f	typeref:typename:void
 light12	algolight.cpp	/^void light12(System name,float seconds,int power,char * color,bool isBlocking)$/;"	f	typeref:typename:void
 line	system.h	/^		uint32_t line;$/;"	m	class:System	typeref:typename:uint32_t
+listAvailableSounds	algosound.cpp	/^void listAvailableSounds(System name)$/;"	f	typeref:typename:void
 loopSequance	algothread.h	/^		uint8_t loopSequance;$/;"	m	class:AlgoThread	typeref:typename:uint8_t
 loopState	algothread.h	/^		uint8_t loopState;$/;"	m	class:AlgoThread	typeref:typename:uint8_t
 move	algomotor.cpp	/^void move(System name,char motorPort,float seconds,float power,int direction,bool isBlocking)$/;"	f	typeref:typename:void
 moveAB	algomotor.cpp	/^void moveAB(System name,float seconds,float power,int direction,bool isBlocking)$/;"	f	typeref:typename:void
 moveABC	algomotor.cpp	/^void moveABC(System name,float seconds,float power,int direction,bool isBlocking)$/;"	f	typeref:typename:void
-neoPixelLed	algolight.h	/^		WS2812 neoPixelLed;$/;"	m	class:AlgoLight	typeref:typename:WS2812
-neoPixelType	neopixel.h	/^typedef uint16_t neoPixelType; \/\/\/< 3rd arg to NeoPixel constructor$/;"	t	typeref:typename:uint16_t
-neoPixelType	neopixel.h	/^typedef uint8_t neoPixelType; \/\/\/< 3rd arg to NeoPixel constructor$/;"	t	typeref:typename:uint8_t
-numBytes	neopixel.h	/^  uint16_t numBytes;  \/\/\/< Size of 'pixels' buffer below$/;"	m	class:NeoPixel	typeref:typename:uint16_t
-numLEDs	neopixel.h	/^  uint16_t numLEDs;   \/\/\/< Number of RGB LEDs in strip$/;"	m	class:NeoPixel	typeref:typename:uint16_t
-numPixels	neopixel.h	/^  uint16_t numPixels(void) const { return numLEDs; }$/;"	f	class:NeoPixel	typeref:typename:uint16_t
+neoPixelLed	algolight.h	/^		TinyWS2812B neoPixelLed;$/;"	m	class:AlgoLight	typeref:typename:TinyWS2812B
+numLeds	TinyWS2812B.h	/^    int numLeds;$/;"	m	class:TinyWS2812B	typeref:typename:int
 numberIsInt	algomotor.h	/^    static int numberIsInt(T number) { return 1; }$/;"	f	struct:TypeName	typeref:typename:int
 numberIsInt	algomotor.h	/^    static int numberIsInt(float number) { return 0; }$/;"	f	struct:TypeName	typeref:typename:int
 numberIsInt	algomotor.h	/^    static int numberIsInt(int number) { return 1; }$/;"	f	struct:TypeName	typeref:typename:int
 numberOfRotations	algomotor.cpp	/^float numberOfRotations(System name,AlgoMotor & motor)$/;"	f	typeref:typename:float
-offsetBlue	WS2812.h	/^	uint8_t offsetBlue;$/;"	m	class:WS2812	typeref:typename:uint8_t
-offsetGreen	WS2812.h	/^	uint8_t offsetGreen;$/;"	m	class:WS2812	typeref:typename:uint8_t
-offsetRed	WS2812.h	/^	uint8_t offsetRed;$/;"	m	class:WS2812	typeref:typename:uint8_t
+oneB	TinyWS2812B.cpp	/^void TinyWS2812B::oneB(){$/;"	f	class:TinyWS2812B	typeref:typename:void
+oneC	TinyWS2812B.cpp	/^void TinyWS2812B::oneC(){$/;"	f	class:TinyWS2812B	typeref:typename:void
+oneD	TinyWS2812B.cpp	/^void TinyWS2812B::oneD(){$/;"	f	class:TinyWS2812B	typeref:typename:void
 operator bool	softserial.h	/^  operator bool() { return true; }$/;"	f	class:SoftSerial
 outputState	algomotor.h	/^        uint8_t outputState;$/;"	m	class:AlgoMotor	typeref:typename:uint8_t
 overflow	softserial.h	/^  bool overflow() { bool ret = _buffer_overflow; if (ret) _buffer_overflow = false; return ret; /;"	f	class:SoftSerial	typeref:typename:bool
@@ -378,33 +283,26 @@ pTIFR	algomotor.h	/^        uint8_t * pTIFR;$/;"	m	class:AlgoMotor	typeref:typen
 p_value	algosensor.h	/^		uint8_t p_value;$/;"	m	class:AlgoSensor	typeref:typename:uint8_t
 pause	algosound.cpp	/^void AlgoSound::pause(void) $/;"	f	class:AlgoSound	typeref:typename:void
 peek	softserial.cpp	/^int SoftSerial::peek()$/;"	f	class:SoftSerial	typeref:typename:int
-period	algolight.h	/^        uint32_t period;$/;"	m	class:AlgoLight	typeref:typename:uint32_t
-period	algomotor.h	/^        uint32_t period;$/;"	m	class:AlgoMotor	typeref:typename:uint32_t
+period	algolight.h	/^        float period;$/;"	m	class:AlgoLight	typeref:typename:float
+period	algomotor.h	/^        float period;$/;"	m	class:AlgoMotor	typeref:typename:float
 pin	algosensor.h	/^        uint8_t pin;$/;"	m	class:AlgoSensor	typeref:typename:uint8_t
-pin	neopixel.h	/^  int16_t pin;        \/\/\/< Output pin number (-1 if not yet set)$/;"	m	class:NeoPixel	typeref:typename:int16_t
 pinHigh	owi.cpp	/^void OWI::pinHigh(void)$/;"	f	class:OWI	typeref:typename:void
 pinInput	owi.cpp	/^void OWI::pinInput(void)$/;"	f	class:OWI	typeref:typename:void
 pinLow	owi.cpp	/^void OWI::pinLow(void)$/;"	f	class:OWI	typeref:typename:void
-pinMask	WS2812.h	/^	uint8_t pinMask; $/;"	m	class:WS2812	typeref:typename:uint8_t
-pinMask	neopixel.h	/^  uint8_t pinMask;        \/\/\/< Output PORT bitmask$/;"	m	class:NeoPixel	typeref:typename:uint8_t
 pinOutput	owi.cpp	/^void OWI::pinOutput(void)$/;"	f	class:OWI	typeref:typename:void
 pinRead	owi.cpp	/^uint8_t OWI::pinRead(void)$/;"	f	class:OWI	typeref:typename:uint8_t
 pin_	owi.h	/^        uint8_t pin_;$/;"	m	class:OWI	typeref:typename:uint8_t
 pinr_	owi.h	/^        uint8_t * pinr_;$/;"	m	class:OWI	typeref:typename:uint8_t *
-pio	neopixel.h	/^  PIO pio = pio0;$/;"	m	class:NeoPixel	typeref:typename:PIO
-pixels	WS2812.h	/^	uint8_t *pixels;$/;"	m	class:WS2812	typeref:typename:uint8_t *
-pixels	neopixel.h	/^  uint8_t *pixels;    \/\/\/< Holds LED color values (3 or 4 bytes each)$/;"	m	class:NeoPixel	typeref:typename:uint8_t *
 play	algosound.cpp	/^void AlgoSound::play(byte trackId) $/;"	f	class:AlgoSound	typeref:typename:void
 playButtonReset	algobutton.cpp	/^void playButtonReset(System name)$/;"	f	typeref:typename:void
 playSound	algosound.cpp	/^void playSound(System name,int sound,int power,bool isBlocking) $/;"	f	typeref:typename:void
-port	neopixel.h	/^  volatile uint8_t *port; \/\/\/< Output PORT register$/;"	m	class:NeoPixel	typeref:typename:volatile uint8_t *
+port	TinyWS2812B.h	/^    byte port;$/;"	m	class:TinyWS2812B	typeref:typename:byte
+portOff	TinyWS2812B.h	/^    byte portOff;$/;"	m	class:TinyWS2812B	typeref:typename:byte
+portOn	TinyWS2812B.h	/^    byte portOn;$/;"	m	class:TinyWS2812B	typeref:typename:byte
 port_	owi.h	/^        uint8_t * port_;$/;"	m	class:OWI	typeref:typename:uint8_t *
 power	algomotor.h	/^		uint8_t power;$/;"	m	class:AlgoMotor	typeref:typename:uint8_t
 prevState	algomotor.h	/^		uint8_t prevState;$/;"	m	class:AlgoMotor	typeref:typename:uint8_t
 pwmValue	algomotor.h	/^        uint8_t pwmValue;$/;"	m	class:AlgoMotor	typeref:typename:uint8_t
-r	cRGB.h	/^	uint8_t r; $/;"	m	struct:cRGB	typeref:typename:uint8_t
-rOffset	neopixel.h	/^  uint8_t rOffset;    \/\/\/< Red index within each 3- or 4-byte pixel$/;"	m	class:NeoPixel	typeref:typename:uint8_t
-rainbow	neopixel.cpp	/^void NeoPixel::rainbow(uint16_t first_hue, int8_t reps,$/;"	f	class:NeoPixel	typeref:typename:void
 random	algoC.cpp	/^int random(System name)$/;"	f	typeref:typename:int
 read	softserial.cpp	/^int SoftSerial::read()$/;"	f	class:SoftSerial	typeref:typename:int
 readValue	owi.cpp	/^uint8_t OWI::readValue(uint8_t reg,uint8_t * value)$/;"	f	class:OWI	typeref:typename:uint8_t
@@ -413,6 +311,7 @@ reset	owi.cpp	/^void OWI::reset(void)$/;"	f	class:OWI	typeref:typename:void
 resetAllThreads	algothread.cpp	/^void resetAllThreads(void)$/;"	f	typeref:typename:void
 resetThreadConfiguration	algothread.cpp	/^void resetThreadConfiguration(AlgoThread & thread)$/;"	f	typeref:typename:void
 resistanceToStop	algomotor.cpp	/^void resistanceToStop(System name, char motorPort, float  threshold)$/;"	f	typeref:typename:void
+resistanceToStopPeriod	algomotor.h	/^		uint8_t resistanceToStopPeriod;$/;"	m	class:AlgoMotor	typeref:typename:uint8_t
 rotCnt	algomotor.h	/^		uint16_t rotCnt;$/;"	m	class:AlgoMotor	typeref:typename:uint16_t
 rotation	algomotor.cpp	/^uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread, float rotation/;"	f	class:AlgoMotor	typeref:typename:uint8_t
 rotationCounterFlag	algomotor.h	/^		uint8_t rotationCounterFlag;$/;"	m	class:AlgoMotor	typeref:typename:uint8_t
@@ -423,8 +322,6 @@ rotations	algomotor.cpp	/^void rotations(System name,char motorPort,float rotati
 rotations	algomotor.h	/^		uint16_t rotations;$/;"	m	class:AlgoMotor	typeref:typename:uint16_t
 rotationsAB	algomotor.cpp	/^void rotationsAB(System name,float rotations,float power,int direction,bool isBlocking)$/;"	f	typeref:typename:void
 rotationsABC	algomotor.cpp	/^void rotationsABC(System name,float rotations,float power,int direction,bool isBlocking)$/;"	f	typeref:typename:void
-rp2040Init	neopixel.cpp	/^void NeoPixel::rp2040Init(uint8_t pin, bool is800KHz)$/;"	f	class:NeoPixel	typeref:typename:void
-rp2040Show	neopixel.cpp	/^void  NeoPixel::rp2040Show(uint8_t pin, uint8_t *pixels, uint32_t numBytes, bool is800KHz)$/;"	f	class:NeoPixel	typeref:typename:void
 run	algolight.cpp	/^uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,float time,uint8_t p/;"	f	class:AlgoLight	typeref:typename:uint8_t
 run	algomotor.cpp	/^uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,int power,int dir,/;"	f	class:AlgoMotor	typeref:typename:uint8_t
 runRaw	algolight.cpp	/^uint8_t AlgoLight::runRaw(float time,uint8_t power,uint32_t color)$/;"	f	class:AlgoLight	typeref:typename:uint8_t
@@ -434,26 +331,13 @@ scriptRowId	algosound.h	/^        byte scriptRowId = 0;$/;"	m	class:AlgoSound	ty
 sequance	algothread.h	/^		uint8_t sequance;$/;"	m	class:AlgoThread	typeref:typename:uint8_t
 sequance	system.h	/^		uint32_t sequance;$/;"	m	class:System	typeref:typename:uint32_t
 sequanceCnt	algothread.h	/^		uint8_t sequanceCnt;$/;"	m	class:AlgoThread	typeref:typename:uint8_t
-setBrightness	neopixel.cpp	/^void NeoPixel::setBrightness(uint8_t b) {$/;"	f	class:NeoPixel	typeref:typename:void
+setColor	TinyWS2812B.cpp	/^void TinyWS2812B::setColor(byte r, byte g, byte b)$/;"	f	class:TinyWS2812B	typeref:typename:void
 setColor	algolight.cpp	/^void AlgoLight::setColor(uint8_t r,uint8_t g,uint8_t b)$/;"	f	class:AlgoLight	typeref:typename:void
-setColorOrderBRG	WS2812.cpp	/^void WS2812::setColorOrderBRG() {$/;"	f	class:WS2812	typeref:typename:void
-setColorOrderGRB	WS2812.cpp	/^void WS2812::setColorOrderGRB() { \/\/ Default color order$/;"	f	class:WS2812	typeref:typename:void
-setColorOrderRGB	WS2812.cpp	/^void WS2812::setColorOrderRGB() {$/;"	f	class:WS2812	typeref:typename:void
-setOutput	WS2812.cpp	/^void WS2812::setOutput(const volatile uint8_t* port, volatile uint8_t* reg, uint8_t pin) {$/;"	f	class:WS2812	typeref:typename:void
-setOutput	WS2812.cpp	/^void WS2812::setOutput(uint8_t pin) {$/;"	f	class:WS2812	typeref:typename:void
-setPin	neopixel.cpp	/^void NeoPixel::setPin(int16_t p) {$/;"	f	class:NeoPixel	typeref:typename:void
-setPixelColor	neopixel.cpp	/^void NeoPixel::setPixelColor(uint16_t n, uint32_t c) {$/;"	f	class:NeoPixel	typeref:typename:void
-setPixelColor	neopixel.cpp	/^void NeoPixel::setPixelColor(uint16_t n, uint8_t r, uint8_t g,$/;"	f	class:NeoPixel	typeref:typename:void
 setPower	algomotor.cpp	/^void AlgoMotor::setPower(uint32_t power)$/;"	f	class:AlgoMotor	typeref:typename:void
 setRotationCnt	algomotor.cpp	/^void AlgoMotor::setRotationCnt(float rot)$/;"	f	class:AlgoMotor	typeref:typename:void
 setTX	softserial.cpp	/^void SoftSerial::setTX(uint8_t tx)$/;"	f	class:SoftSerial	typeref:typename:void
 setThreadCompletedFlag	algothread.cpp	/^bool setThreadCompletedFlag(AlgoThread & thread)$/;"	f	typeref:typename:bool
 setVolume	algosound.cpp	/^void AlgoSound::setVolume(int volumeLevel) $/;"	f	class:AlgoSound	typeref:typename:void
-set_crgb_at	WS2812.cpp	/^uint8_t WS2812::set_crgb_at(uint16_t index, uint8_t r, uint8_t g, uint8_t b) $/;"	f	class:WS2812	typeref:typename:uint8_t
-set_subpixel_at	WS2812.cpp	/^uint8_t WS2812::set_subpixel_at(uint16_t index, uint8_t offset, uint8_t px_value) {$/;"	f	class:WS2812	typeref:typename:uint8_t
-show	neopixel.cpp	/^void NeoPixel::show(void) {$/;"	f	class:NeoPixel	typeref:typename:void
-sine8	neopixel.h	/^  static uint8_t sine8(uint8_t x) {$/;"	f	class:NeoPixel	typeref:typename:uint8_t
-sm	neopixel.h	/^  int sm = 0;$/;"	m	class:NeoPixel	typeref:typename:int
 soundSerial	algosound.h	/^        SoftSerial soundSerial;$/;"	m	class:AlgoSound	typeref:typename:SoftSerial
 speed	algomotor.h	/^		uint16_t speed;$/;"	m	class:AlgoMotor	typeref:typename:uint16_t
 speed_cnt	algomotor.h	/^		uint16_t speed_cnt;$/;"	m	class:AlgoMotor	typeref:typename:uint16_t
@@ -486,7 +370,6 @@ subThreadCompleted	algothread.h	/^		uint8_t subThreadCompleted;$/;"	m	class:Algo
 subThreadIdx	algothread.h	/^		uint8_t subThreadIdx;$/;"	m	class:AlgoThread	typeref:typename:uint8_t
 subThreadSequance	algothread.h	/^		uint8_t subThreadSequance;$/;"	m	class:AlgoThread	typeref:typename:uint8_t
 subtract_cap	softserial.cpp	/^uint16_t SoftSerial::subtract_cap(uint16_t num, uint16_t sub) $/;"	f	class:SoftSerial	typeref:typename:uint16_t
-sync	WS2812.cpp	/^void WS2812::sync() {$/;"	f	class:WS2812	typeref:typename:void
 thread0	algothread.cpp	/^AlgoThread & thread0 = threads[0];$/;"	v	typeref:typename:AlgoThread &
 thread0_run	algothread.cpp	/^void thread0_run(void)$/;"	f	typeref:typename:void
 thread1	algothread.cpp	/^AlgoThread & thread1 = threads[1];$/;"	v	typeref:typename:AlgoThread &
@@ -523,30 +406,7 @@ trackCommand	algosound.h	/^		char trackCommand[8];$/;"	m	class:AlgoSound	typeref
 tunedDelay	softserial.cpp	/^inline void SoftSerial::tunedDelay(uint16_t delay) $/;"	f	class:SoftSerial	typeref:typename:void
 txByte	owi.cpp	/^void OWI::txByte(uint8_t data)$/;"	f	class:OWI	typeref:typename:void
 type	algosensor.h	/^        uint8_t type;$/;"	m	class:AlgoSensor	typeref:typename:uint8_t
-updateLength	neopixel.cpp	/^void NeoPixel::updateLength(uint16_t n) {$/;"	f	class:NeoPixel	typeref:typename:void
-updateType	neopixel.cpp	/^void NeoPixel::updateType(neoPixelType t) {$/;"	f	class:NeoPixel	typeref:typename:void
-w1	light_ws2812.cpp	/^#define w1 /;"	d	file:
-w1_nops	light_ws2812.cpp	/^  #define w1_nops /;"	d	file:
-w2	light_ws2812.cpp	/^#define w2 /;"	d	file:
-w2_nops	light_ws2812.cpp	/^#define w2_nops /;"	d	file:
-w3	light_ws2812.cpp	/^#define w3 /;"	d	file:
-w3_nops	light_ws2812.cpp	/^#define w3_nops /;"	d	file:
-wOffset	neopixel.h	/^  uint8_t wOffset;    \/\/\/< Index of white (==rOffset if no white)$/;"	m	class:NeoPixel	typeref:typename:uint8_t
-w_fixedhigh	light_ws2812.cpp	/^#define w_fixedhigh /;"	d	file:
-w_fixedlow	light_ws2812.cpp	/^#define w_fixedlow /;"	d	file:
-w_fixedtotal	light_ws2812.cpp	/^#define w_fixedtotal /;"	d	file:
-w_lowtime	light_ws2812.cpp	/^#define w_lowtime /;"	d	file:
-w_nop1	light_ws2812.cpp	/^#define w_nop1 /;"	d	file:
-w_nop16	light_ws2812.cpp	/^#define w_nop16 /;"	d	file:
-w_nop2	light_ws2812.cpp	/^#define w_nop2 /;"	d	file:
-w_nop4	light_ws2812.cpp	/^#define w_nop4 /;"	d	file:
-w_nop8	light_ws2812.cpp	/^#define w_nop8 /;"	d	file:
-w_onecycles	light_ws2812.cpp	/^#define w_onecycles /;"	d	file:
-w_onepulse	light_ws2812.cpp	/^#define w_onepulse /;"	d	file:
-w_totalcycles	light_ws2812.cpp	/^#define w_totalcycles /;"	d	file:
-w_totalperiod	light_ws2812.cpp	/^#define w_totalperiod /;"	d	file:
-w_zerocycles	light_ws2812.cpp	/^#define w_zerocycles /;"	d	file:
-w_zeropulse	light_ws2812.cpp	/^#define w_zeropulse /;"	d	file:
+updateLeds	TinyWS2812B.cpp	/^void TinyWS2812B::updateLeds(){$/;"	f	class:TinyWS2812B	typeref:typename:void
 wait	algowait.cpp	/^void wait(System name,float seconds)$/;"	f	typeref:typename:void
 wait4CompletionALGOBOT	algoC.cpp	/^void wait4CompletionALGOBOT(void)$/;"	f	typeref:typename:void
 wait4Presence	owi.cpp	/^uint8_t OWI::wait4Presence(void)$/;"	f	class:OWI	typeref:typename:uint8_t
@@ -558,11 +418,10 @@ waitState	algothread.h	/^		uint8_t waitState;$/;"	m	class:AlgoThread	typeref:typ
 waitTimer	algothread.h	/^		uint32_t waitTimer;$/;"	m	class:AlgoThread	typeref:typename:uint32_t
 write	algoserial.h	/^template <typename Var> void write(System name,Var line)$/;"	f	typeref:typename:void
 write	softserial.cpp	/^size_t SoftSerial::write(uint8_t b)$/;"	f	class:SoftSerial	typeref:typename:size_t
+writeByte	TinyWS2812B.cpp	/^void TinyWS2812B::writeByte(byte dataByte){$/;"	f	class:TinyWS2812B	typeref:typename:void
 writeLine	algoserial.h	/^template <typename Var> void writeLine(System name,Var line)$/;"	f	typeref:typename:void
-ws2812_port	WS2812.h	/^	const volatile uint8_t *ws2812_port;$/;"	m	class:WS2812	typeref:typename:const volatile uint8_t *
-ws2812_port_reg	WS2812.h	/^	volatile uint8_t *ws2812_port_reg;$/;"	m	class:WS2812	typeref:typename:volatile uint8_t *
-ws2812_sendarray_mask	light_ws2812.cpp	/^void  WS2812::ws2812_sendarray_mask(uint8_t *data,uint16_t datlen,uint8_t maskhi,uint8_t *port, /;"	f	class:WS2812	typeref:typename:void
 yield	algoC.cpp	/^uint8_t yield(void)$/;"	f	typeref:typename:uint8_t
-~NeoPixel	neopixel.cpp	/^NeoPixel::~NeoPixel() {$/;"	f	class:NeoPixel
+zeroB	TinyWS2812B.cpp	/^void TinyWS2812B::zeroB(){$/;"	f	class:TinyWS2812B	typeref:typename:void
+zeroC	TinyWS2812B.cpp	/^void TinyWS2812B::zeroC(){$/;"	f	class:TinyWS2812B	typeref:typename:void
+zeroD	TinyWS2812B.cpp	/^void TinyWS2812B::zeroD(){$/;"	f	class:TinyWS2812B	typeref:typename:void
 ~SoftSerial	softserial.cpp	/^SoftSerial::~SoftSerial()$/;"	f	class:SoftSerial
-~WS2812	WS2812.cpp	/^WS2812::~WS2812() {$/;"	f	class:WS2812

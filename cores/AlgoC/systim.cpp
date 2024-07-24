@@ -48,3 +48,9 @@ uint32_t getElapsedTimeSYSTIM(uint32_t t_beg)
 		return (time + (0xFFFFFFFF - t_beg));
 	}
 }
+
+void delay_ms(uint32_t ms)
+{
+	uint32_t timer = getSYSTIM();
+	while(chk4TimeoutSYSTIM(timer,ms)==SYSTIM_KEEP_ALIVE);
+}

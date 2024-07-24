@@ -30,7 +30,7 @@
 #include <../../libraries/Algobrix/softserial.h>
 
 
-#define ALGOC_VERSION							"v0.5.11"
+#define ALGOC_VERSION							"v0.5.12"
 
 #define R1 20000.0 // resistance of R1 (20K)
 #define R2 10000.0 // resistance of R2 (10K)
@@ -129,11 +129,13 @@ ISR(PCINT1_vect)
 int main(void)
 {
     init();
-
-
     initVariant();
-    initALGOBOT();
 
+	pinMode(PLAY_BUTTON_PIN,INPUT_PULLUP);
+	uint8_t prevButtonState = digitalRead(PLAY_BUTTON_PIN);
+
+	pinMode(PLAY_BUTTON_PIN,OUTPUT);
+	digitalWrite(PLAY_BUTTON_PIN,0x01);
 	// time_t t;
 	// srand((unsigned) time(&t));
 
@@ -165,7 +167,6 @@ int main(void)
 		bleSerial.write(i);
 	}
 	delay(100);
-	uint8_t prevButtonState = digitalRead(PLAY_BUTTON_PIN);
     uint8_t buttonState = prevButtonState;
     uint8_t batteryError = 0x00;
     uint8_t batteryState = 0x00;
@@ -175,6 +176,7 @@ int main(void)
 	g_playState = 0x01;
     pinMode(POWER_LED_PIN,OUTPUT);
 	digitalWrite(PLAY_LED_PIN,g_playState);
+
 
 	uint32_t eepromBuildTime;
 	eepromBuildTime = EEPROM.read(0);
@@ -196,7 +198,6 @@ int main(void)
 		EEPROM.write(3,c_current_build_time & 0xff);
 		/* Serial.println("Save build to EEPROM"); */
 	}
-
     g_battery_voltage = getBatteryVoltage();
 
 	// time_t t;
@@ -210,11 +211,23 @@ int main(void)
 #endif
     if(g_battery_voltage < 5500)
     {
+#ifdef SERIAL_ENABLE
+		Serial.println(F("Make sure battery block is connected and turned on"));
+#endif
         g_upload_flag = 0;
         g_playState = 0x00;
         digitalWrite(PLAY_LED_PIN,g_playState);
-    }
-
+		g_ALGOBOT_INFO.state = ALGOBOT_STATE_POWER_OFF;
+	}
+	else
+	{
+		g_ALGOBOT_INFO.state = ALGOBOT_STATE_IDLE;
+	}
+	digitalWrite(PLAY_BUTTON_PIN,0x00);
+	uint32_t timer = getSYSTIM();
+	while(chk4TimeoutSYSTIM(timer,200)==SYSTIM_KEEP_ALIVE);
+	pinMode(PLAY_BUTTON_PIN,INPUT);
+    initALGOBOT();
 
 	PCIFR = 0b00000000; //Clear all flags
 	PCMSK1 |= 0x01;
@@ -230,9 +243,12 @@ int main(void)
 			{
 				g_ALGOBOT_INFO.state = ALGOBOT_STATE_IDLE;
 				digitalWrite(PLAY_LED_PIN,1);
+				delay_ms(200);
 			}
 			else
 			{
+				g_runFlag = 0;
+				g_upload_flag = 0;
 				g_ALGOBOT_INFO.state = ALGOBOT_STATE_POWER_OFF;
 			}
 		}
@@ -260,9 +276,14 @@ int main(void)
 						digitalWrite(POWER_LED_PIN,batteryState);
 					}
 				}
-				else
+				else if(g_battery_voltage > 5500)
 				{
 					batteryState ^= 0x01;
+					digitalWrite(POWER_LED_PIN,batteryState);
+				}
+				else
+				{
+					batteryState = 0x00;
 					digitalWrite(POWER_LED_PIN,batteryState);
 				}
 			}
