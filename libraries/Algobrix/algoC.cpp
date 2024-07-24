@@ -38,7 +38,6 @@ void initALGOBOT(void)
 
     uint32_t timer = getSYSTIM();
     uint8_t state = 0;
-    g_ALGOBOT_INFO.state = ALGOBOT_STATE_IDLE;
 }
 
 void chkALGOBOT(void)
