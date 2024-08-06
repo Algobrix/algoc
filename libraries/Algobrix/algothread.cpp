@@ -115,6 +115,7 @@ void resetAllThreads(void)
 		threads[k].loopSequance = 0;
 		threads[k].subThreadIdx = 0;
 	}
+    g_ALGOBOT_INFO.state = ALGOBOT_STATE_IDLE;
 	threadAlgoC.state = ALGOTHREAD_STATE_IDLE;
 	threadAlgoC.sequance = 0;
 	threadAlgoC.sequanceCnt = 0;
