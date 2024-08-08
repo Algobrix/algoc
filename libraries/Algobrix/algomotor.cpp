@@ -290,8 +290,8 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 				cthread.sequance++;
 				return 	ALGOMOTOR_STATUS_COMPLETED;
 			}
-			if(rotation < 0)
 			{
+                if(rotation < 0)
 				rotation = 0;
 			}
 
@@ -586,6 +586,7 @@ void AlgoMotor::setRotationCnt(float rot)
 		float rot_coeff = -8.59;
 		float intercept_coeff = 1.87;
 		rot_calc = (rot * 360) - ((power_coeff * this->power) + (rot_coeff * rot) - intercept_coeff);
+        rot_calc = rot_calc / 2;
 	}
 	else if(rot < 1)
 	{
@@ -593,6 +594,7 @@ void AlgoMotor::setRotationCnt(float rot)
 		float rot_coeff = 1.27;
 		float intercept_coeff = -0.71;
 		rot_calc = (rot * 360) - ((power_coeff * this->power) + (rot_coeff * rot) - intercept_coeff);
+        rot_calc = rot_calc / 2;
 	}
 	else if(rot)
 	{
