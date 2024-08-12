@@ -525,48 +525,53 @@ ISR(TIMER1_COMPA_vect)
 	{
 		if(MotorB.rotations <= *MotorB.pOCR)
 		{
-			if(0)
-			{
-				*MotorB.pOCR = 0;
-				*MotorB.pTCNT = 0;
-				*MotorB.pTIFR = 0;
-			}
-			else
-			{
-				*MotorB.pOCR = 1;
-				*MotorB.pTCNT = 0;
-				*MotorB.pTIFR = 0;
-			}
-			MotorB.stop();
+            *MotorB.pOCR = 1;
+            *MotorB.pTCNT = 0;
+            *MotorB.pTIFR = 0;
+            MotorB.stop();
 		}
 		else
 		{
 			MotorB.rotations -= *MotorB.pOCR;
 		}
+        MotorB.rotCnt++;
+        MotorB.speed_cnt++;
+        if(MotorB.rotationCounterFlag)
+        {
+            if(MotorB.rotationCounterFloat != 0)
+            {
+                *MotorB.rotationCounterFloat = (float) MotorB.rotCnt / 360.;
+            }
+            if(MotorB.rotationCounterInt != 0)
+            {
+                *MotorB.rotationCounterInt = MotorB.rotCnt / 360.;
+            }
+        }
 	}
+    else
+    {
+        MotorB.rotCnt++;
+        MotorB.speed_cnt++;
+        if(MotorB.rotationCounterFlag)
+        {
+            if(MotorB.rotationCounterFloat != 0)
+            {
+                *MotorB.rotationCounterFloat = (float) MotorB.rotCnt / 360.;
+            }
+            if(MotorB.rotationCounterInt != 0)
+            {
+                *MotorB.rotationCounterInt = MotorB.rotCnt / 360.;
+            }
+            *MotorB.pTCNT = 0;
+            *MotorB.pTIFR = 0;
+        }
+        else
+        {
+            *MotorB.pTCNT = 0;
+            *MotorB.pTIFR = 0;
+        }
 
-	if(MotorB.rotationCounterFlag)
-	{
-		MotorB.rotCnt++;
-		MotorB.speed_cnt++;
-		if(MotorB.rotationCounterFloat != 0)
-		{
-			*MotorB.rotationCounterFloat = (float) MotorB.rotCnt / 360;
-		}
-		if(MotorB.rotationCounterInt != 0)
-		{
-			*MotorB.rotationCounterInt = MotorB.rotCnt / 360.;
-		}
-		*MotorB.pTCNT = 0;
-		*MotorB.pTIFR = 0;
-	}
-	else
-	{
-		MotorB.rotCnt++;
-		MotorB.speed_cnt++;
-		*MotorB.pTCNT = 0;
-		*MotorB.pTIFR = 0;
-	}
+}
 
 	interrupts();
 }
@@ -577,12 +582,13 @@ ISR(TIMER4_COMPA_vect)
   noInterrupts();
   if(MotorC.state == ALGOMOTOR_STATE_ROTATION)
   {
-	  if(MotorC.rotations <= *MotorC.pOCR)
+      if(MotorC.rotations <= *MotorC.pOCR)
 	  {
 		  *MotorC.pOCR = 1;
 		  *MotorC.pTCNT = 0;
 		  *MotorC.pTIFR = 0;
 		  MotorC.stop();
+
 	  }
 	  else
 	  {
