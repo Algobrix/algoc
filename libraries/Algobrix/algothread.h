@@ -22,7 +22,7 @@
 											if(cThread.state == ALGOTHREAD_STATE_IDLE)\
 											{\
 												cThread.state = ALGOTHREAD_STATE_RUNNING;\
-											}\
+                                            }\
 											cThread.sequanceCnt = 0; \
 											
 
@@ -30,9 +30,12 @@
 												if((thread_id.state != ALGOTHREAD_STATE_COMPLETED) && (thread_id.sequance == cThread.sequanceCnt) && (thread_id.subThreadIdx == thread_id.subThreadCompleted))\
 												{\
 													thread_id.state = ALGOTHREAD_STATE_COMPLETED;\
-													for(uint8_t k = 0; k < thread_id.subThreadIdx; k++)\
 													{\
-														thread_id.subThread[k]->state = ALGOTHREAD_STATE_IDLE;\
+                                                        for(uint8_t k = 0; k < thread_id.subThreadIdx; k++)\
+                                                        {\
+														    thread_id.subThread[k]->state = ALGOTHREAD_STATE_IDLE;\
+                                                        }\
+												        Serial.println("Stop thread");\
 													}\
 												}\
 											}

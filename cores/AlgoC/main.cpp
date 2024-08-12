@@ -30,7 +30,7 @@
 #include <../../libraries/Algobrix/softserial.h>
 
 
-#define ALGOC_VERSION							"v0.5.15"
+#define ALGOC_VERSION							"v0.5.16"
 
 #define R1 20000.0 // resistance of R1 (20K)
 #define R2 10000.0 // resistance of R2 (10K)
@@ -315,9 +315,13 @@ int main(void)
             digitalWrite(PLAY_LED_PIN,0);
 
 			chkALGOBOT();
+
+            threadAlgoC.state = ALGOTHREAD_STATE_RUNNING;
             do
             {
 			    application(threadAlgoC);
+                threadAlgoC.state = ALGOTHREAD_STATE_IDLE;
+                yield();
             } while(areAllThreadsCompleted() == false);
 			// loop();
 			if(chk4TimeoutSYSTIM(g_playTimer,200) == SYSTIM_TIMEOUT)

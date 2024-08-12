@@ -47,6 +47,11 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 	{
 		yield();
 	}
+
+    if((&cthread == &threadAlgoC) && (cthread.state == ALGOTHREAD_STATE_IDLE))
+    {
+        return 0;
+    }
 	if(cthread.sequance != sequance)
 	{
 		return 0;
@@ -257,6 +262,16 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 		yield();
 	}
 
+    if((&cthread == &threadAlgoC) && (cthread.state == ALGOTHREAD_STATE_IDLE))
+    {
+        return 0;
+    }
+
+    if(cthread.state == ALGOTHREAD_STATE_IDLE)
+    {
+        return 0 ;
+    }
+
 	if(cthread.sequance != sequance)
 	{
 		return 0;
@@ -321,11 +336,11 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 			{
 				power = 10;
 			}
-			setPower(power);
 			this->resistanceToStopPeriod = 200 - (15 * (power - 1));
 			if(rotation != FOREVER)
 			{
 				setRotationCnt(rotation);
+			    setPower(power);
 				if(mode == OP_STATUS_BLOCKING)
 				{
 					this->prevState = this->state;
@@ -375,15 +390,18 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 				}
 				else
 				{
+					if(&cthread == &threadAlgoC)
+                    {
+						cthread.sequance++;
+                    }
 					this->prevState = this->state;
 					this->state = ALGOMOTOR_STATE_ROTATION;
-					cthread.sequance++;
 					return 	ALGOMOTOR_STATUS_COMPLETED;
 				}
-
 			}
 			else
 			{
+			    setPower(power);
 				this->prevState = this->state;
 				this->state = ALGOMOTOR_STATE_ON;
 			}
@@ -391,17 +409,17 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 		}
 		case (ALGOMOTOR_STATUS_RUNNING):
 		{
-			if(chk4TimeoutSYSTIM(this->timer,this->period) == SYSTIM_TIMEOUT)
-			{
-				stop();
-				this->status = ALGOMOTOR_STATUS_INIT;
-				cthread.sequance++;
-				return 	ALGOMOTOR_STATUS_COMPLETED;
-			}
-			return 	ALGOMOTOR_STATUS_RUNNING;
-			break;
-		}
-	}
+            if(this->state != ALGOMOTOR_STATE_ROTATION)
+            {
+                stop();
+                this->status = ALGOMOTOR_STATUS_INIT;
+                cthread.sequance++;
+                return 	ALGOMOTOR_STATUS_COMPLETED;
+            }
+            return 	ALGOMOTOR_STATUS_RUNNING;
+            break;
+        }
+    }
 }
 
 uint8_t AlgoMotor::rotationRaw(float rotation,uint8_t power,int8_t dir)
@@ -472,8 +490,8 @@ void AlgoMotor::changeSpeed(uint8_t pwm)
                     TIMSK2 = (TIMSK2 & B11111011) | B00000000; // Disable Compare B Interrupt
                     break;
                 }
-                default: 
                 {
+                    default: 
                     OCR2B = pwmValue;
                     TIMSK2 = (TIMSK2 & B11111011) | B00000100; // Enable Compare B Interrupt
                     break;
@@ -492,20 +510,8 @@ void AlgoMotor::changeSpeed(uint8_t pwm)
 void AlgoMotor::stop()
 {
 	changeSpeed(0);
-	// if(state == ALGOMOTOR_STATE_IDLE)
-	// {
-	// 	return;
-	// }
-	// else if(state == ALGOMOTOR_STATE_ROTATION)
-	// {
-	// }
-	// else
-	// {
-	// 	changeSpeed(0);
-	// }
 	this->prevState = this->state;
 	this->state = ALGOMOTOR_STATE_IDLE;
-	this->status = ALGOMOTOR_STATUS_INIT;
 	return;
 
 }
@@ -817,11 +823,11 @@ void stopCounting(System name, char motorPort)
 		{
 			if(motor->rotationCounterFloat != 0)
 			{
-				*motor->rotationCounterFloat = (float) *motor->pTCNT / 720;
+				*motor->rotationCounterFloat = (float) motor->rotCnt / 360;
 			}
 			if(motor->rotationCounterInt != 0)
 			{
-				*motor->rotationCounterInt = *motor->pTCNT / 720;
+				*motor->rotationCounterInt = motor->rotCnt / 720;
 			}
 		}
 	}

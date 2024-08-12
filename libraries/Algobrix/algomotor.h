@@ -67,24 +67,22 @@ class AlgoMotor
         uint8_t pwmValue;
 		uint8_t power;
         uint8_t direction;
-		uint16_t rotCnt;
-		uint16_t rotations;
-		float * rotationCounterFloat;
-		int * rotationCounterInt;
-		uint8_t rotationCounterFlag;
+		volatile uint16_t rotCnt;
+		volatile uint16_t rotations;
+		volatile float * rotationCounterFloat;
+		volatile  int * rotationCounterInt;
+		volatile uint8_t rotationCounterFlag;
         uint32_t timer;
         float period;
-        uint16_t * pOCR;
-        uint16_t * pTCNT;
-        uint8_t * pTIFR;
+        volatile uint16_t * pOCR;
+        volatile uint16_t * pTCNT;
+        volatile uint8_t * pTIFR;
 
 		uint32_t speed_timer;
-		uint16_t speed_cnt;
+		volatile uint16_t speed_cnt;
 		uint16_t speed;
 		uint8_t speed_drop_threshold;
 		uint8_t resistanceToStopPeriod;
-
-		
 
 
         AlgoMotor(uint8_t dirPin, uint8_t pwmPin,uint16_t * TCNT,uint8_t * TIFR,uint16_t * OCR,char id); 
