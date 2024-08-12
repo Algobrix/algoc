@@ -411,9 +411,6 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 		{
             if(this->state != ALGOMOTOR_STATE_ROTATION)
             {
-                Serial.println(this->timer);
-                Serial.println(this->period);
-                Serial.println(getSYSTIM());
                 stop();
                 this->status = ALGOMOTOR_STATUS_INIT;
                 cthread.sequance++;
