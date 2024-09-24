@@ -96,14 +96,40 @@ void chk4CmdALGOBOT(void)
 				case('s'):
 				case('S'):
 				{
-					stopActuators();
-					resetAllThreads();
-					while(Serial.available())
-					{
-						char tmp = Serial.read();
-					}
-					break;
-				}
+	                if(Serial.available())
+                    {
+			            char data = Serial.read();
+                        if(data == '1')
+                        {
+                        	int cvalue = Sensor(1);
+                            Serial.println(cvalue);
+                        }
+                        else if(data == '2')
+                        {
+                        	int cvalue = Sensor(2);
+                            Serial.println(cvalue);
+                        }
+                        else
+                        {
+                            stopActuators();
+                            resetAllThreads();
+                            while(Serial.available())
+                            {
+                                char tmp = Serial.read();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        stopActuators();
+                        resetAllThreads();
+                        while(Serial.available())
+                        {
+                            char tmp = Serial.read();
+                        }
+                    }
+                    break;
+                }
 				case('a'):
 				case('A'):
 				{

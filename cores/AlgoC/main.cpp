@@ -30,7 +30,7 @@
 #include <../../libraries/Algobrix/softserial.h>
 
 
-#define ALGOC_VERSION							"v0.5.16"
+#define ALGOC_VERSION							"v0.5.17"
 
 #define R1 20000.0 // resistance of R1 (20K)
 #define R2 10000.0 // resistance of R2 (10K)
@@ -211,9 +211,7 @@ int main(void)
 #endif
     if(g_battery_voltage < 5500)
     {
-#ifdef SERIAL_ENABLE
 		Serial.println(F("Make sure battery block is connected and turned on"));
-#endif
         g_upload_flag = 0;
         g_playState = 0x00;
         digitalWrite(PLAY_LED_PIN,g_playState);
