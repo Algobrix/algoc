@@ -43,7 +43,7 @@ class AlgoSensor
         
     public:
         AlgoSensor(uint8_t pin,OWI * owi);
-        uint8_t getValue();
+        int getValue();
 };
 
 /* Exported variables ****************************************************** */
@@ -52,8 +52,8 @@ extern AlgoSensor Sensor2;
 
 
 /* Exported functions ****************************************************** */
-uint8_t Sensor(AlgoSensor & sensor);
-uint8_t Sensor(uint8_t port);
+int Sensor(AlgoSensor & sensor);
+int Sensor(uint8_t port);
 
 int waitSensor(System name,int sensorPort, int minSignalValue, int maxSignalValue);
 void waitForPressSensor(System name,int sensorPort, bool logicState);
