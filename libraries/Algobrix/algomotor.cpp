@@ -272,7 +272,7 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
         return 0 ;
     }
 
-	if(cthread.sequance != sequance)
+	if((cthread.sequance != sequance) && (this->status != ALGOMOTOR_STATUS_RUNNING))
 	{
 		return 0;
 	}
@@ -390,12 +390,13 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 				}
 				else
 				{
-					if(&cthread == &threadAlgoC)
-                    {
-						cthread.sequance++;
-                    }
+					// if(&cthread == &threadAlgoC)
+					//                {
+					//                }
+                    cthread.sequance++;
 					this->prevState = this->state;
 					this->state = ALGOMOTOR_STATE_ROTATION;
+					this->status = ALGOMOTOR_STATUS_RUNNING;
 					return 	ALGOMOTOR_STATUS_COMPLETED;
 				}
 			}
@@ -413,7 +414,10 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
             {
                 stop();
                 this->status = ALGOMOTOR_STATUS_INIT;
-                cthread.sequance++;
+				if(mode == OP_STATUS_BLOCKING)
+                {
+                    cthread.sequance++;
+                }
                 return 	ALGOMOTOR_STATUS_COMPLETED;
             }
             return 	ALGOMOTOR_STATUS_RUNNING;
