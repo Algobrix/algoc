@@ -26,7 +26,7 @@ AlgoSensor::AlgoSensor(uint8_t pin, OWI * owi)
 }
 
 
-uint8_t AlgoSensor::getValue() 
+int AlgoSensor::getValue() 
 {
     float dutyCycle = 0;
     uint8_t value = 0;
@@ -66,17 +66,21 @@ uint8_t AlgoSensor::getValue()
         {
             dutyCycle = 0;
         }
-        value = uint8_t(round(dutyCycle / 10));
+        value = int(round(dutyCycle / 10));
+        if(value == 0)
+        {
+            value = -1;
+        }
     }
     return value;
 }
 
 
-uint8_t Sensor(AlgoSensor & sensor)
+int Sensor(AlgoSensor & sensor)
 {
     return sensor.getValue();
 }
-uint8_t Sensor(uint8_t port)
+int Sensor(uint8_t port)
 {
     switch(port)
     {
