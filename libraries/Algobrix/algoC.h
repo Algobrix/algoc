@@ -28,7 +28,7 @@
 #endif
 
 #define repeat(system,condition)				system.cthread.sequance++;while((g_ALGOBOT_INFO.state != ALGOBOT_STATE_IDLE) && (g_ALGOBOT_INFO.state != ALGOBOT_STATE_HALT) && (condition))
-#define isStopPressed(system)                   system.cthread.sequance++;if((g_ALGOBOT_INFO.state == ALGOBOT_STATE_IDLE) || (g_ALGOBOT_INFO.state == ALGOBOT_STATE_HALT)){break;}
+#define isStopDetected(system)                   system.cthread.sequance++;if((g_ALGOBOT_INFO.state == ALGOBOT_STATE_IDLE) || (g_ALGOBOT_INFO.state == ALGOBOT_STATE_HALT)){break;}
 
 
 
