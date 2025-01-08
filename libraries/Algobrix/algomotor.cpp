@@ -390,14 +390,21 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 				}
 				else
 				{
-					// if(&cthread == &threadAlgoC)
-					//                {
-					//                }
-                    cthread.sequance++;
-					this->prevState = this->state;
-					this->state = ALGOMOTOR_STATE_ROTATION;
-					this->status = ALGOMOTOR_STATUS_RUNNING;
-					return 	ALGOMOTOR_STATUS_COMPLETED;
+					if(&cthread == &threadAlgoC)
+                    {
+                        cthread.sequance++;
+                        this->prevState = this->state;
+                        this->state = ALGOMOTOR_STATE_ROTATION;
+                        return 	ALGOMOTOR_STATUS_COMPLETED;
+                    }
+                    else
+                    {
+                        cthread.sequance++;
+                        this->prevState = this->state;
+                        this->state = ALGOMOTOR_STATE_ROTATION;
+                        this->status = ALGOMOTOR_STATUS_RUNNING;
+                        return 	ALGOMOTOR_STATUS_COMPLETED;
+                    }
 				}
 			}
 			else
