@@ -516,7 +516,8 @@ void AlgoMotor::stop()
 	changeSpeed(0);
 	this->prevState = this->state;
 	this->state = ALGOMOTOR_STATE_IDLE;
-	return;
+    this->status = ALGOMOTOR_STATUS_INIT;
+    return;
 
 }
 void AlgoMotor::stop(int line,int sequance,AlgoThread & cthread)
