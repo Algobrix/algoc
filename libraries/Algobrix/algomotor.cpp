@@ -57,6 +57,7 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 		return 0;
 	}
 
+
 	yield();
 	switch(this->status)
 	{
@@ -192,8 +193,10 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 				}
 				else
 				{
-					this->status = ALGOMOTOR_STATUS_RUNNING;
-					return 	ALGOMOTOR_STATUS_RUNNING;
+                    this->running_thread = &cthread;
+                    this->status = ALGOMOTOR_STATUS_RUNNING;
+					cthread.sequance++;
+                    return 	ALGOMOTOR_STATUS_RUNNING;
 				}
 
 			}
@@ -209,13 +212,17 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 					this->prevState = this->state;
 					this->state = ALGOMOTOR_STATE_TIMED_ON;
 				}
-				cthread.sequance++;
+                this->running_thread = &cthread;
+                cthread.sequance++;
+                this->status = ALGOMOTOR_STATUS_RUNNING;
 				return 	ALGOMOTOR_STATUS_COMPLETED;
 			}
 			break;
 		}
 		case (ALGOMOTOR_STATUS_RUNNING):
 		{
+            // Serial.print("Current state:");
+            // Serial.println(this->state);
 			if(chk4TimeoutSYSTIM(this->speed_timer,this->resistanceToStopPeriod) == SYSTIM_TIMEOUT)
 			{
 				this->speed_timer = getSYSTIM();
@@ -228,9 +235,9 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 				{
 					if((this->speed * (this->speed_drop_threshold/100.)) > this->speed_cnt)
 					{
-						stop();
+                        stop();
 						this->status = ALGOMOTOR_STATUS_INIT;
-						cthread.sequance++;
+                        this->running_thread = 0;
 						return 	ALGOMOTOR_STATUS_COMPLETED;
 					}
 					this->speed_cnt = 0;
@@ -241,7 +248,7 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 			{
 				stop();
 				this->status = ALGOMOTOR_STATUS_INIT;
-				cthread.sequance++;
+                this->running_thread = 0;
 				return 	ALGOMOTOR_STATUS_COMPLETED;
 			}
 			return 	ALGOMOTOR_STATUS_RUNNING;
@@ -383,6 +390,7 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 					}
 					else
 					{
+                        this->running_thread = &cthread;
 						this->status = ALGOMOTOR_STATUS_RUNNING;
 						return 	ALGOMOTOR_STATUS_RUNNING;
 					}
@@ -403,6 +411,7 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
                         this->prevState = this->state;
                         this->state = ALGOMOTOR_STATE_ROTATION;
                         this->status = ALGOMOTOR_STATUS_RUNNING;
+                        this->running_thread = &cthread;
                         return 	ALGOMOTOR_STATUS_COMPLETED;
                     }
 				}
@@ -421,10 +430,7 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
             {
                 stop();
                 this->status = ALGOMOTOR_STATUS_INIT;
-				if(mode == OP_STATUS_BLOCKING)
-                {
-                    cthread.sequance++;
-                }
+                this->running_thread = 0;
                 return 	ALGOMOTOR_STATUS_COMPLETED;
             }
             return 	ALGOMOTOR_STATUS_RUNNING;
@@ -535,7 +541,10 @@ void AlgoMotor::stop(int line,int sequance,AlgoThread & cthread)
 	}
 	if(state == ALGOMOTOR_STATE_IDLE)
 	{
-
+#ifdef SERIAL_ENABLE
+        Serial.print(F("Stop motor: "));
+        Serial.println (this->id);
+#endif
 		cthread.sequance++;
 		return;
 	}
@@ -558,7 +567,13 @@ void AlgoMotor::stop(int line,int sequance,AlgoThread & cthread)
 	this->prevState = this->state;
 	this->state = ALGOMOTOR_STATE_IDLE;
 	this->status = ALGOMOTOR_STATUS_INIT;
+
 	cthread.sequance++;
+    if(this->running_thread != 0)
+    {
+        this->running_thread->sequance++;
+        this->running_thread = 0;
+    }
 	return;
 }
 uint32_t AlgoMotor::getRuntime(void)

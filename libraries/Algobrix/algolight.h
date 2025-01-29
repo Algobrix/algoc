@@ -63,9 +63,11 @@ class AlgoLight
 		uint8_t threadState;
 		uint8_t status;
 		AlgoLight(uint8_t pin,uint8_t id);
+		AlgoThread * running_thread;
 
         void setColor(uint8_t r,uint8_t g,uint8_t b);
         void stop(void);
+		void stop(int line,int sequance,AlgoThread & cthread);
         uint8_t run(uint32_t line,uint32_t sequance,AlgoThread & cthread,float time,uint8_t power,uint32_t color, uint8_t mode);
 		uint8_t runRaw(float time,uint8_t power,uint32_t color);
 };

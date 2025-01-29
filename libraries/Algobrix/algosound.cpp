@@ -57,6 +57,12 @@ void AlgoSound::stop(void)
         this->soundSerial.println(trackCommand); // If a track is playing, we send it again to stop it.
         // this->soundSerial.println(trackCommand); // If a track is playing, we send it again to stop it.
     }
+
+    if(this->running_thread != 0)
+    {
+        this->running_thread->sequance++;
+        this->running_thread = 0;
+    }
     // this->currentTrack = 0;
 }
 
@@ -171,13 +177,15 @@ void playSound(System name,int sound,int power,bool isBlocking)
 				}
 				else
 				{
+                    soundPlayer.running_thread = &name.cthread;
 					soundPlayer.status = ALGOSOUND_STATUS_RUNNING;
 					return;
 				}
 			}
 			else
 			{
-				name.cthread.sequance++;
+                soundPlayer.running_thread = &name.cthread;
+                name.cthread.sequance++;
 				return;
 			}
 			break;
@@ -189,6 +197,7 @@ void playSound(System name,int sound,int power,bool isBlocking)
 			{
 				soundPlayer.status = ALGOSOUND_STATUS_INIT;
 				name.cthread.sequance++;
+                soundPlayer.running_thread = 0;
 				return;
 			}
 			return;
@@ -207,6 +216,8 @@ void stopSound(System name)
 	yield();
     soundPlayer.stop();
 	name.cthread.sequance++;
+
+
 }
 
 void stopSound(void)
