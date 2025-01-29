@@ -30,7 +30,7 @@
 #include <../../libraries/Algobrix/softserial.h>
 
 
-#define ALGOC_VERSION							"v0.5.24"
+#define ALGOC_VERSION							"v0.5.25"
 
 #define R1 20000.0 // resistance of R1 (20K)
 #define R2 10000.0 // resistance of R2 (10K)
