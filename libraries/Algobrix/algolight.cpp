@@ -274,7 +274,30 @@ void light12(System name,float seconds,int power,char * color,bool isBlocking)
 	light(name,2,seconds,power,color,isBlocking);
 }
 
-void RGB12(System name,int lightPort, float seconds,int power,int R,int G,int B,bool isBlocking)
+void RGB(System name,int lightPort, float seconds,int power,int R,int G,int B,bool isBlocking)
+{
+    uint32_t color = R;
+    color = (color << 8) | G;
+    color = (color << 8) | B;
+	switch(lightPort)
+	{
+		case(1):
+		case('1'):
+		{
+			Light1.run(name.line,name.sequance,name.cthread,seconds,power,color,isBlocking);
+			break;
+		}
+		case(2):
+		case('2'):
+		{
+			Light2.run(name.line,name.sequance,name.cthread,seconds,power,color,isBlocking);
+			break;
+		}
+	}
+}
+
+
+void RGB12(System name,float seconds,int power,int R,int G,int B,bool isBlocking)
 {
     uint32_t color = R;
     color = (color << 8) | G;

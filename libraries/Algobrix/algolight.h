@@ -85,7 +85,7 @@ int isLightCompleted(AlgoLight & light);
 
 void light12(System name,float seconds,int power,char * color,bool isBlocking);
 void RGB(System name,int lightPort, float seconds,int power,int R,int G,int B,bool isBlocking);
-void RGB12(System name,int lightPort, float seconds,int power,int R,int G,int B,bool isBlocking);
+void RGB12(System name,float seconds,int power,int R,int G,int B,bool isBlocking);
 void stopLight(System name, int lightPort);
 bool isLightBusy(System name, int lightPort);
 #endif 
