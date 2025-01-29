@@ -84,6 +84,7 @@ class AlgoMotor
 		uint8_t speed_drop_threshold;
 		uint8_t resistanceToStopPeriod;
 
+		AlgoThread * running_thread;
 
         AlgoMotor(uint8_t dirPin, uint8_t pwmPin,uint16_t * TCNT,uint8_t * TIFR,uint16_t * OCR,char id); 
         uint8_t run(int line,int sequance,AlgoThread & cthread, float time,int power,int dir,int mode);

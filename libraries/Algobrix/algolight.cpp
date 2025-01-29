@@ -68,7 +68,7 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 		yield();
 	}
 
-	if(cthread.sequance != sequance)
+	if((cthread.sequance != sequance) && (this->status == ALGOLED_LIGHT_STATUS_INIT))
 	{
 		return 0;
 	}
@@ -132,7 +132,9 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 				}
 				else
 				{
-					return 	ALGOLED_LIGHT_STATUS_RUNNING;
+					cthread.sequance++;
+                    this->running_thread = &cthread;
+                    return 	ALGOLED_LIGHT_STATUS_RUNNING;
 				}
 			}
 			else
@@ -146,7 +148,8 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 					this->state = ALGOLED_LIGHT_STATE_TIMED_ON;
 				}
 				cthread.sequance++;
-				return 	ALGOLED_LIGHT_STATUS_COMPLETED;
+                this->running_thread = &cthread;
+                return 	ALGOLED_LIGHT_STATUS_COMPLETED;
 			}
 			break;
 		}
@@ -159,7 +162,7 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 #endif
 				this->stop();
 				this->status = ALGOLED_LIGHT_STATUS_INIT;
-				cthread.sequance++;
+                this->running_thread = 0;
 				return 	ALGOLED_LIGHT_STATUS_COMPLETED;
 			}
 			return 	ALGOLED_LIGHT_STATUS_RUNNING;
@@ -294,13 +297,13 @@ void stopLight(System name, int lightPort)
         case(1):
 		case('1'):
         {
-            Light1.stop();
+            Light1.stop(name.line,name.sequance,name.cthread);
             break;
         }
         case(2):
 		case('2'):
         {
-            Light2.stop();
+            Light2.stop(name.line,name.sequance,name.cthread);
             break;
         }
         default:
@@ -309,9 +312,25 @@ void stopLight(System name, int lightPort)
         }
     }
 
-	name.cthread.sequance++;
-
 }
+
+void AlgoLight::stop(int line,int sequance,AlgoThread & cthread)
+{	
+    if(cthread.sequance != sequance)
+	{
+		return;
+	}
+    this->state = ALGOLED_LIGHT_STATE_OFF;
+    setColor(0x00,0x00,0x00);
+	cthread.sequance++;
+    if(this->running_thread != 0)
+    {
+        this->running_thread->sequance++;
+        this->running_thread = 0;
+    }
+	return;
+}
+
 
 bool isLightBusy(System name, int lightPort )
 {

@@ -49,7 +49,9 @@ class AlgoSound
         SoftSerial soundSerial;
         char * getTrackCommand(byte trackNumber);
 
+
     public:
+		AlgoThread * running_thread;
         byte scriptRowId = 0;
 		char trackCommand[8];
         uint8_t status;
