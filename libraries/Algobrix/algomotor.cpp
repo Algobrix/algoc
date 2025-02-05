@@ -274,11 +274,6 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
         return 0;
     }
 
-    if(cthread.state == ALGOTHREAD_STATE_IDLE)
-    {
-        return 0 ;
-    }
-
 	if((cthread.sequance != sequance) && (this->status != ALGOMOTOR_STATUS_RUNNING))
 	{
 		return 0;
@@ -348,6 +343,7 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 			{
 				setRotationCnt(rotation);
 			    setPower(power);
+                this->mode = mode;
 				if(mode == OP_STATUS_BLOCKING)
 				{
 					this->prevState = this->state;
@@ -428,6 +424,10 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
 		{
             if(this->state != ALGOMOTOR_STATE_ROTATION)
             {
+                if(this->mode == OP_STATUS_BLOCKING)
+                {
+                    cthread.sequance++;
+                }
                 stop();
                 this->status = ALGOMOTOR_STATUS_INIT;
                 this->running_thread = 0;
@@ -529,7 +529,6 @@ void AlgoMotor::stop()
 	changeSpeed(0);
 	this->prevState = this->state;
 	this->state = ALGOMOTOR_STATE_IDLE;
-    this->status = ALGOMOTOR_STATUS_INIT;
     return;
 
 }
@@ -566,12 +565,10 @@ void AlgoMotor::stop(int line,int sequance,AlgoThread & cthread)
 #endif
 	this->prevState = this->state;
 	this->state = ALGOMOTOR_STATE_IDLE;
-	this->status = ALGOMOTOR_STATUS_INIT;
 
 	cthread.sequance++;
     if(this->running_thread != 0)
     {
-        this->running_thread->sequance++;
         this->running_thread = 0;
     }
 	return;

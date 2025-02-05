@@ -269,9 +269,18 @@ void light(System name,int lightPort, float seconds,int power,char * color,bool 
 
 void light12(System name,float seconds,int power,char * color,bool isBlocking)
 {
-	light(name,1,seconds,power,color,false);
-	name.cthread.sequance--;
-	light(name,2,seconds,power,color,isBlocking);
+    if(&name.cthread == &threadAlgoC)
+    {
+        light(name,1,seconds,power,color,false);
+        name.cthread.sequance--;
+        light(name,2,seconds,power,color,isBlocking);
+    }
+    else
+    {
+        light(name,1,seconds,power,color,isBlocking);
+        name.cthread.sequance--;
+        light(name,2,seconds,power,color,isBlocking);
+    }
 }
 
 void RGB(System name,int lightPort, float seconds,int power,int R,int G,int B,bool isBlocking)

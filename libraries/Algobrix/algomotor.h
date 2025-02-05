@@ -67,6 +67,7 @@ class AlgoMotor
         uint8_t pwmValue;
 		uint8_t power;
         uint8_t direction;
+        uint8_t mode;
 		volatile uint16_t rotCnt;
 		volatile uint16_t rotations;
 		volatile float * rotationCounterFloat;

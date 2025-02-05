@@ -27,7 +27,7 @@
 											
 
 #define END_THREAD(thread_id)				{\
-												if((thread_id.state != ALGOTHREAD_STATE_COMPLETED) && (thread_id.sequance == cThread.sequanceCnt) && (thread_id.subThreadIdx == thread_id.subThreadCompleted))\
+												if((thread_id.state != ALGOTHREAD_STATE_COMPLETED) && (thread_id.sequance >= cThread.sequanceCnt) && (thread_id.subThreadIdx == thread_id.subThreadCompleted))\
 												{\
 													thread_id.state = ALGOTHREAD_STATE_COMPLETED;\
 													{\
@@ -35,7 +35,6 @@
                                                         {\
 														    thread_id.subThread[k]->state = ALGOTHREAD_STATE_IDLE;\
                                                         }\
-												        Serial.println("Stop thread");\
 													}\
 												}\
 											}
