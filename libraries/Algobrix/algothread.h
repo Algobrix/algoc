@@ -19,6 +19,10 @@
 
 #define START_THREAD(thread_id)				\
 											AlgoThread & cThread = thread_id;\
+                                            if(cThread.state == ALGOTHREAD_STATE_COMPLETED)\
+                                            {\
+                                                return;\
+                                            }\
 											if(cThread.state == ALGOTHREAD_STATE_IDLE)\
 											{\
 												cThread.state = ALGOTHREAD_STATE_RUNNING;\

@@ -438,15 +438,8 @@ void chkLIGHT(void)
 	uint8_t k = 0;
 	for( k = 0; k < 2; k++ )
 	{
-		if(light[k]->state == ALGOLED_LIGHT_STATE_TIMED_ON)
-		{
-			if(chk4TimeoutSYSTIM(light[k]->timer,light[k]->period) == SYSTIM_TIMEOUT)
-			{
-				light[k]->stop();
-			}
-		}
-
-	}
+        light[k]->loop();
+    }
 }
 
 void initUI(void)
