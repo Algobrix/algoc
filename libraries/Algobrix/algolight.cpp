@@ -104,11 +104,11 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 			uint8_t b =  ((color) & 0xff) * ((float)power/LIGHT_POWER_LEVEL_CNT);
 			this->setColor(r,g,b);
 			// if((mode == OP_STATUS_BLOCKING) && (this->period != FOREVER))
+            this->mode = mode;
 			if(mode == OP_STATUS_BLOCKING)
 			{
 				this->state = ALGOLED_LIGHT_STATE_ON;
 				this->timer = getSYSTIM();
-				this->status = ALGOLED_LIGHT_STATUS_RUNNING;
 				if(&cthread == &threadAlgoC)
 				{
 					while((this->period == FOREVER) || (chk4TimeoutSYSTIM(this->timer,this->period) == SYSTIM_KEEP_ALIVE))
@@ -132,7 +132,7 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 				}
 				else
 				{
-					cthread.sequance++;
+				    this->status = ALGOLED_LIGHT_STATUS_RUNNING;
                     this->running_thread = &cthread;
                     return 	ALGOLED_LIGHT_STATUS_RUNNING;
 				}
@@ -141,13 +141,14 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 			{
 				if(this->period == FOREVER)
 				{
-					this->state = ALGOLED_LIGHT_STATE_ON;
+                    this->state = ALGOLED_LIGHT_STATE_ON;
 				}
 				else
 				{
 					this->state = ALGOLED_LIGHT_STATE_TIMED_ON;
 				}
-				cthread.sequance++;
+                this->status = ALGOLED_LIGHT_STATUS_RUNNING;
+                cthread.sequance++;
                 this->running_thread = &cthread;
                 return 	ALGOLED_LIGHT_STATUS_COMPLETED;
 			}
@@ -158,8 +159,12 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 			if(chk4TimeoutSYSTIM(this->timer,this->period) == SYSTIM_TIMEOUT)
 			{
 #ifdef SERIAL_ENABLE
-				Serial.println("Stop light");
+				Serial.println("Stop light from run");
 #endif
+                if(this->mode == OP_STATUS_BLOCKING)
+                {
+                    cthread.sequance++;
+                }
 				this->stop();
 				this->status = ALGOLED_LIGHT_STATUS_INIT;
                 this->running_thread = 0;
@@ -170,6 +175,29 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 		}
 	}
 }
+
+
+void AlgoLight::loop(void)
+{
+    if(this->status == ALGOLED_LIGHT_STATUS_RUNNING)
+    {
+        if(this->mode != OP_STATUS_BLOCKING)
+        {
+            if(chk4TimeoutSYSTIM(this->timer,this->period) == SYSTIM_TIMEOUT)
+            {
+#ifdef SERIAL_ENABLE
+                Serial.println("Stop light");
+#endif
+                this->status = ALGOLED_LIGHT_STATUS_INIT;
+                this->stop();
+                this->running_thread = 0;
+            }
+        }
+
+    }
+
+}
+
 
 uint8_t AlgoLight::runRaw(float time,uint8_t power,uint32_t color)
 {
@@ -277,8 +305,9 @@ void light12(System name,float seconds,int power,char * color,bool isBlocking)
     }
     else
     {
-        light(name,1,seconds,power,color,isBlocking);
-        name.cthread.sequance--;
+        light(name,1,seconds,power,color,false);
+        name.cthread.sequanceCnt++;
+        name.sequance++;
         light(name,2,seconds,power,color,isBlocking);
     }
 }

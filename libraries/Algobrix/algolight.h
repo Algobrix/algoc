@@ -62,6 +62,7 @@ class AlgoLight
         uint32_t timer;
 		uint8_t threadState;
 		uint8_t status;
+        uint8_t mode;
 		AlgoLight(uint8_t pin,uint8_t id);
 		AlgoThread * running_thread;
 
@@ -70,6 +71,8 @@ class AlgoLight
 		void stop(int line,int sequance,AlgoThread & cthread);
         uint8_t run(uint32_t line,uint32_t sequance,AlgoThread & cthread,float time,uint8_t power,uint32_t color, uint8_t mode);
 		uint8_t runRaw(float time,uint8_t power,uint32_t color);
+
+        void loop(void);
 };
 
 /* Exported variables ****************************************************** */
