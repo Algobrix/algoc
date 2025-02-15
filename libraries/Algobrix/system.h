@@ -29,6 +29,7 @@ class System
 		uint32_t line;
 		uint32_t sequance;
 		AlgoThread & cthread;
+        System(void); 
         System(uint32_t line,uint32_t sequance,AlgoThread & cthread); 
 };
 
