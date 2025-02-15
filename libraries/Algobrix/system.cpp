@@ -12,6 +12,12 @@
 /* Private function prototypes ********************************************* */
 
 /* Exported functions ****************************************************** */
+System::System(void):
+	cthread(threadAlgoC)
+{
+    this->line = 0;
+    this->sequance = 0;
+}
 System::System(uint32_t line,uint32_t sequance,AlgoThread & cthread):
 	cthread(cthread)
 {

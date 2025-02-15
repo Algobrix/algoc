@@ -50,8 +50,14 @@ void chkALGOBOT(void)
 void stopActuators(void)
 {
 	A.stop();
+    A.status = ALGOMOTOR_STATUS_INIT;
+    A.running_thread = 0;
 	B.stop();
+    B.status = ALGOMOTOR_STATUS_INIT;
+    B.running_thread = 0;
 	C.stop();
+    C.status = ALGOMOTOR_STATUS_INIT;
+    C.running_thread = 0;
 	Light1.stop();
 	Light2.stop();
 	soundPlayer.stop();

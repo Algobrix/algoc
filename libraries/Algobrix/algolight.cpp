@@ -34,9 +34,9 @@ const uint32_t c_color_value [LIGHT_COLOR_CNT] =
     LIGHT_COLOR_ORANGE,
 };
 
-
-
-
+uint8_t g_light_dual_state = 0;
+System g_light_dual_system;
+AlgoThread g_light_dual_thread;
 
 
 /* Private function prototypes ********************************************* */
@@ -159,7 +159,8 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 			if(chk4TimeoutSYSTIM(this->timer,this->period) == SYSTIM_TIMEOUT)
 			{
 #ifdef SERIAL_ENABLE
-				Serial.println("Stop light from run");
+				Serial.print("Stop light from run: ");
+                Serial.println(this->id);
 #endif
                 if(this->mode == OP_STATUS_BLOCKING)
                 {
@@ -179,23 +180,24 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 
 void AlgoLight::loop(void)
 {
-    if(this->status == ALGOLED_LIGHT_STATUS_RUNNING)
-    {
-        if(this->mode != OP_STATUS_BLOCKING)
-        {
-            if(chk4TimeoutSYSTIM(this->timer,this->period) == SYSTIM_TIMEOUT)
-            {
-#ifdef SERIAL_ENABLE
-                Serial.println("Stop light");
-#endif
-                this->status = ALGOLED_LIGHT_STATUS_INIT;
-                this->stop();
-                this->running_thread = 0;
-            }
-        }
-
-    }
-
+//     if(this->status == ALGOLED_LIGHT_STATUS_RUNNING)
+//     {
+//         if(this->mode != OP_STATUS_BLOCKING)
+//         {
+//             if(chk4TimeoutSYSTIM(this->timer,this->period) == SYSTIM_TIMEOUT)
+//             {
+// #ifdef SERIAL_ENABLE
+// 				Serial.print("Stop light: ");
+//                 Serial.println(this->id);
+// #endif
+//                 this->status = ALGOLED_LIGHT_STATUS_INIT;
+//                 this->stop();
+//                 this->running_thread = 0;
+//             }
+//         }
+//
+//     }
+//
 }
 
 
@@ -305,10 +307,87 @@ void light12(System name,float seconds,int power,char * color,bool isBlocking)
     }
     else
     {
-        light(name,1,seconds,power,color,false);
-        name.cthread.sequanceCnt++;
-        name.sequance++;
-        light(name,2,seconds,power,color,isBlocking);
+        if((name.cthread.sequance != name.sequance) && (g_light_dual_state != 2))
+        {
+            return;
+        }
+
+        uint8_t k = 0;
+        while( color[k] != '\0' )
+        {
+            if(color[k] >= 'A' && color[k] <='Z') 
+            {
+                color[k] = (color[k] - 'A') + 'a';
+            }
+            k++;
+        }
+        for( k = 0; k < 8; k++ )
+        {
+            uint8_t res = strcmp(color,c_color_name[k]);
+            if(res == 0)
+            {
+                break;
+            }
+        }
+        if(k == 8)
+        {
+#ifdef SERIAL_ENABLE
+            Serial.print("Specified color [");
+            Serial.print(color);
+            Serial.print("] for the light on the line [");
+            Serial.print(name.line);
+            Serial.print("Specified color for the light on the line [");
+            Serial.println("] is invalide");
+#endif
+        }
+        uint32_t colorValue = c_color_value[k];
+
+        switch(g_light_dual_state )
+        {
+            case(0):
+            {
+                g_light_dual_system.line = name.line;
+                g_light_dual_system.sequance = 0;
+                g_light_dual_thread.sequanceCnt = 2;
+                g_light_dual_thread.sequance = 0;
+                g_light_dual_system.cthread = g_light_dual_thread;
+                g_light_dual_state = 1;
+                break;
+            }
+            case(1):
+            {
+			    Light1.run(g_light_dual_system.line,0,g_light_dual_thread,seconds,power,colorValue,false);
+			    Light2.run(g_light_dual_system.line,1,g_light_dual_thread,seconds,power,colorValue,isBlocking);
+                if(isBlocking)
+                {
+                    if((Light1.status == ALGOLED_LIGHT_STATUS_INIT) && (Light2.status == ALGOLED_LIGHT_STATUS_INIT))
+                    {
+                        Serial.println("Completed");
+                        g_light_dual_state = 0;
+                        name.cthread.sequance++;
+                    }
+                }
+                else
+                {
+                    Serial.println("Go to the state 2");
+                    g_light_dual_state = 2;
+                    name.cthread.sequance++;
+                }
+                break;
+            }
+            case(2):
+            {
+			    Light1.run(g_light_dual_system.line,0,g_light_dual_thread,seconds,power,colorValue,false);
+			    Light2.run(g_light_dual_system.line,1,g_light_dual_thread,seconds,power,colorValue,isBlocking);
+                if((Light1.status == ALGOLED_LIGHT_STATUS_INIT) && (Light2.status == ALGOLED_LIGHT_STATUS_INIT))
+                {
+                    Serial.print("Completed non-blocking");
+                    g_light_dual_state = 0;
+                }
+                break;
+            }
+
+        }
     }
 }
 
