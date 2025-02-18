@@ -44,6 +44,7 @@ void stopALGOBOT(void);
 int random(System name);
 void blinkLed(void);
 void stopActuators(void);
+uint8_t isIdleALGOBOT(void);
 
 #endif 
 /* ***************************** END OF FILE ******************************* */
