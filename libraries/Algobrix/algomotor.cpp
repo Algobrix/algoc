@@ -63,6 +63,7 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
             this->running_thread->sequance++;
         }
         this->running_thread = 0;
+        this->status = ALGOMOTOR_STATUS_INIT;
         this->stop();
     }
 
@@ -297,6 +298,8 @@ uint8_t AlgoMotor::rotation(uint32_t line,uint32_t sequance,AlgoThread & cthread
         }
         this->running_thread = 0;
         this->stop();
+        this->status = ALGOMOTOR_STATUS_INIT;
+        this->running_thread = 0;
     }
 
 

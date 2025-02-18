@@ -433,6 +433,18 @@ void chkMOTOR(void)
 	}
 }
 
+uint8_t isIdleALGOBOT(void)
+{
+    uint8_t status = 0;
+    status += MotorA.status;
+    status += MotorB.status;
+    status += MotorC.status;
+    status += Light1.status;
+    status += Light2.status;
+    status += soundPlayer.status;
+    return status;
+}
+
 void initLIGHT(void)
 {
     Light1.stop();
@@ -511,7 +523,13 @@ ISR(TIMER3_COMPA_vect)
 				*MotorA.pTIFR = 0;
 			}
 			MotorA.stop();
-		}
+            if(MotorA.mode == OP_STATUS_BLOCKING)
+            {
+                MotorA.running_thread->sequance++;
+            }
+            MotorA.running_thread = 0;
+            MotorA.status = ALGOMOTOR_STATUS_INIT;
+        }
 		else
 		{
 			MotorA.rotations -= *MotorA.pOCR;
@@ -554,6 +572,12 @@ ISR(TIMER1_COMPA_vect)
             *MotorB.pTCNT = 0;
             *MotorB.pTIFR = 0;
             MotorB.stop();
+            if(MotorB.mode == OP_STATUS_BLOCKING)
+            {
+                MotorB.running_thread->sequance++;
+            }
+            MotorB.running_thread = 0;
+            MotorB.status = ALGOMOTOR_STATUS_INIT;
 		}
 		else
 		{
@@ -613,8 +637,13 @@ ISR(TIMER4_COMPA_vect)
 		  *MotorC.pTCNT = 0;
 		  *MotorC.pTIFR = 0;
 		  MotorC.stop();
-
-	  }
+          if(MotorC.mode == OP_STATUS_BLOCKING)
+          {
+              MotorC.running_thread->sequance++;
+          }
+          MotorC.running_thread = 0;
+          MotorC.status = ALGOMOTOR_STATUS_INIT;
+      }
 	  else
 	  {
 		  MotorC.rotations -= *MotorC.pOCR;

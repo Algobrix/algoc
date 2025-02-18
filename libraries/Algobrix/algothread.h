@@ -33,14 +33,30 @@
 #define END_THREAD(thread_id)				{\
 												if((thread_id.state != ALGOTHREAD_STATE_COMPLETED) && (thread_id.sequance >= cThread.sequanceCnt) && (thread_id.subThreadIdx == thread_id.subThreadCompleted))\
 												{\
-													thread_id.state = ALGOTHREAD_STATE_COMPLETED;\
-													{\
-                                                        for(uint8_t k = 0; k < thread_id.subThreadIdx; k++)\
+                                                    if(thread_id.sequance == cThread.sequanceCnt) \
+                                                    { \
+                                                        thread_id.state = ALGOTHREAD_STATE_COMPLETED;\
                                                         {\
-														    thread_id.subThread[k]->state = ALGOTHREAD_STATE_IDLE;\
+                                                            for(uint8_t k = 0; k < thread_id.subThreadIdx; k++)\
+                                                            {\
+                                                                thread_id.subThread[k]->state = ALGOTHREAD_STATE_IDLE;\
+                                                            }\
                                                         }\
-													}\
-												}\
+                                                    }\
+                                                    else \
+                                                    {\
+                                                        if(isIdleALGOBOT() == 0) \
+                                                        {\
+                                                            thread_id.state = ALGOTHREAD_STATE_COMPLETED;\
+                                                            {\
+                                                                for(uint8_t k = 0; k < thread_id.subThreadIdx; k++)\
+                                                                {\
+                                                                    thread_id.subThread[k]->state = ALGOTHREAD_STATE_IDLE;\
+                                                                }\
+                                                            }\
+                                                        }\
+                                                    }\
+																									}\
 											}
 #define START_SUBTHREAD(parent,child)		\
 											AlgoThread & cThread = child;\
