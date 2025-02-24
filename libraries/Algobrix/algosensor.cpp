@@ -25,6 +25,10 @@ AlgoSensor::AlgoSensor(uint8_t pin, OWI * owi)
     pinMode(pin, INPUT);
 }
 
+int AlgoSensor::getPreviusValue()
+{
+    return this->p_value;
+}
 
 int AlgoSensor::getValue() 
 {
@@ -71,6 +75,7 @@ int AlgoSensor::getValue()
         {
             value = -1;
         }
+        this->p_value = value;
     }
     return value;
 }
@@ -254,11 +259,24 @@ void waitForPressSensor(System name,int sensorPort, bool logicState)
 }
 
 
+uint8_t g_sensor_previous_value = 0;
 int getSensor(System name,int sensorPort)
 {
 	if(name.cthread.sequance != name.sequance)
 	{
-		return 0;
+        switch(sensorPort)
+        {
+            case(1):
+            {
+                return Sensor1.getPreviusValue();
+                break;
+            }
+            case(2):
+            {
+                return Sensor2.getPreviusValue();
+                break;
+            }
+        }
 	}
 	yield();
 	int cvalue = Sensor(sensorPort);
@@ -272,6 +290,7 @@ int getSensor(System name,int sensorPort)
 	Serial.println("]");
 #endif
 	name.cthread.sequance++;
+    g_sensor_previous_value = cvalue;
 	return cvalue;
 }
 
