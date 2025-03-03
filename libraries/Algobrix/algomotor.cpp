@@ -213,20 +213,38 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 			}
 			else
 			{
-				if(this->period == FOREVER)
-				{
-					this->prevState = this->state;
-					this->state = ALGOMOTOR_STATE_ON;
-				}
-				else
-				{
-					this->prevState = this->state;
-					this->state = ALGOMOTOR_STATE_TIMED_ON;
-				}
-                this->running_thread = &cthread;
-                cthread.sequance++;
-                this->status = ALGOMOTOR_STATUS_RUNNING;
-				return 	ALGOMOTOR_STATUS_COMPLETED;
+				if(&cthread == &threadAlgoC)
+                {
+                    if(this->period == FOREVER)
+                    {
+                        this->prevState = this->state;
+                        this->state = ALGOMOTOR_STATE_ON;
+                    }
+                    else
+                    {
+                        this->prevState = this->state;
+                        this->state = ALGOMOTOR_STATE_TIMED_ON;
+                    }
+                    cthread.sequance++;
+                    return 	ALGOMOTOR_STATUS_COMPLETED;
+                }
+                else
+                {
+                    if(this->period == FOREVER)
+                    {
+                        this->prevState = this->state;
+                        this->state = ALGOMOTOR_STATE_ON;
+                    }
+                    else
+                    {
+                        this->prevState = this->state;
+                        this->state = ALGOMOTOR_STATE_TIMED_ON;
+                    }
+                    this->running_thread = &cthread;
+                    cthread.sequance++;
+                    this->status = ALGOMOTOR_STATUS_RUNNING;
+                    return 	ALGOMOTOR_STATUS_COMPLETED;
+                }
 			}
 			break;
 		}
