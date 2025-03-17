@@ -72,6 +72,14 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 	{
 		return 0;
 	}
+
+    if((this->status != ALGOLED_LIGHT_STATUS_INIT) && (this->running_thread == &threadAlgoC))
+    {
+        this->stop();
+        this->status = ALGOLED_LIGHT_STATUS_INIT;
+        this->running_thread = 0;
+    }
+
 	yield();
 	switch(this->status)
 	{
@@ -166,7 +174,7 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
                 {
                     cthread.sequance++;
                 }
-				this->stop();
+                this->stop();
 				this->status = ALGOLED_LIGHT_STATUS_INIT;
                 this->running_thread = 0;
 				return 	ALGOLED_LIGHT_STATUS_COMPLETED;
