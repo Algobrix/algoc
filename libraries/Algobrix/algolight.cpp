@@ -68,10 +68,16 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 		yield();
 	}
 
-	if((cthread.sequance != sequance) && (this->status == ALGOLED_LIGHT_STATUS_INIT))
+    if((&cthread == &threadAlgoC) && (cthread.state == ALGOTHREAD_STATE_IDLE))
+    {
+        return 0;
+    }
+
+	if(cthread.sequance != sequance)
 	{
 		return 0;
 	}
+
 
     if((this->status != ALGOLED_LIGHT_STATUS_INIT) && (this->running_thread == &threadAlgoC))
     {
@@ -146,20 +152,43 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 				}
 			}
 			else
-			{
-				if(this->period == FOREVER)
-				{
-                    this->state = ALGOLED_LIGHT_STATE_ON;
-				}
-				else
-				{
-					this->state = ALGOLED_LIGHT_STATE_TIMED_ON;
-				}
-                this->status = ALGOLED_LIGHT_STATUS_RUNNING;
-                cthread.sequance++;
-                this->running_thread = &cthread;
-                return 	ALGOLED_LIGHT_STATUS_COMPLETED;
-			}
+            {
+                {
+                    if(&cthread == &threadAlgoC)
+                    {
+                        if(this->period == FOREVER)
+                        {
+                            this->prevState = this->state;
+                            this->state = ALGOLED_LIGHT_STATE_ON;
+                        }
+                        else
+                        {
+                            this->prevState = this->state;
+                            this->state = ALGOLED_LIGHT_STATE_TIMED_ON;
+                        }
+                        cthread.sequance++;
+                        return 	ALGOMOTOR_STATUS_COMPLETED;
+                    }
+                    else
+                    {
+                        if(this->period == FOREVER)
+                        {
+                            this->prevState = this->state;
+                            this->state = ALGOLED_LIGHT_STATE_ON;
+                        }
+                        else
+                        {
+                            this->prevState = this->state;
+                            this->state = ALGOLED_LIGHT_STATE_TIMED_ON;
+                        }
+                        this->running_thread = &cthread;
+                        cthread.sequance++;
+                        this->status = ALGOLED_LIGHT_STATUS_RUNNING;
+                        return 	ALGOMOTOR_STATUS_COMPLETED;
+                    }
+
+                }
+            }
 			break;
 		}
 		case (ALGOLED_LIGHT_STATUS_RUNNING):
@@ -170,10 +199,6 @@ uint8_t AlgoLight::run(uint32_t line,uint32_t sequance,AlgoThread & cthread,floa
 				Serial.print("Stop light from run: ");
                 Serial.println(this->id);
 #endif
-                if(this->mode == OP_STATUS_BLOCKING)
-                {
-                    cthread.sequance++;
-                }
                 this->stop();
 				this->status = ALGOLED_LIGHT_STATUS_INIT;
                 this->running_thread = 0;
