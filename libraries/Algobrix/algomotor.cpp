@@ -52,6 +52,10 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
     {
         return 0;
     }
+    Serial.print("CTH: ");
+    Serial.print(cthread.sequance);
+    Serial.print("SEQ: ");
+    Serial.println(sequance);
 	if(cthread.sequance != sequance)
 	{
 		return 0;

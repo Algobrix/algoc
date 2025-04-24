@@ -58,6 +58,7 @@ class AlgoLight
     public:
 		uint8_t id;
         uint8_t state;
+		uint8_t prevState;
         float period;
         uint32_t timer;
 		uint8_t threadState;
