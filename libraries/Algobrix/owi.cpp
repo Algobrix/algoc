@@ -130,7 +130,7 @@ uint8_t OWI::rxByte(void)
 #define OWI_RECALL_E2 0xb8
 #define OWI_RPS 0x34
 
-uint8_t OWI::readValue(uint8_t reg,uint8_t * value)
+uint8_t OWI::readValue(uint8_t reg,int8_t * value)
 {
   this->reset();
   if(this->wait4Presence() != 0)

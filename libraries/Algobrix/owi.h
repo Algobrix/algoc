@@ -35,7 +35,7 @@ class OWI
         uint8_t wait4Presence(void);
         void txByte(uint8_t data);
         uint8_t rxByte(void);
-        uint8_t readValue(uint8_t reg,uint8_t * value);
+        uint8_t readValue(uint8_t reg,int8_t * value);
 };
 
 /* Exported variables ****************************************************** */

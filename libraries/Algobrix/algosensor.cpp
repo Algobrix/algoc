@@ -33,7 +33,7 @@ int AlgoSensor::getPreviusValue()
 int AlgoSensor::getValue() 
 {
     float dutyCycle = 0;
-    uint8_t value = 0;
+    int8_t value = 0;
     if(this->type == ALGOSENSOR_TYPE_1WIRE)
     {
         if(digitalRead(pin) == 0) 
@@ -71,10 +71,10 @@ int AlgoSensor::getValue()
             dutyCycle = 0;
         }
         value = int(round(dutyCycle / 10));
-        if(value == 0)
-        {
-            value = -1;
-        }
+        // if(value == 0)
+        // {
+        //     value = -1;
+        // }
         this->p_value = value;
     }
     return value;
@@ -191,7 +191,7 @@ void waitForPressSensor(System name,int sensorPort, bool logicState)
 		return;
 	}
 	yield();
-    uint8_t cvalue;
+    int8_t cvalue;
 	switch(name.cthread.waitState)
 	{
 		case(ALGOTHREAD_WAIT_STATE_INIT):
@@ -218,19 +218,22 @@ void waitForPressSensor(System name,int sensorPort, bool logicState)
 					delay(10);
 					yield();
 					cvalue = Sensor(sensorPort);
-					if((logicState == false) && cvalue == 0)
-					{
-						break;
-					}
-					else if((logicState == true) && cvalue != 0)
-					{
-						break;
-					}
-					if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_RUN)
-					{
-						name.cthread.waitState = ALGOTHREAD_WAIT_STATE_INIT;
-						return;
-					}
+                    if(cvalue > 0)
+                    {
+                        if((logicState == false) && cvalue == 0)
+                        {
+                            break;
+                        }
+                        else if((logicState == true) && cvalue != 0)
+                        {
+                            break;
+                        }
+                        if(g_ALGOBOT_INFO.state != ALGOBOT_STATE_RUN)
+                        {
+                            name.cthread.waitState = ALGOTHREAD_WAIT_STATE_INIT;
+                            return;
+                        }
+                    }
 				}
 				name.cthread.waitState = ALGOTHREAD_WAIT_STATE_INIT;
 				name.cthread.sequance++;
