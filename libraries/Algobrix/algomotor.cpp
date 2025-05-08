@@ -52,10 +52,6 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
     {
         return 0;
     }
-    Serial.print("CTH: ");
-    Serial.print(cthread.sequance);
-    Serial.print("SEQ: ");
-    Serial.println(sequance);
 	if(cthread.sequance != sequance)
 	{
 		return 0;
@@ -210,7 +206,6 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 				{
                     this->running_thread = &cthread;
                     this->status = ALGOMOTOR_STATUS_RUNNING;
-					cthread.sequance++;
                     return 	ALGOMOTOR_STATUS_RUNNING;
 				}
 
@@ -245,7 +240,6 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
                         this->state = ALGOMOTOR_STATE_TIMED_ON;
                     }
                     this->running_thread = &cthread;
-                    cthread.sequance++;
                     this->status = ALGOMOTOR_STATUS_RUNNING;
                     return 	ALGOMOTOR_STATUS_COMPLETED;
                 }
@@ -281,6 +275,10 @@ uint8_t AlgoMotor::run(int line,int sequance,AlgoThread & cthread, float time,in
 			{
 				stop();
 				this->status = ALGOMOTOR_STATUS_INIT;
+				if(this->running_thread != &threadAlgoC)
+                {
+                    cthread.sequance++;
+                }
                 this->running_thread = 0;
 				return 	ALGOMOTOR_STATUS_COMPLETED;
 			}
