@@ -78,12 +78,15 @@
 											cThread.sequanceCnt = 0; \
 
 #define END_SUBTHREAD(parent,thread_id)		{\
-												if((thread_id.state != ALGOTHREAD_STATE_COMPLETED) && (thread_id.sequance == cThread.sequanceCnt))\
+												if((thread_id.state != ALGOTHREAD_STATE_COMPLETED) && (thread_id.sequance >= cThread.sequanceCnt))\
 												{\
 													thread_id.state = ALGOTHREAD_STATE_COMPLETED;\
 													parent.subThreadCompleted++;\
 												}\
+												if(parent.sequance == sequance)\
+                                                {\
 												parent.sequance++;\
+                                                }\
 											}
 
 
