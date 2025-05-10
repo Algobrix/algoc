@@ -6,7 +6,7 @@
 # https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification
 
 name=AlgoC
-version=0.5.35
+version=0.5.36
 
 
 # AVR compile variables
