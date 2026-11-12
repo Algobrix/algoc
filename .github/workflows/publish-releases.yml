@@ -32,6 +32,10 @@ env:
   # Name to use for the commit (email is set by GH automatically)
   COMMIT_NAME: Github Actions
 
+# Explicit token scope: the org default GITHUB_TOKEN is read-only.
+permissions:
+  contents: write
+
 jobs:
   publish:
     name: Publish tag to JSON file
